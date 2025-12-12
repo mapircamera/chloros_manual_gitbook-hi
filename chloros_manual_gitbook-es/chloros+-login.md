@@ -1,43 +1,43 @@
-# Chloros+ Login
+# क्लोरोस+ लॉगिन
 
-## Chloros and Chloros (Browser) Login
+## क्लोरोस और क्लोरोस (ब्राउज़र) लॉगिन
 
-The user <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar menu allows you to log into your Chloros+ account and unlock additional features.
+उपयोगकर्ता <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> साइडबार मेनू आपको अपने क्लोरोस+ खाते में लॉग इन करने और अतिरिक्त सुविधाओं को अनलॉक करने की अनुमति देता है।
 
-When logged in your account details will be shown:
+लॉग इन करने पर आपके खाते का विवरण दिखाया जाएगा:
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
-## CLI Login
+## सीएलआई लॉगिन
 
-Login with your Chloros+ credentials to enable CLI processing.
+सीएलआई प्रोसेसिंग सक्षम करने के लिए अपने क्लोरोस+ क्रेडेंशियल्स के साथ लॉगिन करें।
 
-**Syntax:**
+**वाक्यविन्यास:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**उदाहरण:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
-{% endhint %}
+{% संकेत शैली = "चेतावनी" %}
+**विशेष वर्ण**: `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर एकल उद्धरण चिह्नों का उपयोग करें।
+{%अंतसंकेत%}
 
-**Output:**
+**आउटपुट:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-### Plan Expiration
+### योजना समाप्ति
 
-The plan expiration in the GUI shows when your license will become invalid. For recurring monthly subscriptions the expiration is at the end of the month. For yearly subscriptions it is a year after you started the subscription. The license check requires a monthly internet connection to verify, with a 30 day grace period.
+जीयूआई में योजना की समाप्ति से पता चलता है कि आपका लाइसेंस कब अमान्य हो जाएगा। आवर्ती मासिक सदस्यताओं के लिए समाप्ति माह के अंत में होती है। वार्षिक सदस्यता के लिए सदस्यता शुरू करने के बाद यह एक वर्ष है। लाइसेंस जांच को सत्यापित करने के लिए 30 दिन की छूट अवधि के साथ मासिक इंटरनेट कनेक्शन की आवश्यकता होती है।
 
-### Device Limit
+### डिवाइस की सीमा
 
-Each Chloros+ plan offers a different number of registered devices. Each device you log into with a Chloros+ account will count towards your number of registered devices. You can rename and remove a device on your MAPIR Cloud account page.
+प्रत्येक क्लोरोस+ योजना अलग-अलग संख्या में पंजीकृत उपकरणों की पेशकश करती है। आपके द्वारा क्लोरोस+ खाते से लॉग इन किया गया प्रत्येक उपकरण आपके पंजीकृत उपकरणों की संख्या में गिना जाएगा। आप अपने MAPIR क्लाउड खाता पृष्ठ पर किसी डिवाइस का नाम बदल सकते हैं और उसे हटा सकते हैं।
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">क्लोरोस+ प्लान</th><th align="center">COPPER</th><th align="center">Bronze</th><th align="center">Silver</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">डिवाइस समर्थित</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

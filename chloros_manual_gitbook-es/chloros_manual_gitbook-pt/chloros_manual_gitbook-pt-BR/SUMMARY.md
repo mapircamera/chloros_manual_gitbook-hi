@@ -1,34 +1,34 @@
-# Table of contents
+# विषयसूची
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* [शुरू करना](README.md)
+* [जीयूआई: नेविगेशन](navigation.md)
+* [जीयूआई: परियोजनाएं](projects.md)
+* [सीएलआई: कमांड लाइन](CLI.md)
+* [एपीआई: पायथन एसडीके](api-python-sdk.md)
+* [समर्थित कैमरे](supported-cameras.md)
+* [आउटपुट छवि प्रारूप](output-image-formats.md)
+* [क्लोरोस+ लॉगिन](chloros+-login.md)
+* [अंशांकन लक्ष्य](calibration-targets.md)
+* [समर्थित भाषाएँ](supported-languages.md)
+* [डाउनलोड करना](download.md)
+* [अक्सर पूछे जाने वाले प्रश्न](faq.md)
 
-## Processing Images (GUI)
+## छवियाँ प्रसंस्करण (जीयूआई)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/page-1.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [प्रोजेक्ट सेटिंग्स समायोजित करना](processing-images-gui/adjusting-project-settings.md)
+* [किसी प्रोजेक्ट में फ़ाइलें जोड़ना](processing-images-gui/page-1.md)
+* [लक्ष्य छवियाँ चुनना](processing-images-gui/choosing-target-images.md)
+* [प्रसंस्करण प्रारंभ करना](processing-images-gui/starting-the-processing.md)
+* [प्रसंस्करण की निगरानी करना](processing-images-gui/monitoring-the-processing.md)
+* [प्रसंस्करण समाप्त करना](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## परियोजना सेटिंग्स
 
-* [Project Settings](project-settings/page-2.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [प्रोजेक्ट सेटिंग्स](project-settings/page-2.md)
+* [मल्टीस्पेक्ट्रल सूचकांक सूत्र](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## छवि दर्शक (जीयूआई)
 
-* [Opening an Image Full Screen](image-viewer-gui/page-3.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [एक छवि पूर्ण स्क्रीन खोलना](image-viewer-gui/page-3.md)
+* [छवि परतें](image-viewer-gui/image-layers.md)
+* [इंडेक्स/एलयूटी सैंडबॉक्स](image-viewer-gui/index-lut-sandbox.md)

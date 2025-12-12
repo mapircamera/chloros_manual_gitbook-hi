@@ -1,17 +1,17 @@
-# Projects
+# परियोजनाओं
 
-Chloros allows you to create projects which can be reopened in the future.
+क्लोरोस आपको ऐसे प्रोजेक्ट बनाने की अनुमति देता है जिन्हें भविष्य में फिर से खोला जा सकता है।
 
-## New Project
+## नया प्रोजेक्ट
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "New Project" from the main menu and enter a unique name for your project.
+मुख्य मेनू से "नया प्रोजेक्ट" चुनें और अपने प्रोजेक्ट के लिए एक अद्वितीय नाम दर्ज करें।
 
-## Open Project
+## ओपन प्रोजेक्ट
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
+प्रोजेक्ट फ़ोल्डर में मौजूदा प्रोजेक्ट्स की सूची देखने के लिए "ओपन प्रोजेक्ट" चुनें। यदि कोई प्रोजेक्ट मौजूद नहीं है तो द्वितीयक साइड मेनू नहीं खुलेगा। आप उपरोक्त फोटो में सूचीबद्ध कुछ GUI निर्मित प्रोजेक्ट (t1, t2, t3) देख सकते हैं। DATE\_TIME प्रोजेक्ट CLI द्वारा डिफ़ॉल्ट प्रोजेक्ट नामकरण योजना का उपयोग करके बनाए गए थे। किसी भी प्रोजेक्ट नाम पर क्लिक करने से वह खुल जाएगा।
 
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/page-2.md).
+"प्रोजेक्ट फ़ोल्डर खोलें" बटन पर क्लिक करने से आपके कंप्यूटर का फ़ाइल एक्सप्लोरर प्रोजेक्ट पथ पर खुल जाता है। आप प्रोजेक्ट पथ को [प्रोजेक्ट सेटिंग्स](project-settings/page-2.md) में समायोजित कर सकते हैं।

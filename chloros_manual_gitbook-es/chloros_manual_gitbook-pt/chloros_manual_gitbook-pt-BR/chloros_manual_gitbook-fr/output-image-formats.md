@@ -4,21 +4,21 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Output Image Formats
+# आउटपुट छवि प्रारूप
 
-### TIFF (16-bit)
+### टीआईएफएफ (16-बिट)
 
-16-bit (pixel digital number 0 - 65535) TIFF (.tif) format output.
+16-बिट (पिक्सेल डिजिटल नंबर 0 - 65535) टीआईएफएफ (.टीआईएफ) प्रारूप आउटपुट।
 
-### TIFF (32-bit, Percent %)
+### टीआईएफएफ (32-बिट, प्रतिशत%)
 
-32-bit (pixel float 0.0 - 1.0) TIFF (.tif) format output. Pixel values represent reflectance percentages where 0.0 = 0% and 1.0 = 100%.
+32-बिट (पिक्सेल फ़्लोट 0.0 - 1.0) TIFF (.tif) प्रारूप आउटपुट। पिक्सेल मान परावर्तन प्रतिशत दर्शाते हैं जहां 0.0 = 0% और 1.0 = 100%।
 
-### **JPG (8-bit)**
+### **जेपीजी (8-बिट)**
 
-8-bit (pixel digital number 0 -255) JPG (.jpg) format output.
+8-बिट (पिक्सेल डिजिटल नंबर 0 -255) जेपीजी (.jpg) प्रारूप आउटपुट।
 
-### **PNG (8-bit)**
+### **पीएनजी (8-बिट)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Lossless compression suitable for web viewing and visualization.
+8-बिट (पिक्सेल डिजिटल नंबर 0 - 255) पीएनजी (.png) प्रारूप आउटपुट। वेब देखने और विज़ुअलाइज़ेशन के लिए उपयुक्त दोषरहित संपीड़न।
 
