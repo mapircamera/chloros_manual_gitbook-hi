@@ -16,7 +16,7 @@
 ## छवियाँ प्रसंस्करण (जीयूआई)
 
 * [प्रोजेक्ट सेटिंग्स समायोजित करना](processing-images-gui/adjusting-project-settings.md)
-* [किसी प्रोजेक्ट में फ़ाइलें जोड़ना](processing-images-gui/page-1.md)
+* [किसी प्रोजेक्ट में फ़ाइलें जोड़ना](processing-images-gui/adding-files-to-a-project.md)
 * [लक्ष्य छवियाँ चुनना](processing-images-gui/choosing-target-images.md)
 * [प्रसंस्करण प्रारंभ करना](processing-images-gui/starting-the-processing.md)
 * [प्रसंस्करण की निगरानी करना](processing-images-gui/monitoring-the-processing.md)
@@ -24,11 +24,11 @@
 
 ## परियोजना सेटिंग्स
 
-* [प्रोजेक्ट सेटिंग्स](project-settings/page-2.md)
+* [प्रोजेक्ट सेटिंग्स](project-settings/project-settings.md)
 * [मल्टीस्पेक्ट्रल सूचकांक सूत्र](project-settings/multispectral-index-formulas.md)
 
 ## छवि दर्शक (जीयूआई)
 
-* [एक छवि पूर्ण स्क्रीन खोलना](image-viewer-gui/page-3.md)
+* [एक छवि पूर्ण स्क्रीन खोलना](image-viewer-gui/opening-an-image-full-screen.md)
 * [छवि परतें](image-viewer-gui/image-layers.md)
 * [इंडेक्स/एलयूटी सैंडबॉक्स](image-viewer-gui/index-lut-sandbox.md)
