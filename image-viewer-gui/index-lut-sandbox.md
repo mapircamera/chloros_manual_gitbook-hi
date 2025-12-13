@@ -83,17 +83,17 @@
 #### एनडीवीआई उदाहरण
 
 ```
-सूत्र: (एनआईआर - लाल) / (एनआईआर + लाल)
+Formula: (NIR - Red) / (NIR + Red)
 
-सर्वे3डब्ल्यू आरजीएन कैमरे के लिए:
-एनआईआर = 850एनएम बैंड
-लाल = 661एनएम बैंड
+For Survey3W RGN camera:
+NIR = 850nm band
+Red = 661nm band
 
-परिणाम सीमा: -1.0 से +1.0
-विशिष्ट वनस्पति: 0.4 से 0.9
-तनावग्रस्त वनस्पति: 0.2 से 0.4
-नंगी मिट्टी: 0.0 से 0.2
-पानी: -0.1 से 0.1
+Result range: -1.0 to +1.0
+Typical vegetation: 0.4 to 0.9
+Stressed vegetation: 0.2 to 0.4
+Bare soil: 0.0 to 0.2
+Water: -0.1 to 0.1
 ```
 
 संपूर्ण सूचकांक सूत्र दस्तावेज़ीकरण के लिए, [मल्टीस्पेक्ट्रल सूचकांक सूत्र](../project-settings/multispectral-index-formulas.md) देखें।
@@ -385,17 +385,17 @@
 **उदाहरण कस्टम सूत्र:**
 
 ```
-ऑफसेट के साथ संशोधित NDVI:
-(एनआईआर - लाल) / (एनआईआर + लाल + 0.5)
+Modified NDVI with offset:
+(NIR - Red) / (NIR + Red + 0.5)
 
-सरल अनुपात:
-एनआईआर/लाल
+Simple ratio:
+NIR / Red
 
-जटिल मल्टी-बैंड:
-(एनआईआर - लाल) / (एनआईआर + लाल - नीला)
+Complex multi-band:
+(NIR - Red) / (NIR + Red - Blue)
 
-घातीय सूचकांक:
-(एनआईआर/लाल) ^ 2
+Exponential index:
+(NIR / Red) ^ 2
 ```
 
 {% hint style="warning" %}

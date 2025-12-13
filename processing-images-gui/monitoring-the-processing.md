@@ -162,11 +162,11 @@
 सामान्य प्रसंस्करण अद्यतन:
 
 ```
-[सूचना] प्रसंस्करण शुरू हो गया
-[जानकारी] IMG_0015.RAW में लक्ष्य का पता चला - 4 पैनल मिले
-[जानकारी] IMG_0234.RAW को कैलिब्रेट किया जा रहा है
-[जानकारी] निर्यात की गई NDVI छवि: IMG_0234_NDVI.tif
-[जानकारी] प्रसंस्करण पूर्ण
+[INFO] Processing started
+[INFO] Target detected in IMG_0015.RAW - 4 panels found
+[INFO] Calibrating IMG_0234.RAW
+[INFO] Exported NDVI image: IMG_0234_NDVI.tif
+[INFO] Processing complete
 ```
 
 #### चेतावनी संदेश (पीला)
@@ -174,9 +174,9 @@
 गैर-महत्वपूर्ण मुद्दे जो प्रसंस्करण नहीं रोकते:
 
 ```
-[चेतावनी] IMG_0145.RAW में कोई जीपीएस डेटा नहीं मिला
-[चेतावनी] छवि टाइमस्टैम्प अंतर > 30 मिनट का लक्ष्य रखें
-[चेतावनी] अंशांकन पैनल में कम कंट्रास्ट - परिणाम भिन्न हो सकते हैं
+[WARN] No GPS data found in IMG_0145.RAW
+[WARN] Target image timestamp gap > 30 minutes
+[WARN] Low contrast in calibration panel - results may vary
 ```
 
 **कार्रवाई:** प्रसंस्करण के बाद चेतावनियों की समीक्षा करें, लेकिन बीच में न आएं
@@ -186,9 +186,9 @@
 गंभीर समस्याएँ जिनके कारण प्रसंस्करण विफल हो सकता है:
 
 ```
-[त्रुटि] फ़ाइल नहीं लिख सकता - डिस्क भरी हुई है
-[त्रुटि] दूषित छवि फ़ाइल: IMG_0299.RAW
-[त्रुटि] कोई लक्ष्य नहीं मिला - परावर्तन अंशांकन सक्षम करें या लक्ष्य छवियों को चिह्नित करें
+[ERROR] Cannot write file - disk full
+[ERROR] Corrupted image file: IMG_0299.RAW
+[ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
 **कार्रवाई:** प्रसंस्करण रोकें, त्रुटि का समाधान करें, पुनरारंभ करें
