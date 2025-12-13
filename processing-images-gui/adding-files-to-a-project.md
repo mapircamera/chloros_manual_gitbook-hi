@@ -1,204 +1,204 @@
-# Adding Files to a Project
+# किसी प्रोजेक्ट में फ़ाइलें जोड़ना
 
-Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
+एक बार जब आप क्लोरोस में एक प्रोजेक्ट बना लेते हैं या खोल लेते हैं, तो अगला कदम प्रसंस्करण शुरू करने के लिए अपनी मल्टीस्पेक्ट्रल छवियों को जोड़ना होता है। फ़ाइल ब्राउज़र<img src='../.gitbook/assets/icon_file-browser.JPG' alt='' data-size='line'> टैब छवियों को आयात करना और आपके डेटासेट को प्रबंधित करना आसान बनाता है।
 
-## Accessing the File Browser
+## फ़ाइल ब्राउज़र तक पहुँचना
 
-1. Open or create a project in Chloros
-2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The File Browser panel will display your project's file list
+1. क्लोरोस में एक प्रोजेक्ट खोलें या बनाएं
+2. बाएं साइडबार में **फ़ाइल ब्राउज़र** <img src='../.gitbook/assets/icon_file-browser.JPG' alt='' data-size='line'> आइकन पर क्लिक करें।
+3. फ़ाइल ब्राउज़र पैनल आपके प्रोजेक्ट की फ़ाइल सूची प्रदर्शित करेगा
 
-{% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
-{% endhint %}
-
-***
-
-## Adding Images to Your Project
-
-There are two primary ways to add images to your project:
-
-### Method 1: Add Files
-
-Use this option to import individual image files or a small selection of files.
-
-1. Click the **"Add Files"** button at the top of the File Browser panel
-2. Navigate to the folder containing your images
-3. Select one or more image files (hold **Ctrl** to select multiple files)
-4. Click **"Open"** to import the selected files
-
-### Method 2: Add Folder
-
-Use this option to import all images from a folder at once.
-
-1. Click the **"Add Folder"** button at the top of the File Browser panel
-2. Navigate to and select the folder containing your capture session images
-3. Click **"Select Folder"** to import all supported images from that folder
+{% संकेत शैली = "जानकारी" %}
+**समर्थित फ़ाइल प्रकार**: क्लोरोस MAPIR सर्वे3W और सर्वे3N कैमरों से RAW+JPG और JPG छवि फ़ाइलों का समर्थन करता है। केवल RAW+JPG की अनुशंसा की जाती है।
+{%अंतसंकेत%}
 
 ***
 
-## Understanding the File Browser Table
+## अपने प्रोजेक्ट में छवियाँ जोड़ना
 
-Once images are imported, they appear in a table with the following columns:
+आपके प्रोजेक्ट में छवियां जोड़ने के दो प्राथमिक तरीके हैं:
 
-### Thumbnail
+### विधि 1: फ़ाइलें जोड़ें
 
-* Small preview of each image
-* Click thumbnail to view full image in the main preview area
+व्यक्तिगत छवि फ़ाइलें या फ़ाइलों का एक छोटा चयन आयात करने के लिए इस विकल्प का उपयोग करें।
 
-### File Name
+1. फ़ाइल ब्राउज़र पैनल के शीर्ष पर **"फ़ाइलें जोड़ें"** बटन पर क्लिक करें
+2. अपनी छवियों वाले फ़ोल्डर पर नेविगेट करें
+3. एक या अधिक छवि फ़ाइलों का चयन करें (एकाधिक फ़ाइलों का चयन करने के लिए **Ctrl** दबाए रखें)
+4. चयनित फ़ाइलों को आयात करने के लिए **"खोलें"** पर क्लिक करें
 
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
+### विधि 2: फ़ोल्डर जोड़ें
 
-### Timestamp
+किसी फ़ोल्डर से सभी छवियाँ एक साथ आयात करने के लिए इस विकल्प का उपयोग करें।
 
-* Date and time the image was captured
-* Extracted from image EXIF metadata
-* Used for PPK synchronization and calibration target detection
-
-### Camera Model
-
-* Automatically detected camera and filter configuration
-* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Used to apply correct processing profiles
-
-### Target Column (Checkbox)
-
-* Check this box for images that contain calibration targets
-* Greatly speeds up target detection during processing
-* See [Choosing Target Images](choosing-target-images.md) for details
+1. फ़ाइल ब्राउज़र पैनल के शीर्ष पर **"फ़ोल्डर जोड़ें"** बटन पर क्लिक करें
+2. अपने कैप्चर सत्र छवियों वाले फ़ोल्डर पर नेविगेट करें और उसका चयन करें
+3. उस फ़ोल्डर से सभी समर्थित छवियों को आयात करने के लिए **"फ़ोल्डर चुनें"** पर क्लिक करें
 
 ***
 
-## Managing Files in Your Project
+## फ़ाइल ब्राउज़र तालिका को समझना
 
-### Removing Files
+एक बार छवियां आयात हो जाने पर, वे निम्नलिखित कॉलम वाली तालिका में दिखाई देती हैं:
 
-To remove unwanted images from your project:
+### थंबनेल
 
-1. Select one or more images in the File Browser table
-2. Click the **"Remove Selected"** button
-3. Confirm removal (files are not deleted from disk, only removed from the project)
+* प्रत्येक छवि का छोटा पूर्वावलोकन
+* मुख्य पूर्वावलोकन क्षेत्र में पूरी छवि देखने के लिए थंबनेल पर क्लिक करें
 
-### Sorting and Filtering
+### फ़ाइल का नाम
 
-* **Sort by column**: Click any column header to sort images
-* **Timestamp sort**: Useful for organizing chronological capture sequences
-* **Camera model filter**: Group images by camera type if using multiple cameras
+* कैमरे से मूल फ़ाइल नाम
+* कैमरा नामकरण परंपरा को बनाए रखता है (उदाहरण के लिए, IMG\_0001.RAW)
 
-***
+### टाइमस्टैम्प
 
-## Image Preview
+* छवि कैप्चर की गई तारीख और समय
+* छवि EXIF ​​मेटाडेटा से निकाला गया
+* पीपीके सिंक्रनाइज़ेशन और अंशांकन लक्ष्य का पता लगाने के लिए उपयोग किया जाता है
 
-### Viewing Full Image
+### कैमरा मॉडल
 
-Click any image thumbnail in the File Browser to display it in the main preview area:
+* स्वचालित रूप से पता लगाया गया कैमरा और फ़िल्टर कॉन्फ़िगरेशन
+* उदाहरण: सर्वे3डब्लू\_आरजीएन, सर्वे3एन\_ओसीएन, सर्वे3डब्लू\_आरजीबी
+* सही प्रोसेसिंग प्रोफाइल लागू करने के लिए उपयोग किया जाता है
 
-1. Image appears in the center preview panel
-2. Use zoom controls to inspect image details
-3. Navigate between images using arrow keys
+### लक्ष्य कॉलम (चेकबॉक्स)
 
-### Quick Navigation
-
-* **Previous Image**: Click left arrow or press ← key
-* **Next Image**: Click right arrow or press → key
-* **Zoom In/Out**: Use mouse wheel or zoom buttons
-* **Pan**: Click and drag on image when zoomed in
+* उन छवियों के लिए इस बॉक्स को चेक करें जिनमें अंशांकन लक्ष्य शामिल हैं
+* प्रसंस्करण के दौरान लक्ष्य का पता लगाने में काफी तेजी आती है
+* विवरण के लिए [लक्ष्य छवियाँ चुनना](choosing-target-images.md) देखें
 
 ***
 
-## Duplicate File Handling
+## अपने प्रोजेक्ट में फ़ाइलें प्रबंधित करना
 
-Chloros automatically detects and ignores duplicate files:
+### फ़ाइलें हटाना
 
-* Files with identical filenames are skipped
-* Prevents accidental double-processing
-* Warning message displayed when duplicates are detected
+अपने प्रोजेक्ट से अवांछित छवियाँ हटाने के लिए:
 
-{% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
-{% endhint %}
+1. फ़ाइल ब्राउज़र तालिका में एक या अधिक छवियों का चयन करें
+2. **"चयनित हटाएँ"** बटन पर क्लिक करें
+3. हटाने की पुष्टि करें (फ़ाइलें डिस्क से नहीं हटाई जाती हैं, केवल प्रोजेक्ट से हटाई जाती हैं)
 
-***
+### सॉर्टिंग और फ़िल्टरिंग
 
-## Mixed Camera Datasets
-
-If your project contains images from multiple MAPIR cameras:
-
-1. Chloros automatically detects each camera model
-2. Each camera type is processed with its appropriate calibration profile
-3. File Browser displays camera model in the Camera Model column
-4. Processing applies correct settings for each camera type
-
-**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
+* **कॉलम के अनुसार क्रमबद्ध करें**: छवियों को क्रमबद्ध करने के लिए किसी भी कॉलम हेडर पर क्लिक करें
+* **टाइमस्टैम्प सॉर्ट**: कालानुक्रमिक कैप्चर अनुक्रमों को व्यवस्थित करने के लिए उपयोगी
+* **कैमरा मॉडल फ़िल्टर**: एकाधिक कैमरों का उपयोग करने पर छवियों को कैमरे के प्रकार के आधार पर समूहित करें
 
 ***
 
-## Best Practices
+## छवि पूर्वावलोकन
 
-### Organize Before Import
+### पूरी छवि देखना
 
-* Keep calibration target images in the same folder as survey images
-* Maintain original folder structure from your camera/SD card
-* Don't mix datasets from different sessions in one project
+मुख्य पूर्वावलोकन क्षेत्र में प्रदर्शित करने के लिए फ़ाइल ब्राउज़र में किसी भी छवि थंबनेल पर क्लिक करें:
 
-### File Naming
+1. छवि मध्य पूर्वावलोकन पैनल में दिखाई देती है
+2. छवि विवरण का निरीक्षण करने के लिए ज़ूम नियंत्रण का उपयोग करें
+3. तीर कुंजियों का उपयोग करके छवियों के बीच नेविगेट करें
 
-* Preserve original camera filenames (IMG\_0001.RAW, etc.)
-* Don't rename files before import
-* Original names contain important metadata
+### त्वरित नेविगेशन
 
-### Calibration Target Images
-
-* Always include 1-2 calibration target images per session
-* Capture targets before and after the capture session
-* Place targets in the same lighting conditions as capture area
-* Mark target images using the Target checkbox to speed up processing
+* **पिछली छवि**: बाएँ तीर पर क्लिक करें या ← कुंजी दबाएँ
+* **अगली छवि**: दाएँ तीर पर क्लिक करें या → कुंजी दबाएँ
+* **ज़ूम इन/आउट**: माउस व्हील या ज़ूम बटन का उपयोग करें
+* **पैन**: ज़ूम इन होने पर छवि पर क्लिक करें और खींचें
 
 ***
 
-## Common Issues and Solutions
+## डुप्लिकेट फ़ाइल हैंडलिंग
 
-### Images Not Appearing After Import
+क्लोरोस स्वचालित रूप से डुप्लिकेट फ़ाइलों का पता लगाता है और उन्हें अनदेखा करता है:
 
-**Possible causes:**
+* समान फ़ाइल नाम वाली फ़ाइलें छोड़ दी जाती हैं
+* आकस्मिक दोहरे प्रसंस्करण को रोकता है
+* डुप्लिकेट का पता चलने पर चेतावनी संदेश प्रदर्शित होता है
 
-* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
-* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
-* File corruption or incomplete transfer from SD card
-
-**Solution**: Verify file format and camera model compatibility
-
-### Camera Model Not Detected
-
-**Possible causes:**
-
-* Modified EXIF metadata
-* Images edited in external software
-* Incomplete file transfer
-
-**Solution**: Re-import original, unmodified files from camera/SD card
-
-### Missing Timestamps
-
-**Possible causes:**
-
-* Camera clock not set correctly
-* EXIF data stripped by external software
-
-**Solution**: Verify camera time settings were correct during capture
+{% संकेत शैली = "चेतावनी" %}
+**महत्वपूर्ण**: आयात करने से पहले अपनी मूल छवि फ़ाइलों का नाम न बदलें या उन्हें संशोधित न करें। उचित प्रसंस्करण के लिए क्लोरोस मूल फ़ाइल नाम और मेटाडेटा पर निर्भर करता है।
+{%अंतसंकेत%}
 
 ***
 
-## Next Steps
+## मिश्रित कैमरा डेटासेट
 
-Once your files are imported:
+यदि आपके प्रोजेक्ट में एकाधिक MAPIR कैमरों की छवियां हैं:
 
-1. **Review the file list** - Ensure all images loaded correctly
-2. **Check camera models** - Verify correct camera detection
-3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
-4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
-5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+1. क्लोरोस स्वचालित रूप से प्रत्येक कैमरा मॉडल का पता लगाता है
+2. प्रत्येक कैमरा प्रकार को उसके उपयुक्त अंशांकन प्रोफ़ाइल के साथ संसाधित किया जाता है
+3. फ़ाइल ब्राउज़र कैमरा मॉडल कॉलम में कैमरा मॉडल प्रदर्शित करता है
+4. प्रसंस्करण प्रत्येक कैमरा प्रकार के लिए सही सेटिंग्स लागू करता है
 
-For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).
+**उदाहरण परिदृश्य**: सर्वे3डब्ल्यू आरजीएन + सर्वे3एन ओसीएन डुअल-कैमरा सेटअप
+
+***
+
+## सर्वोत्तम प्रथाएं
+
+### आयात से पहले व्यवस्थित करें
+
+* अंशांकन लक्ष्य छवियों को सर्वेक्षण छवियों के समान फ़ोल्डर में रखें
+* अपने कैमरे/एसडी कार्ड से मूल फ़ोल्डर संरचना बनाए रखें
+* विभिन्न सत्रों के डेटासेट को एक प्रोजेक्ट में न मिलाएं
+
+### फ़ाइल नामकरण
+
+* मूल कैमरा फ़ाइल नाम सुरक्षित रखें (IMG\_0001.RAW, आदि)
+* आयात से पहले फ़ाइलों का नाम न बदलें
+* मूल नामों में महत्वपूर्ण मेटाडेटा होता है
+
+### अंशांकन लक्ष्य छवियाँ
+
+* हमेशा प्रति सत्र 1-2 अंशांकन लक्ष्य छवियाँ शामिल करें
+* कैप्चर सत्र से पहले और बाद में लक्ष्य कैप्चर करें
+* लक्ष्य को कैप्चर क्षेत्र के समान प्रकाश व्यवस्था में रखें
+* प्रसंस्करण में तेजी लाने के लिए लक्ष्य चेकबॉक्स का उपयोग करके लक्ष्य छवियों को चिह्नित करें
+
+***
+
+## सामान्य मुद्दे और समाधान
+
+### छवियाँ आयात के बाद दिखाई नहीं दे रही हैं
+
+**संभावित कारण:**
+
+* फ़ाइल प्रारूप समर्थित नहीं है (केवल MAPIR कैमरों से RAW+JPG और JPG)
+* छवियां गैर-एमएपीआईआर कैमरों से हैं (देखें [समर्थित कैमरे](../supported-cameras.md))
+* फ़ाइल में खराबी या एसडी कार्ड से अधूरा स्थानांतरण
+
+**समाधान**: फ़ाइल प्रारूप और कैमरा मॉडल संगतता सत्यापित करें
+
+### कैमरा मॉडल का पता नहीं चला
+
+**संभावित कारण:**
+
+* संशोधित EXIF ​​मेटाडेटा
+* छवियाँ बाहरी सॉफ़्टवेयर में संपादित की गईं
+*अपूर्ण फ़ाइल स्थानांतरण
+
+**समाधान**: कैमरा/एसडी कार्ड से मूल, असंशोधित फ़ाइलें पुनः आयात करें
+
+### गुम टाइमस्टैम्प
+
+**संभावित कारण:**
+
+* कैमरा घड़ी ठीक से सेट नहीं है
+* बाहरी सॉफ़्टवेयर द्वारा EXIF ​​डेटा छीन लिया गया
+
+**समाधान**: सत्यापित करें कि कैप्चर के दौरान कैमरा समय सेटिंग्स सही थीं
+
+***
+
+## अगले कदम
+
+एक बार आपकी फ़ाइलें आयात हो जाएं:
+
+1. **फ़ाइल सूची की समीक्षा करें** - सुनिश्चित करें कि सभी छवियां सही ढंग से लोड की गई हैं
+2. **कैमरा मॉडल जांचें** - सही कैमरा पहचान सत्यापित करें
+3. **लक्ष्य छवियों को चिह्नित करें** - देखें [लक्ष्य छवियाँ चुनना](target-images.md चुनना)
+4. **सेटिंग्स समायोजित करें** - [प्रोजेक्ट सेटिंग्स] (एडजस्टिंग-प्रोजेक्ट-सेटिंग्स.एमडी) में प्रोसेसिंग विकल्प कॉन्फ़िगर करें
+5. **प्रसंस्करण प्रारंभ करें** - देखें [प्रसंस्करण प्रारंभ करना](starting-the-processing.md)
+
+प्रोजेक्ट कॉन्फ़िगरेशन के बारे में विस्तृत जानकारी के लिए, [प्रोजेक्ट सेटिंग्स समायोजित करना] (एडजस्टिंग-प्रोजेक्ट-सेटिंग्स.एमडी) देखें।

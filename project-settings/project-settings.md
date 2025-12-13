@@ -1,255 +1,255 @@
-# Project Settings
+# प्रोजेक्ट सेटिंग्स
 
-The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> sidebar in Chloros allows you to configure all aspects of image processing, calibration target detection, multispectral index calculations, and export options for your project. These settings are saved with your project and can be saved as templates for reuse across multiple projects.
+क्लोरोस में प्रोजेक्ट सेटिंग्स <img src='../.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> साइडबार आपको अपने प्रोजेक्ट के लिए इमेज प्रोसेसिंग, कैलिब्रेशन टारगेट डिटेक्शन, मल्टीस्पेक्ट्रल इंडेक्स गणना और निर्यात विकल्पों के सभी पहलुओं को कॉन्फ़िगर करने की अनुमति देता है। ये सेटिंग्स आपके प्रोजेक्ट के साथ सहेजी जाती हैं और कई परियोजनाओं में पुन: उपयोग के लिए टेम्पलेट के रूप में सहेजी जा सकती हैं।
 
-## Accessing Project Settings
+## प्रोजेक्ट सेटिंग्स तक पहुँचना
 
-To access Project Settings:
+प्रोजेक्ट सेटिंग्स तक पहुँचने के लिए:
 
-1. Open a project in Chloros
-2. Click the **Project Settings**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> tab in the left sidebar
-3. The settings panel will display all available configuration options organized by category
-
-***
-
-## Target Detection
-
-These settings control how Chloros detects and processes calibration targets in your images.
-
-### Minimum calibration sample area (px)
-
-* **Type**: Number
-* **Range**: 0 to 10,000 pixels
-* **Default**: 25 pixels
-* **Description**: Sets the minimum area (in pixels) required for a detected region to be considered a valid calibration target sample. Smaller values will detect smaller targets but may increase false positives. Larger values require bigger, clearer target regions for detection.
-* **When to adjust**:
-  * Increase if you're getting false detections on small image artifacts
-  * Decrease if your calibration targets appear small in your images and are not being detected
-
-### Minimum Target Clustering (0-100)
-
-* **Type**: Number
-* **Range**: 0 to 100
-* **Default**: 60
-* **Description**: Controls the clustering threshold for grouping similar colored regions when detecting calibration targets. Higher values require more similar colors to be grouped together, resulting in more conservative target detection. Lower values allow more color variation within a target group.
-* **When to adjust**:
-  * Increase if calibration targets are being split into multiple detections
-  * Decrease if calibration targets with color variation are not being fully detected
+1. क्लोरोस में एक प्रोजेक्ट खोलें
+2. बाएं साइडबार में **प्रोजेक्ट सेटिंग्स** <img src='../.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> टैब पर क्लिक करें।
+3. सेटिंग पैनल श्रेणी के अनुसार व्यवस्थित सभी उपलब्ध कॉन्फ़िगरेशन विकल्प प्रदर्शित करेगा
 
 ***
 
-## Processing
+## लक्ष्य का पता लगाना
 
-These settings control how Chloros processes and calibrates your images.
+ये सेटिंग्स नियंत्रित करती हैं कि क्लोरोस आपकी छवियों में अंशांकन लक्ष्यों का कैसे पता लगाता है और उन्हें संसाधित करता है।
 
-### Vignette correction
+### न्यूनतम अंशांकन नमूना क्षेत्र (पीएक्स)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Applies vignette correction to compensate for lens darkening at the edges of images. Vignetting is a common optical phenomenon where the corners and edges of an image appear darker than the center due to lens characteristics.
-* **When to disable**: Only disable if your camera/lens combination has already applied vignette correction, or if you want to manually correct vignetting in post-processing.
+* **प्रकार**: संख्या
+* **रेंज**: 0 से 10,000 पिक्सेल
+* **डिफ़ॉल्ट**: 25 पिक्सेल
+* **विवरण**: किसी ज्ञात क्षेत्र को वैध अंशांकन लक्ष्य नमूना मानने के लिए आवश्यक न्यूनतम क्षेत्र (पिक्सेल में) सेट करता है। छोटे मान छोटे लक्ष्यों का पता लगाएंगे लेकिन गलत सकारात्मकता बढ़ा सकते हैं। बड़े मानों का पता लगाने के लिए बड़े, स्पष्ट लक्ष्य क्षेत्रों की आवश्यकता होती है।
+* **कब समायोजित करें**:
+  * यदि आपको छोटी छवि कलाकृतियों पर गलत पहचान मिल रही है तो बढ़ाएँ
+  * यदि आपके अंशांकन लक्ष्य आपकी छवियों में छोटे दिखाई देते हैं और उनका पता नहीं लगाया जा रहा है तो कम करें
 
-### Reflectance calibration / white balance
+### न्यूनतम लक्ष्य क्लस्टरिंग (0-100)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Enables automatic reflectance calibration using detected calibration targets in your images. This normalizes the reflectance values across your dataset and ensures consistent measurements regardless of lighting conditions.
-* **When to disable**: Disable only if you want to process raw, uncalibrated images or if you're using a different calibration workflow.
-
-### Debayer method
-
-* **Type**: Dropdown selection
-* **Options**:
-  * High Quality (Faster) - Currently the only option available
-* **Default**: High Quality (Faster)
-* **Description**: Selects the demosaicing algorithm used to convert raw Bayer pattern sensor data into full-color images. The "High Quality (Faster)" method provides an optimal balance between processing speed and image quality.
-* **Note**: Additional debayer methods may be added in future versions of Chloros.
-
-### Minimum recalibration interval
-
-* **Type**: Number
-* **Range**: 0 to 3,600 seconds
-* **Default**: 0 seconds
-* **Description**: Sets the minimum time interval (in seconds) between using calibration targets. When set to 0, Chloros will use every detected calibration target. When set to a higher value, Chloros will only use calibration targets that are separated by at least this many seconds, reducing processing time for datasets with frequent calibration target captures.
-* **When to adjust**:
-  * Set to 0 for maximum calibration accuracy when lighting conditions vary
-  * Increase (e.g., to 60-300 seconds) for faster processing when lighting is consistent and you have frequent calibration target images
-
-### Light sensor timezone offset
-
-* **Type**: Number
-* **Range**: -12 to +12 hours
-* **Default**: 0 hours
-* **Description**: Specifies the timezone offset (in hours from UTC) for light sensor data timestamps. This is used when processing PPK (Post-Processed Kinematic) data files to ensure correct time synchronization between image captures and GPS data.
-* **When to adjust**: Set this to your local timezone offset if your PPK data uses local time instead of UTC. For example:
-  * Pacific Time: -8 or -7 (depending on DST)
-  * Eastern Time: -5 or -4 (depending on DST)
-  * Central European Time: +1 or +2 (depending on DST)
-
-### Apply PPK corrections
-
-* **Type**: Checkbox
-* **Default**: Disabled (unchecked)
-* **Description**: Enables the use of Post-Processed Kinematic (PPK) corrections from MAPIR DAQ recorders containing a GPS (GNSS). When enabled, Chloros will use any .daq log files containing exposure pin data in your project directory and apply precise geolocation corrections to your images.
-* **Requirement**: .daq log file with exposure pin entries must be present in your project directory
-* **When to enable**: It is recommended to always enable PPK correction if you have exposure feedback entries in your .daq log file.
-
-### Exposure Pin 1
-
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 1
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 1 for PPK time synchronization. The exposure pin records the exact timing when the camera shutter is triggered, which is critical for accurate PPK geolocation.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Automatically selects the camera
-  * Single camera + two pins: Pin 1 automatically assigned to the camera
-  * Multiple cameras: Manual selection required
-
-### Exposure Pin 2
-
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 2
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 2 for PPK time synchronization when using a dual-camera setup.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Pin 2 automatically set to "Do Not Use"
-  * Single camera + two pins: Pin 2 automatically set to "Do Not Use"
-  * Multiple cameras: Manual selection required
-* **Note**: The same camera cannot be assigned to both Pin 1 and Pin 2 simultaneously.
+* **प्रकार**: संख्या
+* **रेंज**: 0 से 100
+* **डिफ़ॉल्ट**: 60
+* **विवरण**: अंशांकन लक्ष्यों का पता लगाते समय समान रंगीन क्षेत्रों को समूहीकृत करने के लिए क्लस्टरिंग सीमा को नियंत्रित करता है। उच्च मूल्यों के लिए अधिक समान रंगों को एक साथ समूहीकृत करने की आवश्यकता होती है, जिसके परिणामस्वरूप अधिक रूढ़िवादी लक्ष्य का पता लगाया जा सकता है। कम मान लक्ष्य समूह के भीतर अधिक रंग भिन्नता की अनुमति देते हैं।
+* **कब समायोजित करें**:
+  * यदि अंशांकन लक्ष्यों को कई डिटेक्शन में विभाजित किया जा रहा है तो बढ़ाएँ
+  * यदि रंग भिन्नता वाले अंशांकन लक्ष्यों का पूरी तरह से पता नहीं लगाया जा रहा है तो कमी करें
 
 ***
 
-## Index
+## प्रसंस्करण
 
-These settings allow you to configure multispectral indices for analysis and visualization.
+ये सेटिंग्स नियंत्रित करती हैं कि क्लोरोस आपकी छवियों को कैसे संसाधित और कैलिब्रेट करता है।
 
-### Add index
+### विग्नेट सुधार
 
-* **Type**: Special index configuration panel
-* **Description**: Opens an interactive panel where you can select and configure multispectral vegetation indices (NDVI, NDRE, EVI, etc.) to calculate during image processing. You can add multiple indices, each with its own visualization settings.
-* **Available indices**: The system includes 30+ pre-defined multispectral indices including:
-  * NDVI (Normalized Difference Vegetation Index)
-  * NDRE (Normalized Difference RedEdge)
-  * EVI (Enhanced Vegetation Index)
+* **प्रकार**: चेकबॉक्स
+* **डिफ़ॉल्ट**: सक्षम (चेक किया गया)
+* **विवरण**: छवियों के किनारों पर लेंस के कालेपन की भरपाई के लिए विग्नेट सुधार लागू करता है। विग्नेटिंग एक सामान्य ऑप्टिकल घटना है जहां लेंस की विशेषताओं के कारण छवि के कोने और किनारे केंद्र की तुलना में अधिक गहरे दिखाई देते हैं।
+* **कब अक्षम करें**: केवल तभी अक्षम करें जब आपके कैमरे/लेंस संयोजन ने पहले से ही विगनेट सुधार लागू कर दिया हो, या यदि आप पोस्ट-प्रोसेसिंग में विगनेटिंग को मैन्युअल रूप से सही करना चाहते हैं।
+
+### परावर्तन अंशांकन/श्वेत संतुलन
+
+* **प्रकार**: चेकबॉक्स
+* **डिफ़ॉल्ट**: सक्षम (चेक किया गया)
+* **विवरण**: आपकी छवियों में ज्ञात अंशांकन लक्ष्यों का उपयोग करके स्वचालित परावर्तन अंशांकन सक्षम करता है। यह आपके डेटासेट में परावर्तन मूल्यों को सामान्य करता है और प्रकाश की स्थिति की परवाह किए बिना लगातार माप सुनिश्चित करता है।
+* **कब अक्षम करें**: केवल तभी अक्षम करें जब आप कच्ची, अनकैलिब्रेटेड छवियों को संसाधित करना चाहते हैं या यदि आप एक अलग अंशांकन वर्कफ़्लो का उपयोग कर रहे हैं।
+
+### डिबायर पद्धति
+
+* **प्रकार**: ड्रॉपडाउन चयन
+* **विकल्प**:
+  * उच्च गुणवत्ता (तेज़) - वर्तमान में एकमात्र विकल्प उपलब्ध है
+* **डिफ़ॉल्ट**: उच्च गुणवत्ता (तेज़)
+* **विवरण**: कच्चे बायर पैटर्न सेंसर डेटा को पूर्ण-रंगीन छवियों में परिवर्तित करने के लिए उपयोग किए जाने वाले डेमोसेसिंग एल्गोरिदम का चयन करता है। "उच्च गुणवत्ता (तेज़)" विधि प्रसंस्करण गति और छवि गुणवत्ता के बीच एक इष्टतम संतुलन प्रदान करती है।
+* **नोट**: क्लोरोस के भविष्य के संस्करणों में अतिरिक्त डिबायर विधियाँ जोड़ी जा सकती हैं।
+
+### न्यूनतम पुनर्अंशांकन अंतराल
+
+* **प्रकार**: संख्या
+* **रेंज**: 0 से 3,600 सेकंड
+* **डिफ़ॉल्ट**: 0 सेकंड
+* **विवरण**: अंशांकन लक्ष्यों का उपयोग करने के बीच न्यूनतम समय अंतराल (सेकंड में) निर्धारित करता है। जब 0 पर सेट किया जाता है, तो क्लोरोस प्रत्येक ज्ञात अंशांकन लक्ष्य का उपयोग करेगा। जब उच्च मान पर सेट किया जाता है, तो क्लोरोस केवल उन अंशांकन लक्ष्यों का उपयोग करेगा जो कम से कम इतने सेकंड से अलग होते हैं, जिससे बार-बार अंशांकन लक्ष्य कैप्चर वाले डेटासेट के लिए प्रसंस्करण समय कम हो जाता है।
+* **कब समायोजित करें**:
+  * प्रकाश की स्थिति भिन्न होने पर अधिकतम अंशांकन सटीकता के लिए 0 पर सेट करें
+  * जब प्रकाश सुसंगत हो और आपके पास लगातार अंशांकन लक्ष्य छवियां हों तो तेज प्रसंस्करण के लिए वृद्धि (उदाहरण के लिए, 60-300 सेकंड तक)
+
+### लाइट सेंसर टाइमज़ोन ऑफ़सेट
+
+* **प्रकार**: संख्या
+* **रेंज**: -12 से +12 घंटे
+* **डिफ़ॉल्ट**: 0 घंटे
+* **विवरण**: प्रकाश सेंसर डेटा टाइमस्टैम्प के लिए समयक्षेत्र ऑफसेट (यूटीसी से घंटों में) निर्दिष्ट करता है। छवि कैप्चर और जीपीएस डेटा के बीच सही समय सिंक्रनाइज़ेशन सुनिश्चित करने के लिए पीपीके (पोस्ट-प्रोसेस्ड किनेमेटिक) डेटा फ़ाइलों को संसाधित करते समय इसका उपयोग किया जाता है।
+* **कब समायोजित करें**: यदि आपका पीपीके डेटा यूटीसी के बजाय स्थानीय समय का उपयोग करता है तो इसे अपने स्थानीय समयक्षेत्र ऑफसेट पर सेट करें। उदाहरण के लिए:
+  * प्रशांत समय: -8 या -7 (डीएसटी के आधार पर)
+  * पूर्वी समय: -5 या -4 (डीएसटी के आधार पर)
+  * मध्य यूरोपीय समय: +1 या +2 (डीएसटी के आधार पर)
+
+### पीपीके सुधार लागू करें
+
+* **प्रकार**: चेकबॉक्स
+* **डिफ़ॉल्ट**: अक्षम (अनियंत्रित)
+* **विवरण**: जीपीएस (जीएनएसएस) युक्त एमएपीआईआर डीएक्यू रिकार्डर से पोस्ट-प्रोसेस्ड किनेमेटिक (पीपीके) सुधारों के उपयोग को सक्षम बनाता है। सक्षम होने पर, क्लोरोस आपके प्रोजेक्ट निर्देशिका में एक्सपोज़र पिन डेटा वाली किसी भी .daq लॉग फ़ाइलों का उपयोग करेगा और आपकी छवियों पर सटीक जियोलोकेशन सुधार लागू करेगा।
+* **आवश्यकता**: एक्सपोज़र पिन प्रविष्टियों के साथ .daq लॉग फ़ाइल आपके प्रोजेक्ट निर्देशिका में मौजूद होनी चाहिए
+* **कब सक्षम करें**: यदि आपकी .daq लॉग फ़ाइल में एक्सपोज़र फीडबैक प्रविष्टियाँ हैं तो हमेशा पीपीके सुधार सक्षम करने की अनुशंसा की जाती है।
+
+### एक्सपोज़र पिन 1
+
+* **प्रकार**: ड्रॉपडाउन चयन
+* **दृश्यता**: केवल तभी दिखाई देती है जब "पीपीके सुधार लागू करें" सक्षम होता है और पिन 1 के लिए एक्सपोज़र डेटा उपलब्ध होता है
+* **विकल्प**:
+  * प्रोजेक्ट में कैमरा मॉडल नाम का पता चला
+  * "उपयोग न करें" - इस एक्सपोज़र पिन पर ध्यान न दें
+* **डिफ़ॉल्ट**: प्रोजेक्ट कॉन्फ़िगरेशन के आधार पर स्वतः चयनित
+* **विवरण**: पीपीके समय सिंक्रनाइज़ेशन के लिए एक्सपोज़र पिन 1 को एक विशिष्ट कैमरा निर्दिष्ट करता है। जब कैमरा शटर चालू होता है तो एक्सपोज़र पिन सटीक समय रिकॉर्ड करता है, जो सटीक पीपीके जियोलोकेशन के लिए महत्वपूर्ण है।
+* **स्वतः-चयन व्यवहार**:
+  * सिंगल कैमरा + सिंगल पिन: स्वचालित रूप से कैमरे का चयन करता है
+  * एकल कैमरा + दो पिन: पिन 1 स्वचालित रूप से कैमरे को सौंपा गया है
+  * एकाधिक कैमरे: मैन्युअल चयन आवश्यक है
+
+### एक्सपोज़र पिन 2
+
+* **प्रकार**: ड्रॉपडाउन चयन
+* **दृश्यता**: केवल तभी दिखाई देती है जब "पीपीके सुधार लागू करें" सक्षम होता है और पिन 2 के लिए एक्सपोज़र डेटा उपलब्ध होता है
+* **विकल्प**:
+  * प्रोजेक्ट में कैमरा मॉडल नाम का पता चला
+  * "उपयोग न करें" - इस एक्सपोज़र पिन पर ध्यान न दें
+* **डिफ़ॉल्ट**: प्रोजेक्ट कॉन्फ़िगरेशन के आधार पर स्वतः चयनित
+* **विवरण**: डुअल-कैमरा सेटअप का उपयोग करते समय पीपीके समय सिंक्रनाइज़ेशन के लिए एक्सपोज़र पिन 2 को एक विशिष्ट कैमरा असाइन करता है।
+* **स्वतः-चयन व्यवहार**:
+  * सिंगल कैमरा + सिंगल पिन: पिन 2 स्वचालित रूप से "उपयोग न करें" पर सेट हो जाता है
+  * एकल कैमरा + दो पिन: पिन 2 स्वचालित रूप से "उपयोग न करें" पर सेट हो जाता है
+  * एकाधिक कैमरे: मैन्युअल चयन आवश्यक है
+* **ध्यान दें**: एक ही कैमरा पिन 1 और पिन 2 दोनों को एक साथ नहीं सौंपा जा सकता।
+
+***
+
+## अनुक्रमणिका
+
+ये सेटिंग्स आपको विश्लेषण और विज़ुअलाइज़ेशन के लिए मल्टीस्पेक्ट्रल सूचकांकों को कॉन्फ़िगर करने की अनुमति देती हैं।
+
+### अनुक्रमणिका जोड़ें
+
+* **प्रकार**: विशेष सूचकांक विन्यास पैनल
+* **विवरण**: एक इंटरैक्टिव पैनल खोलता है जहां आप छवि प्रसंस्करण के दौरान गणना करने के लिए मल्टीस्पेक्ट्रल वनस्पति सूचकांक (एनडीवीआई, एनडीआरई, ईवीआई, आदि) का चयन और कॉन्फ़िगर कर सकते हैं। आप अनेक सूचकांक जोड़ सकते हैं, प्रत्येक की अपनी विज़ुअलाइज़ेशन सेटिंग्स होंगी।
+* **उपलब्ध सूचकांक**: सिस्टम में 30+ पूर्व-परिभाषित मल्टीस्पेक्ट्रल सूचकांक शामिल हैं:
+  * एनडीवीआई (सामान्यीकृत अंतर वनस्पति सूचकांक)
+  * एनडीआरई (सामान्यीकृत अंतर रेडएज)
+  * ईवीआई (उन्नत वनस्पति सूचकांक)
   * GNDVI, SAVI, OSAVI, MSAVI2
-  * And many more (see [Multispectral Index Formulas](multispectral-index-formulas.md) for complete list)
-* **Features**:
-  * Select from pre-defined index formulas
-  * Configure visualization color gradients (LUT - Look-Up Tables)
-  * Set threshold values for analysis
-  * Create custom index formulas
+  * और भी बहुत कुछ (पूरी सूची के लिए [मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला](मल्टीस्पेक्ट्रल-इंडेक्स-फॉर्मूला.एमडी) देखें)
+* **विशेषताएँ**:
+  * पूर्व-परिभाषित सूचकांक सूत्रों में से चयन करें
+  * विज़ुअलाइज़ेशन रंग ग्रेडिएंट कॉन्फ़िगर करें (LUT - लुक-अप टेबल्स)
+  * विश्लेषण के लिए सीमा मान निर्धारित करें
+  * कस्टम इंडेक्स फ़ॉर्मूले बनाएं
 
-### Custom Formulas (Chloros+ Feature)
+### कस्टम फ़ॉर्मूले (क्लोरोस+ फ़ीचर)
 
-* **Type**: Array of custom formula definitions
-* **Description**: Allows you to create and save custom multispectral index formulas using band math. Custom formulas are saved with your project settings and can be used just like built-in indices.
-* **How to create**:
-  1. In the Index configuration panel, look for the custom formula option
-  2. Define your formula using band identifiers (e.g., NIR, Red, Green, Blue)
-  3. Save the formula with a descriptive name
-* **Formula syntax**: Standard mathematical operations are supported, including:
-  * Arithmetic: `+`, `-`, `*`, `/`
-  * Parentheses for order of operations
-  * Band references: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
-
-***
-
-## Export
-
-These settings control the format and quality of exported processed images.
-
-### Calibrated image format
-
-* **Type**: Dropdown selection
-* **Options**:
-  * **TIFF (16-bit)** - Uncompressed 16-bit TIFF format
-  * **TIFF (32-bit, Percent)** - 32-bit floating-point TIFF with reflectance values as percentages
-  * **PNG (8-bit)** - Compressed 8-bit PNG format
-  * **JPG (8-bit)** - Compressed 8-bit JPEG format
-* **Default**: TIFF (16-bit)
-* **Description**: Selects the file format for saving processed and calibrated images.
-* **Format recommendations**:
-  * **TIFF (16-bit)**: Recommended for scientific analysis and professional workflows. Preserves maximum data quality with no compression artifacts. Best for multispectral analysis and further processing in GIS software.
-  * **TIFF (32-bit, Percent)**: Best for workflows that require reflectance values as percentages (0-100%). Offers maximum precision for radiometric measurements.
-  * **PNG (8-bit)**: Good for web viewing and general visualization. Smaller file sizes with lossless compression, but reduced dynamic range.
-  * **JPG (8-bit)**: Smallest file sizes, best for previews and web display only. Uses lossy compression which is not suitable for scientific analysis.
+* **प्रकार**: कस्टम सूत्र परिभाषाओं की श्रृंखला
+* **विवरण**: आपको बैंड गणित का उपयोग करके कस्टम मल्टीस्पेक्ट्रल इंडेक्स फ़ॉर्मूले बनाने और सहेजने की अनुमति देता है। कस्टम सूत्र आपकी प्रोजेक्ट सेटिंग्स के साथ सहेजे जाते हैं और इन्हें अंतर्निहित सूचकांकों की तरह ही उपयोग किया जा सकता है।
+* **कैसे बनाये**:
+  1. इंडेक्स कॉन्फ़िगरेशन पैनल में, कस्टम फॉर्मूला विकल्प देखें
+  2. बैंड पहचानकर्ताओं (जैसे, एनआईआर, लाल, हरा, नीला) का उपयोग करके अपने सूत्र को परिभाषित करें
+  3. सूत्र को वर्णनात्मक नाम से सहेजें
+* **सूत्र वाक्यविन्यास**: मानक गणितीय संचालन समर्थित हैं, जिनमें शामिल हैं:
+  * अंकगणित: `+`, `-`, `*`, `/`
+  * संचालन के क्रम के लिए कोष्ठक
+  * बैंड संदर्भ: एनआईआर, लाल, हरा, नीला, रेडएज, सियान, नारंगी, एनआईआर1, एनआईआर2
 
 ***
 
-## Save Project Template
+## निर्यात
 
-This feature allows you to save your current project settings as a reusable template.
+ये सेटिंग्स निर्यातित संसाधित छवियों के प्रारूप और गुणवत्ता को नियंत्रित करती हैं।
 
-* **Type**: Text input + Save button
-* **Description**: Enter a descriptive name for your settings template and click the save icon. The template will store all your current project settings (target detection, processing options, indices, and export format) for easy reuse in future projects.
-* **Use cases**:
-  * Create templates for different camera systems (RGB, multispectral, NIR)
-  * Save standard configurations for specific crop types or analysis workflows
-  * Share consistent settings across a team
-* **How to use**:
-  1. Configure all your desired project settings
-  2. Enter a template name (e.g., "RedEdge Survey3 NDVI Standard")
-  3. Click the save icon
-  4. The template can now be loaded when creating new projects
+### कैलिब्रेटेड छवि प्रारूप
 
-***
-
-## Save Project Folder
-
-This setting specifies where new projects are saved by default.
-
-* **Type**: Directory path display + Edit button
-* **Default**: `C:\Users\[Username]\Chloros Projects`
-* **Description**: Shows the current default directory where new Chloros projects are created. Click the edit icon to select a different directory.
-* **When to change**:
-  * Set to a network drive for team collaboration
-  * Change to a drive with more storage space for large datasets
-  * Organize projects by year, client, or project type in different folders
-* **Note**: Changing this setting only affects NEW projects. Existing projects remain in their original locations.
+* **प्रकार**: ड्रॉपडाउन चयन
+* **विकल्प**:
+  * **TIFF (16-बिट)** - असंपीड़ित 16-बिट TIFF प्रारूप
+  * **TIFF (32-बिट, प्रतिशत)** - 32-बिट फ़्लोटिंग-पॉइंट TIFF प्रतिशत के रूप में परावर्तन मानों के साथ
+  * **पीएनजी (8-बिट)** - संपीड़ित 8-बिट पीएनजी प्रारूप
+  * **जेपीजी (8-बिट)** - संपीड़ित 8-बिट जेपीईजी प्रारूप
+* **डिफ़ॉल्ट**: टीआईएफएफ (16-बिट)
+* **विवरण**: संसाधित और कैलिब्रेटेड छवियों को सहेजने के लिए फ़ाइल प्रारूप का चयन करता है।
+* **प्रारूप अनुशंसाएँ**:
+  * **टीआईएफएफ (16-बिट)**: वैज्ञानिक विश्लेषण और पेशेवर वर्कफ़्लो के लिए अनुशंसित। बिना किसी संपीड़न कलाकृतियों के अधिकतम डेटा गुणवत्ता को सुरक्षित रखता है। जीआईएस सॉफ्टवेयर में मल्टीस्पेक्ट्रल विश्लेषण और आगे की प्रक्रिया के लिए सर्वोत्तम।
+  * **टीआईएफएफ (32-बिट, प्रतिशत)**: वर्कफ़्लो के लिए सर्वोत्तम जिसमें प्रतिशत (0-100%) के रूप में परावर्तन मान की आवश्यकता होती है। रेडियोमेट्रिक माप के लिए अधिकतम परिशुद्धता प्रदान करता है।
+  * **पीएनजी (8-बिट)**: वेब देखने और सामान्य विज़ुअलाइज़ेशन के लिए अच्छा है। दोषरहित संपीड़न के साथ छोटे फ़ाइल आकार, लेकिन कम गतिशील रेंज।
+  * **जेपीजी (8-बिट)**: सबसे छोटे फ़ाइल आकार, केवल पूर्वावलोकन और वेब डिस्प्ले के लिए सर्वोत्तम। हानिपूर्ण संपीड़न का उपयोग करता है जो वैज्ञानिक विश्लेषण के लिए उपयुक्त नहीं है।
 
 ***
 
-## Settings Persistence
+## प्रोजेक्ट टेम्पलेट सहेजें
 
-All project settings are automatically saved with your project file (`.mapir` project format). When you reopen a project, all settings are restored exactly as you left them.
+यह सुविधा आपको अपनी वर्तमान प्रोजेक्ट सेटिंग्स को पुन: प्रयोज्य टेम्पलेट के रूप में सहेजने की अनुमति देती है।
 
-### Settings Hierarchy
-
-Settings are applied in the following order:
-
-1. **System defaults** - Built-in defaults defined by Chloros
-2. **Template settings** - If you load a template when creating a project
-3. **Saved project settings** - Settings saved with the project file
-4. **Manual adjustments** - Any changes you make during the current session
-
-### Settings and Image Processing
-
-Most settings changes (especially in Processing and Export categories) will trigger reprocessing of images to reflect the new settings. However, some settings are "export-only" and don't require immediate reprocessing:
-
-* Save Project Template
-* Working Directory
-* Calibrated image format (applies when exporting)
+* **प्रकार**: टेक्स्ट इनपुट + सेव बटन
+* **विवरण**: अपने सेटिंग टेम्पलेट के लिए एक वर्णनात्मक नाम दर्ज करें और सेव आइकन पर क्लिक करें। भविष्य की परियोजनाओं में आसानी से पुन: उपयोग के लिए टेम्पलेट आपकी सभी वर्तमान परियोजना सेटिंग्स (लक्ष्य का पता लगाना, प्रसंस्करण विकल्प, सूचकांक और निर्यात प्रारूप) को संग्रहीत करेगा।
+* **उपयोग के मामले**:
+  * विभिन्न कैमरा सिस्टम (आरजीबी, मल्टीस्पेक्ट्रल, एनआईआर) के लिए टेम्पलेट बनाएं
+  * विशिष्ट फसल प्रकार या विश्लेषण वर्कफ़्लो के लिए मानक कॉन्फ़िगरेशन सहेजें
+  * एक टीम में लगातार सेटिंग्स साझा करें
+* **का उपयोग कैसे करें**:
+  1. अपनी सभी वांछित प्रोजेक्ट सेटिंग्स कॉन्फ़िगर करें
+  2. एक टेम्प्लेट नाम दर्ज करें (उदाहरण के लिए, "रेडएज सर्वे3 एनडीवीआई स्टैंडर्ड")
+  3. सेव आइकन पर क्लिक करें
+  4. नए प्रोजेक्ट बनाते समय अब ​​टेम्प्लेट लोड किया जा सकता है
 
 ***
 
-## Best Practices
+## प्रोजेक्ट फ़ोल्डर सहेजें
 
-1. **Start with defaults**: The default settings work well for most MAPIR camera systems and typical workflows.
-2. **Create templates**: Once you've optimized settings for a specific workflow or camera, save them as a template to ensure consistency across projects.
-3. **Test before full processing**: When experimenting with new settings, test on a small subset of images before processing your entire dataset.
-4. **Document your settings**: Use descriptive template names that indicate the camera system, processing type, and intended use (e.g., "Survey3\_RGB\_NDVI\_Agriculture").
-5. **Export format selection**: Choose your export format based on your end use:
-   * Scientific analysis → TIFF (16-bit or 32-bit)
-   * GIS processing → TIFF (16-bit)
-   * Quick visualization → PNG (8-bit)
-   * Web sharing → JPG (8-bit)
+यह सेटिंग निर्दिष्ट करती है कि नई परियोजनाएँ डिफ़ॉल्ट रूप से कहाँ सहेजी जाती हैं।
+
+* **प्रकार**: निर्देशिका पथ प्रदर्शन + संपादन बटन
+* **डिफ़ॉल्ट**: `C:\Users\[Username]\Chloros Projects`
+* **विवरण**: वर्तमान डिफ़ॉल्ट निर्देशिका दिखाता है जहां नए क्लोरोस प्रोजेक्ट बनाए जाते हैं। किसी भिन्न निर्देशिका का चयन करने के लिए संपादन आइकन पर क्लिक करें।
+* **कब बदलना है**:
+  * टीम सहयोग के लिए नेटवर्क ड्राइव पर सेट करें
+  * बड़े डेटासेट के लिए अधिक संग्रहण स्थान वाली ड्राइव में बदलें
+  * विभिन्न फ़ोल्डरों में प्रोजेक्ट को वर्ष, क्लाइंट या प्रोजेक्ट प्रकार के अनुसार व्यवस्थित करें
+* **ध्यान दें**: इस सेटिंग को बदलने से केवल नए प्रोजेक्ट प्रभावित होंगे। मौजूदा परियोजनाएं अपने मूल स्थान पर ही बनी हुई हैं।
 
 ***
 
-For more information on multispectral indices in Chloros, see [Multispectral Index Formulas](multispectral-index-formulas.md) page.
+## सेटिंग्स दृढ़ता
+
+सभी प्रोजेक्ट सेटिंग्स स्वचालित रूप से आपकी प्रोजेक्ट फ़ाइल (`.mapir` प्रोजेक्ट प्रारूप) के साथ सहेजी जाती हैं। जब आप किसी प्रोजेक्ट को दोबारा खोलते हैं, तो सभी सेटिंग्स ठीक वैसे ही बहाल हो जाती हैं जैसे आपने उन्हें छोड़ा था।
+
+### सेटिंग्स पदानुक्रम
+
+सेटिंग्स निम्नलिखित क्रम में लागू की जाती हैं:
+
+1. **सिस्टम डिफॉल्ट** - क्लोरोस द्वारा परिभाषित अंतर्निहित डिफॉल्ट
+2. **टेम्पलेट सेटिंग** - यदि आप कोई प्रोजेक्ट बनाते समय कोई टेम्प्लेट लोड करते हैं
+3. **सहेजी गई प्रोजेक्ट सेटिंग्स** - प्रोजेक्ट फ़ाइल के साथ सेटिंग्स सहेजी गईं
+4. **मैन्युअल समायोजन** - वर्तमान सत्र के दौरान आपके द्वारा किया गया कोई भी परिवर्तन
+
+### सेटिंग्स और छवि प्रसंस्करण
+
+अधिकांश सेटिंग्स परिवर्तन (विशेष रूप से प्रसंस्करण और निर्यात श्रेणियों में) नई सेटिंग्स को प्रतिबिंबित करने के लिए छवियों के पुन: प्रसंस्करण को ट्रिगर करेंगे। हालाँकि, कुछ सेटिंग्स "केवल-निर्यात" हैं और उन्हें तत्काल पुन: प्रसंस्करण की आवश्यकता नहीं है:
+
+* प्रोजेक्ट टेम्पलेट सहेजें
+* कार्यकारी डाइरेक्टरी
+* कैलिब्रेटेड छवि प्रारूप (निर्यात करते समय लागू होता है)
+
+***
+
+## सर्वोत्तम प्रथाएं
+
+1. **डिफ़ॉल्ट से प्रारंभ करें**: अधिकांश MAPIR कैमरा सिस्टम और विशिष्ट वर्कफ़्लो के लिए डिफ़ॉल्ट सेटिंग्स अच्छी तरह से काम करती हैं।
+2. **टेम्प्लेट बनाएं**: एक बार जब आप किसी विशिष्ट वर्कफ़्लो या कैमरे के लिए सेटिंग्स अनुकूलित कर लेते हैं, तो प्रोजेक्टों में एकरूपता सुनिश्चित करने के लिए उन्हें एक टेम्पलेट के रूप में सहेजें।
+3. **पूर्ण प्रसंस्करण से पहले परीक्षण करें**: नई सेटिंग्स के साथ प्रयोग करते समय, अपने संपूर्ण डेटासेट को संसाधित करने से पहले छवियों के एक छोटे उपसमूह पर परीक्षण करें।
+4. **अपनी सेटिंग्स का दस्तावेजीकरण करें**: वर्णनात्मक टेम्पलेट नामों का उपयोग करें जो कैमरा सिस्टम, प्रसंस्करण प्रकार और इच्छित उपयोग को इंगित करते हैं (उदाहरण के लिए, "सर्वेक्षण3\_आरजीबी\_एनडीवीआई\_कृषि")।
+5. **निर्यात प्रारूप चयन**: अपने अंतिम उपयोग के आधार पर अपना निर्यात प्रारूप चुनें:
+   * वैज्ञानिक विश्लेषण → TIFF (16-बिट या 32-बिट)
+   * जीआईएस प्रोसेसिंग → टीआईएफएफ (16-बिट)
+   * त्वरित विज़ुअलाइज़ेशन → पीएनजी (8-बिट)
+   * वेब शेयरिंग → JPG (8-बिट)
+
+***
+
+क्लोरोस में मल्टीस्पेक्ट्रल सूचकांकों पर अधिक जानकारी के लिए, [मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला] (मल्टीस्पेक्ट्रल-इंडेक्स-फॉर्मूला.एमडी) पृष्ठ देखें।

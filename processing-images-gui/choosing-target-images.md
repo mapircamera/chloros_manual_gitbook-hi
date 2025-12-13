@@ -1,221 +1,221 @@
-# Choosing Target Images
+# लक्ष्य छवियाँ चुनना
 
-Marking which images contain calibration targets is a crucial step that significantly speeds up the Chloros processing pipeline. By pre-selecting target images, you eliminate the need for Chloros to scan every image in your dataset for calibration targets.
+यह चिह्नित करना कि किन छवियों में अंशांकन लक्ष्य हैं, एक महत्वपूर्ण कदम है जो क्लोरोस प्रसंस्करण पाइपलाइन को काफी गति देता है। लक्ष्य छवियों का पूर्व-चयन करके, आप अंशांकन लक्ष्यों के लिए अपने डेटासेट में प्रत्येक छवि को स्कैन करने के लिए क्लोरोस की आवश्यकता को समाप्त कर देते हैं।
 
-## Why Mark Target Images?
+## लक्ष्य छवियाँ क्यों चिह्नित करें?
 
-### Processing Speed
+### प्रसंस्करण गति
 
-Without marking target images, Chloros must:
+लक्ष्य छवियों को चिह्नित किए बिना, क्लोरोस को यह करना होगा:
 
-* Scan every single image in your project
-* Run target detection algorithms on each image
-* Check hundreds or thousands of images unnecessarily
+* अपने प्रोजेक्ट में प्रत्येक छवि को स्कैन करें
+* प्रत्येक छवि पर लक्ष्य पहचान एल्गोरिदम चलाएँ
+* अनावश्यक रूप से सैकड़ों या हजारों छवियों की जाँच करें
 
-**Result**: Processing can take significantly longer, especially for large datasets.
+**परिणाम**: प्रसंस्करण में काफी अधिक समय लग सकता है, खासकर बड़े डेटासेट के लिए।
 
-### With Marked Target Images
+### चिह्नित लक्ष्य छवियों के साथ
 
-When you check the Target column for specific images:
+जब आप विशिष्ट छवियों के लिए लक्ष्य कॉलम की जाँच करते हैं:
 
-* Chloros only scans the checked images for targets
-* Target detection completes much faster
-* Overall processing time is greatly reduced
+* क्लोरोस केवल लक्ष्यों के लिए जाँच की गई छवियों को स्कैन करता है
+* लक्ष्य का पता लगाना बहुत तेजी से पूरा होता है
+* कुल मिलाकर प्रसंस्करण समय बहुत कम हो गया है
 
-{% hint style="success" %}
-**Speed Improvement**: Marking 2-3 target images in a 500-image dataset can reduce target detection time from 30+ minutes to under 1 minute.
-{% endhint %}
-
-***
-
-## How to Mark Target Images
-
-### Step 1: Identify Your Target Images
-
-Look through your imported images in the File Browser and identify which images contain calibration targets.
-
-**Common scenarios:**
-
-* **Pre-capture target**: Captured before starting the session
-* **Post-capture target**: Captured after completing the session
-* **In-field targets**: Targets placed within the capture area
-* **Multiple targets**: 2-3 target images per session (recommended)
-
-### Step 2: Check the Target Column
-
-For each image containing a calibration target:
-
-1. Locate the image in the File Browser table
-2. Find the **Target** column (rightmost column)
-3. Click the checkbox in the Target column for that image
-4. Repeat for all images containing targets
-
-### Step 3: Verify Your Selection
-
-Before processing, double-check:
-
-* [ ] All images with calibration targets are checked
-* [ ] No non-target images are accidentally checked
-* [ ] Targets are clearly visible in checked images
+{%संकेत शैली='सफलता'%}
+**गति में सुधार**: 500-छवि डेटासेट में 2-3 लक्ष्य छवियों को चिह्नित करने से लक्ष्य का पता लगाने का समय 30+ मिनट से कम होकर 1 मिनट से कम हो सकता है।
+{%अंतसंकेत%}
 
 ***
 
-## Best Practices for Target Images
+## लक्ष्य छवियों को कैसे चिह्नित करें
 
-### Target Capture Guidelines
+### चरण 1: अपनी लक्षित छवियों को पहचानें
 
-**Timing:**
+फ़ाइल ब्राउज़र में अपनी आयातित छवियों को देखें और पहचानें कि किन छवियों में अंशांकन लक्ष्य हैं।
 
-* Capture target images immediately before and throughout your capture session
-* Within the same lighting conditions as your DAQ light sensor
-* Ideally capture target images as often as possible for the best results. Otherwise, the light sensor data will be used to adjust the calibration over time.
+**सामान्य परिदृश्य:**
 
-**Camera Position:**
+* **प्री-कैप्चर लक्ष्य**: सत्र शुरू होने से पहले कैप्चर किया गया
+* **पोस्ट-कैप्चर लक्ष्य**: सत्र पूरा करने के बाद कैप्चर किया गया
+* **इन-फील्ड लक्ष्य**: कैप्चर क्षेत्र के भीतर रखे गए लक्ष्य
+* **एकाधिक लक्ष्य**: प्रति सत्र 2-3 लक्ष्य छवियां (अनुशंसित)
 
-* Hold camera above target such that is is centered and fills around 40-60% of the image center.
-* Keep camera parallel/nadir to target surface
+### चरण 2: लक्ष्य कॉलम की जाँच करें
 
-**Lighting:**
+अंशांकन लक्ष्य वाली प्रत्येक छवि के लिए:
 
-* Same ambient lighting as your DAQ light sensor
-* Avoid shadows on the target surfaces
-* Don't block your light source with your body, vehicle or vegetation
-* Overcast conditions provide most consistent results
+1. फ़ाइल ब्राउज़र तालिका में छवि का पता लगाएँ
+2. **लक्ष्य** कॉलम खोजें (सबसे दाहिना कॉलम)
+3. उस छवि के लिए लक्ष्य कॉलम में चेकबॉक्स पर क्लिक करें
+4. लक्ष्य वाली सभी छवियों के लिए दोहराएँ
 
-**Target Condition:**
+### चरण 3: अपना चयन सत्यापित करें
 
-* Keep target panels clean and dry
-* All 4 panels should be clearly visible and unobstructed
-* Targets perpendicular/nadir to the light source if possible
+प्रसंस्करण से पहले, दोबारा जांचें:
 
-### How Many Target Images?
-
-**Minimum:** 1 target image per session. **Recommended:** 3-5 target images per session.
-
-**Best practice schedule:**
-
-* 3-5 images captured shortly after the light sensor is recording
-* Rotate the camera between captures for the best results
-* Optional: periodically mid-session if lighting conditions change constantly
+* [ ] अंशांकन लक्ष्य वाली सभी छवियों की जाँच की जाती है
+* [ ] किसी भी गैर-लक्ष्य छवि की गलती से जाँच नहीं की जाती है
+* [ ] जाँच की गई छवियों में लक्ष्य स्पष्ट रूप से दिखाई दे रहे हैं
 
 ***
 
-## Working with Multiple Cameras
+## लक्ष्य छवियों के लिए सर्वोत्तम अभ्यास
 
-### Dual-Camera Setups
+### लक्ष्य पर कब्ज़ा करने के दिशानिर्देश
 
-If using two MAPIR cameras simultaneously (e.g., Survey3W RGN + Survey3N OCN):
+**समय:**
 
-1. Capture target images with **both cameras** at the same time
-2. Use the **same physical target** for both cameras
-3. Mark target images for **both camera types** in the File Browser
-4. Chloros will use appropriate targets for each camera's calibration
+* अपने कैप्चर सत्र के तुरंत पहले और उसके दौरान लक्ष्य छवियां कैप्चर करें
+* आपके DAQ लाइट सेंसर के समान प्रकाश व्यवस्था की स्थिति में
+* आदर्श रूप से सर्वोत्तम परिणामों के लिए जितनी बार संभव हो लक्ष्य छवियों को कैप्चर करें। अन्यथा, समय के साथ अंशांकन को समायोजित करने के लिए प्रकाश सेंसर डेटा का उपयोग किया जाएगा।
 
-### Camera Model Column
+**कैमरा स्थिति:**
 
-The **Camera Model** column helps identify which images came from which camera:
+* कैमरे को लक्ष्य से ऊपर इस प्रकार पकड़ें कि वह केन्द्रित हो और छवि केन्द्र का लगभग 40-60% भाग भर जाए।
+* कैमरे को लक्ष्य सतह के समानांतर/नादिर रखें
 
-* Survey3W\_RGN
-* Survey3N\_OCN
-* Survey3W\_RGB
-* etc.
+**प्रकाश:**
 
-Use this column to verify you've marked targets for each camera type in your project.
+* आपके DAQ लाइट सेंसर के समान परिवेशीय प्रकाश व्यवस्था
+* लक्ष्य सतहों पर छाया से बचें
+* अपने प्रकाश स्रोत को अपने शरीर, वाहन या वनस्पति से अवरुद्ध न करें
+* बादल छाए रहने की स्थितियाँ सबसे सुसंगत परिणाम प्रदान करती हैं
 
-***
+**लक्ष्य स्थिति:**
 
-## Target Detection Settings
+* लक्ष्य पैनलों को साफ और सूखा रखें
+* सभी 4 पैनल स्पष्ट रूप से दिखाई देने वाले और अबाधित होने चाहिए
+* यदि संभव हो तो प्रकाश स्रोत के लंबवत/नादिर को लक्ष्य करें
 
-### Adjusting Detection Sensitivity
+### कितनी लक्षित छवियाँ?
 
-If Chloros isn't detecting your targets correctly, adjust these settings in [Project Settings](adjusting-project-settings.md):
+**न्यूनतम:** प्रति सत्र 1 लक्ष्य छवि। **अनुशंसित:** प्रति सत्र 3-5 लक्ष्य छवियाँ।
 
-**Minimum calibration sample area:**
+**सर्वोत्तम अभ्यास कार्यक्रम:**
 
-* **Default**: 25 pixels
-* **Increase** if getting false detections on small artifacts
-* **Decrease** if targets aren't being detected
-
-**Minimum target clustering:**
-
-* **Default**: 60
-* **Increase** if targets are being split into multiple detections
-* **Decrease** if targets with color variation aren't fully detected
+* लाइट सेंसर द्वारा रिकॉर्डिंग करने के तुरंत बाद 3-5 छवियां कैप्चर की गईं
+* सर्वोत्तम परिणामों के लिए कैप्चर के बीच कैमरे को घुमाएँ
+* वैकल्पिक: यदि प्रकाश की स्थिति लगातार बदलती रहती है तो समय-समय पर मध्य सत्र में
 
 ***
 
-## Common Target Image Issues
+## एकाधिक कैमरों के साथ कार्य करना
 
-### Problem: No Targets Detected
+### डुअल-कैमरा सेटअप
 
-**Possible causes:**
+यदि दो MAPIR कैमरे एक साथ उपयोग कर रहे हैं (उदाहरण के लिए, सर्वे3डब्ल्यू आरजीएन + सर्वे3एन ओसीएन):
 
-* Target images not marked in File Browser
-* Target too small in frame (< 30% of image)
-* Poor lighting (shadows, glare)
-* Target detection settings too strict
+1. एक ही समय में **दोनों कैमरों** से लक्ष्य छवियाँ कैप्चर करें
+2. दोनों कैमरों के लिए **समान भौतिक लक्ष्य** का उपयोग करें
+3. फ़ाइल ब्राउज़र में **दोनों प्रकार के कैमरा** के लिए लक्ष्य छवियों को चिह्नित करें
+4. क्लोरोस प्रत्येक कैमरे के अंशांकन के लिए उपयुक्त लक्ष्यों का उपयोग करेगा
 
-**Solutions:**
+### कैमरा मॉडल कॉलम
 
-1. Verify Target column is checked for correct images
-2. Review target image quality in preview
-3. Recapture targets if quality is poor
-4. Adjust target detection settings if needed
+**कैमरा मॉडल** कॉलम यह पहचानने में मदद करता है कि कौन सी छवियां किस कैमरे से आईं:
 
-### Problem: False Target Detections
+* सर्वे3डब्लू\_आरजीएन
+* सर्वे3एन\_OCN
+* सर्वे3डब्ल्यू\_आरजीबी
+* वगैरह।
 
-**Possible causes:**
-
-* White buildings, vehicles, or ground cover mistaken for targets
-* Bright patches in vegetation
-* Detection sensitivity too low
-
-**Solutions:**
-
-1. Mark only actual target images to limit detection scope
-2. Increase minimum calibration sample area
-3. Increase minimum target clustering value
-4. Ensure target images show only the target (minimal background clutter)
+यह सत्यापित करने के लिए इस कॉलम का उपयोग करें कि आपने अपने प्रोजेक्ट में प्रत्येक कैमरा प्रकार के लिए लक्ष्य चिह्नित किए हैं।
 
 ***
 
-## Verification Checklist
+## लक्ष्य पहचान सेटिंग्स
 
-Before starting processing, verify your target image selection:
+### जांच संवेदनशीलता को समायोजित करना
 
-* [ ] At least 1 target image marked per session
-* [ ] Target column checkboxes are checked for all target images
-* [ ] Target images captured within same timeframe as survey
-* [ ] Targets clearly visible in preview when clicked
-* [ ] All 4 calibration panels visible in each target image
-* [ ] No shadows or obstructions on targets
-* [ ] For dual-camera: Targets marked for both camera types
+यदि क्लोरोस आपके लक्ष्यों का सही ढंग से पता नहीं लगा रहा है, तो इन सेटिंग्स को [प्रोजेक्ट सेटिंग्स] (एडजस्टिंग-प्रोजेक्ट-सेटिंग्स.एमडी) में समायोजित करें:
 
-***
+**न्यूनतम अंशांकन नमूना क्षेत्र:**
 
-## Target-Free Processing
+* **डिफ़ॉल्ट**: 25 पिक्सेल
+* **छोटी कलाकृतियों पर गलत पहचान मिलने पर**बढ़ें
+* **यदि लक्ष्य का पता नहीं चल रहा है तो कमी करें**
 
-### Processing Without Calibration Targets
+**न्यूनतम लक्ष्य क्लस्टरिंग:**
 
-While not recommended for scientific work, you can process without targets:
-
-1. Leave all Target column checkboxes unchecked
-2. **Disable** "Reflectance calibration" in Project Settings
-3. Vignette correction will still be applied
-4. Output will not be calibrated for absolute reflectance
-
-{% hint style="warning" %}
-**Not Recommended**: Without reflectance calibration, pixel values represent relative brightness only, not scientific reflectance measurements. Use calibration targets for accurate, repeatable results.
-{% endhint %}
+* **डिफ़ॉल्ट**: 60
+* **बढ़ें** यदि लक्ष्यों को एकाधिक पहचानों में विभाजित किया जा रहा है
+* **घटाना** यदि रंग भिन्नता वाले लक्ष्य पूरी तरह से पहचाने नहीं गए हैं
 
 ***
 
-## Next Steps
+## सामान्य लक्ष्य छवि मुद्दे
 
-Once you've marked your target images:
+### समस्या: कोई लक्ष्य नहीं मिला
 
-1. **Review your settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+**संभावित कारण:**
 
-For more information about calibration targets themselves, see [Calibration Targets](../calibration-targets.md).
+* लक्ष्य छवियाँ फ़ाइल ब्राउज़र में चिह्नित नहीं हैं
+* लक्ष्य फ़्रेम में बहुत छोटा है (<छवि का 30%)
+* खराब रोशनी (छाया, चकाचौंध)
+* लक्ष्य पहचान सेटिंग बहुत सख्त
+
+**समाधान:**
+
+1. सत्यापित करें कि लक्ष्य कॉलम सही छवियों के लिए जाँचा गया है
+2. पूर्वावलोकन में लक्ष्य छवि गुणवत्ता की समीक्षा करें
+3. यदि गुणवत्ता खराब है तो लक्ष्य पुनः प्राप्त करें
+4. यदि आवश्यक हो तो लक्ष्य पहचान सेटिंग्स समायोजित करें
+
+### समस्या: गलत लक्ष्य का पता लगाना
+
+**संभावित कारण:**
+
+* सफेद इमारतें, वाहन या ग्राउंड कवर को गलती से लक्ष्य समझ लिया गया
+* वनस्पति में चमकीले धब्बे
+* जांच संवेदनशीलता बहुत कम
+
+**समाधान:**
+
+1. पता लगाने के दायरे को सीमित करने के लिए केवल वास्तविक लक्ष्य छवियों को चिह्नित करें
+2. न्यूनतम अंशांकन नमूना क्षेत्र बढ़ाएँ
+3. न्यूनतम लक्ष्य क्लस्टरिंग मान बढ़ाएँ
+4. सुनिश्चित करें कि लक्ष्य छवियां केवल लक्ष्य दिखाएं (न्यूनतम पृष्ठभूमि अव्यवस्था)
+
+***
+
+## सत्यापन चेकलिस्ट
+
+प्रसंस्करण शुरू करने से पहले, अपने लक्ष्य छवि चयन को सत्यापित करें:
+
+* [ ] प्रति सत्र कम से कम 1 लक्ष्य छवि चिह्नित
+* [ ] सभी लक्ष्य छवियों के लिए लक्ष्य कॉलम चेकबॉक्स चेक किए गए हैं
+* [ ] सर्वेक्षण के समान समय सीमा के भीतर कैप्चर की गई छवियों को लक्षित करें
+* [ ] क्लिक करने पर लक्ष्य पूर्वावलोकन में स्पष्ट रूप से दिखाई देते हैं
+* [ ] प्रत्येक लक्ष्य छवि में सभी 4 अंशांकन पैनल दिखाई देते हैं
+* [ ] लक्ष्य पर कोई छाया या रुकावट नहीं
+* [ ] दोहरे कैमरे के लिए: दोनों प्रकार के कैमरे के लिए लक्ष्य चिह्नित
+
+***
+
+## लक्ष्य-मुक्त प्रसंस्करण
+
+### अंशांकन लक्ष्य के बिना प्रसंस्करण
+
+जबकि वैज्ञानिक कार्य के लिए अनुशंसित नहीं है, आप लक्ष्य के बिना प्रक्रिया कर सकते हैं:
+
+1. सभी लक्ष्य कॉलम चेकबॉक्स को अनचेक छोड़ दें
+2. प्रोजेक्ट सेटिंग्स में **अक्षम** "परावर्तन अंशांकन"।
+3. विग्नेट सुधार अभी भी लागू किया जाएगा
+4. पूर्ण परावर्तन के लिए आउटपुट को कैलिब्रेट नहीं किया जाएगा
+
+{% संकेत शैली = "चेतावनी" %}
+**अनुशंसित नहीं**: परावर्तन अंशांकन के बिना, पिक्सेल मान केवल सापेक्ष चमक का प्रतिनिधित्व करते हैं, वैज्ञानिक परावर्तन माप का नहीं। सटीक, दोहराने योग्य परिणामों के लिए अंशांकन लक्ष्य का उपयोग करें।
+{%अंतसंकेत%}
+
+***
+
+## अगले कदम
+
+एक बार जब आप अपनी लक्षित छवियाँ चिह्नित कर लें:
+
+1. **अपनी सेटिंग्स की समीक्षा करें** - देखें [प्रोजेक्ट सेटिंग्स समायोजित करना] (एडजस्टिंग-प्रोजेक्ट-सेटिंग्स.एमडी)
+2. **प्रसंस्करण प्रारंभ करें** - देखें [प्रसंस्करण प्रारंभ करना](starting-the-processing.md)
+3. **प्रगति की निगरानी करें** - देखें [प्रसंस्करण की निगरानी](monitoring-the-processing.md)
+
+अंशांकन लक्ष्यों के बारे में अधिक जानकारी के लिए, [अंशांकन लक्ष्य](../calibration-targets.md) देखें।

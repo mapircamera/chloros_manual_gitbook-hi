@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# एक छवि पूर्ण स्क्रीन खोलना
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+क्लोरोस इमेज व्यूअर आपकी मल्टीस्पेक्ट्रल छवियों को देखने, विश्लेषण करने और हेरफेर करने के लिए एक समर्पित फ़ुल-स्क्रीन इंटरफ़ेस प्रदान करता है। चाहे मूल छवियाँ देखना हो या संसाधित आउटपुट, इमेज व्यूअर निरीक्षण और विश्लेषण के लिए शक्तिशाली उपकरण प्रदान करता है।
 
-## Accessing the Image Viewer
+## छवि दर्शक तक पहुँचना
 
-### From the File Browser
+### फ़ाइल ब्राउज़र से
 
-The most common way to open an image in the Image Viewer:
+इमेज व्यूअर में किसी छवि को खोलने का सबसे आम तरीका:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. सुनिश्चित करें कि आप **फ़ाइल ब्राउज़र** टैब <img src='../.gitbook/assets/icon_file-browser.JPG' alt='' data-size='line'> में हैं
+2. छवि ग्रिड में किसी भी **छवि थंबनेल** पर क्लिक करें
+3. छवि **मुख्य पूर्वावलोकन क्षेत्र** (स्क्रीन के केंद्र) में खुलती है
+4. छवि अब लोड हो गई है और पूर्ण-स्क्रीन देखने के लिए तैयार है
 
-### Opening the Image Viewer Tab
+### इमेज व्यूअर टैब खोलना
 
-Once an image is loaded in the preview area:
+एक बार पूर्वावलोकन क्षेत्र में एक छवि लोड हो जाने पर:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. बाएं साइडबार में **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> आइकन पर क्लिक करें।
+2. इमेज व्यूअर टैब खुलता है, जो चयनित छवि को पूर्ण-स्क्रीन प्रदर्शित करता है
+3. उन्नत देखने और विश्लेषण उपकरण बाएं साइडबार में उपलब्ध हो जाते हैं
 
 ***
 
-## Viewing Options
+## छवि दर्शक इंटरफ़ेस अवलोकन
 
-### Basic Image Navigation
+### मुख्य प्रदर्शन क्षेत्र
 
-#### Browse Through Images
+स्क्रीन का सबसे बड़ा भाग आपकी छवि दिखाता है:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **पूर्ण रिज़ॉल्यूशन**: छवियाँ मूल रिज़ॉल्यूशन पर प्रदर्शित होती हैं
+* **ज़ूम करने योग्य**: ज़ूम करने के लिए नियंत्रण या माउस व्हील का उपयोग करें
+* **पैन करने योग्य**: ज़ूम होने पर इधर-उधर जाने के लिए क्लिक करें और खींचें
+* **पहलू अनुपात बनाए रखा गया**: छवियाँ आनुपातिक रूप से मापी जाती हैं
 
 ***
 
-## Pixel Value Inspection
+## विकल्प देखना
 
-### Viewing Pixel Values at Cursor
+### बुनियादी छवि नेविगेशन
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### छवियों के माध्यम से ब्राउज़ करें
 
-**Value display location:**
+कीबोर्ड शॉर्टकट या बटन का उपयोग करके अपने छवि सेट पर नेविगेट करें:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **अगली छवि**: → बटन पर क्लिक करें या **→** (दायाँ तीर) कुंजी दबाएँ
+* **पिछली छवि**: ← बटन पर क्लिक करें या **←** (बायाँ तीर) कुंजी दबाएँ
+* **विशिष्ट छवि पर जाएं**: फ़ाइल ब्राउज़र पर लौटें और वांछित थंबनेल पर क्लिक करें
 
-***
+#### ज़ूम नियंत्रण
 
-## Image Types You Can View
+छवि विवरण का निरीक्षण करने के लिए आवर्धन समायोजित करें:
 
-### Original Images (Pre-Processing)
+**ज़ूम इन:**
 
-**RAW + JPG images from camera:**
+***+** (प्लस) बटन पर क्लिक करें
+* **+** या **=** कुंजी दबाएँ
+* माउस व्हील को **ऊपर** स्क्रॉल करें
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**ज़ूम आउट:**
 
-### Calibrated Reflectance Images
+***−** (माइनस) बटन पर क्लिक करें
+* **−** (माइनस) कुंजी दबाएँ
+* माउस व्हील को **नीचे** स्क्रॉल करें
 
-**After processing:**
+**स्क्रीन पर फ़िट:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* **↔** (फ़िट) बटन पर क्लिक करें
+* **0** (शून्य) कुंजी दबाएँ
+* छवि पर डबल-क्लिक करें
 
-### Index Images
+#### ज़ूम करने पर पैन
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+स्क्रीन आकार से अधिक ज़ूम करने पर:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. माउस कर्सर को छवि पर ले जाएँ
+2. क्लिक करें और **बाईं माउस बटन दबाए रखें**
+3. छवि को चारों ओर ले जाने के लिए **खींचें**
+4. पैनिंग रोकने के लिए रिलीज़ करें
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**वैकल्पिक**: छोटे-छोटे चरणों में पैन करने के लिए तीर कुंजियों का उपयोग करें
 
 ***
 
-## Keyboard Shortcuts
+## पिक्सेल मान निरीक्षण
 
-### Navigation
+### कर्सर पर पिक्सेल मान देखना
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+जैसे ही आप छवि पर अपना माउस कर्सर ले जाते हैं, पिक्सेल मान वास्तविक समय में प्रदर्शित होते हैं:
 
-### Zoom
+**मूल्य प्रदर्शन स्थान:**
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
-
-### View Controls
-
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
-
-### Other
-
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* *दाहिनी ओर इंडेक्स LUT ग्रेडिएंट लेजेंड में फ़्लोटिंग नंबर और लाल रेखा**
+* **जब और अधिक ज़ूम किया जाता है, तो कर्सर और हाइलाइट किए गए पिक्सेल के पास फ्लोटिंग मान**
+* पिक्सेल के लिए मान दिखाता है **कर्सर के नीचे या हाइलाइट किया गया**
+* जैसे ही आप माउस घुमाते हैं अपडेट हो जाता है
 
 ***
 
-### Verifying Index Calculations
+## छवि प्रकार जिन्हें आप देख सकते हैं
 
-Check that indices calculated correctly:
+### मूल छवियाँ (पूर्व-प्रसंस्करण)
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+**कैमरे से रॉ + जेपीजी छवियां:**
 
-***
+* रॉ डेटा को पूर्वावलोकन के अनुसार प्रदर्शित करें
+* मूल, असंशोधित मान दिखाएँ
+* प्रसंस्करण से पहले छवि गुणवत्ता की जांच के लिए उपयोगी
 
-## Troubleshooting Viewing Issues
+### कैलिब्रेटेड परावर्तन छवियाँ
 
-### Image Won't Open
+**प्रसंस्करण के बाद:**
 
-**Possible causes:**
+*विग्नेट सही किया गया
+* परावर्तन अंशांकित
+* मल्टी-बैंड टीआईएफएफ (लाल, हरा, एनआईआर, आदि)
+* वैज्ञानिक डेटा विश्लेषण के लिए तैयार है
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+### अनुक्रमणिका छवियाँ
 
-**Solutions:**
+**NDVI, NDRE, GNDVI, आदि (\_NDVI.tif फ़ाइलें):**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+* सिंगल-बैंड ग्रेस्केल छवियां
+* पिक्सेल मान सूचकांक गणना परिणामों का प्रतिनिधित्व करते हैं
+* सामान्यीकृत सूचकांकों के लिए रेंज आमतौर पर -1 से +1 तक होती है
+* विज़ुअलाइज़ेशन के लिए रंगीन LUTs लगा सकते हैं
 
 ***
 
-## Next Steps
+## इंडेक्स और एलयूटी एप्लीकेशन
 
-Now that you can view images full-screen:
+मल्टीस्पेक्ट्रल सूचकांक और रंग लुक-अप टेबल लागू करें:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+1. **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> साइडबार में **इंडेक्स/LUT सैंडबॉक्स** का पता लगाएं
+2. वनस्पति सूचकांक चुनें (एनडीवीआई, एनडीआरई, आदि)
+3. मल्टीस्पेक्ट्रल फॉर्मूला चुनें, या अपना खुद का कस्टम फॉर्मूला बनाएं (केवल क्लोरोस+)
+4. विज़ुअलाइज़ेशन के लिए रंग LUT ग्रेडिएंट लागू करें
+5. मूल्य सीमाएँ और सीमाएँ समायोजित करें
 
-For processing workflow, see:
+विस्तृत निर्देशों के लिए [Index/LUT Sandbox](index-lut-sandbox.md) देखें।
 
-* [**Processing Images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Complete processing guide
+***
+
+## कुंजीपटल अल्प मार्ग
+
+### मार्गदर्शन
+
+* **→** (दायाँ तीर): अगली छवि
+* **←** (बायाँ तीर): पिछली छवि
+* **होम**: सूची में पहली छवि
+* **समाप्त**: सूची में अंतिम छवि
+
+### ज़ूम करें
+
+* **+** या **=**: ज़ूम इन करें
+* **−**: ज़ूम आउट करें
+* **0** (शून्य): स्क्रीन पर फिट
+* *माउस व्हील**: ज़ूम इन/आउट करें
+
+### नियंत्रण देखें
+
+* **पी**: पिक्सेल प्रतिशत मोड टॉगल करें
+* **एल**: लेयर्स पैनल को टॉगल करें
+* **Esc**: फ़ुल-स्क्रीन बंद करें या फ़ाइल ब्राउज़र पर वापस लौटें
+
+### अन्य
+
+* **Ctrl+S**: वर्तमान छवि सहेजें
+* **एफ**: फ़ुल-स्क्रीन मोड (यदि उपलब्ध हो)
+
+***
+
+### सूचकांक गणनाओं का सत्यापन
+
+जांचें कि सूचकांकों की गणना सही ढंग से की गई है:
+
+1. एनडीवीआई या अन्य सूचकांक छवि खोलें
+2. वनस्पति क्षेत्रों की जाँच करें:
+   * **एनडीवीआई**: स्वस्थ पौधों के लिए 0.4-0.9 दिखाना चाहिए
+   * **एनडीआरई**: जोरदार विकास के लिए उच्च मूल्य
+   * **जीएनडीवीआई**: एनडीवीआई के समान लेकिन क्लोरोफिल-संवेदनशील
+3. गैर-वनस्पति की जाँच करें:
+   * **मिट्टी**: 0 के करीब या थोड़ा नकारात्मक
+   * **पानी**: नकारात्मक मान (-0.5 से 0)
+
+***
+
+## देखने में समस्या का निवारण
+
+### छवि नहीं खुलेगी
+
+**संभावित कारण:**
+
+* प्रसंस्करण के दौरान फ़ाइल दूषित हो गई
+* असमर्थित फ़ाइल स्वरूप
+* बड़ी छवि के लिए अपर्याप्त मेमोरी
+
+**समाधान:**
+
+1. फ़ाइल अखंडता को सत्यापित करने के लिए बाहरी व्यूअर में खोलने का प्रयास करें
+2. जांचें कि फ़ाइल प्रारूप अपेक्षित प्रकार से मेल खाता है
+3. मेमोरी खाली करने के लिए अन्य एप्लिकेशन बंद करें
+4. छोटी/अलग छवि आज़माएं
+
+### काली या सफेद छवि प्रदर्शन
+
+**संभावित कारण:**
+
+* मूल्य सीमा बाहरी प्रदर्शन क्षमता
+* असामान्य मानों के साथ 32-बिट फ़्लोट छवि
+*सूचकांक गणना त्रुटि
+
+**समाधान:**
+
+1. पिक्सेल मान जांचें - यदि सभी बहुत कम या बहुत अधिक हैं, तो डिस्प्ले रेंज समायोजित करें
+2. QGIS या इसके समान ऑटो-रेंज समायोजन के साथ खोलने का प्रयास करें
+3. त्रुटियों के लिए प्रसंस्करण से डीबग लॉग की जाँच करें
+
+### पिक्सेल मान ग़लत प्रतीत होते हैं
+
+**संभावित कारण:**
+
+* गलत छवि देखना (मूल बनाम संसाधित)
+* अंशांकन सही ढंग से लागू नहीं हुआ
+* लाइट सेंसर डेटा इनपुट में शामिल नहीं था
+* प्रतिशत मोड गलत तरीके से टॉगल किया गया
+
+**समाधान:**
+
+1. सत्यापित करें कि आप संसाधित आउटपुट देख रहे हैं (फ़ाइल नाम प्रत्यय जांचें)
+2. प्रतिशत मोड बटन स्थिति की जाँच करें
+3. समान डेटासेट से ज्ञात-अच्छी छवियों के साथ तुलना करें
+
+***
+
+## अगले कदम
+
+अब आप छवियों को पूर्ण-स्क्रीन देख सकते हैं:
+
+* [**छवि परतें**](image-layers.md) - मल्टी-बैंड विज़ुअलाइज़ेशन के बारे में जानें
+* [**इंडेक्स/LUT सैंडबॉक्स**](index-lut-sandbox.md) - कस्टम इंडेक्स और कलर मैपिंग लागू करें
+* [**मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला**](../project-settings/multispectral-index-formulas.md) - उपलब्ध सूचकांकों को समझें
+
+वर्कफ़्लो को संसाधित करने के लिए, देखें:
+
+* [**प्रसंस्करण छवियां (जीयूआई)**](../processing-images-gui/adding-files-to-a-project.md) - संपूर्ण प्रसंस्करण मार्गदर्शिका

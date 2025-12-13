@@ -1,17 +1,17 @@
 ---
-description: अक्सर पूछे जाने वाले प्रश्नों
-metaLinks:
-  alternates:
+विवरण: अक्सर पूछे जाने वाले प्रश्न
+मेटालिंक:
+  विकल्प:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
 
-# FAQ
+# अक्सर पूछे जाने वाले प्रश्न
 
 <details>
 
 <summary>Can I process images from cameras that are not MAPIR brand with Chloros?</summary>
 
-No, Chloros only supports processing MAPIR camera images. Please see the list of [supported camera models](supported-cameras.md) for more information. We do offer processing of other cameras on MAPIR Cloud, see full list [here](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+नहीं, क्लोरोस केवल MAPIR कैमरा छवियों को संसाधित करने का समर्थन करता है। कृपया अधिक जानकारी के लिए [समर्थित कैमरा मॉडल](supported-cameras.md) की सूची देखें। हम MAPIR क्लाउड पर अन्य कैमरों की प्रोसेसिंग की पेशकश करते हैं, पूरी सूची यहां देखें (https://mapir.gitbook.io/mapir-cloud/supported-cameras)।
 
 </details>
 
@@ -19,7 +19,7 @@ No, Chloros only supports processing MAPIR camera images. Please see the list of
 
 <summary>Can I calibrate my images for reflectance without a calibration target?</summary>
 
-No. Without an image of the calibration target captured around when the non target images are captured you will not be able to relate the image's pixel values to a known reflectance percent. If you also do not include the log from a MAPIR light sensor then the ambient light spectrum will not be measured, and the reflectance results will not be accurate.
+नहीं, गैर-लक्ष्य छवियों को कैप्चर किए जाने पर अंशांकन लक्ष्य की छवि के बिना आप छवि के पिक्सेल मानों को ज्ञात परावर्तन प्रतिशत से संबंधित नहीं कर पाएंगे। यदि आप MAPIR प्रकाश सेंसर से लॉग भी शामिल नहीं करते हैं तो परिवेश प्रकाश स्पेक्ट्रम को मापा नहीं जाएगा, और परावर्तन परिणाम सटीक नहीं होंगे।
 
 </details>
 
@@ -27,7 +27,7 @@ No. Without an image of the calibration target captured around when the non targ
 
 <summary>Can I edit my images prior to processing in Chloros?</summary>
 
-No. Chloros assumes the input data has not been modified. Do not change the file names.
+नहीं, क्लोरोस मानता है कि इनपुट डेटा को संशोधित नहीं किया गया है। फ़ाइल नाम न बदलें.
 
 </details>
 
@@ -35,7 +35,7 @@ No. Chloros assumes the input data has not been modified. Do not change the file
 
 <summary>Can I set my MAPIR Survey3 cameras to auto exposure and process the images in Chloros?</summary>
 
-No. Survey3 image datasets must have a fixed/locked exposure, so no auto shutter speed or auto ISO. All images of the same camera model must have identical shutter speed and ISO (exposure).
+नहीं, सर्वे3 छवि डेटासेट में एक निश्चित/लॉक एक्सपोज़र होना चाहिए, इसलिए कोई ऑटो शटर गति या ऑटो आईएसओ नहीं। एक ही कैमरा मॉडल की सभी छवियों की शटर गति और आईएसओ (एक्सपोज़र) समान होनी चाहिए।
 
 </details>
 
@@ -43,7 +43,7 @@ No. Survey3 image datasets must have a fixed/locked exposure, so no auto shutter
 
 <summary>Can Chloros process or analyze orthomosaic images?</summary>
 
-No. Only individual MAPIR camera images are supported, not stitched images like an orthomosaic map.
+नहीं, केवल व्यक्तिगत MAPIR कैमरा छवियां समर्थित हैं, ऑर्थोमोज़ेक मानचित्र जैसी सिलाई वाली छवियां नहीं।
 
 </details>
 
@@ -51,7 +51,7 @@ No. Only individual MAPIR camera images are supported, not stitched images like 
 
 <summary>How can I speed up the target detection step of Chloros?</summary>
 
-In the file browser table pre-selecting the target images in the right column will tell Chloros to only look in those images for calibration targets, greatly speeding up the processing.
+फ़ाइल ब्राउज़र तालिका में दाएं कॉलम में लक्ष्य छवियों को पूर्व-चयन करने से क्लोरोस को केवल अंशांकन लक्ष्यों के लिए उन छवियों को देखने के लिए कहा जाएगा, जिससे प्रसंस्करण में काफी तेजी आएगी।
 
 </details>
 
@@ -59,7 +59,7 @@ In the file browser table pre-selecting the target images in the right column wi
 
 <summary>If I will upload my images to <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> should I process in Chloros prior to uploading?</summary>
 
-If you plan to upload to our online processing platform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) do not edit the images prior to uploading. Cloud will perform all the same processing and more.
+यदि आप हमारे ऑनलाइन प्रोसेसिंग प्लेटफॉर्म [एमएपीआईआर क्लाउड](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) पर अपलोड करने की योजना बना रहे हैं तो अपलोड करने से पहले छवियों को संपादित न करें। क्लाउड सभी समान प्रसंस्करण और बहुत कुछ करेगा।
 
 </details>
 
@@ -67,6 +67,6 @@ If you plan to upload to our online processing platform [MAPIR Cloud](https://ww
 
 <summary>Will MAPIR ever support X feature? I really wish MAPIR offered X.</summary>
 
-We are always interested in receiving feedback on our products. If you find an issue with our products, or have a suggestion on how we can improve our products please [CONTACT US](https://www.mapir.camera/community/contact) to share your thoughts. Most of our R\&D is guided by listening to our customer's biggest needs.
+हम हमेशा अपने उत्पादों पर प्रतिक्रिया प्राप्त करने में रुचि रखते हैं। यदि आपको हमारे उत्पादों में कोई समस्या मिलती है, या आपके पास कोई सुझाव है कि हम अपने उत्पादों को कैसे बेहतर बना सकते हैं तो कृपया अपने विचार साझा करने के लिए [हमसे संपर्क करें] (https://www.mapir.camera/community/contact) करें। हमारा अधिकांश R\&D हमारे ग्राहकों की सबसे बड़ी जरूरतों को सुनकर निर्देशित होता है।
 
 </details>

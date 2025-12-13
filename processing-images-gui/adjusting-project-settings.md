@@ -1,234 +1,234 @@
-# Adjusting Project Settings
+# प्रोजेक्ट सेटिंग्स समायोजित करना
 
-Before processing your images, it's important to configure your project settings to match your workflow requirements. The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> panel provides comprehensive control over calibration, processing options, multispectral indices, and export formats.
+अपनी छवियों को संसाधित करने से पहले, अपनी वर्कफ़्लो आवश्यकताओं से मेल खाने के लिए अपनी प्रोजेक्ट सेटिंग्स को कॉन्फ़िगर करना महत्वपूर्ण है। प्रोजेक्ट सेटिंग्स <img src='../.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> पैनल अंशांकन, प्रसंस्करण विकल्प, मल्टीस्पेक्ट्रल सूचकांक और निर्यात प्रारूपों पर व्यापक नियंत्रण प्रदान करता है।
 
-## Accessing Project Settings
+## प्रोजेक्ट सेटिंग्स तक पहुँचना
 
-1. Open your project in Chloros
-2. Click the **Project Settings** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The Project Settings panel displays all configuration options
+1. अपना प्रोजेक्ट क्लोरोस में खोलें
+2. बाएं साइडबार में **प्रोजेक्ट सेटिंग्स** <img src='../.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> आइकन पर क्लिक करें।
+3. प्रोजेक्ट सेटिंग्स पैनल सभी कॉन्फ़िगरेशन विकल्प प्रदर्शित करता है
 
-{% hint style="info" %}
-**Settings are saved automatically** with your project. When you reopen a project, all settings are restored.
-{% endhint %}
-
-***
-
-## Quick Setup for Common Workflows
-
-### Default Settings (Recommended for Most Users)
-
-For typical MAPIR Survey3 camera workflows, the default settings work well:
-
-* ✅ **Vignette correction**: Enabled
-* ✅ **Reflectance calibration**: Enabled (requires images of MAPIR targets)
-* ✅ **Debayer method**: High Quality (Faster)
-* ✅ **Export format**: TIFF (16-bit)
-
-Simply import your images and start processing with these defaults.
+{% संकेत शैली = "जानकारी" %}
+**सेटिंग्स आपके प्रोजेक्ट के साथ स्वचालित रूप से सहेजी जाती हैं**। जब आप किसी प्रोजेक्ट को दोबारा खोलते हैं, तो सभी सेटिंग्स पुनर्स्थापित हो जाती हैं।
+{%अंतसंकेत%}
 
 ***
 
-## Project Settings Overview
+## सामान्य वर्कफ़्लोज़ के लिए त्वरित सेटअप
 
-The Project Settings panel is organized into several categories. Below is a summary of each section. For complete documentation, see [Project Settings](../project-settings/project-settings.md).
+### डिफ़ॉल्ट सेटिंग्स (अधिकांश उपयोगकर्ताओं के लिए अनुशंसित)
 
-### Target Detection
+विशिष्ट MAPIR सर्वे3 कैमरा वर्कफ़्लो के लिए, डिफ़ॉल्ट सेटिंग्स अच्छी तरह से काम करती हैं:
 
-Controls how Chloros identifies calibration targets in your images.
+* ✅ **विग्नेट सुधार**: सक्षम
+* ✅ **परावर्तन अंशांकन**: सक्षम (एमएपीआईआर लक्ष्यों की छवियों की आवश्यकता है)
+* ✅ **डिबायर विधि**: उच्च गुणवत्ता (तेज़)
+* ✅ **निर्यात प्रारूप**: टीआईएफएफ (16-बिट)
 
-**Key settings:**
-
-* **Minimum calibration sample area**: Size threshold for target detection (default: 25 pixels)
-* **Minimum target clustering**: Similarity threshold for grouping target regions (default: 60)
-
-**When to adjust:**
-
-* Increase sample area if getting false detections
-* Decrease if targets aren't being detected
-* Adjust clustering if targets are being split into multiple detections
-
-### Processing
-
-Main image processing and calibration options.
-
-**Key settings:**
-
-* **Vignette correction**: Compensates for lens darkening at edges ✅ Recommended
-* **Reflectance calibration**: Normalizes values using calibration targets ✅ Recommended
-* **Debayer method**: Algorithm for converting RAW to 3-channels multi-spectral
-* **Minimum recalibration interval**: Time between using calibration targets (0 = use all)
-
-**Advanced settings:**
-
-* **Light sensor timezone offset**: For PPK time synchronization (default: 0)
-* **Apply PPK corrections**: Uses GPS/exposure pin data from .daq files
-* **Exposure Pin 1/2**: Assigns cameras to exposure pins for dual-camera setups
-
-### Index (Multispectral Indices)
-
-Configure which vegetation indices to calculate and export.
-
-**How to add indices:**
-
-1. Click **"Add index"** button
-2. Select an index from the dropdown menu (NDVI, NDRE, GNDVI, etc.)
-3. Configure visualization settings (LUT colors, value ranges)
-4. Add multiple indices as needed
-
-**Popular indices:**
-
-* **NDVI**: General vegetation health (most common)
-* **NDRE**: Early stress detection with RedEdge
-* **GNDVI**: Chlorophyll concentration sensitive
-* **OSAVI**: Works well with visible soil
-* **EVI**: High leaf area index (LAI) regions
-
-**Custom formulas (Chloros+ only):**
-
-* Create custom multispectral index formulas
-* Use band math with all image channels
-* Save custom formulas for reuse
-
-For all available indices and formulas, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
-
-### Export
-
-Controls output file format and quality.
-
-**Available formats:**
-
-* **TIFF (16-bit)**: Recommended for GIS and scientific analysis (0-65,535 range)
-* **TIFF (32-bit, Percent)**: Floating-point reflectance values (0.0-1.0 range)
-* **PNG (8-bit)**: Lossless compression for visualization (0-255 range)
-* **JPG (8-bit)**: Smallest files, lossy compression (0-255 range)
+बस अपनी छवियां आयात करें और इन डिफ़ॉल्ट के साथ प्रसंस्करण शुरू करें।
 
 ***
 
-## Saving and Loading Settings
+## प्रोजेक्ट सेटिंग्स अवलोकन
 
-### Save Project Template
+प्रोजेक्ट सेटिंग्स पैनल को कई श्रेणियों में व्यवस्थित किया गया है। नीचे प्रत्येक अनुभाग का सारांश दिया गया है। संपूर्ण दस्तावेज़ीकरण के लिए, [प्रोजेक्ट सेटिंग्स](../project-settings/project-settings.md) देखें।
 
-Create reusable templates for consistent workflows:
+### लक्ष्य का पता लगाना
 
-1. Configure all desired settings in the Project Settings panel
-2. Scroll to **"Save Project Template"** section at the bottom
-3. Enter a descriptive template name (e.g., "Survey3N\_RGN\_Agriculture")
-4. Click the save icon
+नियंत्रित करता है कि क्लोरोस आपकी छवियों में अंशांकन लक्ष्यों की पहचान कैसे करता है।
 
-**Benefits:**
+**मुख्य सेटिंग्स:**
 
-* Apply identical settings across multiple projects
-* Share configurations with team members
-* Maintain consistency for repeated surveys
+* **न्यूनतम अंशांकन नमूना क्षेत्र**: लक्ष्य का पता लगाने के लिए आकार सीमा (डिफ़ॉल्ट: 25 पिक्सेल)
+* **न्यूनतम लक्ष्य क्लस्टरिंग**: लक्ष्य क्षेत्रों को समूहीकृत करने के लिए समानता सीमा (डिफ़ॉल्ट: 60)
 
-### Load Template on New Project
+**कब समायोजित करें:**
 
-When creating a new project:
+* गलत पहचान मिलने पर नमूना क्षेत्र बढ़ाएँ
+* यदि लक्ष्य का पता नहीं चल रहा है तो कमी करें
+* यदि लक्ष्य को कई डिटेक्शन में विभाजित किया जा रहा है तो क्लस्टरिंग समायोजित करें
 
-1. Select **"New Project"** from main menu
-2. Choose **"Load from template"** option
-3. Select your saved template
-4. All settings are automatically applied
+### प्रसंस्करण
 
-### Working Directory
+मुख्य छवि प्रसंस्करण और अंशांकन विकल्प।
 
-The **"Save Project Folder"** setting specifies where new projects are created by default:
+**मुख्य सेटिंग्स:**
 
-* **Default location**: `C:\Users\[Username]\Chloros Projects`
-* **Change location**: Click edit icon and select new folder
-* **When to change**:
-  * Network drive for team collaboration
-  * Different drive with more storage space
-  * Organized folder structure by year/client
+* **विग्नेट सुधार**: किनारों पर लेंस के कालेपन की भरपाई करता है ✅ अनुशंसित
+* **परावर्तन अंशांकन**: अंशांकन लक्ष्यों का उपयोग करके मूल्यों को सामान्यीकृत करता है ✅ अनुशंसित
+* **डिबेयर विधि**: रॉ को 3-चैनल मल्टी-स्पेक्ट्रल में परिवर्तित करने के लिए एल्गोरिदम
+* **न्यूनतम पुनर्अंशांकन अंतराल**: अंशांकन लक्ष्यों का उपयोग करने के बीच का समय (0 = सभी का उपयोग करें)
 
-***
+**एडवांस सेटिंग:**
 
-## PPK (Post-Processed Kinematic) Setup
+* **लाइट सेंसर टाइमज़ोन ऑफ़सेट**: पीपीके समय सिंक्रनाइज़ेशन के लिए (डिफ़ॉल्ट: 0)
+* **पीपीके सुधार लागू करें**: .daq फ़ाइलों से जीपीएस/एक्सपोज़र पिन डेटा का उपयोग करता है
+* **एक्सपोज़र पिन 1/2**: डुअल-कैमरा सेटअप के लिए कैमरे को एक्सपोज़र पिन असाइन करता है
 
-If using MAPIR DAQ recorders with GPS for precise geolocation:
+### सूचकांक (मल्टीस्पेक्ट्रल सूचकांक)
 
-### Prerequisites
+कॉन्फ़िगर करें कि किस वनस्पति सूचकांक की गणना और निर्यात करना है।
 
-* MAPIR DAQ with GPS (GNSS) module
-* .daq log file with exposure pin entries
-* Camera connected to DAQ exposure pins during capture session
+**सूचकांक कैसे जोड़ें:**
 
-### Configuration Steps
+1. **"अनुक्रमणिका जोड़ें"** बटन पर क्लिक करें
+2. ड्रॉपडाउन मेनू से एक इंडेक्स चुनें (एनडीवीआई, एनडीआरई, जीएनडीवीआई, आदि)
+3. विज़ुअलाइज़ेशन सेटिंग्स कॉन्फ़िगर करें (LUT रंग, मान श्रेणियां)
+4. आवश्यकतानुसार एकाधिक सूचकांक जोड़ें
 
-1. Place the .daq log file in your project folder
-2. In Project Settings, enable **"Apply PPK corrections"** checkbox
-3. Set **"Light sensor timezone offset"** if needed (default: 0 for UTC)
-4. Assign cameras to exposure pins:
-   * **Single camera**: Automatically assigned to Pin 1
-   * **Dual cameras**: Manually assign each camera to correct pin
+**लोकप्रिय सूचकांक:**
 
-**Exposure Pin Assignment:**
+* **एनडीवीआई**: सामान्य वनस्पति स्वास्थ्य (सबसे आम)
+* **एनडीआरई**: रेडएज के साथ तनाव का शीघ्र पता लगाना
+* **जीएनडीवीआई**: क्लोरोफिल सांद्रता संवेदनशील
+* **ओसावी**: दृश्यमान मिट्टी पर अच्छा काम करता है
+* **ईवीआई**: उच्च पत्ती क्षेत्र सूचकांक (एलएआई) क्षेत्र
 
-* **Exposure Pin 1**: Select camera model from dropdown
-* **Exposure Pin 2**: Select second camera or "Do Not Use"
-* Same camera cannot be assigned to both pins
+**कस्टम सूत्र (केवल क्लोरोस+):**
 
-{% hint style="warning" %}
-**Important**: Exposure pins must be correctly assigned to their respective cameras. Incorrect assignment will result in wrong geolocation data.
-{% endhint %}
+* कस्टम मल्टीस्पेक्ट्रल इंडेक्स फ़ॉर्मूले बनाएं
+* सभी छवि चैनलों के साथ बैंड गणित का प्रयोग करें
+* पुन: उपयोग के लिए कस्टम फ़ार्मुलों को सहेजें
 
-***
+सभी उपलब्ध सूचकांकों और फ़ार्मुलों के लिए, [मल्टीस्पेक्ट्रल इंडेक्स फ़ॉर्मूले](../project-settings/multispectral-index-formulas.md) देखें।
 
-## Advanced Scenarios
+### निर्यात
 
-### Multi-Camera Projects
+आउटपुट फ़ाइल स्वरूप और गुणवत्ता को नियंत्रित करता है।
 
-When processing images from multiple MAPIR cameras in one project:
+**उपलब्ध प्रारूप:**
 
-1. Chloros automatically detects each camera model
-2. Each camera gets appropriate processing profile
-3. PPK: Manually assign each camera to correct exposure pin
-4. All cameras use same export format and indices
-
-**Example**: Survey3W RGN + Survey3N OCN dual-camera rig
-
-### Time-Lapse or Multi-Date Surveys
-
-For repeated surveys of the same area over time:
-
-1. Create a template with your standard settings
-2. Use consistent calibration target setup each session
-3. Process each date as a separate project
-4. Use identical settings for comparable results
-5. Export in same format for temporal analysis
-
-### Large Datasets
-
-For projects with many images (500+):
-
-* Consider breaking into smaller projects by date or area
-* Use Chloros+ parallel processing for faster results
-* Consider CLI or API for batch automation
-* Adjust minimum recalibration interval to reduce target detection time
+* **टीआईएफएफ (16-बिट)**: जीआईएस और वैज्ञानिक विश्लेषण के लिए अनुशंसित (0-65,535 रेंज)
+* **TIFF (32-बिट, प्रतिशत)**: फ़्लोटिंग-पॉइंट परावर्तन मान (0.0-1.0 रेंज)
+* **पीएनजी (8-बिट)**: विज़ुअलाइज़ेशन के लिए दोषरहित संपीड़न (0-255 रेंज)
+* **जेपीजी (8-बिट)**: सबसे छोटी फ़ाइलें, हानिपूर्ण संपीड़न (0-255 रेंज)
 
 ***
 
-## Verifying Your Settings
+## सेटिंग्स सहेजना और लोड करना
 
-Before starting to process, review these key settings:
+### प्रोजेक्ट टेम्पलेट सहेजें
 
-* [ ] Camera model correctly detected in File Browser
-* [ ] Vignette correction enabled
-* [ ] Reflectance calibration enabled
-* [ ] At least one calibration target image imported
-* [ ] Desired multispectral indices added
-* [ ] Export format appropriate for your workflow
-* [ ] PPK settings configured (if using .daq with expposure events)
+सुसंगत वर्कफ़्लो के लिए पुन: प्रयोज्य टेम्पलेट बनाएं:
+
+1. प्रोजेक्ट सेटिंग्स पैनल में सभी वांछित सेटिंग्स कॉन्फ़िगर करें
+2. नीचे **"प्रोजेक्ट टेम्पलेट सहेजें"** अनुभाग तक स्क्रॉल करें
+3. एक वर्णनात्मक टेम्पलेट नाम दर्ज करें (उदाहरण के लिए, "Survey3N\_RGN\_Agriculture")
+4. सेव आइकन पर क्लिक करें
+
+**फ़ायदे:**
+
+* एकाधिक परियोजनाओं में समान सेटिंग्स लागू करें
+* टीम के सदस्यों के साथ कॉन्फ़िगरेशन साझा करें
+* बार-बार सर्वेक्षण के लिए निरंतरता बनाए रखें
+
+### नए प्रोजेक्ट पर टेम्पलेट लोड करें
+
+कोई नया प्रोजेक्ट बनाते समय:
+
+1. मुख्य मेनू से **"नया प्रोजेक्ट"** चुनें
+2. **"टेम्पलेट से लोड करें"** विकल्प चुनें
+3. अपना सहेजा गया टेम्पलेट चुनें
+4. सभी सेटिंग्स स्वचालित रूप से लागू हो जाती हैं
+
+### कार्यकारी डाइरेक्टरी
+
+**"प्रोजेक्ट फ़ोल्डर सहेजें"** सेटिंग निर्दिष्ट करती है कि डिफ़ॉल्ट रूप से नए प्रोजेक्ट कहां बनाए जाते हैं:
+
+* **डिफ़ॉल्ट स्थान**: `C:\Users\[उपयोगकर्ता नाम]\क्लोरोस प्रोजेक्ट्स`
+* **स्थान बदलें**: संपादन आइकन पर क्लिक करें और नया फ़ोल्डर चुनें
+* **कब बदलना है**:
+  * टीम सहयोग के लिए नेटवर्क ड्राइव
+  * अधिक संग्रहण स्थान के साथ अलग ड्राइव
+  * वर्ष/ग्राहक के अनुसार व्यवस्थित फ़ोल्डर संरचना
 
 ***
 
-## Next Steps
+## पीपीके (पोस्ट-प्रोसेस्ड किनेमेटिक) सेटअप
 
-Once your settings are configured:
+यदि सटीक जियोलोकेशन के लिए जीपीएस के साथ MAPIR DAQ रिकॉर्डर का उपयोग कर रहे हैं:
 
-1. **Mark calibration target images** - See [Choosing Target Images](choosing-target-images.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+### पूर्वावश्यकताएँ
 
-For complete details on all available settings, see the [Project Settings](../project-settings/project-settings.md) reference documentation.
+* जीपीएस (जीएनएसएस) मॉड्यूल के साथ MAPIR DAQ
+* एक्सपोज़र पिन प्रविष्टियों के साथ .daq लॉग फ़ाइल
+* कैप्चर सत्र के दौरान कैमरा DAQ एक्सपोज़र पिन से जुड़ा
+
+### कॉन्फ़िगरेशन चरण
+
+1. .daq लॉग फ़ाइल को अपने प्रोजेक्ट फ़ोल्डर में रखें
+2. प्रोजेक्ट सेटिंग्स में, **"पीपीके सुधार लागू करें"** चेकबॉक्स सक्षम करें
+3. यदि आवश्यक हो तो **"लाइट सेंसर टाइमज़ोन ऑफसेट"** सेट करें (डिफ़ॉल्ट: यूटीसी के लिए 0)
+4. कैमरे को एक्सपोज़र पिन पर असाइन करें:
+   * **एकल कैमरा**: स्वचालित रूप से पिन 1 को असाइन किया गया
+   * **दोहरे कैमरे**: प्रत्येक कैमरे को पिन सही करने के लिए मैन्युअल रूप से असाइन करें
+
+**एक्सपोज़र पिन असाइनमेंट:**
+
+* **एक्सपोज़र पिन 1**: ड्रॉपडाउन से कैमरा मॉडल चुनें
+* **एक्सपोज़र पिन 2**: दूसरा कैमरा चुनें या "उपयोग न करें"
+* दोनों पिनों को एक ही कैमरा नहीं सौंपा जा सकता
+
+{% संकेत शैली = "चेतावनी" %}
+**महत्वपूर्ण**: एक्सपोज़र पिन उनके संबंधित कैमरों को सही ढंग से लगाए जाने चाहिए। ग़लत असाइनमेंट के परिणामस्वरूप ग़लत जियोलोकेशन डेटा प्राप्त होगा।
+{%अंतसंकेत%}
+
+***
+
+## उन्नत परिदृश्य
+
+### मल्टी-कैमरा प्रोजेक्ट
+
+एक प्रोजेक्ट में एकाधिक MAPIR कैमरों से छवियों को संसाधित करते समय:
+
+1. क्लोरोस स्वचालित रूप से प्रत्येक कैमरा मॉडल का पता लगाता है
+2. प्रत्येक कैमरे को उचित प्रोसेसिंग प्रोफ़ाइल मिलती है
+3. पीपीके: एक्सपोज़र पिन को सही करने के लिए प्रत्येक कैमरे को मैन्युअल रूप से असाइन करें
+4. सभी कैमरे समान निर्यात प्रारूप और सूचकांक का उपयोग करते हैं
+
+**उदाहरण**: सर्वे3डब्ल्यू आरजीएन + सर्वे3एन ओसीएन डुअल-कैमरा रिग
+
+### समय चूक या बहु-दिनांक सर्वेक्षण
+
+समय के साथ एक ही क्षेत्र के बार-बार सर्वेक्षण के लिए:
+
+1. अपनी मानक सेटिंग्स के साथ एक टेम्पलेट बनाएं
+2. प्रत्येक सत्र में सुसंगत अंशांकन लक्ष्य सेटअप का उपयोग करें
+3. प्रत्येक दिनांक को एक अलग प्रोजेक्ट के रूप में संसाधित करें
+4. तुलनीय परिणामों के लिए समान सेटिंग्स का उपयोग करें
+5. अस्थायी विश्लेषण के लिए समान प्रारूप में निर्यात करें
+
+### बड़े डेटासेट
+
+अनेक छवियों (500+) वाली परियोजनाओं के लिए:
+
+* दिनांक या क्षेत्र के अनुसार छोटी परियोजनाओं को तोड़ने पर विचार करें
+* तेज़ परिणामों के लिए क्लोरोस+ समानांतर प्रसंस्करण का उपयोग करें
+* बैच स्वचालन के लिए सीएलआई या एपीआई पर विचार करें
+* लक्ष्य का पता लगाने के समय को कम करने के लिए न्यूनतम पुनर्अंशांकन अंतराल को समायोजित करें
+
+***
+
+## अपनी सेटिंग्स सत्यापित करना
+
+प्रक्रिया शुरू करने से पहले, इन प्रमुख सेटिंग्स की समीक्षा करें:
+
+* [ ] फ़ाइल ब्राउज़र में कैमरा मॉडल का सही ढंग से पता लगाया गया
+* [ ] विग्नेट सुधार सक्षम
+* [ ] परावर्तन अंशांकन सक्षम
+* [ ] कम से कम एक अंशांकन लक्ष्य छवि आयात की गई
+* [ ] वांछित मल्टीस्पेक्ट्रल सूचकांक जोड़े गए
+* [ ] आपके वर्कफ़्लो के लिए उपयुक्त निर्यात प्रारूप
+* [ ] पीपीके सेटिंग्स कॉन्फ़िगर की गईं (यदि एक्सपोज़र इवेंट के साथ .daq का उपयोग कर रहे हैं)
+
+***
+
+## अगले कदम
+
+एक बार आपकी सेटिंग्स कॉन्फ़िगर हो जाएं:
+
+1. **अंशांकन लक्ष्य छवियों को चिह्नित करें** - देखें [लक्ष्य छवियाँ चुनना] (लक्ष्य-छवियाँ चुनना)
+2. **प्रसंस्करण प्रारंभ करें** - देखें [प्रसंस्करण प्रारंभ करना](starting-the-processing.md)
+3. **प्रगति की निगरानी करें** - देखें [प्रसंस्करण की निगरानी](monitoring-the-processing.md)
+
+सभी उपलब्ध सेटिंग्स पर संपूर्ण विवरण के लिए, [प्रोजेक्ट सेटिंग्स](../project-settings/project-settings.md) संदर्भ दस्तावेज़ देखें।

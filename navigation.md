@@ -1,47 +1,47 @@
-# GUI : Navigation
+# जीयूआई: नेविगेशन
 
-When you first launch Chloros and Chloros (Browser) it will start up its backend. Once it is ready the top left main menu icon will be revealed <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+जब आप पहली बार क्लोरोस और क्लोरोस (ब्राउज़र) लॉन्च करेंगे तो यह अपना बैकएंड शुरू कर देगा। एक बार यह तैयार हो जाने पर ऊपरी बाएँ मुख्य मेनू आइकन <img src='.gitbook/assets/image (1).png' alt='' data-size='line'> सामने आ जाएगा।
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
-From left to right the top header contains:
+बाएँ से दाएँ शीर्ष शीर्षलेख में शामिल हैं:
 
-### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Main Menu
+### <img src='.gitbook/assets/image (1) (1).png' alt='' data-size='line'> मुख्य मेनू
 
-From the main menu you can start a new project, open an existing project or open the project folder.
+मुख्य मेनू से आप एक नया प्रोजेक्ट शुरू कर सकते हैं, मौजूदा प्रोजेक्ट खोल सकते हैं या प्रोजेक्ट फ़ोल्डर खोल सकते हैं।
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Play/Start Button
+### <img src='.gitbook/assets/image (2).png' alt='' data-size='line'> प्ले/स्टार्ट बटन
 
-When enabled, the start processing button starts the image processing pipeline.
+सक्षम होने पर, स्टार्ट प्रोसेसिंग बटन इमेज प्रोसेसिंग पाइपलाइन शुरू करता है।
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Progress Bar <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+### <img src='.gitbook/assets/image (4).png' alt='' data-size='line'> प्रगति पट्टी <img src='.gitbook/assets/image (5).png' alt='' data-size='line'>
 
-In the free Chloros mode, which processes all files sequentially, the progress bar will show 2 stages: Target Detect and Processing.
+निःशुल्क क्लोरोस मोड में, जो सभी फ़ाइलों को क्रमिक रूप से संसाधित करता है, प्रगति पट्टी 2 चरणों को दिखाएगी: लक्ष्य का पता लगाना और प्रसंस्करण।
 
-In the paid Chloros+ licensed mode, which process all files simultaneously, the progress bar shows 4 stages: Detecting, Analyzing, Calibrating, Exporting. If you hover your mouse cursor over the Chloros+ progress bar it will drop down the extended 4 progress bar panel so you can follow along. Clicking the top progress bar will freeze the dropdown panel, clicking again unfreezes it.
+भुगतान किए गए क्लोरोस + लाइसेंस प्राप्त मोड में, जो सभी फ़ाइलों को एक साथ संसाधित करता है, प्रगति पट्टी 4 चरणों को दिखाती है: पता लगाना, विश्लेषण करना, कैलिब्रेट करना, निर्यात करना। यदि आप अपने माउस कर्सर को क्लोरोस+ प्रोग्रेस बार पर घुमाते हैं तो यह विस्तारित 4 प्रोग्रेस बार पैनल को नीचे गिरा देगा ताकि आप इसका अनुसरण कर सकें। शीर्ष प्रगति पट्टी पर क्लिक करने से ड्रॉपडाउन पैनल फ़्रीज़ हो जाएगा, दोबारा क्लिक करने से यह अनफ़्रीज़ हो जाएगा।
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-## Side Menu
+## साइड मेनू
 
-The left sidebar menu contains various icons to interact with:
+बाएं साइडबार मेनू में इंटरैक्ट करने के लिए विभिन्न आइकन शामिल हैं:
 
-#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Project Settings](project-settings/project-settings.md)
+#### <img src='.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> [प्रोजेक्ट सेटिंग्स](प्रोजेक्ट-सेटिंग्स/प्रोजेक्ट-सेटिंग्स.md)
 
-The Project Setting tab allows you to adjust project global and project processing settings. Adjust these prior to starting to process your files.
+प्रोजेक्ट सेटिंग टैब आपको प्रोजेक्ट ग्लोबल और प्रोजेक्ट प्रोसेसिंग सेटिंग्स को समायोजित करने की अनुमति देता है। अपनी फ़ाइलों पर कार्रवाई शुरू करने से पहले इन्हें समायोजित करें।
 
-#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> File Browser
+#### <img src='.gitbook/assets/icon_file-browser.JPG' alt='' data-size='line'> फ़ाइल ब्राउज़र
 
-Add files/folders and remove files from the project. Duplicate files are ignored. Check the target column box for any target image, and the processing will only look at checked images for targets, greatly speeding up your processing time.
+फ़ाइलें/फ़ोल्डर जोड़ें और प्रोजेक्ट से फ़ाइलें हटाएँ। डुप्लिकेट फ़ाइलों को अनदेखा कर दिया जाता है. किसी भी लक्ष्य छवि के लिए लक्ष्य कॉलम बॉक्स की जाँच करें, और प्रसंस्करण केवल लक्ष्यों के लिए जाँच की गई छवियों को देखेगा, जिससे आपके प्रसंस्करण समय में काफी तेजी आएगी।
 
-#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Image Viewer](image-viewer-gui/opening-an-image-full-screen.md)
+#### <img src='.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> [इमेज व्यूअर](image-viewer-gui/opening-an-image-full-screen.md)
 
-When an image is clicked in the main image viewer it is opened full screen in the Image Viewer tab.
+जब किसी छवि को मुख्य छवि व्यूअर में क्लिक किया जाता है तो वह इमेज व्यूअर टैब में पूर्ण स्क्रीन पर खुल जाती है।
 
-#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Debug Log
+#### <img src='.gitbook/assets/icon_log.JPG' alt='' data-size='line'> डिबग लॉग
 
-Review the log for debug prints when issues happen. Copy/download the log and send to [MAPIR Support](https://www.mapir.camera/community/contact) for assistance.
+समस्या होने पर डिबग प्रिंट के लिए लॉग की समीक्षा करें। लॉग को कॉपी/डाउनलोड करें और सहायता के लिए [MAPIR सपोर्ट](https://www.mapir.camera/community/contact) को भेजें।
 
-#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [User Login](chloros+-login.md)
+#### <img src='.gitbook/assets/icon_user.JPG' alt='' data-size='line'> [उपयोगकर्ता लॉगिन](क्लोरोस+-लॉगिन.एमडी)
 
-The user login sidebar allows you to log into your Chloros+ account to unlock advanced features. You can also view the current application version, as well as adjust the language of the displayed text in Chloros GUI and CLI.
+उपयोगकर्ता लॉगिन साइडबार आपको उन्नत सुविधाओं को अनलॉक करने के लिए अपने क्लोरोस+ खाते में लॉग इन करने की अनुमति देता है। आप वर्तमान एप्लिकेशन संस्करण भी देख सकते हैं, साथ ही क्लोरोस जीयूआई और सीएलआई में प्रदर्शित पाठ की भाषा को समायोजित कर सकते हैं।

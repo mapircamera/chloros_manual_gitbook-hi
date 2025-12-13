@@ -1,352 +1,352 @@
-# Image Layers
+# छवि परतें
 
-The Image Layers dropdown in the Chloros Image Viewer allows you to quickly switch between different versions of the same image - from the original captures to processed reflectance outputs and calculated index images.
+क्लोरोस इमेज व्यूअर में इमेज लेयर्स ड्रॉपडाउन आपको एक ही छवि के विभिन्न संस्करणों के बीच जल्दी से स्विच करने की अनुमति देता है - मूल कैप्चर से लेकर संसाधित परावर्तन आउटपुट और गणना सूचकांक छवियों तक।
 
-## What are Image Layers?
+## छवि परतें क्या हैं?
 
-In Chloros, **layers** refer to the different image outputs available for a single source image. When you process images, Chloros creates multiple versions:
+क्लोरोस में, **परतें** एकल स्रोत छवि के लिए उपलब्ध विभिन्न छवि आउटपुट को संदर्भित करती हैं। जब आप छवियों को संसाधित करते हैं, तो क्लोरोस कई संस्करण बनाता है:
 
-* **Original images** (JPG and RAW files from your camera)
-* **Reflectance calibrated** outputs (if reflectance calibration was enabled)
-* **Target images** (if the image contains calibration targets)
-* **Index images** (NDVI, NDRE, GNDVI, etc. if indices were configured)
+* **मूल छवियाँ** (आपके कैमरे से JPG और RAW फ़ाइलें)
+* **परावर्तन अंशांकित** आउटपुट (यदि परावर्तन अंशांकन सक्षम किया गया था)
+* **लक्ष्य छवियां** (यदि छवि में अंशांकन लक्ष्य शामिल हैं)
+* **सूचकांक छवियां** (एनडीवीआई, एनडीआरई, जीएनडीवीआई, आदि यदि सूचकांक कॉन्फ़िगर किए गए थे)
 
-The **Layer Selector dropdown** in the top-right of the Image Viewer lets you instantly switch between these versions without leaving the viewer.
-
-***
-
-## Available Layer Types
-
-### JPG
-
-* The original JPG preview image from your camera
-* Always available for all images
-* Unprocessed, as captured by the camera
-* Fastest to load and display
-
-**When to view:**
-
-* Quick preview of original capture
-* Checking image composition and framing
-* Verifying capture quality before processing
-
-### RAW (Original)
-
-* The original RAW sensor data from your camera
-* Debayered with no post processing applied
-* Higher bit depth than JPG (typically 12-bit or 14-bit sensor data)
-
-**When to view:**
-
-* Inspecting original sensor data quality
-* Checking for sensor issues or artifacts
-* Comparing before/after processing results
-
-### RAW (Target)
-
-* Only appears for images identified as containing calibration targets
-* Shows the original RAW image with target detected
-* Used to verify target detection was successful
-
-**When to view:**
-
-* Confirming calibration targets were detected correctly
-* Checking target image quality
-* Troubleshooting calibration issues
-
-{% hint style="info" %}
-**Target Layer**: This layer only appears in the dropdown for images that contain calibration targets. Regular capture images will not have this option.
-{% endhint %}
-
-### RAW (Reflectance)
-
-* The calibrated reflectance output image
-* Vignette corrected (if enabled in processing)
-* Reflectance calibrated using target data (if enabled)
-* Multi-band TIFF with all camera channels
-* Pixel values represent percent reflectance (when using percent mode)
-* Ready to manipulate with the [Index/LUT Sandbox](index-lut-sandbox.md)
-
-**When to view:**
-
-* Inspecting calibrated results
-* Verifying calibration quality
-* Checking pixel values for scientific accuracy
-* Comparing with original to see calibration effects
-
-{% hint style="success" %}
-**Recommended**: Use RAW (Reflectance) layer when checking pixel values for scientific measurements and analysis.
-{% endhint %}
-
-### RAW (NDVI Index)... and similar
-
-* Calculated vegetation index image (NDVI in this example)
-* The index name changes based on which index was configured during processing
-* Examples: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
-* Single-band grayscale image showing index calculation results
-* One layer appears for each index configured in Project Settings
-
-**Possible index names:**
-
-* RAW (NDVI Index)
-* RAW (NDRE Index)
-* RAW (GNDVI Index)
-* RAW (OSAVI Index)
-* RAW (EVI Index)
-* RAW (SAVI Index)
-* And many more... (see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md))
-
-**When to view:**
-
-* Examining index calculation results
-* Checking index value ranges
-* Identifying areas of interest
-* Verifying index images before using in GIS or analysis
+छवि व्यूअर के शीर्ष दाईं ओर **लेयर सेलेक्टर ड्रॉपडाउन** आपको व्यूअर को छोड़े बिना इन संस्करणों के बीच तुरंत स्विच करने देता है।
 
 ***
 
-## Using the Layer Selector
+## उपलब्ध परत प्रकार
 
-### Opening the Dropdown
+### जेपीजी
 
-1. Open an image in fullscreen mode (click any thumbnail in the Image Viewer)
-2. Locate the **layer dropdown** in the top-right corner of the viewer
-3. The dropdown shows the currently selected layer (e.g., "JPG")
-4. Click the dropdown to see all available layers
+* आपके कैमरे से मूल JPG पूर्वावलोकन छवि
+* सभी छवियों के लिए हमेशा उपलब्ध
+* असंसाधित, जैसा कि कैमरे द्वारा कैप्चर किया गया
+* लोड करने और प्रदर्शित करने में सबसे तेज़
 
-### Switching Layers
+**कब देखें:**
 
-1. Click the layer dropdown to open the list
-2. All available layers for the current image are shown
-3. Click any layer name to switch to that version
-4. The image updates immediately to show the selected layer
+* मूल कैप्चर का त्वरित पूर्वावलोकन
+* छवि संरचना और फ़्रेमिंग की जाँच करना
+* प्रसंस्करण से पहले कैप्चर गुणवत्ता का सत्यापन करना
 
-**Quick switching:**
+### रॉ (मूल)
 
-* The dropdown remembers your last selection
-* When navigating to the next image, Chloros attempts to show the same layer type
-* If that layer doesn't exist on the next image, it defaults to JPG
+* आपके कैमरे से मूल RAW सेंसर डेटा
+* कोई पोस्ट प्रोसेसिंग लागू किए बिना बहस की गई
+* JPG से अधिक बिट गहराई (आमतौर पर 12-बिट या 14-बिट सेंसर डेटा)
 
-### Layer Availability
+**कब देखें:**
 
-Not all layers are available for every image:
+* मूल सेंसर डेटा गुणवत्ता का निरीक्षण करना
+* सेंसर समस्याओं या कलाकृतियों की जाँच करना
+* प्रसंस्करण परिणामों से पहले/बाद में तुलना करना
 
-**Always available:**
+### रॉ (लक्ष्य)
 
-* ✅ JPG (every image has a JPG preview)
+* केवल अंशांकन लक्ष्य वाली छवियों के लिए प्रकट होता है
+* पता लगाए गए लक्ष्य के साथ मूल RAW छवि दिखाता है
+* यह सत्यापित करने के लिए उपयोग किया गया कि लक्ष्य का पता लगाना सफल रहा
 
-**Conditionally available:**
+**कब देखें:**
 
-* ⚠️ RAW (Original) - Only if image was captured in RAW or RAW+JPG mode
-* ⚠️ RAW (Target) - Only if image contains detected calibration targets
-* ⚠️ RAW (Reflectance) - Only after processing with reflectance calibration enabled
-* ⚠️ RAW (\[Index] Index) - Only after processing with indices configured
+* यह पुष्टि करना कि अंशांकन लक्ष्य सही ढंग से पाए गए
+* लक्ष्य छवि गुणवत्ता की जाँच करना
+* अंशांकन समस्याओं का निवारण
 
-***
+{% संकेत शैली = "जानकारी" %}
+**लक्ष्य परत**: यह परत केवल उन छवियों के लिए ड्रॉपडाउन में दिखाई देती है जिनमें अंशांकन लक्ष्य होते हैं। नियमित कैप्चर छवियों में यह विकल्प नहीं होगा।
+{%अंतसंकेत%}
 
-## Layer Persistence
+### रॉ (प्रतिबिंब)
 
-### Navigating Between Images
+* कैलिब्रेटेड परावर्तन आउटपुट छवि
+* विग्नेट सही किया गया (यदि प्रसंस्करण में सक्षम है)
+* लक्ष्य डेटा का उपयोग करके परावर्तन कैलिब्रेट किया गया (यदि सक्षम हो)
+* सभी कैमरा चैनलों के साथ मल्टी-बैंड टीआईएफएफ
+* पिक्सेल मान प्रतिशत परावर्तन का प्रतिनिधित्व करते हैं (प्रतिशत मोड का उपयोग करते समय)
+* [इंडेक्स/एलयूटी सैंडबॉक्स](index-lut-sandbox.md) के साथ हेरफेर करने के लिए तैयार
 
-When you navigate to a different image (using arrow keys or clicking thumbnails):
+**कब देखें:**
 
-**Layer preference is preserved:**
+* अंशांकित परिणामों का निरीक्षण करना
+* अंशांकन गुणवत्ता का सत्यापन
+* वैज्ञानिक सटीकता के लिए पिक्सेल मानों की जाँच करना
+* अंशांकन प्रभाव देखने के लिए मूल के साथ तुलना करना
 
-* If viewing "RAW (Reflectance)", next image shows "RAW (Reflectance)" (if available)
-* If viewing "RAW (NDVI Index)", next image shows "RAW (NDVI Index)" (if available)
-* If the same layer doesn't exist, defaults to JPG
+{%संकेत शैली='सफलता'%}
+**अनुशंसित**: वैज्ञानिक माप और विश्लेषण के लिए पिक्सेल मानों की जाँच करते समय RAW (परावर्तन) परत का उपयोग करें।
+{%अंतसंकेत%}
 
-**Example workflow:**
+### रॉ (एनडीवीआई इंडेक्स)... और इसी तरह
 
-1. Open Image 1, switch to RAW (NDVI Index)
-2. Press → to view Image 2
-3. Image 2 automatically displays RAW (NDVI Index) layer
-4. Continue navigating - all images show NDVI layer
-5. Very efficient for reviewing index results across many images
+* परिकलित वनस्पति सूचकांक छवि (इस उदाहरण में एनडीवीआई)
+* प्रोसेसिंग के दौरान किस इंडेक्स को कॉन्फ़िगर किया गया था, उसके आधार पर इंडेक्स का नाम बदलता है
+* उदाहरण: RAW (NDVI इंडेक्स), RAW (NDRE इंडेक्स), RAW (GNDVI इंडेक्स), आदि।
+* एकल-बैंड ग्रेस्केल छवि सूचकांक गणना परिणाम दिखा रही है
+* प्रोजेक्ट सेटिंग्स में कॉन्फ़िगर किए गए प्रत्येक इंडेक्स के लिए एक परत दिखाई देती है
 
-***
+**संभावित सूचकांक नाम:**
 
-## Common Workflows
+* रॉ (एनडीवीआई इंडेक्स)
+* रॉ (एनडीआरई इंडेक्स)
+* रॉ (जीएनडीवीआई सूचकांक)
+* रॉ (ओसावी इंडेक्स)
+* रॉ (ईवीआई इंडेक्स)
+* रॉ (एसएवीआई इंडेक्स)
+* और भी बहुत कुछ... (देखें [मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला](../project-settings/multispectral-index-formulas.md))
 
-### Workflow 1: Before/After Comparison
+**कब देखें:**
 
-**Goal**: Compare original vs. calibrated image
-
-1. Open processed image in Image Viewer
-2. Select **RAW (Original)** from dropdown
-3. Note the vignetting and uncalibrated values
-4. Switch to **RAW (Reflectance)** from dropdown
-5. Compare - vignetting removed, values calibrated
-
-### Workflow 2: Index Review
-
-**Goal**: Quickly review NDVI results across dataset
-
-1. Open first processed image
-2. Select **RAW (NDVI Index)** from dropdown
-3. Use → arrow key to navigate to next image
-4. NDVI layer persists automatically
-5. Continue through all images, checking NDVI patterns
-6. Switch to **RAW (NDRE Index)** to compare
-
-### Workflow 3: Target Verification
-
-**Goal**: Verify all target images were detected correctly
-
-1. Navigate to a target image
-2. Select **RAW (Target)** from dropdown
-3. Verify calibration targets are clearly visible and detected
-4. Navigate to next target image
-5. Repeat verification for all targets
-
-### Workflow 4: Pixel Value Inspection
-
-**Goal**: Check reflectance values for scientific accuracy
-
-1. Open processed image
-2. Select **RAW (Reflectance)** layer
-3. Enable **Pixel Percent** mode (button in top-right toolbar)
-4. Move cursor over vegetation areas
-5. Verify pixel values are in expected ranges (30-70% for NIR, 5-15% for Red)
-6. Check soil and water areas for appropriate values
+* सूचकांक गणना परिणामों की जांच करना
+* सूचकांक मूल्य श्रेणियों की जाँच करना
+* रुचि के क्षेत्रों की पहचान करना
+* जीआईएस या विश्लेषण में उपयोग करने से पहले सूचकांक छवियों का सत्यापन करना
 
 ***
 
-## Understanding Pixel Values by Layer
+## परत चयनकर्ता का उपयोग करना
 
-Different layers show different pixel value ranges:
+### ड्रॉपडाउन खोलना
 
-### JPG Layer
+1. एक छवि को फ़ुलस्क्रीन मोड में खोलें (छवि व्यूअर में किसी भी थंबनेल पर क्लिक करें)
+2. व्यूअर के ऊपरी-दाएँ कोने में **लेयर ड्रॉपडाउन** का पता लगाएँ
+3. ड्रॉपडाउन वर्तमान में चयनित परत दिखाता है (उदाहरण के लिए, "जेपीजी")
+4. सभी उपलब्ध परतें देखने के लिए ड्रॉपडाउन पर क्लिक करें
 
-* **Range**: 0-255 (8-bit)
-* **Meaning**: Display values, gamma-corrected
-* **Use**: Visual inspection only, not for scientific measurement
+### परतें बदलना
 
-### RAW (Original)
+1. सूची खोलने के लिए लेयर ड्रॉपडाउन पर क्लिक करें
+2. वर्तमान छवि के लिए सभी उपलब्ध परतें दिखाई गई हैं
+3. उस संस्करण पर स्विच करने के लिए किसी भी परत के नाम पर क्लिक करें
+4. चयनित परत दिखाने के लिए छवि तुरंत अपडेट हो जाती है
 
-* **Range**: 0-65535 (16-bit)
-* **Meaning**: Raw sensor digital numbers
-* **Use**: Checking sensor performance, not calibrated
+**त्वरित स्विचिंग:**
 
-### RAW (Reflectance)
+* ड्रॉपडाउन आपके अंतिम चयन को याद रखता है
+* अगली छवि पर नेविगेट करते समय, क्लोरोस उसी परत प्रकार को दिखाने का प्रयास करता है
+* यदि वह परत अगली छवि पर मौजूद नहीं है, तो यह JPG पर डिफ़ॉल्ट है
 
-* **Range**: 0-65,535 (16-bit TIFF) or 0.0-1.0 (32-bit Percent)
-* **Meaning**: Calibrated percent reflectance
-* **Use**: Scientific measurements and analysis
+### परत उपलब्धता
 
-**For 16-bit TIFF:** Divide by 65,535 to get percent reflectance **For 32-bit Percent:** Values directly represent percent (0.5 = 50% reflectance)
+प्रत्येक छवि के लिए सभी परतें उपलब्ध नहीं हैं:
 
-### RAW (Index Images)
+**हमेशा उपलब्ध:**
 
-* **Range**: Varies by index (typically -1.0 to +1.0 for normalized indices)
-* **Meaning**: Index calculation result
-* **Examples**:
-  * NDVI: -1 to +1 (vegetation typically 0.4 to 0.9)
-  * NDRE: -1 to +1 (stress detection)
-  * EVI: 0 to 1 (enhanced vegetation)
+* ✅ JPG (प्रत्येक छवि में JPG पूर्वावलोकन होता है)
 
-***
+**सशर्त उपलब्ध:**
 
-## Tips and Best Practices
-
-### Efficient Layer Switching
-
-* **Keyboard shortcut awareness**: While there's no keyboard shortcut for layers, navigation arrows (←/→) work across all layers
-* **Consistent workflows**: Pick one layer (e.g., NDVI) and review entire dataset before switching to another
-* **Quick comparisons**: Toggle between Original and Reflectance to verify processing quality
-
-### Performance Considerations
-
-* **JPG loads fastest**: Use for quick navigation through many images
-* **RAW layers load slower**: Higher resolution and bit depth
-* **Index layers**: Similar speed to Reflectance layers
-* **First load is slowest**: Subsequent views of same layer are cached and faster
-
-### Quality Verification
-
-* **Always check RAW (Original)**: Verify source data quality before trusting processed outputs
-* **Compare layers**: Use layer switching to validate processing worked correctly
-* **Check index ranges**: Use Pixel Percent mode with index layers to verify values are reasonable
+* ⚠️ RAW (मूल) - केवल तभी जब छवि RAW या RAW+JPG मोड में कैप्चर की गई हो
+* ⚠️ रॉ (लक्ष्य) - केवल तभी जब छवि में पता लगाए गए अंशांकन लक्ष्य हों
+* ⚠️ रॉ (परावर्तन) - केवल परावर्तन अंशांकन सक्षम होने पर प्रसंस्करण के बाद
+* ⚠️ RAW (\[सूचकांक] सूचकांक) - कॉन्फ़िगर किए गए सूचकांकों के साथ प्रसंस्करण के बाद ही
 
 ***
 
-## Troubleshooting
+## परत दृढ़ता
 
-### Layer Not Available
+### छवियों के बीच नेविगेट करना
 
-**Problem**: Expected layer doesn't appear in dropdown
+जब आप किसी भिन्न छवि पर नेविगेट करते हैं (तीर कुंजियों का उपयोग करके या थंबनेल पर क्लिक करके):
 
-**Possible causes:**
+**परत वरीयता संरक्षित है:**
 
-* Image wasn't processed (only JPG and RAW (Original) available)
-* Reflectance calibration was disabled during processing
-* Specific index wasn't configured in Project Settings
-* Image is a target-only image (no indices generated for targets)
+* यदि आप "RAW (प्रतिबिंब)" देख रहे हैं, तो अगली छवि "RAW (प्रतिबिंब)" दिखाती है (यदि उपलब्ध हो)
+* यदि आप "RAW (NDVI Index)" देख रहे हैं, तो अगली छवि "RAW (NDVI Index)" दिखाती है (यदि उपलब्ध हो)
+* यदि समान परत मौजूद नहीं है, तो डिफ़ॉल्ट JPG है
 
-**Solutions:**
+**उदाहरण वर्कफ़्लो:**
 
-1. Verify image was processed (check output folder for processed files)
-2. Check Project Settings to confirm indices were configured
-3. Reprocess with desired indices enabled
-
-### Wrong Layer Shown
-
-**Problem**: Image opens in unexpected layer
-
-**Cause**: Layer preference from previous image carried forward, but that layer doesn't exist on current image
-
-**Solution**: Chloros automatically falls back to JPG when preferred layer unavailable - this is normal behavior
-
-### Can't See Calibration Targets
-
-**Problem**: RAW (Target) layer doesn't show target detection
-
-**Possible causes:**
-
-* Targets weren't detected during processing
-* Image doesn't actually contain targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Check Debug Log for "Target found" messages
-2. Verify image actually contains visible calibration targets
-3. Adjust target detection settings in Project Settings
-4. See [Choosing Target Images](../processing-images-gui/choosing-target-images.md)
+1. छवि 1 खोलें, रॉ (एनडीवीआई इंडेक्स) पर स्विच करें
+2. छवि 2 देखने के लिए → दबाएँ
+3. छवि 2 स्वचालित रूप से RAW (NDVI इंडेक्स) परत प्रदर्शित करती है
+4. नेविगेट करना जारी रखें - सभी छवियां NDVI परत दिखाती हैं
+5. कई छवियों में सूचकांक परिणामों की समीक्षा के लिए बहुत कुशल
 
 ***
 
-## Related Features
+## सामान्य कार्यप्रवाह
 
-### Image Viewer Tools
+### वर्कफ़्लो 1: तुलना से पहले/बाद में
 
-When viewing any layer, you can use:
+**लक्ष्य**: मूल बनाम कैलिब्रेटेड छवि की तुलना करें
 
-* **Zoom controls**: Magnify to inspect details
-* **Pan**: Click and drag to move around zoomed image
-* **Pixel value inspection**: See values at cursor location
-* **Navigation arrows**: Move between images while maintaining layer
-* **Pixel Percent mode**: Toggle between DN and percent display
+1. इमेज व्यूअर में संसाधित छवि खोलें
+2. ड्रॉपडाउन से **RAW (मूल)** चुनें
+3. विग्नेटिंग और अनकैलिब्रेटेड मानों पर ध्यान दें
+4. ड्रॉपडाउन से **RAW (रिफ्लेक्शन)** पर स्विच करें
+5. तुलना करें - विग्नेटिंग हटा दी गई, मान अंशांकित किए गए
 
-See [Opening an Image Full Screen](opening-an-image-full-screen.md) for complete Image Viewer documentation.
+### वर्कफ़्लो 2: सूचकांक समीक्षा
 
-### Index/LUT Sandbox
+**लक्ष्य**: संपूर्ण डेटासेट में NDVI परिणामों की त्वरित समीक्षा करें
 
-For interactive index testing and visualization:
+1. पहली संसाधित छवि खोलें
+2. ड्रॉपडाउन से **RAW (NDVI Index)** चुनें
+3. अगली छवि पर नेविगेट करने के लिए → तीर कुंजी का उपयोग करें
+4. NDVI परत स्वचालित रूप से बनी रहती है
+5. सभी छवियों के माध्यम से एनडीवीआई पैटर्न की जांच करना जारी रखें
+6. तुलना करने के लिए **RAW (NDRE Index)** पर स्विच करें
 
-* **Real-time index calculation**: Test different index formulas
-* **LUT color mapping**: Apply color gradients to grayscale indices
-* **Export visualizations**: Save colored index images
+### वर्कफ़्लो 3: लक्ष्य सत्यापन
 
-See [Index/LUT Sandbox](index-lut-sandbox.md) for details.
+**लक्ष्य**: सत्यापित करें कि सभी लक्ष्य छवियां सही ढंग से पहचानी गईं
+
+1. लक्ष्य छवि पर नेविगेट करें
+2. ड्रॉपडाउन से **RAW (लक्ष्य)** चुनें
+3. सत्यापित करें कि अंशांकन लक्ष्य स्पष्ट रूप से दिखाई और पहचाने गए हैं
+4. अगली लक्ष्य छवि पर नेविगेट करें
+5. सभी लक्ष्यों के लिए पुन: सत्यापन
+
+### वर्कफ़्लो 4: पिक्सेल मान निरीक्षण
+
+**लक्ष्य**: वैज्ञानिक सटीकता के लिए परावर्तन मूल्यों की जाँच करें
+
+1. संसाधित छवि खोलें
+2. **RAW (परावर्तन)** परत चुनें
+3. **पिक्सेल प्रतिशत** मोड सक्षम करें (शीर्ष-दाएं टूलबार में बटन)
+4. कर्सर को वनस्पति क्षेत्रों पर ले जाएँ
+5. सत्यापित करें कि पिक्सेल मान अपेक्षित सीमा में हैं (एनआईआर के लिए 30-70%, लाल के लिए 5-15%)
+6. उचित मूल्यों के लिए मिट्टी और जल क्षेत्रों की जाँच करें
 
 ***
 
-## Next Steps
+## परत द्वारा पिक्सेल मान को समझना
 
-Now that you understand image layers:
+विभिन्न परतें अलग-अलग पिक्सेल मान श्रेणियाँ दिखाती हैं:
 
-* [**Opening an Image Full Screen**](opening-an-image-full-screen.md) - Complete Image Viewer guide
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Interactive index visualization
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Available indices reference
-* [**Finishing the Processing**](../processing-images-gui/finishing-the-processing.md) - Understanding processed outputs
+### जेपीजी परत
+
+* **रेंज**: 0-255 (8-बिट)
+* **अर्थ**: प्रदर्शन मान, गामा-सुधारित
+* **उपयोग**: केवल दृश्य निरीक्षण, वैज्ञानिक माप के लिए नहीं
+
+### रॉ (मूल)
+
+* **रेंज**: 0-65535 (16-बिट)
+* **अर्थ**: कच्चे सेंसर डिजिटल नंबर
+* **उपयोग**: सेंसर के प्रदर्शन की जाँच करना, कैलिब्रेटेड नहीं
+
+### रॉ (प्रतिबिंब)
+
+* **रेंज**: 0-65,535 (16-बिट टीआईएफएफ) या 0.0-1.0 (32-बिट प्रतिशत)
+* **अर्थ**: कैलिब्रेटेड प्रतिशत परावर्तन
+* **उपयोग**: वैज्ञानिक माप और विश्लेषण
+
+**16-बिट टीआईएफएफ के लिए:** प्रतिशत परावर्तन प्राप्त करने के लिए 65,535 से विभाजित करें **32-बिट प्रतिशत के लिए:** मान सीधे प्रतिशत का प्रतिनिधित्व करते हैं (0.5 = 50% परावर्तन)
+
+### रॉ (सूचकांक छवियाँ)
+
+* **रेंज**: सूचकांक के अनुसार भिन्न होता है (सामान्यीकृत सूचकांकों के लिए आमतौर पर -1.0 से +1.0)
+* **अर्थ**: सूचकांक गणना परिणाम
+* **उदाहरण**:
+  * एनडीवीआई: -1 से +1 (वनस्पति आमतौर पर 0.4 से 0.9)
+  * एनडीआरई: -1 से +1 (तनाव का पता लगाना)
+  * ईवीआई: 0 से 1 (उन्नत वनस्पति)
+
+***
+
+## युक्तियाँ और सर्वोत्तम प्रथाएँ
+
+### कुशल परत स्विचिंग
+
+* **कीबोर्ड शॉर्टकट जागरूकता**: हालांकि परतों के लिए कोई कीबोर्ड शॉर्टकट नहीं है, नेविगेशन तीर (←/→) सभी परतों पर काम करते हैं
+* **सुसंगत वर्कफ़्लो**: एक परत चुनें (उदाहरण के लिए, एनडीवीआई) और दूसरे पर स्विच करने से पहले संपूर्ण डेटासेट की समीक्षा करें
+* **त्वरित तुलना**: प्रसंस्करण गुणवत्ता को सत्यापित करने के लिए मूल और परावर्तन के बीच टॉगल करें
+
+### प्रदर्शन संबंधी विचार
+
+* **जेपीजी सबसे तेजी से लोड होता है**: कई छवियों के माध्यम से त्वरित नेविगेशन के लिए उपयोग करें
+* **रॉ परतें धीमी गति से लोड होती हैं**: उच्च रिज़ॉल्यूशन और बिट गहराई
+* **सूचकांक परतें**: परावर्तन परतों के समान गति
+* **पहला लोड सबसे धीमा है**: उसी परत के बाद के दृश्य कैश्ड और तेज़ होते हैं
+
+### गुणवत्ता सत्यापन
+
+* **हमेशा रॉ (मूल) की जांच करें**: संसाधित आउटपुट पर भरोसा करने से पहले स्रोत डेटा गुणवत्ता सत्यापित करें
+* **परतों की तुलना करें**: सही ढंग से काम कर रही प्रोसेसिंग को प्रमाणित करने के लिए लेयर स्विचिंग का उपयोग करें
+* **सूचकांक श्रेणियों की जांच करें**: मान उचित हैं यह सत्यापित करने के लिए सूचकांक परतों के साथ पिक्सेल प्रतिशत मोड का उपयोग करें
+
+***
+
+## समस्या निवारण
+
+### परत उपलब्ध नहीं है
+
+**समस्या**: अपेक्षित परत ड्रॉपडाउन में दिखाई नहीं देती है
+
+**संभावित कारण:**
+
+* छवि संसाधित नहीं हुई थी (केवल JPG और RAW (मूल) उपलब्ध)
+* प्रसंस्करण के दौरान परावर्तन अंशांकन अक्षम कर दिया गया था
+* प्रोजेक्ट सेटिंग्स में विशिष्ट सूचकांक कॉन्फ़िगर नहीं किया गया था
+* छवि एक लक्ष्य-केवल छवि है (लक्ष्य के लिए कोई सूचकांक उत्पन्न नहीं)
+
+**समाधान:**
+
+1. सत्यापित करें कि छवि संसाधित की गई थी (संसाधित फ़ाइलों के लिए आउटपुट फ़ोल्डर की जाँच करें)
+2. सूचकांक कॉन्फ़िगर किए गए थे इसकी पुष्टि करने के लिए प्रोजेक्ट सेटिंग्स की जांच करें
+3. वांछित सूचकांकों को सक्षम करके पुन:प्रक्रिया करें
+
+### गलत परत दिखाई गई
+
+**समस्या**: छवि अप्रत्याशित परत में खुलती है
+
+**कारण**: पिछली छवि से परत वरीयता को आगे बढ़ाया गया, लेकिन वह परत वर्तमान छवि पर मौजूद नहीं है
+
+**समाधान**: पसंदीदा परत अनुपलब्ध होने पर क्लोरोस स्वचालित रूप से जेपीजी पर वापस आ जाता है - यह सामान्य व्यवहार है
+
+### अंशांकन लक्ष्य नहीं देख सकते
+
+**समस्या**: RAW (लक्ष्य) परत लक्ष्य का पता लगाना नहीं दिखाती है
+
+**संभावित कारण:**
+
+* प्रसंस्करण के दौरान लक्ष्य का पता नहीं चला
+* छवि में वास्तव में लक्ष्य शामिल नहीं हैं
+* लक्ष्य पहचान सेटिंग बहुत सख्त
+
+**समाधान:**
+
+1. "लक्ष्य मिला" संदेशों के लिए डिबग लॉग की जाँच करें
+2. सत्यापित करें कि छवि में वास्तव में दृश्यमान अंशांकन लक्ष्य हैं
+3. प्रोजेक्ट सेटिंग्स में लक्ष्य पहचान सेटिंग्स समायोजित करें
+4. देखें [लक्ष्य छवियाँ चुनना](../processing-images-gui/choosing-target-images.md)
+
+***
+
+## संबंधित विशेषताएं
+
+### छवि दर्शक उपकरण
+
+किसी भी परत को देखते समय, आप इसका उपयोग कर सकते हैं:
+
+* **ज़ूम नियंत्रण**: विवरण का निरीक्षण करने के लिए आवर्धन करें
+* **पैन**: ज़ूम की गई छवि के चारों ओर घूमने के लिए क्लिक करें और खींचें
+* **पिक्सेल मान निरीक्षण**: कर्सर स्थान पर मान देखें
+* **नेविगेशन तीर**: परत बनाए रखते हुए छवियों के बीच जाएँ
+* **पिक्सेल प्रतिशत मोड**: डीएन और प्रतिशत डिस्प्ले के बीच टॉगल करें
+
+संपूर्ण इमेज व्यूअर दस्तावेज़ीकरण के लिए [एक छवि पूर्ण स्क्रीन खोलना] (ओपनिंग-एन-इमेज-फुल-स्क्रीन.एमडी) देखें।
+
+### इंडेक्स/एलयूटी सैंडबॉक्स
+
+इंटरैक्टिव सूचकांक परीक्षण और विज़ुअलाइज़ेशन के लिए:
+
+* **वास्तविक समय सूचकांक गणना**: विभिन्न सूचकांक सूत्रों का परीक्षण करें
+* **LUT कलर मैपिंग**: ग्रेस्केल इंडेक्स पर कलर ग्रेडिएंट लागू करें
+* **विज़ुअलाइज़ेशन निर्यात करें**: रंगीन अनुक्रमणिका छवियाँ सहेजें
+
+विवरण के लिए [Index/LUT Sandbox](index-lut-sandbox.md) देखें।
+
+***
+
+## अगले कदम
+
+अब जब आप छवि परतों को समझ गए हैं:
+
+* [**एक छवि को पूर्ण स्क्रीन पर खोलना**](एक छवि को पूर्ण-स्क्रीन पर खोलना) - पूर्ण छवि दर्शक मार्गदर्शिका
+* [**इंडेक्स/LUT सैंडबॉक्स**](index-lut-sandbox.md) - इंटरएक्टिव इंडेक्स विज़ुअलाइज़ेशन
+* [**मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला**](../project-settings/multispectral-index-formulas.md) - उपलब्ध इंडेक्स संदर्भ
+* [**प्रसंस्करण समाप्त करना**](../processing-images-gui/finishing-the-processing.md) - संसाधित आउटपुट को समझना

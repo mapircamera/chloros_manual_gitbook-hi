@@ -1,419 +1,419 @@
-# Index/LUT Sandbox
+# इंडेक्स/LUT सैंडबॉक्स
 
-The Index/LUT Sandbox is an interactive workspace within the Chloros Image Viewer that allows you to experiment with multispectral index calculations and color visualizations in real-time. This powerful tool helps you test different indices, refine value ranges, and create publication-ready visualizations without reprocessing your entire dataset.
+इंडेक्स/एलयूटी सैंडबॉक्स क्लोरोस इमेज व्यूअर के भीतर एक इंटरैक्टिव कार्यक्षेत्र है जो आपको वास्तविक समय में मल्टीस्पेक्ट्रल इंडेक्स गणना और रंग विज़ुअलाइज़ेशन के साथ प्रयोग करने की अनुमति देता है। यह शक्तिशाली उपकरण आपको विभिन्न सूचकांकों का परीक्षण करने, मूल्य श्रेणियों को परिष्कृत करने और आपके संपूर्ण डेटासेट को पुन: संसाधित किए बिना प्रकाशन-तैयार विज़ुअलाइज़ेशन बनाने में मदद करता है।
 
-## What is the Index/LUT Sandbox?
+## इंडेक्स/LUT सैंडबॉक्स क्या है?
 
-### Purpose
+### उद्देश्य
 
-The Sandbox provides:
+सैंडबॉक्स प्रदान करता है:
 
-* **Real-time index calculation** - Apply any vegetation index instantly
-* **Interactive LUT adjustment** - Fine-tune color gradients and ranges
-* **Workflow optimization** - Determine best settings before batch processing
+* **वास्तविक समय सूचकांक गणना** - किसी भी वनस्पति सूचकांक को तुरंत लागू करें
+* **इंटरैक्टिव LUT समायोजन** - रंग ग्रेडिएंट और रेंज को फाइन-ट्यून करें
+* **वर्कफ़्लो अनुकूलन** - बैच प्रोसेसिंग से पहले सर्वोत्तम सेटिंग्स निर्धारित करें
 
-### Sandbox vs. Project Processing
+### सैंडबॉक्स बनाम प्रोजेक्ट प्रोसेसिंग
 
-**Index/LUT Sandbox (Interactive):**
+**सूचकांक/एलयूटी सैंडबॉक्स (इंटरएक्टिव):**
 
-* Single image at a time
-* Instant feedback
-* Experimental and iterative
-* No permanent changes to files
-* Perfect for exploring and testing
+* एक समय में एकल छवि
+* तत्काल प्रतिक्रिया
+* प्रायोगिक एवं पुनरावृत्तीय
+*फ़ाइलों में कोई स्थायी परिवर्तन नहीं
+* अन्वेषण और परीक्षण के लिए बिल्कुल सही
 
-**Project Processing (Batch):**
+**परियोजना प्रसंस्करण (बैच):**
 
-* Entire dataset at once
-* Pre-configured settings
-* Permanent output files
-* Time-intensive
-* Best when settings are finalized
+* संपूर्ण डेटासेट एक साथ
+* पूर्व-कॉन्फ़िगर सेटिंग्स
+* स्थायी आउटपुट फ़ाइलें
+* गहन समय
+* सबसे अच्छा तब जब सेटिंग्स को अंतिम रूप दे दिया जाए
 
-{% hint style="success" %}
-**Best Workflow**: Use the Sandbox to experiment and find optimal index and LUT settings, then apply those settings during Project Processing for your entire dataset.
-{% endhint %}
-
-***
-
-## Working with the Index/LUT Sandbox
-
-### Understanding Pre-Calculated Indices
-
-In Chloros, indices can be applied during project processing. To determine which index and LUT settings you want to apply to exports it is easiest to use the image viewer sandbox.
-
-The sandbox allows you to:
-
-* **Apply new index and color gradients (LUTs)** to visualize the data
-* **Adjust visualization settings** interactively
-* **View** already-calculated index images
-* **Inspect** pixel values at all zoom levels
-
-### Opening the Sandbox
-
-The Index/LUT Sandbox is accessed in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar tab:
-
-1. Click an image in the file browser image grid, it opens in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab
-2. Click **the Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab to open the left pop-out sidebar if it's not already open
-
-### Selecting an Image to Apply an Index/LUT to
-
-To work with an index in the Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandbox:
-
-1. **Open an image** from the main image grid by clicking on it
-2. The **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab will then open
-3. Click the **Layer dropdown** (top-right of viewer)
-4. Select the layer from the dropdown:
-   * RAW (Reflectance)
-
-### Applying an Index to an Image
-
-Once the image is fullscreen and the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar is open:
-
-1. Check the Index box at the top of the sidebar
-2. Choose your camera's filter from the left dropdown
-3. Choose the desired index formula from the right dropdown
-4. Drag the filter channel color circles to the locations in the index formula below
-5. Once the formula is valid the image will update and show the index values
-6. Move your mouse cursor around to see the values at the cursor's location
-7. Zoom in to see individual pixels and their associated values
-
-Each index has a specific value range and meaning:
-
-#### NDVI Example
-
-```
-Formula: (NIR - Red) / (NIR + Red)
-
-For Survey3W RGN camera:
-NIR = 850nm band
-Red = 661nm band
-
-Result range: -1.0 to +1.0
-Typical vegetation: 0.4 to 0.9
-Stressed vegetation: 0.2 to 0.4
-Bare soil: 0.0 to 0.2
-Water: -0.1 to 0.1
-```
-
-For complete index formula documentation, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
+{%संकेत शैली='सफलता'%}
+**सर्वोत्तम वर्कफ़्लो**: प्रयोग करने और इष्टतम इंडेक्स और एलयूटी सेटिंग्स खोजने के लिए सैंडबॉक्स का उपयोग करें, फिर अपने संपूर्ण डेटासेट के लिए प्रोजेक्ट प्रोसेसिंग के दौरान उन सेटिंग्स को लागू करें।
+{%अंतसंकेत%}
 
 ***
 
-## Working with LUTs (Look-Up Tables)
+## इंडेक्स/एलयूटी सैंडबॉक्स के साथ काम करना
 
-### What is a LUT?
+### पूर्व-परिकलित सूचकांकों को समझना
 
-A **Look-Up Table (LUT)** maps numerical index values to colors for visualization:
+क्लोरोस में, सूचकांकों को परियोजना प्रसंस्करण के दौरान लागू किया जा सकता है। यह निर्धारित करने के लिए कि आप निर्यात पर कौन सी अनुक्रमणिका और LUT सेटिंग्स लागू करना चाहते हैं, छवि व्यूअर सैंडबॉक्स का उपयोग करना सबसे आसान है।
 
-* **Input**: Index pixel value (e.g., NDVI 0.65)
-* **Output**: RGB color (e.g., bright green)
-* **Purpose**: Make patterns easier to see and interpret
+सैंडबॉक्स आपको इसकी अनुमति देता है:
 
-**Grayscale vs. Color LUT:**
+* **डेटा को विज़ुअलाइज़ करने के लिए नए इंडेक्स और कलर ग्रेडिएंट्स (LUTs) लागू करें**
+* **विज़ुअलाइज़ेशन सेटिंग्स को अंतःक्रियात्मक रूप से समायोजित करें**
+* **देखें** पहले से ही गणना की गई सूचकांक छवियां
+* **सभी ज़ूम स्तरों पर पिक्सेल मानों का निरीक्षण करें**
 
-* Grayscale: Scientific and neutral, shows raw data
-* Color LUT: Intuitive and impactful, highlights patterns and differences
+### सैंडबॉक्स खोलना
 
-{% hint style="success" %}
-**Visualization Power**: Applying a color LUT to a grayscale index image makes it dramatically easier to identify patterns, anomalies, and areas of interest at a glance.
-{% endhint %}
+इंडेक्स/LUT सैंडबॉक्स को **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> साइडबार टैब में एक्सेस किया जाता है:
 
-### Applying a LUT to an Index Image
+1. फ़ाइल ब्राउज़र छवि ग्रिड में एक छवि पर क्लिक करें, यह **छवि व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> टैब में खुलता है
+2. यदि बायां पॉप-आउट साइडबार पहले से खुला नहीं है तो उसे खोलने के लिए **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> टैब पर क्लिक करें।
 
-Once you have an index image showing
+### इंडेक्स/एलयूटी लागू करने के लिए एक छवि का चयन करना
 
-1. Click the <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+Add LUT" button
-2. Select the color gradient
-3. Adjust the clipping min/max end points
-4. Adjust the Clipping Mode
-5. Check the Index box in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar to apply the LUT
+इमेज व्यूअर <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> सैंडबॉक्स में एक इंडेक्स के साथ काम करने के लिए:
 
-### Choosing a Color Gradient
+1. **एक छवि** पर क्लिक करके उसे मुख्य छवि ग्रिड से खोलें
+2. **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> टैब तब खुलेगा
+3. **लेयर ड्रॉपडाउन** पर क्लिक करें (दर्शक के ऊपर दाईं ओर)
+4. ड्रॉपडाउन से परत का चयन करें:
+   * रॉ (परावर्तन)
 
-**Selecting a gradient:**
+### किसी छवि पर अनुक्रमणिका लागू करना
 
-1. In the LUT panel, locate the **colored gradient bar**
-2. Hover your mouse over it to view available gradient presets
-3. Select desired gradient
-4. The image **updates immediately** with new colors when the Index box is checked
+एक बार छवि फुलस्क्रीन हो जाए और **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> टैब साइडबार खुला हो:
 
-{% hint style="success" %}
-**Best Practice**: For vegetation indices like NDVI, the Red-Yellow-Green gradient is most intuitive because it aligns with natural color associations (green=healthy, yellow=moderate, red=stressed).
-{% endhint %}
+1. साइडबार के शीर्ष पर इंडेक्स बॉक्स को चेक करें
+2. बाएं ड्रॉपडाउन से अपने कैमरे का फ़िल्टर चुनें
+3. दाएँ ड्रॉपडाउन से वांछित सूचकांक सूत्र चुनें
+4. फ़िल्टर चैनल रंग वृत्तों को नीचे सूचकांक सूत्र के स्थानों पर खींचें
+5. एक बार फॉर्मूला मान्य हो जाने पर छवि अपडेट हो जाएगी और सूचकांक मान दिखाएगी
+6. कर्सर के स्थान पर मान देखने के लिए अपने माउस कर्सर को इधर-उधर घुमाएँ
+7. अलग-अलग पिक्सल और उनसे जुड़े मूल्यों को देखने के लिए ज़ूम इन करें
 
-### Adjusting Color Classes
+प्रत्येक सूचकांक की एक विशिष्ट मूल्य सीमा और अर्थ होता है:
 
-The **Classes control** determines how many discrete color steps appear in your gradient:
+#### एनडीवीआई उदाहरण
 
-**Class count options:**
+```
+सूत्र: (एनआईआर - लाल) / (एनआईआर + लाल)
 
-* **2-5 classes**: Very broad categories, distinct zones
-* **6-10 classes**: Balanced, good for classification
-* **11-20 classes**: Smooth gradients, continuous appearance
-* **20+ classes**: Near-continuous, maximum smoothness
+सर्वे3डब्ल्यू आरजीएन कैमरे के लिए:
+एनआईआर = 850एनएम बैंड
+लाल = 661एनएम बैंड
 
-**How to adjust:**
+परिणाम सीमा: -1.0 से +1.0
+विशिष्ट वनस्पति: 0.4 से 0.9
+तनावग्रस्त वनस्पति: 0.2 से 0.4
+नंगी मिट्टी: 0.0 से 0.2
+पानी: -0.1 से 0.1
+```
 
-1. In the LUT panel, locate the **color swatch squares below the gradient bar**
-2. Adjust the number of classes by adding with the + button
-3. Remove the number of classes by double clicking on a color swatch
-4. The gradient updates **in real-time** on the image
+संपूर्ण सूचकांक सूत्र दस्तावेज़ीकरण के लिए, [मल्टीस्पेक्ट्रल सूचकांक सूत्र](../project-settings/multispectral-index-formulas.md) देखें।
 
-**Effect on visualization:**
+***
 
-* **Fewer classes** (3-5): Creates distinct zones, simplified classification, easier to distinguish categories
-* **Medium classes** (6-10): Balanced approach, good for most applications
-* **More classes** (15-20): Smooth transitions, detailed variation, photographic appearance
+## LUTs (लुक-अप टेबल्स) के साथ कार्य करना
 
-**When to use:**
+### LUT क्या है?
 
-* **Few classes (3-5)**: Presentation slides, classification maps, simple reports
-* **Medium classes (6-10)**: General analysis, balanced detail, standard reports
-* **Many classes (15-20)**: Scientific analysis, detailed inspection, publication-quality outputs
+एक **लुक-अप टेबल (LUT)** विज़ुअलाइज़ेशन के लिए संख्यात्मक सूचकांक मानों को रंगों में मैप करता है:
 
-### Fine-Tuning Value Ranges
+* **इनपुट**: सूचकांक पिक्सेल मान (उदाहरण के लिए, एनडीवीआई 0.65)
+* **आउटपुट**: आरजीबी रंग (उदाहरण के लिए, चमकीला हरा)
+* **उद्देश्य**: पैटर्न को देखना और व्याख्या करना आसान बनाएं
 
-The **value range controls** determine which index values map to which colors in your gradient:
+**ग्रेस्केल बनाम रंग LUT:**
 
-**Range controls in LUT panel:**
+* ग्रेस्केल: वैज्ञानिक और तटस्थ, कच्चा डेटा दिखाता है
+* रंग LUT: सहज और प्रभावशाली, पैटर्न और अंतर पर प्रकाश डालता है
 
-* **Minimum value**: Lower bound of the color scale
-* **Maximum value**: Upper bound of the color scale
-* **Intermediate values**: Automatically distributed between min and max (based on class count)
+{%संकेत शैली='सफलता'%}
+**विज़ुअलाइज़ेशन पावर**: ग्रेस्केल इंडेक्स छवि पर रंग LUT लगाने से एक नज़र में पैटर्न, विसंगतियों और रुचि के क्षेत्रों की पहचान करना नाटकीय रूप से आसान हो जाता है।
+{%अंतसंकेत%}
 
-#### Adjusting Min/Max Values
+### किसी अनुक्रमणिका छवि पर LUT लागू करना
 
-**To adjust value ranges:**
+एक बार जब आपके पास एक सूचकांक छवि दिखाई देगी
 
-1. In the LUT panel, locate the **Min Value** and **Max Value** input fields
-2. Click the **Min Value** field
-3. Type the desired minimum value (e.g., `0.2`)
-4. Press **Enter** or click outside the field
-5. Repeat for **Max Value** field (e.g., `0.9`)
-6. The visualization **updates immediately**
+1. <img src='../.gitbook/assets/image.png' alt='' data-size='line'> '+Add LUT' बटन पर क्लिक करें
+2. रंग ग्रेडिएंट का चयन करें
+3. क्लिपिंग न्यूनतम/अधिकतम अंतिम बिंदुओं को समायोजित करें
+4. क्लिपिंग मोड को समायोजित करें
+5. LUT लागू करने के लिए **इमेज व्यूअर** <img src=”../.gitbook/assets/icon_image-viewer.JPG” alt=”” data-size=”line”> टैब साइडबार में इंडेक्स बॉक्स को चेक करें।
 
-{% hint style="info" %}
-**Auto-Scaling**: When you first apply a LUT, Chloros automatically sets the min/max to the actual data range in the image. You can then narrow this range to focus on specific value ranges of interest.
-{% endhint %}
+### रंग ग्रेडियंट चुनना
 
-**Example NDVI range adjustments:**
+**एक ग्रेडिएंट का चयन करना:**
 
-* **Full range**: `-1.0` to `1.0` (show all possible values)
-* **Vegetation-focused**: `0.2` to `0.9` (exclude bare soil and water)
-* **Healthy vegetation only**: `0.5` to `0.9` (highlight only vigorous plants)
-* **Stress detection**: `0.2` to `0.5` (emphasize problem areas)
-* **Custom range**: Adjust based on your observed pixel values
+1. LUT पैनल में, **रंगीन ग्रेडिएंट बार** का पता लगाएं
+2. उपलब्ध ग्रेडिएंट प्रीसेट देखने के लिए उस पर अपना माउस घुमाएँ
+3. वांछित ग्रेडिएंट का चयन करें
+4. इंडेक्स बॉक्स को चेक करने पर छवि **तुरंत नए रंगों के साथ अपडेट हो जाती है**
 
-**Why adjust ranges?**
+{%संकेत शैली='सफलता'%}
+**सर्वोत्तम अभ्यास**: एनडीवीआई जैसे वनस्पति सूचकांकों के लिए, लाल-पीला-हरा ग्रेडिएंट सबसे सहज है क्योंकि यह प्राकृतिक रंग संघों (हरा = स्वस्थ, पीला = मध्यम, लाल = तनावग्रस्त) के साथ संरेखित होता है।
+{%अंतसंकेत%}
 
-* **Increase contrast** in your area of interest
-* **Exclude irrelevant values** (e.g., water bodies, bare soil)
-* **Standardize visualization** across multiple images or dates
-* **Emphasize subtle differences** within a narrow value range
+### रंग वर्गों का समायोजन
 
-### Clipping Out-of-Range Values
+**कक्षा नियंत्रण** यह निर्धारित करता है कि आपके ग्रेडिएंट में कितने अलग-अलग रंग चरण दिखाई देते हैं:
 
-When pixel values fall outside your defined min/max range, you can control how they're displayed using **clipping modes**.
+**कक्षा गणना विकल्प:**
 
-#### **Available clipping mode options:**
+* *2-5 कक्षाएं**: बहुत व्यापक श्रेणियां, विशिष्ट क्षेत्र
+* *6-10 कक्षाएं**: संतुलित, वर्गीकरण के लिए अच्छा
+* **11-20 कक्षाएं**: सहज ग्रेडिएंट, निरंतर उपस्थिति
+* **20+ कक्षाएं**: लगभग-निरंतर, अधिकतम चिकनाई
 
-#### 1. Minimum and Maximum
+**कैसे समायोजित करें:**
 
-* Pixels **below minimum** → display using the **first color** in gradient (e.g., red)
-* Pixels **above maximum** → display using the **last color** in gradient (e.g., green)
-* **Use case**: Emphasize extremes, show full data range with saturated colors at limits
-* **Example**: NDVI values below 0.2 all appear red, values above 0.9 all appear green
+1. LUT पैनल में, **ग्रेडिएंट बार के नीचे रंग स्वैच वर्ग** का पता लगाएं
+2. + बटन से जोड़कर कक्षाओं की संख्या समायोजित करें
+3. रंग नमूने पर डबल क्लिक करके कक्षाओं की संख्या निकालें
+4. छवि पर ग्रेडिएंट **वास्तविक समय में** अपडेट होता है
 
-#### 2. Transparent Background
+**विज़ुअलाइज़ेशन पर प्रभाव:**
 
-* Pixels **outside the range** become **fully transparent**
-* Only pixels **within range** show color gradient
-* **Use case**: GIS overlay, isolating specific value ranges, highlighting only areas of interest
-* **Example**: Show only NDVI 0.4-0.7 in color, everything else transparent
+* **कम कक्षाएं** (3-5): अलग-अलग क्षेत्र बनाता है, वर्गीकरण को सरल बनाता है, श्रेणियों को अलग करना आसान होता है
+* **मध्यम कक्षाएं** (6-10): संतुलित दृष्टिकोण, अधिकांश अनुप्रयोगों के लिए अच्छा
+* **अधिक कक्षाएं** (15-20): सहज बदलाव, विस्तृत विविधता, फोटोग्राफिक उपस्थिति
 
-{% hint style="warning" %}
-**Transparency Limitation**: Transparent pixels will appear as the background color in the viewer. When exported during processing, transparency is preserved in PNG format but not in JPG.
-{% endhint %}
+**कब उपयोग करें:**
 
-#### 3. Index Background
+* **कुछ कक्षाएं (3-5)**: प्रस्तुति स्लाइड, वर्गीकरण मानचित्र, सरल रिपोर्ट
+* **मध्यम कक्षाएँ (6-10)**: सामान्य विश्लेषण, संतुलित विवरण, मानक रिपोर्ट
+* **कई कक्षाएं (15-20)**: वैज्ञानिक विश्लेषण, विस्तृत निरीक्षण, प्रकाशन-गुणवत्ता आउटपुट
 
-* Pixels **outside range** display in **grayscale** (showing raw index values)
-* Pixels **within range** show **color gradient**
-* **Use case**: Subtle highlighting, maintain context while emphasizing areas of interest
-* **Example**: Color-highlight stressed vegetation (NDVI 0.3-0.5) while showing healthy areas in gray
+### फाइन-ट्यूनिंग वैल्यू रेंज
 
-#### 4. Original Background
+**मान श्रेणी नियंत्रण** यह निर्धारित करते हैं कि कौन सा सूचकांक मान आपके ग्रेडिएंट में किन रंगों से मेल खाता है:
 
-* Pixels **outside range** display the **original multispectral image**
-* Pixels **within range** show **color gradient**
-* **Use case**: Most intuitive - combines natural image context with analytical color overlay
-* **Example**: See the actual field/crop appearance with color-coded stress areas overlaid
+**LUT पैनल में रेंज नियंत्रण:**
 
-### Choosing the Right Clipping Mode
+* **न्यूनतम मान**: रंग पैमाने की निचली सीमा
+* **अधिकतम मान**: रंग पैमाने की ऊपरी सीमा
+* **मध्यवर्ती मान**: न्यूनतम और अधिकतम के बीच स्वचालित रूप से वितरित (वर्ग गणना के आधार पर)
 
-| Clipping Mode              | Best For                                   | Visualization Style          |
+#### न्यूनतम/अधिकतम मान समायोजित करना
+
+**मूल्य श्रेणियों को समायोजित करने के लिए:**
+
+1. LUT पैनल में, **न्यूनतम मान** और **अधिकतम मान** इनपुट फ़ील्ड ढूंढें
+2. **न्यूनतम मान** फ़ील्ड पर क्लिक करें
+3. वांछित न्यूनतम मान टाइप करें (जैसे, `0.2`)
+4. **Enter** दबाएँ या फ़ील्ड के बाहर क्लिक करें
+5. **अधिकतम मान** फ़ील्ड के लिए दोहराएँ (जैसे, `0.9`)
+6. विज़ुअलाइज़ेशन **तुरंत अपडेट होता है**
+
+{% संकेत शैली = "जानकारी" %}
+**ऑटो-स्केलिंग**: जब आप पहली बार LUT लागू करते हैं, तो क्लोरोस स्वचालित रूप से छवि में वास्तविक डेटा रेंज पर न्यूनतम/अधिकतम सेट कर देता है। फिर आप रुचि की विशिष्ट मूल्य श्रेणियों पर ध्यान केंद्रित करने के लिए इस सीमा को सीमित कर सकते हैं।
+{%अंतसंकेत%}
+
+**उदाहरण एनडीवीआई रेंज समायोजन:**
+
+* **पूर्ण श्रेणी**: `-1.0` से `1.0` (सभी संभावित मान दिखाएं)
+* **वनस्पति-केंद्रित**: `0.2` से `0.9` (नंगी मिट्टी और पानी को छोड़कर)
+* **केवल स्वस्थ वनस्पति**: `0.5` से `0.9` (केवल सशक्त पौधों को हाइलाइट करें)
+* **तनाव का पता लगाना**: `0.2` से `0.5` (समस्या क्षेत्रों पर जोर दें)
+* **कस्टम रेंज**: अपने देखे गए पिक्सेल मानों के आधार पर समायोजित करें
+
+**श्रेणियाँ समायोजित क्यों करें?**
+
+* **अपनी रुचि के क्षेत्र में कंट्रास्ट बढ़ाएँ**
+* **अप्रासंगिक मूल्यों को हटा दें** (उदाहरण के लिए, जल निकाय, नंगी मिट्टी)
+* **कई छवियों या तिथियों में विज़ुअलाइज़ेशन को मानकीकृत करें**
+* **एक संकीर्ण मूल्य सीमा के भीतर सूक्ष्म अंतरों पर जोर दें**
+
+### सीमा से बाहर के मूल्यों को काटना
+
+जब पिक्सेल मान आपकी निर्धारित न्यूनतम/अधिकतम सीमा से बाहर हो जाते हैं, तो आप **क्लिपिंग मोड** का उपयोग करके यह नियंत्रित कर सकते हैं कि वे कैसे प्रदर्शित हों।
+
+#### **उपलब्ध क्लिपिंग मोड विकल्प:**
+
+#### 1. न्यूनतम और अधिकतम
+
+* पिक्सेल **न्यूनतम से नीचे** → ग्रेडिएंट में **पहले रंग** का उपयोग करके प्रदर्शित करें (उदाहरण के लिए, लाल)
+* पिक्सेल **अधिकतम से ऊपर** → ग्रेडिएंट में **अंतिम रंग** का उपयोग करके प्रदर्शित करें (उदाहरण के लिए, हरा)
+* **उपयोग का मामला**: चरम पर जोर दें, सीमा पर संतृप्त रंगों के साथ पूर्ण डेटा रेंज दिखाएं
+* **उदाहरण**: 0.2 से नीचे एनडीवीआई मान सभी लाल दिखाई देते हैं, 0.9 से ऊपर सभी मान हरे दिखाई देते हैं
+
+#### 2. पारदर्शी पृष्ठभूमि
+
+*पिक्सेल **सीमा के बाहर** **पूरी तरह से पारदर्शी** हो जाते हैं
+* केवल पिक्सेल **सीमा के भीतर** रंग ढाल दिखाते हैं
+* **उपयोग मामला**: जीआईएस ओवरले, विशिष्ट मूल्य श्रेणियों को अलग करना, केवल रुचि के क्षेत्रों को उजागर करना
+* **उदाहरण**: केवल NDVI 0.4-0.7 रंग में दिखाएं, बाकी सब पारदर्शी
+
+{% संकेत शैली = "चेतावनी" %}
+**पारदर्शिता सीमा**: पारदर्शी पिक्सेल व्यूअर में पृष्ठभूमि रंग के रूप में दिखाई देंगे। जब प्रसंस्करण के दौरान निर्यात किया जाता है, तो पारदर्शिता पीएनजी प्रारूप में संरक्षित होती है लेकिन जेपीजी में नहीं।
+{%अंतसंकेत%}
+
+#### 3. सूचकांक पृष्ठभूमि
+
+* पिक्सेल **सीमा के बाहर** **ग्रेस्केल** में प्रदर्शित होते हैं (कच्चे सूचकांक मान दिखा रहे हैं)
+*पिक्सेल **सीमा के भीतर** **रंग ढाल** दिखाते हैं
+* **उपयोग मामला**: सूक्ष्म हाइलाइटिंग, रुचि के क्षेत्रों पर जोर देते हुए संदर्भ बनाए रखें
+* **उदाहरण**: स्वस्थ क्षेत्रों को भूरे रंग में दिखाते हुए रंग-हाइलाइट तनावग्रस्त वनस्पति (एनडीवीआई 0.3-0.5)
+
+#### 4. मूल पृष्ठभूमि
+
+* पिक्सेल **सीमा के बाहर** **मूल मल्टीस्पेक्ट्रल छवि** प्रदर्शित करते हैं
+*पिक्सेल **सीमा के भीतर** **रंग ढाल** दिखाते हैं
+* **उपयोग का मामला**: सबसे सहज - विश्लेषणात्मक रंग ओवरले के साथ प्राकृतिक छवि संदर्भ को जोड़ता है
+* **उदाहरण**: रंग-कोडित तनाव क्षेत्रों के साथ वास्तविक क्षेत्र/फसल का स्वरूप देखें
+
+### सही क्लिपिंग मोड चुनना
+
+| क्लिपिंग मोड | के लिए सर्वश्रेष्ठ | विज़ुअलाइज़ेशन शैली |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum and Maximum**    | Full data display, scientific analysis     | All pixels colored           |
-| **Transparent Background** | GIS overlays, isolating specific ranges    | Color on range, blank beyond |
-| **Index Background**       | Subtle emphasis, maintaining data context  | Color on range, gray beyond  |
-| **Original Background**    | Reports, presentations, intuitive analysis | Color on range, photo beyond |
+| **न्यूनतम और अधिकतम** | पूर्ण डेटा प्रदर्शन, वैज्ञानिक विश्लेषण | सभी पिक्सेल रंगीन |
+| **पारदर्शी पृष्ठभूमि** | जीआईएस ओवरले, विशिष्ट श्रेणियों को अलग करता है | सीमा पर रंग, परे रिक्त |
+| **सूचकांक पृष्ठभूमि** | सूक्ष्म जोर, डेटा संदर्भ बनाए रखना | रेंज पर रंग, परे ग्रे |
+| **मूल पृष्ठभूमि** | रिपोर्टें, प्रस्तुतियाँ, सहज विश्लेषण | रंग रेंज पर, फोटो परे |
 
-### Creating Custom LUT Colors
+### कस्टम LUT रंग बनाना
 
-For full control over your visualization, you can create **custom color gradients** by editing individual color stops.
+अपने विज़ुअलाइज़ेशन पर पूर्ण नियंत्रण के लिए, आप अलग-अलग रंग स्टॉप को संपादित करके **कस्टम रंग ग्रेडिएंट** बना सकते हैं।
 
-**To create a custom gradient:**
+**कस्टम ग्रेडिएंट बनाने के लिए:**
 
-1. In the LUT panel, locate the **gradient preview bar**
-2. Look for **color swatch squares** below the gradient
-3. **Click a color stop** to select it
-4. A **color picker** opens
-5. Choose a new color using:
-   * **Color wheel**: Visual color selection
-   * **RGB/HSV sliders**: Precise color control
-   * **Hex code entry**: Exact color specification (e.g., `#FF0000` for red)
-6. Click off the color picker **to apply the new color**
-7. The gradient **updates immediately** on the image
+1. LUT पैनल में, **ग्रेडिएंट प्रीव्यू बार** का पता लगाएं
+2. ग्रेडिएंट के नीचे **रंग नमूना वर्ग** देखें
+3. **रंग स्टॉप** को चुनने के लिए उस पर क्लिक करें
+4. एक **रंग बीनने वाला** खुलता है
+5. इसका उपयोग करके नया रंग चुनें:
+   * **रंग पहिया**: दृश्य रंग चयन
+   * **आरजीबी/एचएसवी स्लाइडर्स**: सटीक रंग नियंत्रण
+   * **हेक्स कोड प्रविष्टि**: सटीक रंग विनिर्देश (उदाहरण के लिए, लाल रंग के लिए `#FF0000`)
+6. नया रंग लगाने के लिए रंग बीनने वाले को क्लिक करें**
+7. छवि पर ग्रेडिएंट **तुरंत अपडेट** होता है
 
-**Adding or removing color stops:**
+**रंग जोड़ना या हटाना बंद हो जाता है:**
 
-* **Add a stop**: Click the + icon to add a new swatch at the end
-* **Remove a stop**: Double click the color square to remove the swatch
+* **स्टॉप जोड़ें**: अंत में एक नया नमूना जोड़ने के लिए + आइकन पर क्लिक करें
+* **एक स्टॉप हटाएं**: नमूना हटाने के लिए रंग वर्ग पर डबल क्लिक करें
 
-**Customization strategies:**
+**अनुकूलन रणनीतियाँ:**
 
-* **Invert gradient**: Flip color order to reverse the meaning (e.g., green=low, red=high)
-* **Brand colors**: Match your organization's color palette for reports
-* **Colorblind-friendly**: Use orange-blue or purple-yellow combinations
-* **Print optimization**: Choose colors that work in both color and grayscale printing
-* **Multi-threshold**: Use distinct colors at specific value thresholds for classification
+* **उलटा ग्रेडिएंट**: अर्थ को उलटने के लिए रंग क्रम को पलटें (उदाहरण के लिए, हरा = कम, लाल = अधिक)
+* **ब्रांड रंग**: रिपोर्ट के लिए अपने संगठन के रंग पैलेट से मिलान करें
+* **रंग-अंध-अनुकूल**: नारंगी-नीले या बैंगनी-पीले संयोजन का उपयोग करें
+* **प्रिंट अनुकूलन**: ऐसे रंग चुनें जो रंग और ग्रेस्केल प्रिंटिंग दोनों में काम करते हों
+* **मल्टी-थ्रेसहोल्ड**: वर्गीकरण के लिए विशिष्ट मूल्य सीमा पर अलग-अलग रंगों का उपयोग करें
 
-{% hint style="info" %}
-**Saving Custom Gradients**: Custom gradients can be saved and reused. Click the save icon in the LUT panel to preserve your custom color schemes for future use.
-{% endhint %}
-
-***
-
-## Interactive Workflow
-
-### Real-Time Updates
-
-All LUT adjustments in the sandbox update the image **instantly and interactively**:
-
-* **Switch layer** → Image changes immediately
-* **Select gradient** → Colors update instantly
-* **Adjust value range** → Contrast changes in real-time
-* **Change classes** → Gradient smoothness updates immediately
-* **Modify clipping** → Background display changes instantly
-* **Edit colors** → Custom gradient applies immediately
-
-**No "Apply" button needed** - all changes are live and interactive!
-
-{% hint style="success" %}
-**Live Feedback**: The instant visual feedback allows you to rapidly experiment with different settings until you find the optimal visualization for your analysis needs.
-{% endhint %}
-
-### Iterative Refinement Workflow
-
-**Typical LUT optimization workflow:**
-
-1. **Select index layer** (e.g., RAW (Reflectance))
-2. **Apply index** - Choose camera filter and index formula, drag colored circles to appropriate location in the index formula
-3. **Apply LUT gradient** - Start with Red-Yellow-Green preset
-4. **Inspect pixel values** - Move cursor around, note value ranges
-5. **Adjust min/max** - Narrow to focus on vegetation (e.g., 0.2 to 0.9)
-6. **Choose clipping** - Try "Original Background" for context
-7. **Refine colors** - Customize gradient if needed for specific emphasis
-8. **Finalize settings** - Document settings and copy to Project Settings for export processing
-
-### Pixel Value Inspection
-
-Understanding actual pixel values is crucial for setting effective LUT ranges:
-
-**How to inspect values:**
-
-1. Pixel values show when the image has either the Index, or both the Index and LUT **boxes checked**.
-2. **Move your cursor** over different areas of the image
-3. **Observe pixel values** displayed in the legend as you hover
-4. Zoom in to see individual pixels highlighted with a floating value
-5. **Take notes** of value ranges for different features:
-   * **Healthy vegetation**: e.g., NDVI 0.55-0.85
-   * **Stressed vegetation**: e.g., NDVI 0.30-0.50
-   * **Bare soil**: e.g., NDVI 0.05-0.25
-   * **Water** (if present): e.g., NDVI -0.05 to 0.10
-
-**Using pixel values to set LUT ranges:**
-
-After inspecting pixel values, adjust your LUT min/max accordingly:
-
-**Example scenario:**
-
-* **Observation**: Soil values = 0.05-0.25, Stressed = 0.25-0.50, Healthy = 0.50-0.85
-* **Goal**: Visualize only plant health (exclude soil)
-* **LUT settings**: Min = `0.25`, Max = `0.85`
-* **Clipping**: "Original Background" to see soil in natural color
-* **Result**: Color gradient only applies to vegetation, soil shows as original image
-
-{% hint style="info" %}
-**Dynamic Range**: Different crops, seasons, and growth stages will have different value ranges. Always inspect pixel values in your specific dataset before setting LUT ranges.
-{% endhint %}
+{% संकेत शैली = "जानकारी" %}
+**कस्टम ग्रेडिएंट्स को सहेजना**: कस्टम ग्रेडिएंट्स को सहेजा और पुन: उपयोग किया जा सकता है। भविष्य में उपयोग के लिए अपनी कस्टम रंग योजनाओं को संरक्षित करने के लिए LUT पैनल में सेव आइकन पर क्लिक करें।
+{%अंतसंकेत%}
 
 ***
 
-## Custom Indices (Chloros+)
+## इंटरएक्टिव वर्कफ़्लो
 
-### Creating Custom Index Formulas
+### वास्तविक समय अपडेट
 
-{% hint style="info" %}
-**Where to Create**: Custom indices can be configured in **Project Settings** before processing, as well as in the Image Viewer sandbox sidebar.
-{% endhint %}
+सैंडबॉक्स में सभी LUT समायोजन छवि को **तुरंत और अंतःक्रियात्मक रूप से अपडेट करते हैं**:
 
-**To create a custom index:**
+* **परत स्विच करें** → छवि तुरंत बदल जाती है
+* **ग्रेडिएंट चुनें** → रंग तुरंत अपडेट होते हैं
+* **मूल्य सीमा समायोजित करें** → वास्तविक समय में परिवर्तनों की तुलना करें
+* **कक्षाएं बदलें** → ग्रेडिएंट स्मूथनेस तुरंत अपडेट हो जाती है
+* **क्लिपिंग को संशोधित करें** → बैकग्राउंड डिस्प्ले तुरंत बदल जाता है
+* **रंग संपादित करें** → कस्टम ग्रेडिएंट तुरंत लागू होता है
 
-1. **Open Project Settings** (before processing) or Image Viewer sandbox sidebar
-2. Navigate to the **Index formula dropdown**
-3. Look for **"Custom"** option (must be logged in with Chloros+ license)
-4. **Define your formula** using band variables:
-   * Band names: `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, etc.
-   * Operators: `+`, `-`, `*`, `/`, `^` (exponent)
-   * Functions: `sqrt()`, `abs()`, etc. (if supported)
-   * Parentheses: `()` for order of operations
-5. **Name your index** (e.g., "MyIndex" or "CustomNDVI")
-6. **Save the configuration**
+**कोई "लागू करें" बटन की आवश्यकता नहीं** - सभी परिवर्तन लाइव और इंटरैक्टिव हैं!
 
-**Example custom formulas:**
+{%संकेत शैली='सफलता'%}
+**लाइव फीडबैक**: त्वरित विज़ुअल फीडबैक आपको विभिन्न सेटिंग्स के साथ तेजी से प्रयोग करने की अनुमति देता है जब तक कि आपको अपनी विश्लेषण आवश्यकताओं के लिए इष्टतम विज़ुअलाइज़ेशन नहीं मिल जाता।
+{%अंतसंकेत%}
+
+### पुनरावृत्तीय शोधन कार्यप्रवाह
+
+**विशिष्ट LUT अनुकूलन वर्कफ़्लो:**
+
+1. **सूचकांक परत का चयन करें** (उदाहरण के लिए, RAW (परावर्तन))
+2. **इंडेक्स लागू करें** - कैमरा फ़िल्टर और इंडेक्स फॉर्मूला चुनें, रंगीन सर्कल को इंडेक्स फॉर्मूला में उचित स्थान पर खींचें
+3. **LUT ग्रेडिएंट लागू करें** - लाल-पीला-हरा प्रीसेट से प्रारंभ करें
+4. **पिक्सेल मानों का निरीक्षण करें** - कर्सर को चारों ओर ले जाएं, मान श्रेणियों पर ध्यान दें
+5. **न्यूनतम/अधिकतम समायोजित करें** - वनस्पति पर ध्यान केंद्रित करने के लिए संकीर्ण (उदाहरण के लिए, 0.2 से 0.9)
+6. **क्लिपिंग चुनें** - संदर्भ के लिए "मूल पृष्ठभूमि" आज़माएं
+7. **रंगों को परिष्कृत करें** - विशिष्ट जोर देने के लिए यदि आवश्यक हो तो ग्रेडिएंट को अनुकूलित करें
+8. **सेटिंग्स को अंतिम रूप दें** - दस्तावेज़ सेटिंग्स और निर्यात प्रसंस्करण के लिए प्रोजेक्ट सेटिंग्स में कॉपी करें
+
+### पिक्सेल मान निरीक्षण
+
+प्रभावी LUT रेंज सेट करने के लिए वास्तविक पिक्सेल मानों को समझना महत्वपूर्ण है:
+
+**मूल्यों का निरीक्षण कैसे करें:**
+
+1. पिक्सेल मान तब दिखाई देते हैं जब छवि में या तो इंडेक्स, या इंडेक्स और एलयूटी दोनों **बॉक्स चेक** होते हैं।
+2. **अपना कर्सर** छवि के विभिन्न क्षेत्रों पर ले जाएँ
+3. जैसे ही आप होवर करते हैं लेजेंड में प्रदर्शित **पिक्सेल मानों का निरीक्षण करें**
+4. फ्लोटिंग वैल्यू के साथ हाइलाइट किए गए अलग-अलग पिक्सल को देखने के लिए ज़ूम इन करें
+5. विभिन्न विशेषताओं के लिए मूल्य श्रेणियों के **नोट लें**:
+   * *स्वस्थ वनस्पति**: उदाहरण के लिए, एनडीवीआई 0.55-0.85
+   * **तनावग्रस्त वनस्पति**: उदाहरण के लिए, एनडीवीआई 0.30-0.50
+   * **नंगी मिट्टी**: उदाहरण के लिए, NDVI 0.05-0.25
+   * **पानी** (यदि मौजूद हो): उदाहरण के लिए, एनडीवीआई -0.05 से 0.10
+
+**LUT रेंज सेट करने के लिए पिक्सेल मानों का उपयोग करना:**
+
+पिक्सेल मानों का निरीक्षण करने के बाद, अपने LUT न्यूनतम/अधिकतम को तदनुसार समायोजित करें:
+
+**उदाहरण परिदृश्य:**
+
+* **अवलोकन**: मिट्टी का मान = 0.05-0.25, तनावग्रस्त = 0.25-0.50, स्वस्थ = 0.50-0.85
+* **लक्ष्य**: केवल पौधों के स्वास्थ्य की कल्पना करें (मिट्टी को छोड़कर)
+* **LUT सेटिंग्स**: न्यूनतम = `0.25`, अधिकतम = `0.85`
+* **क्लिपिंग**: मिट्टी को प्राकृतिक रंग में देखने के लिए "मूल पृष्ठभूमि"।
+* **परिणाम**: रंग ग्रेडिएंट केवल वनस्पति पर लागू होता है, मिट्टी मूल छवि के रूप में दिखाई देती है
+
+{% संकेत शैली = "जानकारी" %}
+**गतिशील रेंज**: विभिन्न फसलों, मौसमों और विकास चरणों की अलग-अलग मूल्य श्रेणियां होंगी। LUT रेंज सेट करने से पहले हमेशा अपने विशिष्ट डेटासेट में पिक्सेल मानों का निरीक्षण करें।
+{%अंतसंकेत%}
+
+***
+
+## कस्टम सूचकांक (क्लोरोस+)
+
+### कस्टम इंडेक्स फ़ॉर्मूले बनाना
+
+{% संकेत शैली = "जानकारी" %}
+**कहां बनाएं**: कस्टम इंडेक्स को प्रसंस्करण से पहले **प्रोजेक्ट सेटिंग्स** में कॉन्फ़िगर किया जा सकता है, साथ ही इमेज व्यूअर सैंडबॉक्स साइडबार में भी।
+{%अंतसंकेत%}
+
+**कस्टम इंडेक्स बनाने के लिए:**
+
+1. **प्रोजेक्ट सेटिंग्स खोलें** (प्रसंस्करण से पहले) या इमेज व्यूअर सैंडबॉक्स साइडबार
+2. **सूचकांक सूत्र ड्रॉपडाउन** पर नेविगेट करें
+3. **"कस्टम"** विकल्प देखें (क्लोरोस+ लाइसेंस के साथ लॉग इन होना चाहिए)
+4. **बैंड वेरिएबल्स का उपयोग करके अपना फॉर्मूला परिभाषित करें**:
+   * बैंड के नाम: `एनआईआर`, `रेड`, `ग्रीन`, `ब्लू`, `रेडएज`, आदि।
+   * संचालक: `+`, `-`, `*`, `/`, `^` (प्रतिपादक)
+   * फ़ंक्शन: `sqrt()`, `abs()`, आदि (यदि समर्थित हो)
+   * कोष्ठक: संचालन के क्रम के लिए `()`
+5. **अपने इंडेक्स को नाम दें** (उदाहरण के लिए, "MyIndex" या "CustomNDVI")
+6. **कॉन्फ़िगरेशन सहेजें**
+
+**उदाहरण कस्टम सूत्र:**
 
 ```
-Modified NDVI with offset:
-(NIR - Red) / (NIR + Red + 0.5)
+ऑफसेट के साथ संशोधित NDVI:
+(एनआईआर - लाल) / (एनआईआर + लाल + 0.5)
 
-Simple ratio:
-NIR / Red
+सरल अनुपात:
+एनआईआर/लाल
 
-Complex multi-band:
-(NIR - Red) / (NIR + Red - Blue)
+जटिल मल्टी-बैंड:
+(एनआईआर - लाल) / (एनआईआर + लाल - नीला)
 
-Exponential index:
-(NIR / Red) ^ 2
+घातीय सूचकांक:
+(एनआईआर/लाल) ^ 2
 ```
 
-{% hint style="warning" %}
-**Formula Validation**: Ensure your formula uses bands available in your camera. For example, RedEdge is only available on cameras with a RedEdge filter.
-{% endhint %}
+{% संकेत शैली = "चेतावनी" %}
+**फ़ॉर्मूला सत्यापन**: सुनिश्चित करें कि आपका फॉर्मूला आपके कैमरे में उपलब्ध बैंड का उपयोग करता है। उदाहरण के लिए, RedEdge केवल RedEdge फ़िल्टर वाले कैमरों पर उपलब्ध है।
+{%अंतसंकेत%}
 
 ***
 
-## Next Steps
+## अगले कदम
 
-Now that you understand the Index/LUT Sandbox:
+अब जब आप इंडेक्स/एलयूटी सैंडबॉक्स को समझ गए हैं:
 
-* **Apply to processing**: Use discovered settings in [Project Settings](../project-settings/project-settings.md)
-* **Batch process**: Apply optimized indices to full datasets
-* **Learn more**: Read [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md)
+* **प्रसंस्करण पर लागू करें**: [प्रोजेक्ट सेटिंग्स](../project-settings/project-settings.md) में खोजी गई सेटिंग्स का उपयोग करें
+* **बैच प्रक्रिया**: पूर्ण डेटासेट पर अनुकूलित सूचकांक लागू करें
+* **और जानें**: पढ़ें [मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला](../project-settings/multispectral-index-formulas.md)
 
-Related documentation:
+संबंधित दस्तावेज़:
 
-* [**Image Layers**](image-layers.md) - Layer management and visualization
-* [**Opening an Image Full Screen**](opening-an-image-full-screen.md) - Image Viewer basics
-* [**Processing Images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Full processing workflow
+* [**छवि परतें**](image-layers.md) - परत प्रबंधन और विज़ुअलाइज़ेशन
+* [**एक छवि को पूर्ण स्क्रीन पर खोलना**](एक छवि को पूर्ण-स्क्रीन पर खोलना) - छवि दर्शक की मूल बातें
+* [**प्रसंस्करण छवियां (जीयूआई)**](../processing-images-gui/adding-files-to-a-project.md) - पूर्ण प्रसंस्करण वर्कफ़्लो

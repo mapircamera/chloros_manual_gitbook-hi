@@ -1,366 +1,366 @@
-# Starting the Processing
+#प्रसंस्करण प्रारंभ करना
 
-Once you've imported your images, marked your calibration targets, and configured your project settings, you're ready to begin processing. This page guides you through initiating the Chloros processing pipeline.
+एक बार जब आप अपनी छवियां आयात कर लेते हैं, अपने अंशांकन लक्ष्यों को चिह्नित कर लेते हैं, और अपनी प्रोजेक्ट सेटिंग्स कॉन्फ़िगर कर लेते हैं, तो आप प्रसंस्करण शुरू करने के लिए तैयार हैं। यह पृष्ठ क्लोरोस प्रसंस्करण पाइपलाइन आरंभ करने में आपका मार्गदर्शन करता है।
 
-## Pre-Processing Checklist
+## प्री-प्रोसेसिंग चेकलिस्ट
 
-Before clicking the Start button, verify that everything is ready:
+स्टार्ट बटन पर क्लिक करने से पहले, सत्यापित करें कि सब कुछ तैयार है:
 
-* [ ] **Files imported** - All images appear in File Browser
-* [ ] **Target images marked** - Target column checked for calibration images
-* [ ] **Camera models detected** - Camera Model column shows correct cameras
-* [ ] **Settings configured** - Project Settings reviewed and adjusted
-* [ ] **Indices selected** - Desired multispectral indices added (if needed)
-* [ ] **Export format chosen** - Output format appropriate for your workflow
+* [ ] **फ़ाइलें आयातित** - सभी छवियाँ फ़ाइल ब्राउज़र में दिखाई देती हैं
+* [ ] **लक्षित छवियाँ चिह्नित** - अंशांकन छवियों के लिए लक्ष्य स्तंभ की जाँच की गई
+* [ ] **कैमरा मॉडल का पता चला** - कैमरा मॉडल कॉलम सही कैमरे दिखाता है
+* [ ] **सेटिंग्स कॉन्फ़िगर** - प्रोजेक्ट सेटिंग्स की समीक्षा की गई और समायोजित किया गया
+* [ ] **सूचकांक चयनित** - वांछित मल्टीस्पेक्ट्रल सूचकांक जोड़े गए (यदि आवश्यक हो)
+* [ ] **निर्यात प्रारूप चुना गया** - आपके वर्कफ़्लो के लिए उपयुक्त आउटपुट प्रारूप
 
-{% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
-{% endhint %}
-
-***
-
-## Starting the Processing
-
-### Locate the Start Button
-
-The Start/Play button is located in the top header bar of Chloros:
-
-* Position: Top center of the window
-* Icon: **Play/Start button** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* Status: Button is enabled (bright) when ready to process
-
-### Click to Start
-
-1. Click the **Play/Start button** in the top header
-2. Processing begins immediately
-3. The button becomes disabled (grayed out) during processing
-4. Progress bar updates, showing processing status
-
-{% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
-{% endhint %}
+{% संकेत शैली = "जानकारी" %}
+**टिप**: प्रसंस्करण से पहले यह सत्यापित करने के लिए कि वे सही ढंग से लोड हुई हैं, फ़ाइल ब्राउज़र में कुछ छवियों पर क्लिक करें।
+{%अंतसंकेत%}
 
 ***
 
-## Understanding Processing Modes
+## प्रोसेसिंग शुरू करना
 
-Chloros operates in two different processing modes depending on your license:
+### स्टार्ट बटन का पता लगाएं
 
-### Free Mode (Sequential Processing)
+स्टार्ट/प्ले बटन क्लोरोस के शीर्ष हेडर बार में स्थित है:
 
-**Available to all users**
+* स्थिति: खिड़की के शीर्ष मध्य
+* आइकन: **प्ले/स्टार्ट बटन** <img src='../.gitbook/assets/image (2).png' alt='' data-size='line'>
+* स्थिति: प्रक्रिया के लिए तैयार होने पर बटन सक्षम (उज्ज्वल) होता है
 
-**How it works:**
+### प्रारंभ करने के लिए क्लिक करें
 
-* Processes images one at a time, sequentially
-* Single-threaded operation
-* Lower memory usage
+1. शीर्ष हेडर में **प्ले/स्टार्ट बटन** पर क्लिक करें
+2. प्रसंस्करण तुरंत शुरू होता है
+3. प्रसंस्करण के दौरान बटन अक्षम हो जाता है (धूसर हो जाता है)।
+4. प्रगति पट्टी अद्यतन, प्रसंस्करण स्थिति दिखा रहा है
 
-**Progress bar shows 2 stages:**
-
-1. **Target Detect** - Scanning for calibration targets
-2. **Processing** - Applying calibration and exporting images
-
-**Processing time:**
-
-* Much slower than Chloros+ parallel mode
-* Suitable for small to medium datasets (< 200 images)
-
-### Chloros+ Mode (Parallel Processing)
-
-**Requires Chloros+ license**
-
-**How it works:**
-
-* Processes multiple images simultaneously
-* Multi-threaded operation (up to 16 parallel workers)
-* Utilizes multiple CPU cores
-* Optional GPU (CUDA) acceleration with NVIDIA graphics cards
-
-**Progress bar shows 4 stages:**
-
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining image metadata and preparing pipeline
-3. **Calibrating** - Applying corrections and calibrations
-4. **Exporting** - Saving processed images and indices
-
-**Progress bar interaction:**
-
-* **Hover mouse** over bar to see detailed 4-stage dropdown panel
-* **Click** progress bar to freeze the dropdown panel in place
-* **Click again** to unfreeze and hide panel
-
-**Processing time:**
-
-* Significantly faster than free mode
-* Scales with CPU core count
-* GPU acceleration further improves speed
-
-{% hint style="info" %}
-**Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
-{% endhint %}
+{%संकेत शैली='सफलता'%}
+**प्रसंस्करण प्रारंभ**: एक बार क्लिक करने पर, क्लोरोस स्वचालित रूप से सभी प्रसंस्करण चरणों को संभालता है - लक्ष्य का पता लगाना, डिबेयरिंग, अंशांकन, सूचकांक गणना और निर्यात।
+{%अंतसंकेत%}
 
 ***
 
-## What Happens During Processing
+## प्रोसेसिंग मोड को समझना
 
-### Stage 1: Target Detection
+क्लोरोस आपके लाइसेंस के आधार पर दो अलग-अलग प्रसंस्करण मोड में काम करता है:
 
-**What Chloros does:**
+### फ्री मोड (अनुक्रमिक प्रसंस्करण)
 
-* Scans marked target images (or all images if none marked)
-* Identifies the 4 calibration panels in each target
-* Extracts reflectance values from target panels
-* Records target timestamps for calibration scheduling
+**सभी उपयोगकर्ताओं के लिए उपलब्ध**
 
-**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
+**यह काम किस प्रकार करता है:**
 
-### Stage 2: Debayering (RAW Conversion)
+* छवियों को एक-एक करके, क्रमानुसार संसाधित करता है
+* सिंगल-थ्रेडेड ऑपरेशन
+* मेमोरी का कम उपयोग
 
-**What Chloros does:**
+**प्रगति पट्टी 2 चरण दिखाती है:**
 
-* Converts RAW Bayer pattern data to full RGB images
-* Applies high-quality demosaicing algorithm
-* Preserves maximum image quality and detail
+1. **लक्ष्य का पता लगाएं** - अंशांकन लक्ष्यों के लिए स्कैनिंग
+2. **प्रसंस्करण** - अंशांकन लागू करना और छवियों को निर्यात करना
 
-**Duration:** Varies by image count and CPU speed
+**प्रोसेसिंग समय:**
 
-### Stage 3: Calibration
+*क्लोरोस+समानांतर मोड की तुलना में बहुत धीमा
+* छोटे से मध्यम डेटासेट के लिए उपयुक्त (<200 छवियां)
 
-**What Chloros does:**
+### क्लोरोस+ मोड (समानांतर प्रसंस्करण)
 
-* **Vignette correction**: Removes lens darkening at edges
-* **Reflectance calibration**: Normalizes using target reflectance values
-* Applies corrections across all bands/channels
-* Uses appropriate calibration target for each image based on timestamp
+**क्लोरोस+ लाइसेंस की आवश्यकता है**
 
-**Duration:** Majority of processing time
+**यह काम किस प्रकार करता है:**
 
-### Stage 4: Index Calculation
+* एक साथ कई छवियों को संसाधित करता है
+* मल्टी-थ्रेडेड ऑपरेशन (16 समानांतर श्रमिकों तक)
+* एकाधिक सीपीयू कोर का उपयोग करता है
+* NVIDIA ग्राफ़िक्स कार्ड के साथ वैकल्पिक GPU (CUDA) त्वरण
 
-**What Chloros does:**
+**प्रगति बार 4 चरण दिखाता है:**
 
-* Calculates configured multispectral indices (NDVI, NDRE, etc.)
-* Applies band math to calibrated images
-* Generates index images for each selected index
+1. **पता लगाना** - अंशांकन लक्ष्य ढूँढना
+2. **विश्लेषण** - छवि मेटाडेटा की जांच करना और पाइपलाइन तैयार करना
+3. **अंशांकन** - सुधार और अंशांकन लागू करना
+4. **निर्यात** - संसाधित छवियों और सूचकांकों को सहेजना
 
-**Duration:** A few seconds per image
+**प्रगति बार इंटरेक्शन:**
 
-### Stage 5: Export
+* *विस्तृत 4-स्टेज ड्रॉपडाउन पैनल देखने के लिए बार पर माउस घुमाएं
+* ** ड्रॉपडाउन पैनल को यथास्थान स्थिर करने के लिए प्रगति पट्टी पर क्लिक करें
+* **पैनल को अनफ़्रीज़ करने और छिपाने के लिए**फिर से क्लिक करें
 
-**What Chloros does:**
+**प्रोसेसिंग समय:**
 
-* Saves calibrated images in selected format
-* Exports index images with configured LUT colors
-* Writes files to camera model subfolders
-* Preserves original filenames with suffixes
+* फ्री मोड से काफी तेज
+* सीपीयू कोर गिनती के साथ स्केल
+* GPU त्वरण से गति में और सुधार होता है
 
-**Duration:** Varies by export format and file size
-
-***
-
-## Processing Behavior
-
-### Automatic Processing Pipeline
-
-Once started, the entire pipeline runs automatically:
-
-* No user interaction needed
-* All configured steps execute in sequence
-* Progress updates shown in real-time
-
-### Computer Usage During Processing
-
-**Free Mode:**
-
-* Relatively low CPU usage (single-threaded)
-* Computer remains responsive for other tasks
-* Safe to minimize Chloros and work in other applications
-
-**Chloros+ Parallel Mode:**
-
-* High CPU usage (multi-threaded, up to 16 cores)
-* With GPU acceleration: High GPU usage
-* Computer may be less responsive during processing
-* Avoid starting other CPU-intensive tasks
-
-{% hint style="warning" %}
-**Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
-{% endhint %}
-
-### Processing Cannot Be Paused
-
-**Important limitations:**
-
-* Once started, processing cannot be paused
-* You can cancel processing, but progress is lost
-* Partial results are not saved
-* Must restart from beginning if canceled
-
-**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
+{% संकेत शैली = "जानकारी" %}
+**क्लोरोस+ स्पीड**: बड़े डेटासेट के लिए समानांतर प्रसंस्करण अनुक्रमिक मोड की तुलना में 5-10 गुना तेज हो सकता है। 500-छवि वाला प्रोजेक्ट, जिसमें फ्री मोड में 2 घंटे लगते हैं, क्लोरोस+ के साथ 15-20 मिनट में पूरा हो सकता है।
+{%अंतसंकेत%}
 
 ***
 
-## Monitoring Your Processing
+## प्रसंस्करण के दौरान क्या होता है
 
-While processing runs, you can:
+### चरण 1: लक्ष्य का पता लगाना
 
-* **Watch progress bar** - See overall completion percentage
-* **View current stage** - Detect, Analyze, Calibrate, or Export
-* **Check log tab** - See detailed processing messages and warnings
-* **Preview completed images** - Some export files may appear during processing
+**क्लोरोस क्या करता है:**
 
-For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
+* चिह्नित लक्ष्य छवियों को स्कैन करता है (या यदि कोई भी चिह्नित नहीं है तो सभी छवियां)
+* प्रत्येक लक्ष्य में 4 अंशांकन पैनल की पहचान करता है
+* लक्ष्य पैनलों से परावर्तन मान निकालता है
+* अंशांकन शेड्यूलिंग के लिए लक्ष्य टाइमस्टैम्प रिकॉर्ड करता है
+
+**अवधि:** 1-30 सेकंड (चिह्नित लक्ष्यों के साथ), 5-30+ मिनट (अचिह्नित)
+
+### चरण 2: डिबेयरिंग (रॉ रूपांतरण)
+
+**क्लोरोस क्या करता है:**
+
+* रॉ बायर पैटर्न डेटा को पूर्ण आरजीबी छवियों में परिवर्तित करता है
+* उच्च-गुणवत्ता वाला डेमोसैसिंग एल्गोरिदम लागू करता है
+* अधिकतम छवि गुणवत्ता और विवरण सुरक्षित रखता है
+
+**अवधि:** छवि गणना और सीपीयू गति के अनुसार भिन्न होती है
+
+### चरण 3: अंशांकन
+
+**क्लोरोस क्या करता है:**
+
+* **विग्नेट सुधार**: किनारों पर लेंस का कालापन दूर करता है
+* **परावर्तन अंशांकन**: लक्ष्य परावर्तन मानों का उपयोग करके सामान्यीकृत किया जाता है
+* सभी बैंड/चैनलों पर सुधार लागू करता है
+* टाइमस्टैम्प के आधार पर प्रत्येक छवि के लिए उचित अंशांकन लक्ष्य का उपयोग करता है
+
+**अवधि:** अधिकांश प्रसंस्करण समय
+
+### चरण 4: सूचकांक गणना
+
+**क्लोरोस क्या करता है:**
+
+* कॉन्फ़िगर किए गए मल्टीस्पेक्ट्रल सूचकांकों (एनडीवीआई, एनडीआरई, आदि) की गणना करता है।
+* कैलिब्रेटेड छवियों पर बैंड गणित लागू करता है
+* प्रत्येक चयनित सूचकांक के लिए सूचकांक छवियां उत्पन्न करता है
+
+**अवधि:** प्रति छवि कुछ सेकंड
+
+### चरण 5: निर्यात
+
+**क्लोरोस क्या करता है:**
+
+* चयनित प्रारूप में कैलिब्रेटेड छवियों को सहेजता है
+* कॉन्फ़िगर किए गए LUT रंगों के साथ सूचकांक छवियों को निर्यात करता है
+* कैमरा मॉडल सबफ़ोल्डर्स में फ़ाइलें लिखता है
+* मूल फ़ाइल नामों को प्रत्ययों के साथ सुरक्षित रखता है
+
+**अवधि:** निर्यात प्रारूप और फ़ाइल आकार के अनुसार भिन्न होता है
 
 ***
 
-## Canceling Processing
+## प्रसंस्करण व्यवहार
 
-If you need to stop processing:
+### स्वचालित प्रसंस्करण पाइपलाइन
 
-### How to Cancel
+एक बार शुरू होने पर, पूरी पाइपलाइन स्वचालित रूप से चलती है:
 
-1. Locate the **Stop/Cancel button** (replaces Start button during processing)
-2. Click the Stop button
-3. Processing halts immediately
-4. Partial results are discarded
+* किसी उपयोगकर्ता सहभागिता की आवश्यकता नहीं
+* सभी कॉन्फ़िगर किए गए चरण क्रम में निष्पादित होते हैं
+* प्रगति अपडेट वास्तविक समय में दिखाए गए
 
-### When to Cancel
+### प्रसंस्करण के दौरान कंप्यूटर का उपयोग
 
-**Valid reasons to cancel:**
+**मुक्त मोड:**
 
-* Realized incorrect settings were used
-* Forgot to mark target images
-* Wrong images imported
-* System running too slow or unresponsive
+* अपेक्षाकृत कम सीपीयू उपयोग (एकल-थ्रेडेड)
+* कंप्यूटर अन्य कार्यों के लिए उत्तरदायी रहता है
+* क्लोरोज़ को न्यूनतम करने और अन्य अनुप्रयोगों में काम करने के लिए सुरक्षित
 
-**After canceling:**
+**क्लोरोस+समानांतर मोड:**
 
-* Review and fix any issues
-* Adjust settings as needed
-* Restart processing from the beginning
-* For the cleanest experience, completely close Chloros and restart
+* उच्च सीपीयू उपयोग (बहु-थ्रेडेड, 16 कोर तक)
+* GPU त्वरण के साथ: उच्च GPU उपयोग
+* प्रोसेसिंग के दौरान कंप्यूटर कम प्रतिक्रियाशील हो सकता है
+* अन्य सीपीयू-गहन कार्यों को शुरू करने से बचें
 
-{% hint style="warning" %}
-**No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
-{% endhint %}
+{% संकेत शैली = "चेतावनी" %}
+**प्रदर्शन युक्ति**: सर्वोत्तम क्लोरोस+ प्रदर्शन के लिए, अन्य एप्लिकेशन बंद करें और क्लोरोस को पूर्ण सिस्टम संसाधनों का उपयोग करने दें।
+{%अंतसंकेत%}
+
+### प्रसंस्करण रोका नहीं जा सकता
+
+**महत्वपूर्ण सीमाएँ:**
+
+* एक बार शुरू होने के बाद प्रोसेसिंग को रोका नहीं जा सकता
+* आप प्रसंस्करण रद्द कर सकते हैं, लेकिन प्रगति खो गई है
+* आंशिक परिणाम सहेजे नहीं जाते
+* रद्द होने पर प्रारंभ से पुनः आरंभ करना होगा
+
+**योजना युक्ति:** बहुत बड़ी परियोजनाओं के लिए, बेहतर नियंत्रण के लिए बैचों में प्रसंस्करण या सीएलआई का उपयोग करने पर विचार करें।
 
 ***
 
-## Processing Time Estimates
+## आपके प्रसंस्करण की निगरानी करना
 
-Actual processing time varies greatly based on:
+प्रसंस्करण चलते समय, आप यह कर सकते हैं:
 
-* Number of images
-* Image resolution
-* RAW vs JPG input format
-* Processing mode (Free vs Chloros+)
-* CPU speed and core count
-* GPU availability (Chloros+ only)
-* Number of indices to calculate
-* Export format complexity
+* **प्रगति बार देखें** - समग्र पूर्णता प्रतिशत देखें
+* **वर्तमान चरण देखें** - पता लगाएं, विश्लेषण करें, कैलिब्रेट करें, या निर्यात करें
+* **लॉग टैब जांचें** - विस्तृत प्रसंस्करण संदेश और चेतावनियां देखें
+* **पूर्ण छवियों का पूर्वावलोकन करें** - कुछ निर्यात फ़ाइलें प्रसंस्करण के दौरान दिखाई दे सकती हैं
 
-### Rough Estimates (Chloros+, 12MP images, modern CPU)
+निगरानी पर विस्तृत जानकारी के लिए, [प्रसंस्करण की निगरानी](monitoring-the-processing.md) देखें।
 
-| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
+***
+
+## प्रसंस्करण रद्द करना
+
+यदि आपको प्रसंस्करण रोकने की आवश्यकता है:
+
+### कैसे रद्द करें
+
+1. **रोकें/रद्द करें बटन** का पता लगाएं (प्रसंस्करण के दौरान प्रारंभ बटन को बदल देता है)
+2. स्टॉप बटन पर क्लिक करें
+3. प्रसंस्करण तुरंत रुक जाता है
+4. आंशिक परिणाम खारिज कर दिए जाते हैं
+
+### कब रद्द करें
+
+**रद्द करने के वैध कारण:**
+
+* एहसास हुआ कि गलत सेटिंग्स का उपयोग किया गया था
+* लक्ष्य छवियों को चिह्नित करना भूल गए
+* गलत छवियाँ आयातित
+* सिस्टम बहुत धीमा या अनुत्तरदायी चल रहा है
+
+**रद्द करने के बाद:**
+
+* किसी भी समस्या की समीक्षा करें और उसे ठीक करें
+* आवश्यकतानुसार सेटिंग्स समायोजित करें
+* आरंभ से प्रसंस्करण पुनः आरंभ करें
+* सबसे स्वच्छ अनुभव के लिए, क्लोरोस को पूरी तरह से बंद करें और पुनः आरंभ करें
+
+{% संकेत शैली = "चेतावनी" %}
+**कोई आंशिक परिणाम नहीं**: रद्द करने से सारी प्रगति खारिज हो जाती है। क्लोरोस आंशिक रूप से संसाधित छवियों को सहेजता नहीं है।
+{%अंतसंकेत%}
+
+***
+
+## प्रसंस्करण समय का अनुमान
+
+वास्तविक प्रसंस्करण समय निम्न के आधार पर बहुत भिन्न होता है:
+
+* छवियों की संख्या
+* छवि संकल्प
+* रॉ बनाम जेपीजी इनपुट प्रारूप
+* प्रोसेसिंग मोड (फ्री बनाम क्लोरोस+)
+* सीपीयू स्पीड और कोर गिनती
+* जीपीयू उपलब्धता (केवल क्लोरोस+)
+* गणना करने के लिए सूचकांकों की संख्या
+* निर्यात प्रारूप जटिलता
+
+### अनुमानित अनुमान (क्लोरोस+, 12एमपी छवियाँ, आधुनिक सीपीयू)
+
+| छवि गणना | फ्री मोड | क्लोरोस+ (सीपीयू) | क्लोरोस+ (जीपीयू) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
+| 50 छवियाँ | 15-20 मिनट | 5-8 मिनट | 3-5 मिनट |
+| 100 छवियाँ | 30-40 मिनट | 10-15 मिनट | 5-8 मिनट |
+| 200 छवियाँ | 1-1.5 बजे | 20-30 मिनट | 10-15 मिनट |
+| 500 छवियाँ | 2-3 घंटे | 45-60 मिनट | 20-30 मिनट |
+| 1000 छवियाँ | 4-6 घंटे | 1.5-2 घंटे | 40-60 मिनट |
 
-{% hint style="info" %}
-**First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
-{% endhint %}
-
-***
-
-## Common Issues at Start
-
-### Start Button Disabled (Grayed Out)
-
-**Possible causes:**
-
-* No images imported
-* Backend not fully started
-* Previous processing still running
-* Project not fully loaded
-
-**Solutions:**
-
-1. Wait for backend to fully initialize (check main menu icon)
-2. Verify images are imported in File Browser
-3. Restart Chloros if button remains disabled
-4. Check Debug Log for error messages
-
-### Processing Starts Then Immediately Fails
-
-**Possible causes:**
-
-* No valid images in project
-* Corrupted image files
-* Insufficient disk space
-* Insufficient memory (RAM)
-
-**Solutions:**
-
-1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for error messages
-2. Verify disk space available
-3. Try processing a smaller subset of images
-4. Verify images are not corrupted
-
-### "No Targets Detected" Warning
-
-**Possible causes:**
-
-* Forgot to mark target images
-* Target images don't contain visible targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Review [Choosing Target Images](choosing-target-images.md)
-2. Mark appropriate images in Target column
-3. Verify targets are visible in marked images
-4. Adjust target detection settings if needed
+{% संकेत शैली = "जानकारी" %}
+**पहला रन**: प्रारंभिक प्रसंस्करण में अधिक समय लग सकता है क्योंकि क्लोरोस कैश और प्रोफाइल बनाता है। समान डेटासेट की बाद की प्रोसेसिंग तेज़ होगी।
+{%अंतसंकेत%}
 
 ***
 
-## Tips for Successful Processing
+## प्रारंभ में सामान्य मुद्दे
 
-### Before Starting
+### प्रारंभ बटन अक्षम (ग्रे आउट)
 
-1. **Test with small subset first** - Process 10-20 images to verify settings
-2. **Check available disk space** - Ensure 2-3x dataset size free
-3. **Close unnecessary applications** - Free up system resources
-4. **Verify target images** - Preview marked targets to ensure quality
-5. **Save project** - Project auto-saves, but good practice to save manually
+**संभावित कारण:**
 
-### During Processing
+* कोई छवि आयात नहीं की गई
+* बैकएंड पूरी तरह से प्रारंभ नहीं हुआ
+* पिछली प्रोसेसिंग अभी भी चल रही है
+* प्रोजेक्ट पूरी तरह लोड नहीं हुआ
 
-1. **Avoid system sleep** - Disable power saving modes
-2. **Keep Chloros in foreground** - Or at least visible in taskbar
-3. **Monitor progress occasionally** - Check for warnings or errors
-4. **Don't load other heavy applications** - Especially with Chloros+ parallel mode
+**समाधान:**
 
-### Chloros+ GPU Acceleration
+1. बैकएंड के पूरी तरह से आरंभ होने तक प्रतीक्षा करें (मुख्य मेनू आइकन जांचें)
+2. सत्यापित करें कि छवियाँ फ़ाइल ब्राउज़र में आयात की गई हैं
+3. यदि बटन अक्षम रहता है तो क्लोरोस को पुनः प्रारंभ करें
+4. त्रुटि संदेशों के लिए डिबग लॉग की जाँच करें
 
-If using NVIDIA GPU acceleration:
+### प्रोसेसिंग शुरू होती है और तुरंत विफल हो जाती है
 
-1. Update NVIDIA drivers to latest version
-2. Ensure GPU has 4GB+ VRAM
-3. Close GPU-intensive applications (games, video editing)
-4. Monitor GPU temperature (ensure adequate cooling)
+**संभावित कारण:**
+
+* प्रोजेक्ट में कोई मान्य चित्र नहीं
+* दूषित छवि फ़ाइलें
+* डिस्क में अपर्याप्त स्थान
+* अपर्याप्त मेमोरी (रैम)
+
+**समाधान:**
+
+1. त्रुटि संदेशों के लिए डिबग लॉग <img src='../.gitbook/assets/icon_log.JPG' alt='' data-size='line'> जांचें
+2. उपलब्ध डिस्क स्थान को सत्यापित करें
+3. छवियों के एक छोटे उपसमूह को संसाधित करने का प्रयास करें
+4. सत्यापित करें कि छवियाँ दूषित नहीं हैं
+
+### "कोई लक्ष्य नहीं मिला" चेतावनी
+
+**संभावित कारण:**
+
+* लक्ष्य छवियों को चिह्नित करना भूल गए
+* लक्ष्य छवियों में दृश्यमान लक्ष्य नहीं होते हैं
+* लक्ष्य पहचान सेटिंग बहुत सख्त
+
+**समाधान:**
+
+1. समीक्षा करें [लक्ष्य छवियाँ चुनना](choosing-target-images.md)
+2. लक्ष्य कॉलम में उपयुक्त छवियों को चिह्नित करें
+3. सत्यापित करें कि लक्ष्य चिह्नित छवियों में दिखाई दे रहे हैं
+4. यदि आवश्यक हो तो लक्ष्य पहचान सेटिंग्स समायोजित करें
 
 ***
 
-## Next Steps
+## सफल प्रसंस्करण के लिए युक्तियाँ
 
-Once processing has started:
+### शुरू करने से पहले
 
-1. **Monitor the progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-2. **Wait for completion** - Processing runs automatically
-3. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
+1. **पहले छोटे उपसमुच्चय के साथ परीक्षण करें** - सेटिंग्स को सत्यापित करने के लिए 10-20 छवियों को संसाधित करें
+2. **उपलब्ध डिस्क स्थान की जाँच करें** - 2-3x डेटासेट आकार निःशुल्क सुनिश्चित करें
+3. **अनावश्यक एप्लिकेशन बंद करें** - सिस्टम संसाधनों को खाली करें
+4. **लक्ष्य छवियों को सत्यापित करें** - गुणवत्ता सुनिश्चित करने के लिए चिह्नित लक्ष्यों का पूर्वावलोकन करें
+5. **प्रोजेक्ट सहेजें** - प्रोजेक्ट स्वतः सहेजता है, लेकिन मैन्युअल रूप से सहेजना अच्छा अभ्यास है
 
-For information about what to do during processing, see [Monitoring the Processing](monitoring-the-processing.md).
+### प्रसंस्करण के दौरान
+
+1. **सिस्टम स्लीप से बचें** - पावर सेविंग मोड अक्षम करें
+2. **क्लोरोस को अग्रभूमि में रखें** - या कम से कम टास्कबार में दिखाई दे
+3. **समय-समय पर प्रगति की निगरानी करें** - चेतावनियों या त्रुटियों की जाँच करें
+4. **अन्य भारी एप्लिकेशन लोड न करें** - विशेष रूप से क्लोरोस+ समानांतर मोड के साथ
+
+### क्लोरोस+ जीपीयू त्वरण
+
+यदि NVIDIA GPU त्वरण का उपयोग कर रहे हैं:
+
+1. NVIDIA ड्राइवरों को नवीनतम संस्करण में अपडेट करें
+2. सुनिश्चित करें कि GPU में 4GB+ VRAM है
+3. GPU-सघन एप्लिकेशन (गेम, वीडियो संपादन) बंद करें
+4. GPU तापमान की निगरानी करें (पर्याप्त शीतलन सुनिश्चित करें)
+
+***
+
+## अगले कदम
+
+एक बार प्रसंस्करण शुरू हो जाने पर:
+
+1. **प्रगति की निगरानी करें** - देखें [प्रसंस्करण की निगरानी](monitoring-the-processing.md)
+2. **पूरा होने की प्रतीक्षा करें** - प्रसंस्करण स्वचालित रूप से चलता है
+3. **परिणामों की समीक्षा करें** - देखें [प्रसंस्करण समाप्त करना](finishing-the-processing.md)
+
+प्रसंस्करण के दौरान क्या करना है इसके बारे में जानकारी के लिए, [प्रसंस्करण की निगरानी](monitoring-the-processing.md) देखें।

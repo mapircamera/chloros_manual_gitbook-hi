@@ -1,16 +1,16 @@
-# Manual Repository Creation Instructions
+# मैनुअल रिपॉजिटरी निर्माण निर्देश
 
-If you prefer to create repositories manually or if the automated script doesn't work, follow these instructions.
+यदि आप मैन्युअल रूप से रिपॉजिटरी बनाना पसंद करते हैं या स्वचालित स्क्रिप्ट काम नहीं करती है, तो इन निर्देशों का पालन करें।
 
-## Prerequisites
+## पूर्वावश्यकताएँ
 
-1. GitHub account with appropriate permissions
-2. Git installed on your computer
-3. GitHub CLI (optional but recommended): https://cli.github.com/
+1. उचित अनुमतियों के साथ GitHub खाता
+2. आपके कंप्यूटर पर Git इंस्टॉल हो गया है
+3. GitHub CLI (वैकल्पिक लेकिन अनुशंसित): https://cli.github.com/
 
-## Method 1: Using GitHub CLI (Recommended)
+## विधि 1: GitHub CLI का उपयोग करना (अनुशंसित)
 
-### Install GitHub CLI
+### GitHub CLI इंस्टॉल करें
 ```powershell
 # Windows (using winget)
 winget install --id GitHub.cli
@@ -18,13 +18,13 @@ winget install --id GitHub.cli
 # Or download from https://cli.github.com/
 ```
 
-### Authenticate
+### प्रमाणित करें
 ```powershell
 gh auth login
 ```
 
-### Create Each Repository
-For each language, run:
+### प्रत्येक रिपॉजिटरी बनाएं
+प्रत्येक भाषा के लिए, चलाएँ:
 
 ```powershell
 # Example for Spanish
@@ -64,41 +64,41 @@ git push -u origin main
 cd ..
 ```
 
-Repeat for all 27 languages (see language-repos-list.md for all language codes).
+सभी 27 भाषाओं के लिए दोहराएं (सभी भाषा कोड के लिए language-repos-list.md देखें)।
 
-## Method 2: Using GitHub Web Interface
+## विधि 2: GitHub वेब इंटरफ़ेस का उपयोग करना
 
-### For Each Language:
+### प्रत्येक भाषा के लिए:
 
-1. **Go to GitHub**
-   - Navigate to https://github.com/new
+1. **GitHub पर जाएं**
+- https://github.com/new पर नेविगेट करें
    
-2. **Repository Settings**
-   - Repository name: `chloros_manual_gitbook-[language-code]`
-   - Description: `Chloros Professional Multispectral Image Processing Software - User Manual ([Native Language Name])`
-   - Public repository
-   - ✓ Add a README file
-   - Add .gitignore: None (we'll add it later)
-   - License: None (or your preferred license)
+2. **रिपॉजिटरी सेटिंग्स**
+- रिपॉजिटरी का नाम: `chloros_manual_gitbook-[language-code]`
+- विवरण: `Chloros Professional Multispectral Image Processing Software - User Manual ([Native Language Name])`
+- सार्वजनिक भंडार
+- ✓ एक README फ़ाइल जोड़ें
+- .gitignore जोड़ें: कोई नहीं (हम इसे बाद में जोड़ेंगे)
+- लाइसेंस: कोई नहीं (या आपका पसंदीदा लाइसेंस)
 
-3. **Click "Create repository"**
+3. **"रिपॉजिटरी बनाएं" पर क्लिक करें**
 
-4. **Clone Locally**
-   ```powershell
+4. **स्थानीय रूप से क्लोन करें**
+```powershell
    git clone https://github.com/YOUR-USERNAME/chloros_manual_gitbook-[language-code]
    cd chloros_manual_gitbook-[language-code]
    ```
 
-5. **Add Files**
-   - Edit README.md with appropriate content
-   - Create .gitignore file
-   - Commit and push
+5. **फ़ाइलें जोड़ें**
+- उचित सामग्री के साथ README.md संपादित करें
+- .gitignore फ़ाइल बनाएं
+- प्रतिबद्ध और धक्का
 
-6. **Repeat** for all 27 languages
+6. सभी 27 भाषाओं के लिए **दोहराएँ**
 
-## All Repository Names to Create
+## बनाने के लिए सभी रिपॉजिटरी नाम
 
-Copy and paste this list for reference:
+संदर्भ के लिए इस सूची को कॉपी और पेस्ट करें:
 
 ```
 chloros_manual_gitbook-es       (Spanish - Español)
@@ -130,9 +130,9 @@ chloros_manual_gitbook-ro       (Romanian - Română)
 chloros_manual_gitbook-uk       (Ukrainian - Українська)
 ```
 
-## Quick Command List (GitHub CLI)
+## त्वरित कमांड सूची (GitHub CLI)
 
-If you have GitHub CLI installed, you can run these commands in sequence:
+यदि आपके पास GitHub CLI स्थापित है, तो आप इन आदेशों को क्रम से चला सकते हैं:
 
 ```powershell
 gh repo create chloros_manual_gitbook-es --public --description "Chloros User Manual - Español" --clone
@@ -164,30 +164,30 @@ gh repo create chloros_manual_gitbook-ro --public --description "Chloros User Ma
 gh repo create chloros_manual_gitbook-uk --public --description "Chloros User Manual - Українська" --clone
 ```
 
-## Next Steps After Repo Creation
+## रेपो निर्माण के बाद अगले चरण
 
-1. **In GitBook**: Duplicate your Chloros manual 27 times (one for each language)
-2. **Name each space**: "Chloros Manual - [Native Language Name]"
-3. **Connect to GitHub**: In each GitBook space settings, connect to the corresponding GitHub repo
-4. **Enable Sync**: Set up bi-directional sync between GitBook and GitHub
-5. **Verify**: Check that all repos are properly synced
-6. **Translate**: Use translation tools to translate the content in each repo
+1. **GitBook में**: अपने Chloros मैनुअल को 27 बार डुप्लिकेट करें (प्रत्येक भाषा के लिए एक)
+2. **प्रत्येक स्थान को नाम दें**: "Chloros मैनुअल - [मूल भाषा का नाम]"
+3. **GitHub से कनेक्ट करें**: प्रत्येक GitBook स्पेस सेटिंग्स में, संबंधित GitHub रेपो से कनेक्ट करें
+4. **सिंक सक्षम करें**: GitBook और GitHub के बीच द्वि-दिशात्मक सिंक सेट करें
+5. **सत्यापित करें**: जांचें कि सभी रेपो ठीक से सिंक हो गए हैं
+6. **अनुवाद**: प्रत्येक रेपो में सामग्री का अनुवाद करने के लिए अनुवाद टूल का उपयोग करें
 
-## Troubleshooting
+## समस्या निवारण
 
-### Issue: "Repository already exists"
-- The repository name is already taken
-- Choose a different name or delete the existing repo first
+### समस्या: "भंडार पहले से मौजूद है"
+- रिपॉजिटरी का नाम पहले ही लिया जा चुका है
+- एक अलग नाम चुनें या पहले मौजूदा रेपो को हटा दें
 
-### Issue: GitHub CLI not authenticated
-Run: `gh auth login`
+### समस्या: GitHub CLI प्रमाणित नहीं
+चलाएँ: `gh auth login`
 
-### Issue: Permission denied
-- Make sure you have permission to create repos in your account/organization
-- Check your GitHub token permissions
+### समस्या: अनुमति अस्वीकृत
+- सुनिश्चित करें कि आपके पास अपने खाते/संगठन में रेपो बनाने की अनुमति है
+- अपनी GitHub टोकन अनुमतियाँ जांचें
 
-### Issue: Rate limiting
-- GitHub has API rate limits
-- Wait a few minutes between creating repositories
-- Or create them manually through the web interface
+### मुद्दा: दर सीमित करना
+- GitHub में API दर सीमाएँ हैं
+- रिपॉजिटरी बनाने के बीच कुछ मिनट प्रतीक्षा करें
+- या उन्हें वेब इंटरफ़ेस के माध्यम से मैन्युअल रूप से बनाएं
 

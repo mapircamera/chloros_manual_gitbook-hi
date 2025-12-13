@@ -1,392 +1,392 @@
-# Monitoring the Processing
+# प्रसंस्करण की निगरानी करना
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+एक बार प्रसंस्करण शुरू हो जाने के बाद, क्लोरोस प्रगति की निगरानी करने, समस्याओं की जांच करने और यह समझने के लिए कई तरीके प्रदान करता है कि आपके डेटासेट के साथ क्या हो रहा है। यह पृष्ठ बताता है कि अपनी प्रोसेसिंग को कैसे ट्रैक करें और क्लोरोस द्वारा प्रदान की गई जानकारी की व्याख्या कैसे करें।
 
-## Progress Bar Overview
+## प्रगति बार अवलोकन
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+शीर्ष शीर्षलेख में प्रगति पट्टी वास्तविक समय प्रसंस्करण स्थिति और पूर्णता प्रतिशत दिखाती है।
 
-### Free Mode Progress Bar
+### फ्री मोड प्रोग्रेस बार
 
-For users without Chloros+ license:
+क्लोरोस+ लाइसेंस के बिना उपयोगकर्ताओं के लिए:
 
-**2-Stage Progress Display:**
+**2-चरण प्रगति प्रदर्शन:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **लक्ष्य का पता लगाएं** - छवियों में अंशांकन लक्ष्य ढूँढना
+2. **प्रसंस्करण** - सुधार लागू करना और निर्यात करना
 
-**Progress bar shows:**
+**प्रगति बार दिखाता है:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* समग्र पूर्णता प्रतिशत (0-100%)
+* वर्तमान चरण का नाम
+* सरल क्षैतिज पट्टी दृश्य
 
-### Chloros+ Progress Bar
+### क्लोरोस+ प्रोग्रेस बार
 
-For users with Chloros+ license:
+क्लोरोस+ लाइसेंस वाले उपयोगकर्ताओं के लिए:
 
-**4-Stage Progress Display:**
+**4-चरण प्रगति प्रदर्शन:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **पता लगाना** - अंशांकन लक्ष्य ढूँढना
+2. **विश्लेषण** - छवियों की जांच करना और पाइपलाइन तैयार करना
+3. **अंशांकन** - विगनेट और परावर्तन सुधार लागू करना
+4. **निर्यात** - संसाधित फ़ाइलों को सहेजना
 
-**Interactive Features:**
+**इंटरैक्टिव विशेषताएं:**
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* *विस्तारित 4-स्टेज पैनल देखने के लिए प्रगति बार पर होवर करें
+* **विस्तारित पैनल को फ़्रीज़/पिन करने के लिए प्रगति पट्टी पर क्लिक करें**
+* **माउस लीव पर अनफ़्रीज़ और ऑटो-छिपाने के लिए फिर से क्लिक करें**
+* प्रत्येक चरण व्यक्तिगत प्रगति दर्शाता है (0-100%)
 
 ***
 
-## Debug Log Tab
+## प्रत्येक प्रसंस्करण चरण को समझना
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### चरण 1: पता लगाना (लक्ष्य का पता लगाना)
 
-### Accessing the Debug Log
+**क्या हो रहा है:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* क्लोरोस लक्ष्य चेकबॉक्स से चिह्नित छवियों को स्कैन करता है
+* कंप्यूटर विज़न एल्गोरिदम 4 अंशांकन पैनलों की पहचान करते हैं
+* प्रत्येक पैनल से परावर्तन मान निकाले गए
+* उचित अंशांकन शेड्यूलिंग के लिए लक्ष्य टाइमस्टैम्प रिकॉर्ड किए गए
 
-### Understanding Log Messages
+**अवधि:**
 
-#### Information Messages (White/Gray)
+* चिन्हित लक्ष्यों के साथ: 10-60 सेकंड
+* चिह्नित लक्ष्यों के बिना: 5-30+ मिनट (सभी छवियों को स्कैन करता है)
 
-Normal processing updates:
+**प्रगति सूचक:**
+
+* पता लगाना: 0% → 100%
+* स्कैन की गई छवियों की संख्या
+*लक्ष्यों की गिनती हुई
+
+**क्या देखना है:**
+
+* लक्ष्य ठीक से चिन्हित होने पर शीघ्र पूरा होना चाहिए
+* अधिक समय लगने पर लक्ष्य चिह्नित नहीं हो सकेंगे
+* "लक्ष्य मिला" संदेशों के लिए डिबग लॉग की जाँच करें
+
+### चरण 2: विश्लेषण करना
+
+**क्या हो रहा है:**
+
+* छवि EXIF ​​मेटाडेटा पढ़ना (टाइमस्टैम्प, एक्सपोज़र सेटिंग्स)
+* लक्ष्य टाइमस्टैम्प के आधार पर अंशांकन रणनीति का निर्धारण
+* छवि प्रसंस्करण कतार का आयोजन
+* समानांतर प्रसंस्करण श्रमिकों को तैयार करना (केवल क्लोरोस+)
+
+**अवधि:** 5-30 सेकंड
+
+**प्रगति सूचक:**
+
+* विश्लेषण: 0% → 100%
+* तेज़ चरण, आमतौर पर जल्दी पूरा होता है
+
+**क्या देखना है:**
+
+*बिना रुके निरंतर प्रगति करनी चाहिए
+* गुम मेटाडेटा के बारे में चेतावनियाँ डीबग लॉग में दिखाई देंगी
+
+### चरण 3: अंशांकन
+
+**क्या हो रहा है:**
+
+* **डिबेयरिंग**: रॉ बायर पैटर्न को 3 चैनलों में परिवर्तित करना
+* **विग्नेट सुधार**: लेंस किनारे का कालापन हटाना
+* **परावर्तन अंशांकन**: लक्ष्य मानों के साथ सामान्यीकरण
+* **सूचकांक गणना**: मल्टीस्पेक्ट्रल सूचकांकों की गणना
+* प्रत्येक छवि को पूर्ण पाइपलाइन के माध्यम से संसाधित करना
+
+**अवधि:** कुल प्रसंस्करण समय का अधिकांश भाग (60-80%)
+
+**प्रगति सूचक:**
+
+* अंशांकन: 0% → 100%
+* वर्तमान छवि संसाधित की जा रही है
+* पूर्ण छवियाँ / कुल छवियाँ
+
+**प्रसंस्करण व्यवहार:**
+
+* *निःशुल्क मोड**: एक समय में एक छवि को क्रमिक रूप से संसाधित करता है
+* **क्लोरोस+ मोड**: एक साथ 16 छवियों को संसाधित करता है
+* **जीपीयू त्वरण**: इस चरण में उल्लेखनीय रूप से गति बढ़ाता है
+
+**क्या देखना है:**
+
+* छवि गणना के माध्यम से स्थिर प्रगति
+* प्रति-छवि पूर्णता संदेशों के लिए डिबग लॉग की जाँच करें
+* छवि गुणवत्ता या अंशांकन समस्याओं के बारे में चेतावनियाँ
+
+### चरण 4: निर्यात
+
+**क्या हो रहा है:**
+
+* चयनित प्रारूप में डिस्क पर कैलिब्रेटेड छवियां लिखना
+* LUT रंगों के साथ मल्टीस्पेक्ट्रल इंडेक्स छवियों का निर्यात करना
+* कैमरा मॉडल सबफ़ोल्डर बनाना
+* उचित प्रत्ययों के साथ मूल फ़ाइल नामों को संरक्षित करना
+
+**अवधि:** कुल प्रसंस्करण समय का 10-20%
+
+**प्रगति सूचक:**
+
+* निर्यात: 0% → 100%
+* फ़ाइलें लिखी जा रही हैं
+* निर्यात प्रारूप और गंतव्य
+
+**क्या देखना है:**
+
+* डिस्क स्थान चेतावनियाँ
+* फ़ाइल लिखने में त्रुटियाँ
+* सभी कॉन्फ़िगर किए गए आउटपुट को पूरा करना
+
+***
+
+## डीबग लॉग टैब
+
+डिबग लॉग प्रसंस्करण प्रगति और आने वाली किसी भी समस्या के बारे में विस्तृत जानकारी प्रदान करता है।
+
+### डिबग लॉग तक पहुँचना
+
+1. बाएं साइडबार में **डीबग लॉग** <img src=”../.gitbook/assets/icon_log.JPG” alt=”” data-size=”line”> आइकन पर क्लिक करें।
+2. लॉग पैनल वास्तविक समय प्रसंस्करण संदेशों को दिखाते हुए खुलता है
+3. नवीनतम संदेश दिखाने के लिए ऑटो-स्क्रॉल
+
+### लॉग संदेशों को समझना
+
+#### सूचना संदेश (सफ़ेद/ग्रे)
+
+सामान्य प्रसंस्करण अद्यतन:
 
 ```
-[INFO] Processing started
-[INFO] Target detected in IMG_0015.RAW - 4 panels found
-[INFO] Calibrating IMG_0234.RAW
-[INFO] Exported NDVI image: IMG_0234_NDVI.tif
-[INFO] Processing complete
+[सूचना] प्रसंस्करण शुरू हो गया
+[जानकारी] IMG_0015.RAW में लक्ष्य का पता चला - 4 पैनल मिले
+[जानकारी] IMG_0234.RAW को कैलिब्रेट किया जा रहा है
+[जानकारी] निर्यात की गई NDVI छवि: IMG_0234_NDVI.tif
+[जानकारी] प्रसंस्करण पूर्ण
 ```
 
-#### Warning Messages (Yellow)
+#### चेतावनी संदेश (पीला)
 
-Non-critical issues that don't stop processing:
-
-```
-[WARN] No GPS data found in IMG_0145.RAW
-[WARN] Target image timestamp gap > 30 minutes
-[WARN] Low contrast in calibration panel - results may vary
-```
-
-**Action:** Review warnings after processing, but don't interrupt
-
-#### Error Messages (Red)
-
-Critical issues that may cause processing to fail:
+गैर-महत्वपूर्ण मुद्दे जो प्रसंस्करण नहीं रोकते:
 
 ```
-[ERROR] Cannot write file - disk full
-[ERROR] Corrupted image file: IMG_0299.RAW
-[ERROR] No targets detected - enable reflectance calibration or mark target images
+[चेतावनी] IMG_0145.RAW में कोई जीपीएस डेटा नहीं मिला
+[चेतावनी] छवि टाइमस्टैम्प अंतर > 30 मिनट का लक्ष्य रखें
+[चेतावनी] अंशांकन पैनल में कम कंट्रास्ट - परिणाम भिन्न हो सकते हैं
 ```
 
-**Action:** Stop processing, resolve error, restart
+**कार्रवाई:** प्रसंस्करण के बाद चेतावनियों की समीक्षा करें, लेकिन बीच में न आएं
 
-### Common Log Messages
+#### त्रुटि संदेश (लाल)
 
-| Message                          | Meaning                                | Action Needed                                         |
+गंभीर समस्याएँ जिनके कारण प्रसंस्करण विफल हो सकता है:
+
+```
+[त्रुटि] फ़ाइल नहीं लिख सकता - डिस्क भरी हुई है
+[त्रुटि] दूषित छवि फ़ाइल: IMG_0299.RAW
+[त्रुटि] कोई लक्ष्य नहीं मिला - परावर्तन अंशांकन सक्षम करें या लक्ष्य छवियों को चिह्नित करें
+```
+
+**कार्रवाई:** प्रसंस्करण रोकें, त्रुटि का समाधान करें, पुनरारंभ करें
+
+### सामान्य लॉग संदेश
+
+| संदेश | मतलब | कार्रवाई की आवश्यकता |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+| "\[फ़ाइल नाम] में लक्ष्य का पता चला" | अंशांकन लक्ष्य सफलतापूर्वक पाया गया | कोई नहीं - सामान्य |
+| "Y की छवि X का प्रसंस्करण" | वर्तमान प्रगति अद्यतन | कोई नहीं - सामान्य |
+| "कोई लक्ष्य नहीं मिला" | कोई अंशांकन लक्ष्य नहीं पाया गया | लक्ष्य छवियों को चिह्नित करें या परावर्तन अंशांकन अक्षम करें |
+| "अपर्याप्त डिस्क स्थान" | आउटपुट के लिए पर्याप्त भंडारण नहीं | डिस्क स्थान खाली करें |
+| "दूषित फ़ाइल को छोड़ा जा रहा है" | छवि फ़ाइल क्षतिग्रस्त है | एसडी कार्ड से फ़ाइल पुनः कॉपी करें |
+| "पीपीके डेटा लागू" | .daq फ़ाइल से जीपीएस सुधार लागू | कोई नहीं - सामान्य |
 
-### Copying Log Data
+### लॉग डेटा कॉपी करना
 
-To copy log for troubleshooting or support:
+समस्या निवारण या सहायता के लिए लॉग कॉपी करने के लिए:
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
-
-***
-
-## System Resource Monitoring
-
-### CPU Usage
-
-**Free Mode:**
-
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
-
-**Chloros+ Parallel Mode:**
-
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
-
-**To monitor:**
-
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
-
-### Memory (RAM) Usage
-
-**Typical usage:**
-
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
-
-**If memory is low:**
-
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
-
-### GPU Usage (Chloros+ with CUDA)
-
-When GPU acceleration is enabled:
-
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
-
-**To monitor:**
-
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
-
-### Disk I/O
-
-**What to expect:**
-
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
-
-**Performance tip:**
-
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
+1. डिबग लॉग पैनल खोलें
+2. **"कॉपी लॉग"** बटन पर क्लिक करें (या राइट-क्लिक करें → सभी का चयन करें)
+3. टेक्स्ट फ़ाइल या ईमेल में चिपकाएँ
+4. यदि आवश्यक हो तो MAPIR सहायता को भेजें
 
 ***
 
-## Detecting Problems During Processing
+## सिस्टम संसाधन निगरानी
 
-### Warning Signs
+### सीपीयू उपयोग
 
-**Progress stalls (no change for 5+ minutes):**
+**मुक्त मोड:**
 
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
+* 1 सीपीयू कोर \~100% पर
+* अन्य कोर निष्क्रिय या उपलब्ध हैं
+* सिस्टम रिस्पॉन्सिव रहता है
 
-**Error messages appear frequently:**
+**क्लोरोस+समानांतर मोड:**
 
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
+* 80-100% पर एकाधिक कोर (16 कोर तक)
+* उच्च समग्र सीपीयू उपयोग
+* सिस्टम कम प्रतिक्रियाशील महसूस कर सकता है
 
-**System becomes unresponsive:**
+**नजर रखने के लिए:**
 
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
+* विंडोज़ टास्क मैनेजर (Ctrl+Shift+Esc)
+* प्रदर्शन टैब → सीपीयू अनुभाग
+* "क्लोरोस" या "क्लोरोस-बैकएंड" प्रक्रियाओं को देखें
 
-### When to Stop Processing
+### मेमोरी (रैम) का उपयोग
 
-Stop processing if you see:
+**सामान्य उपयोग:**
 
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
+* छोटी परियोजनाएँ (<100 छवियाँ): 2-4 जीबी
+* मध्यम परियोजनाएँ (100-500 छवियाँ): 4-8 जीबी
+* बड़े प्रोजेक्ट (500+ छवियाँ): 8-16 जीबी
+* क्लोरोस+ पैरेलल मोड अधिक रैम का उपयोग करता है
 
-**How to stop:**
+**यदि याददाश्त कम है:**
 
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+* छोटे बैचों में प्रक्रिया करें
+* अन्य एप्लिकेशन बंद करें
+* यदि नियमित रूप से बड़े डेटासेट को संसाधित कर रहे हैं तो रैम को अपग्रेड करें
 
-***
+### जीपीयू उपयोग (सीयूडीए के साथ क्लोरोस+)
 
-## Troubleshooting During Processing
+जब GPU त्वरण सक्षम हो:
 
-### Processing is Very Slow
+* NVIDIA GPU उच्च उपयोग दिखाता है (60-90%)
+* वीआरएएम का उपयोग बढ़ता है (4 जीबी+ वीआरएएम की आवश्यकता है)
+* कैलिब्रेटिंग चरण काफी तेज है
 
-**Possible causes:**
+**नजर रखने के लिए:**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
+* NVIDIA सिस्टम ट्रे आइकन
+* कार्य प्रबंधक → प्रदर्शन → जीपीयू
+* GPU-Z या समान निगरानी उपकरण
 
-**Solutions:**
+### डिस्क I/O
 
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
+**क्या उम्मीद करें:**
 
-### "Disk Space" Warnings
+* विश्लेषण चरण के दौरान उच्च डिस्क पढ़ी गई
+* निर्यात चरण के दौरान उच्च डिस्क लेखन
+* SSD HDD से काफी तेज़ है
 
-**Solutions:**
+**प्रदर्शन युक्ति:**
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
-
-### Frequent "Corrupted File" Messages
-
-**Solutions:**
-
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
-
-### System Overheating / Throttling
-
-**Solutions:**
-
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+* जब संभव हो तो प्रोजेक्ट फ़ोल्डर के लिए SSD का उपयोग करें
+* बड़े डेटासेट के लिए नेटवर्क ड्राइव से बचें
+* सुनिश्चित करें कि डिस्क क्षमता के करीब नहीं है (लिखने की गति को प्रभावित करती है)
 
 ***
 
-## Processing Complete Notification
+## प्रसंस्करण के दौरान समस्याओं का पता लगाना
 
-When processing finishes:
+### चेतावनी के संकेत
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+**प्रगति स्टॉल (5+ मिनट तक कोई परिवर्तन नहीं):**
+
+* त्रुटियों के लिए डिबग लॉग की जाँच करें
+* उपलब्ध डिस्क स्थान सत्यापित करें
+* क्लोरोस चल रहा है यह सुनिश्चित करने के लिए टास्क मैनेजर की जाँच करें
+
+**त्रुटि संदेश अक्सर दिखाई देते हैं:**
+
+* प्रसंस्करण रोकें और त्रुटियों की समीक्षा करें
+* सामान्य कारण: डिस्क स्थान, दूषित फ़ाइलें, मेमोरी समस्याएँ
+* नीचे समस्या निवारण अनुभाग देखें
+
+**सिस्टम अनुत्तरदायी हो जाता है:**
+
+* क्लोरोस+ समानांतर मोड बहुत अधिक संसाधनों का उपयोग कर रहा है
+* समवर्ती कार्यों को कम करने या हार्डवेयर को अपग्रेड करने पर विचार करें
+* फ्री मोड कम संसाधन-गहन है
+
+### प्रसंस्करण कब बंद करना है
+
+यदि आप देखें तो प्रसंस्करण रोकें:
+
+* ❌ "डिस्क पूर्ण" या "फ़ाइल नहीं लिख सकता" त्रुटियाँ
+* ❌ बार-बार छवि फ़ाइल भ्रष्टाचार त्रुटियाँ
+* ❌ सिस्टम पूरी तरह से बंद (प्रतिक्रिया नहीं दे रहा)
+* ❌ एहसास हुआ कि गलत सेटिंग्स कॉन्फ़िगर की गई थीं
+* ❌ गलत छवियाँ आयातित
+
+**कैसे रोकें:**
+
+1. **रोकें/रद्द करें बटन** पर क्लिक करें (प्रारंभ बटन की जगह)
+2. प्रसंस्करण रुक जाता है, प्रगति खो जाती है
+3. समस्याओं को ठीक करें और शुरुआत से पुनरारंभ करें
 
 ***
 
-## Next Steps
+## प्रसंस्करण के दौरान समस्या निवारण
 
-Once processing completes:
+### प्रोसेसिंग बहुत धीमी है
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+**संभावित कारण:**
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+* अचिह्नित लक्ष्य छवियाँ (सभी छवियों को स्कैन करना)
+* SSD स्टोरेज के बजाय HDD
+* अपर्याप्त सिस्टम संसाधन
+* कई सूचकांक कॉन्फ़िगर किए गए
+* नेटवर्क ड्राइव एक्सेस
+
+**समाधान:**
+
+1. यदि अभी शुरू हुआ है और पता लगाने के चरण में है: रद्द करें, लक्ष्य चिह्नित करें, पुनरारंभ करें
+2. भविष्य के लिए: एसएसडी का उपयोग करें, सूचकांक कम करें, हार्डवेयर अपग्रेड करें
+3. बड़े डेटासेट के बैच प्रोसेसिंग के लिए सीएलआई पर विचार करें
+
+### "डिस्क स्थान" चेतावनियाँ
+
+**समाधान:**
+
+1. डिस्क स्थान तुरंत खाली करें
+2. अधिक स्थान के साथ ड्राइव करने के लिए प्रोजेक्ट को स्थानांतरित करें
+3. निर्यात के लिए सूचकांकों की संख्या कम करें
+4. TIFF (छोटी फ़ाइलें) के बजाय JPG प्रारूप का उपयोग करें
+
+### बारंबार "दूषित फ़ाइल" संदेश
+
+**समाधान:**
+
+1. अखंडता सुनिश्चित करने के लिए एसडी कार्ड से छवियों को पुनः कॉपी करें
+2. त्रुटियों के लिए एसडी कार्ड का परीक्षण करें
+3. प्रोजेक्ट से दूषित फ़ाइलें हटाएँ
+4. शेष छवियों का प्रसंस्करण जारी रखें
+
+### सिस्टम ओवरहीटिंग / थ्रॉटलिंग
+
+**समाधान:**
+
+1. पर्याप्त वेंटिलेशन सुनिश्चित करें
+2. कंप्यूटर वेंट से धूल साफ करें
+3. प्रोसेसिंग लोड कम करें (क्लोरोस+ के बजाय फ्री मोड का उपयोग करें)
+4. दिन के ठंडे समय में प्रक्रिया करें
+
+***
+
+## प्रसंस्करण पूर्ण अधिसूचना
+
+जब प्रसंस्करण समाप्त हो जाए:
+
+*प्रगति बार 100% तक पहुँचता है
+* **"प्रक्रिया पूर्ण"** संदेश डिबग लॉग में दिखाई देता है
+* स्टार्ट बटन फिर से सक्षम हो जाता है
+* सभी आउटपुट फ़ाइलें कैमरा मॉडल सबफ़ोल्डर में हैं
+
+***
+
+## अगले कदम
+
+एक बार प्रसंस्करण पूरा हो जाने पर:
+
+1. **परिणामों की समीक्षा करें** - देखें [प्रसंस्करण समाप्त करना](finishing-the-processing.md)
+2. **आउटपुट फ़ोल्डर की जाँच करें** - निर्यात की गई सभी फ़ाइलों को सही ढंग से सत्यापित करें
+3. **डीबग लॉग की समीक्षा करें** - किसी भी चेतावनी या त्रुटि की जांच करें
+4. **संसाधित छवियों का पूर्वावलोकन करें** - इमेज व्यूअर या बाहरी सॉफ़्टवेयर का उपयोग करें
+
+अपने संसाधित परिणामों की समीक्षा और उपयोग के बारे में जानकारी के लिए, [प्रसंस्करण समाप्त करना](finishing-the-processing.md) देखें।

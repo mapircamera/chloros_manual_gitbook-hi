@@ -1,74 +1,74 @@
-# Chloros Manual Language Repositories
+# Chloros मैनुअल भाषा रिपॉजिटरी
 
-This document lists all 28 language repositories for the Chloros manual translation project.
+यह दस्तावेज़ Chloros मैन्युअल अनुवाद प्रोजेक्ट के लिए सभी 28 भाषा रिपॉजिटरी को सूचीबद्ध करता है।
 
-## Repository Naming Convention
+## रिपॉजिटरी नामकरण कन्वेंशन
 
 `chloros_manual_gitbook-[language-code]`
 
-## Repository List
+## रिपॉजिटरी सूची
 
-| # | Language | Native Name | Repo Name | Language Code |
-|---|----------|-------------|-----------|---------------|
-| 1 | English | English | `chloros_manual_gitbook` | en (current) |
-| 2 | Spanish | Español | `chloros_manual_gitbook-es` | es |
-| 3 | Portuguese | Português | `chloros_manual_gitbook-pt` | pt |
-| 4 | French | Français | `chloros_manual_gitbook-fr` | fr |
-| 5 | German | Deutsch | `chloros_manual_gitbook-de` | de |
-| 6 | Italian | Italiano | `chloros_manual_gitbook-it` | it |
-| 7 | Japanese | 日本語 | `chloros_manual_gitbook-ja` | ja |
-| 8 | Korean | 한국어 | `chloros_manual_gitbook-ko` | ko |
-| 9 | Chinese (Simplified) | 简体中文 | `chloros_manual_gitbook-zh-CN` | zh-CN |
-| 10 | Chinese (Traditional) | 繁體中文 | `chloros_manual_gitbook-zh-TW` | zh-TW |
-| 11 | Russian | Русский | `chloros_manual_gitbook-ru` | ru |
-| 12 | Dutch | Nederlands | `chloros_manual_gitbook-nl` | nl |
-| 13 | Arabic | العربية | `chloros_manual_gitbook-ar` | ar |
-| 14 | Polish | Polski | `chloros_manual_gitbook-pl` | pl |
-| 15 | Turkish | Türkçe | `chloros_manual_gitbook-tr` | tr |
-| 16 | Hindi | हिंदी | `chloros_manual_gitbook-hi` | hi |
-| 17 | Indonesian | Bahasa Indonesia | `chloros_manual_gitbook-id` | id |
-| 18 | Vietnamese | Tiếng Việt | `chloros_manual_gitbook-vi` | vi |
-| 19 | Thai | ไทย | `chloros_manual_gitbook-th` | th |
-| 20 | Swedish | Svenska | `chloros_manual_gitbook-sv` | sv |
-| 21 | Danish | Dansk | `chloros_manual_gitbook-da` | da |
-| 22 | Norwegian | Norsk | `chloros_manual_gitbook-no` | no |
-| 23 | Finnish | Suomi | `chloros_manual_gitbook-fi` | fi |
-| 24 | Greek | Ελληνικά | `chloros_manual_gitbook-el` | el |
-| 25 | Czech | Čeština | `chloros_manual_gitbook-cs` | cs |
-| 26 | Hungarian | Magyar | `chloros_manual_gitbook-hu` | hu |
-| 27 | Romanian | Română | `chloros_manual_gitbook-ro` | ro |
-| 28 | Ukrainian | Українська | `chloros_manual_gitbook-uk` | uk |
+| # | भाषा | मूल नाम | रेपो नाम | भाषा कोड |
+|---|---|---|---|----|---|
+| 1 | अंग्रेजी | अंग्रेजी | `chloros_manual_gitbook` | एन (वर्तमान) |
+| 2 | स्पैनिश | एस्पनॉल | `chloros_manual_gitbook-es` | तों |
+| 3 | पुर्तगाली | पुर्तगाली | `chloros_manual_gitbook-pt` | पीटी |
+| 4 | फ़्रेंच | फ़्रांसीसी | `chloros_manual_gitbook-fr` | fr |
+| 5 | जर्मन | जर्मन | `chloros_manual_gitbook-de` | डे |
+| 6 | इटालियन | इटालियनो | `chloros_manual_gitbook-it` | यह |
+| 7 | जापानी | 日本語 | `chloros_manual_gitbook-ja` | जा |
+| 8 | कोरियाई | 한국어 | `chloros_manual_gitbook-ko` | को |
+| 9 | चीनी (सरलीकृत) | 简体中文 | `chloros_manual_gitbook-zh-CN` | zh-CN |
+| 10 | चीनी (पारंपरिक) | 繁體中文 | `chloros_manual_gitbook-zh-TW` | zh-TW |
+| 11 | रूसी | Русский | `chloros_manual_gitbook-ru` | आरयू |
+| 12 | डच | नीदरलैंड | `chloros_manual_gitbook-nl` | एनएल |
+| 13 | अरबी | العربية | `chloros_manual_gitbook-ar` | एआर |
+| 14 | पोलिश | पोल्स्की | `chloros_manual_gitbook-pl` | कृपया |
+| 15 | तुर्की | तुर्कसे | `chloros_manual_gitbook-tr` | tr |
+| 16 | हिंदी | हिंदी | `chloros_manual_gitbook-hi` | नमस्ते |
+| 17 | इंडोनेशियाई | बहासा इंडोनेशिया | `chloros_manual_gitbook-id` | आईडी |
+| 18 | वियतनामी | तियांग वियत | `chloros_manual_gitbook-vi` | vi |
+| 19 | थाई | ไทย | `chloros_manual_gitbook-th` | वें |
+| 20 | स्वीडिश | स्वेन्स्का | `chloros_manual_gitbook-sv` | एसवी |
+| 21 | डेनिश | डांस्क | `chloros_manual_gitbook-da` | दा |
+| 22 | नॉर्वेजियन | नॉर्स्क | `chloros_manual_gitbook-no` | नहीं |
+| 23 | फ़िनिश | सुओमी | `chloros_manual_gitbook-fi` | फाई |
+| 24 | ग्रीक | Ελληνικά | `chloros_manual_gitbook-el` | एल |
+| 25 | चेक | सेस्टिना | `chloros_manual_gitbook-cs` | सीएस |
+| 26 | हंगेरियन | मग्यार | `chloros_manual_gitbook-hu` | हू |
+| 27 | रोमानियाई | रोमानी | `chloros_manual_gitbook-ro` | आरओ |
+| 28 | यूक्रेनी | Українська | `chloros_manual_gitbook-uk` | यूके |
 
-## GitBook Synchronization Plan
+## GitBook सिंक्रोनाइज़ेशन योजना
 
-### Step 1: Create GitHub Repositories
-Run the PowerShell script: `create-language-repos.ps1`
+### चरण 1: GitHub रिपॉजिटरी बनाएं
+पॉवरशेल स्क्रिप्ट चलाएँ: `create-language-repos.ps1`
 
-### Step 2: Duplicate GitBook Spaces
-In GitBook:
-1. Go to your current Chloros manual space
-2. Duplicate the space 27 times
-3. Name each space with the language (e.g., "Chloros Manual - Español", "Chloros Manual - 日本語", etc.)
+### चरण 2: डुप्लिकेट GitBook स्पेस
+GitBook में:
+1. अपने वर्तमान Chloros मैनुअल स्पेस पर जाएं
+2. स्थान को 27 बार डुप्लिकेट करें
+3. प्रत्येक स्थान को भाषा के साथ नाम दें (उदाहरण के लिए, "Chloros मैनुअल - Español", "Chloros मैनुअल - 日本語", आदि)
 
-### Step 3: Connect GitBook to GitHub
-For each duplicated GitBook space:
-1. Go to Space Settings → Integrations
-2. Select "GitHub"
-3. Connect to the corresponding language repository
-4. Set up bi-directional sync
-5. Choose the branch (typically `main`)
+### चरण 3: GitBook को GitHub से कनेक्ट करें
+प्रत्येक डुप्लिकेट किए गए GitBook स्थान के लिए:
+1. स्पेस सेटिंग्स → इंटीग्रेशन पर जाएं
+2. "GitHub" चुनें
+3. संबंधित भाषा भंडार से कनेक्ट करें
+4. द्वि-दिशात्मक सिंक सेट करें
+5. शाखा चुनें (आमतौर पर `main`)
 
-### Step 4: Translation
-Once all GitBook spaces are synced:
-1. Each space will have its content in the GitHub repo
-2. Run translation scripts to translate markdown files
-3. Changes will sync back to GitBook automatically
+### चरण 4: अनुवाद
+एक बार सभी GitBook स्पेस सिंक हो जाएं:
+1. GitHub रेपो में प्रत्येक स्थान की अपनी सामग्री होगी
+2. मार्कडाउन फ़ाइलों का अनुवाद करने के लिए अनुवाद स्क्रिप्ट चलाएँ
+3. परिवर्तन स्वचालित रूप से GitBook पर वापस सिंक हो जाएंगे
 
-## Repository URLs (After Creation)
+## रिपोजिटरी यूआरएल (निर्माण के बाद)
 
-Assuming GitHub username is `MAPIR` or your organization:
+यह मानते हुए कि GitHub उपयोगकर्ता नाम `MAPIR` या आपका संगठन है:
 
-- https://github.com/MAPIR/chloros_manual_gitbook (English - current)
+- https://github.com/MAPIR/chloros_manual_gitbook (अंग्रेजी - वर्तमान)
 - https://github.com/MAPIR/chloros_manual_gitbook-es
 - https://github.com/MAPIR/chloros_manual_gitbook-pt
 - https://github.com/MAPIR/chloros_manual_gitbook-fr
@@ -97,11 +97,11 @@ Assuming GitHub username is `MAPIR` or your organization:
 - https://github.com/MAPIR/chloros_manual_gitbook-ro
 - https://github.com/MAPIR/chloros_manual_gitbook-uk
 
-## Translation Tools
+## अनुवाद उपकरण
 
-After repository creation, additional scripts will be provided for:
-- Automated markdown translation using AI/translation APIs
-- Batch processing of all language repos
-- Quality control and review workflows
-- Maintaining sync between English (master) and translations
+रिपॉजिटरी निर्माण के बाद, अतिरिक्त स्क्रिप्ट प्रदान की जाएंगी:
+- एआई/अनुवाद एपीआई का उपयोग करके स्वचालित मार्कडाउन अनुवाद
+- सभी भाषा रिपो का बैच प्रसंस्करण
+- गुणवत्ता नियंत्रण और समीक्षा वर्कफ़्लो
+- अंग्रेजी (मास्टर) और अनुवाद के बीच समन्वय बनाए रखना
 
