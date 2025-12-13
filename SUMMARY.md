@@ -7,7 +7,7 @@
 * [API : Python SDK](api-python-sdk.md)
 * [समर्थित कैमरे](supported-cameras.md)
 * [आउटपुट छवि प्रारूप](output-image-formats.md)
-* [Chloros+ लॉगिन](क्लोरोस+-login.md)
+* [Chloros+ लॉगिन](chloros+-login.md)
 * [अंशांकन लक्ष्य](calibration-targets.md)
 * [समर्थित भाषाएँ](supported-languages.md)
 * [डाउनलोड करें](download.md)

@@ -26,7 +26,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 {% hint style="warning" %}
 **Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर सिंगल कोट्स का उपयोग करें।
-{%अंतसंकेत%}
+{% endhint %}
 
 **आउटपुट:**
 
