@@ -41,7 +41,7 @@ metaLinks: {}
 * **एकाधिक डिवाइस उपयोग**: प्रत्येक क्लोरोस+ लाइसेंस 2+ डिवाइस को पंजीकृत करने की अनुमति देता है। पंजीकृत उपकरणों को प्रबंधित करने के लिए अपने MAPIR क्लाउड खाते का उपयोग करें। अपने क्लोरोस+ लाइसेंस को अपग्रेड करके अधिक उपकरणों के लिए समर्थन जोड़ें।
 * **कस्टम मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला:** प्रसंस्करण और छवि देखने वाले सैंडबॉक्स दोनों के लिए, क्लोरोस रैस्टर कैलकुलेटर में कस्टम मल्टीस्पेक्ट्रल इंडेक्स दर्ज करें।
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Pricing &#x26; Signup</a></p>
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ मूल्य निर्धारण और साइनअप</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

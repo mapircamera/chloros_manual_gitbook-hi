@@ -57,7 +57,7 @@
 
 <details>
 
-<summary>If I will upload my images to <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> should I process in Chloros prior to uploading?</summary>
+<summary>यदि मैं अपनी छवियों को <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> पर अपलोड करूंगा तो क्या मुझे अपलोड करने से पहले क्लोरोस में संसाधित करना चाहिए?</summary>
 
 यदि आप हमारे ऑनलाइन प्रोसेसिंग प्लेटफॉर्म [एमएपीआईआर क्लाउड](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) पर अपलोड करने की योजना बना रहे हैं तो अपलोड करने से पहले छवियों को संपादित न करें। क्लाउड सभी समान प्रसंस्करण और बहुत कुछ करेगा।
 
