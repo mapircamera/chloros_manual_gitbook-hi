@@ -15,13 +15,13 @@
 **वाक्यविन्यास:**
 
 ```bash
-क्लोरोस-सीएलआई लॉगिन <ईमेल> <पासवर्ड>
+chloros-cli login <email> <password>
 ```
 
 **उदाहरण:**
 
 ```powershell
-क्लोरोस-सीएलआई लॉगिन user@example.com 'MyP@ssw0rd123'
+chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
 {% संकेत शैली = "चेतावनी" %}

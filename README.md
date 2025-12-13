@@ -2,44 +2,44 @@
 metaLinks: {}
 ---
 
-# Getting Started
+# शुरू करना
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
 
-Chloros is a software application from [MAPIR](https://www.mapir.camera) to process images and other sensor data.
+क्लोरोस छवियों और अन्य सेंसर डेटा को संसाधित करने के लिए [एमएपीआईआर] (https://www.mapir.camera) का एक सॉफ्टवेयर एप्लिकेशन है।
 
 ***
 
-Chloros is available in 4 application modes:
+क्लोरोस 4 एप्लिकेशन मोड में उपलब्ध है:
 
-## Chloros: Desktop GUI application
+## क्लोरोस: डेस्कटॉप जीयूआई एप्लिकेशन
 
-\[Recommended] Standalone separate window with all features.
+\[अनुशंसित] सभी सुविधाओं के साथ स्टैंडअलोन अलग विंडो।
 
-## Chloros (Browser): Web-based GUI interface
+## क्लोरोस (ब्राउज़र): वेब-आधारित जीयूआई इंटरफ़ेस
 
-Runs in your web browser (Chrome/Edge). Best for slower computers with <4GB VRAM.
+आपके वेब ब्राउज़र (क्रोम/एज) में चलता है। <4GB VRAM वाले धीमे कंप्यूटरों के लिए सर्वोत्तम।
 
-## [Chloros CLI: Command line interface](CLI.md)
+## [क्लोरोस सीएलआई: कमांड लाइन इंटरफ़ेस](सीएलआई.एमडी)
 
-Command-line batch processing. Perfect for automation, scripting, and advanced workflows. _CLI requires a Chloros+ license to access._
+कमांड-लाइन बैच प्रोसेसिंग। स्वचालन, स्क्रिप्टिंग और उन्नत वर्कफ़्लो के लिए बिल्कुल सही। _सीएलआई को एक्सेस करने के लिए क्लोरोस+ लाइसेंस की आवश्यकता होती है।_
 
-## [Chloros API: Python SDK](api-python-sdk.md)
+## [क्लोरोस एपीआई: पायथन एसडीके](api-python-sdk.md)
 
-Programmatic Python interface for automation and custom workflows. Perfect for research pipelines, integration with existing Python applications, and building custom tools. _API requires a Chloros+ license to access._
+स्वचालन और कस्टम वर्कफ़्लो के लिए प्रोग्रामेटिक पायथन इंटरफ़ेस। अनुसंधान पाइपलाइनों, मौजूदा पायथन अनुप्रयोगों के साथ एकीकरण और कस्टम टूल के निर्माण के लिए बिल्कुल सही। _एपीआई को एक्सेस करने के लिए क्लोरोस+ लाइसेंस की आवश्यकता होती है।_
 
 ***
 
-## Chloros+
+## क्लोरोस+
 
-While Chloros is free to use for most tasks, you may find you want more. That is where a paid license for Chloros+ can benefit you. With a Chloros+ license you can unlock new features such as:
+जबकि अधिकांश कार्यों के लिए क्लोरोस का उपयोग निःशुल्क है, आप पाएंगे कि आप और अधिक चाहते हैं। यहीं पर क्लोरोस+ के लिए सशुल्क लाइसेंस आपको लाभ पहुंचा सकता है। क्लोरोस+ लाइसेंस के साथ आप नई सुविधाओं को अनलॉक कर सकते हैं जैसे:
 
-* **Multi-threaded Processing**: greatly speed up image processing for larger projects by simultaneously processing images through the pipeline.
-* **GPU (CUDA) Acceleration**: take advantage of today's higher GPU memory options to further speed up the image processing pipeline. We recommend 4GB or more of VRAM for best results.
-* **Chloros+** [**CLI**](CLI.md) **Access**: run Chloros+ from the command line to automate and integrate into your own software.
-* **Chloros+** [**API**](api-python-sdk.md) **Access:** run Chloros+ from Python for programmatic control, enabling seamless integration with your research pipelines, data analysis workflows, and custom applications.
-* **Multiple Device Usage**: each Chloros+ license allows for 2+ devices to be registered. Use your MAPIR Cloud account to manage registered devices. Add support for more devices by upgrading your Chloros+ license.
-* **Custom Multispectral Index Formulas:** enter in custom multispectral indices in the Chloros raster calculators, both for processing and the image viewing sandbox.
+* **मल्टी-थ्रेडेड प्रोसेसिंग**: पाइपलाइन के माध्यम से एक साथ छवियों को संसाधित करके बड़ी परियोजनाओं के लिए छवि प्रसंस्करण को बहुत तेज करता है।
+* **जीपीयू (सीयूडीए) एक्सेलेरेशन**: इमेज प्रोसेसिंग पाइपलाइन को और तेज करने के लिए आज के उच्च जीपीयू मेमोरी विकल्पों का लाभ उठाएं। सर्वोत्तम परिणामों के लिए हम 4GB या अधिक VRAM की अनुशंसा करते हैं।
+* **क्लोरोस+** [**सीएलआई**](सीएलआई.एमडी) **एक्सेस**: स्वचालित करने और अपने स्वयं के सॉफ़्टवेयर में एकीकृत करने के लिए कमांड लाइन से क्लोरोस+ चलाएं।
+* **क्लोरोस+** [**एपीआई**](एपीआई-पायथन-एसडीके.एमडी) **पहुंच:** प्रोग्रामेटिक नियंत्रण के लिए पायथन से क्लोरोस+ चलाएं, जिससे आपके शोध पाइपलाइनों, डेटा विश्लेषण वर्कफ़्लो और कस्टम अनुप्रयोगों के साथ निर्बाध एकीकरण सक्षम हो सके।
+* **एकाधिक डिवाइस उपयोग**: प्रत्येक क्लोरोस+ लाइसेंस 2+ डिवाइस को पंजीकृत करने की अनुमति देता है। पंजीकृत उपकरणों को प्रबंधित करने के लिए अपने MAPIR क्लाउड खाते का उपयोग करें। अपने क्लोरोस+ लाइसेंस को अपग्रेड करके अधिक उपकरणों के लिए समर्थन जोड़ें।
+* **कस्टम मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला:** प्रसंस्करण और छवि देखने वाले सैंडबॉक्स दोनों के लिए, क्लोरोस रैस्टर कैलकुलेटर में कस्टम मल्टीस्पेक्ट्रल इंडेक्स दर्ज करें।
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Pricing &#x26; Signup</a></p>
 
