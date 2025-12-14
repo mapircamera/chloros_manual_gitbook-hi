@@ -6,7 +6,7 @@ metaLinks: {}
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
 
-क्लोरोस छवियों और अन्य सेंसर डेटा को संसाधित करने के लिए [एमएपीआईआर] (https://www.mapir.camera) का एक सॉफ्टवेयर एप्लिकेशन है।
+क्लोरोस छवियों और अन्य सेंसर डेटा को संसाधित करने के लिए [एमएपीआईआर](https://www.mapir.camera) का एक सॉफ्टवेयर एप्लिकेशन है।
 
 ***
 
