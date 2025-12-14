@@ -12,23 +12,14 @@
 
 सीएलआई प्रोसेसिंग सक्षम करने के लिए अपने क्लोरोस+ क्रेडेंशियल्स के साथ लॉगिन करें।
 
-**वाक्यविन्यास:**
-
-```bash
+**वाक्यविन्यास:**```bash
 chloros-cli login <email> <password>
-```
-
-**Example:**
-
-```powershell
+```**Example:**```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर सिंगल कोट्स का उपयोग करें।
-{% endhint %}
-
-**आउटपुट:**
+{% hint style="warning" %}**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर सिंगल कोट्स का उपयोग करें।
+{% endhint %}**आउटपुट:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 

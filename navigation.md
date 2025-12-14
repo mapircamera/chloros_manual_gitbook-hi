@@ -1,20 +1,20 @@
 # जीयूआई: नेविगेशन
 
-जब आप पहली बार क्लोरोस और क्लोरोस (ब्राउज़र) लॉन्च करेंगे तो यह अपना बैकएंड शुरू कर देगा। एक बार यह तैयार हो जाने पर ऊपरी बाएँ मुख्य मेनू आइकन <img src='.gitbook/assets/image (1).png' alt='' data-size='line'> सामने आ जाएगा।
+जब आप पहली बार क्लोरोस और क्लोरोस (ब्राउज़र) लॉन्च करेंगे तो यह अपना बैकएंड शुरू कर देगा। एक बार यह तैयार हो जाने पर शीर्ष बाईं ओर मुख्य मेनू आइकन सामने आ जाएगा<img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
 बाएँ से दाएँ शीर्ष शीर्षलेख में शामिल हैं:
 
-### <img src='.gitbook/assets/image (1) (1).png' alt='' data-size='line'> मुख्य मेनू
+### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Main Menu
 
 मुख्य मेनू से आप एक नया प्रोजेक्ट शुरू कर सकते हैं, मौजूदा प्रोजेक्ट खोल सकते हैं या प्रोजेक्ट फ़ोल्डर खोल सकते हैं।
 
-### <img src='.gitbook/assets/image (2).png' alt='' data-size='line'> प्ले/स्टार्ट बटन
+### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Play/Start Button
 
 सक्षम होने पर, स्टार्ट प्रोसेसिंग बटन इमेज प्रोसेसिंग पाइपलाइन शुरू करता है।
 
-### <img src='.gitbook/assets/image (4).png' alt='' data-size='line'> प्रगति पट्टी <img src='.gitbook/assets/image (5).png' alt='' data-size='line'>
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Progress Bar <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
 निःशुल्क क्लोरोस मोड में, जो सभी फ़ाइलों को क्रमिक रूप से संसाधित करता है, प्रगति पट्टी 2 चरणों को दिखाएगी: लक्ष्य का पता लगाना और प्रसंस्करण।
 
@@ -22,26 +22,26 @@
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-## साइड मेनू
+## पार्श्व मेनू
 
 बाएं साइडबार मेनू में इंटरैक्ट करने के लिए विभिन्न आइकन शामिल हैं:
 
-#### <img src='.gitbook/assets/icon_project-settings.JPG' alt='' data-size='line'> [प्रोजेक्ट सेटिंग्स](project-settings/project-settings.md)
+#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Project Settings](project-settings/project-settings.md)
 
 प्रोजेक्ट सेटिंग टैब आपको प्रोजेक्ट ग्लोबल और प्रोजेक्ट प्रोसेसिंग सेटिंग्स को समायोजित करने की अनुमति देता है। अपनी फ़ाइलों पर कार्रवाई शुरू करने से पहले इन्हें समायोजित करें।
 
-#### <img src='.gitbook/assets/icon_file-browser.JPG' alt='' data-size='line'> फ़ाइल ब्राउज़र
+#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> File Browser
 
 फ़ाइलें/फ़ोल्डर जोड़ें और प्रोजेक्ट से फ़ाइलें हटाएँ। डुप्लिकेट फ़ाइलों को अनदेखा कर दिया जाता है. किसी भी लक्ष्य छवि के लिए लक्ष्य कॉलम बॉक्स की जाँच करें, और प्रसंस्करण केवल लक्ष्यों के लिए जाँच की गई छवियों को देखेगा, जिससे आपके प्रसंस्करण समय में काफी तेजी आएगी।
 
-#### <img src='.gitbook/assets/icon_image-viewer.JPG' alt='' data-size='line'> [इमेज व्यूअर](image-viewer-gui/opening-an-image-full-screen.md)
+#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Image Viewer](image-viewer-gui/opening-an-image-full-screen.md)
 
 जब किसी छवि को मुख्य छवि व्यूअर में क्लिक किया जाता है तो वह इमेज व्यूअर टैब में पूर्ण स्क्रीन पर खुल जाती है।
 
-#### <img src='.gitbook/assets/icon_log.JPG' alt='' data-size='line'> डिबग लॉग
+#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Debug Log
 
-समस्या होने पर डिबग प्रिंट के लिए लॉग की समीक्षा करें। लॉग को कॉपी/डाउनलोड करें और सहायता के लिए [MAPIR सपोर्ट](https://www.mapir.camera/community/contact) को भेजें।
+समस्या होने पर डिबग प्रिंट के लिए लॉग की समीक्षा करें। लॉग को कॉपी/डाउनलोड करें और [MAPIR सपोर्ट] को भेजें(https://www.mapir.camera/community/contact) सहायता के लिए.
 
-#### <img src='.gitbook/assets/icon_user.JPG' alt='' data-size='line'> [उपयोगकर्ता लॉगिन](क्लोरोस+-लॉगिन.एमडी)
+#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [User Login](chloros+-login.md)
 
 उपयोगकर्ता लॉगिन साइडबार आपको उन्नत सुविधाओं को अनलॉक करने के लिए अपने क्लोरोस+ खाते में लॉग इन करने की अनुमति देता है। आप वर्तमान एप्लिकेशन संस्करण भी देख सकते हैं, साथ ही क्लोरोस जीयूआई और सीएलआई में प्रदर्शित पाठ की भाषा को समायोजित कर सकते हैं।
