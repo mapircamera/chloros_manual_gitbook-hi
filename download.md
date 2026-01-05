@@ -4,191 +4,161 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Download
+# डाउनलोड करना
 
-Download the latest version of Chloros to get started with multispectral image processing.
+मल्टीस्पेक्ट्रल इमेज प्रोसेसिंग शुरू करने के लिए Chloros का नवीनतम संस्करण डाउनलोड करें।
 
-### System Requirements
+### सिस्टम आवश्यकताएं
 
-| Requirement          | Minimum                         | Recommended                     |
-| -------------------- | ------------------------------- | ------------------------------- |
-| **Operating System** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
-| **Processor**        | Intel Core i5 or equivalent     | Intel Core i7 or better         |
-| **Memory (RAM)**     | 8GB                             | 16GB or more                    |
-| **Graphics Card**    | DirectX 11 compatible           | NVIDIA GPU with 4GB+ VRAM       |
-| **Storage**          | 6GB free space                  | SSD with 10GB+ free space       |
-| **Display**          | 1920x1080                       | 2560x1440 or higher             |
-| **Internet**         | Required for license activation | Required for license activation |
+| आवश्यकता | न्यूनतम | अनुशंसित |
+| ------------------- | -------------------------------- | -------------------------------- |
+| **ऑपरेटिंग सिस्टम** | Windows 10 (64-बिट) | Windows 11 (64-बिट) |
+| **प्रोसेसर** | इंटेल कोर i5 या समकक्ष | इंटेल कोर i7 या बेहतर |
+| **मेमोरी (रैम)** | 8जीबी | 16जीबी या अधिक |
+| **ग्राफिक्स कार्ड** | DirectX 11 संगत | 4GB+ VRAM के साथ NVIDIA GPU |
+| **भंडारण** | 6GB खाली जगह | 10GB+ खाली जगह के साथ SSD |
+| **प्रदर्शन** | 1920x1080 | 2560x1440 या उच्चतर |
+| **इंटरनेट** | लाइसेंस सक्रियण के लिए आवश्यक | लाइसेंस सक्रियण के लिए आवश्यक |
 
-{% hint style="info" %}
-**GPU Acceleration**: Chloros+ users with NVIDIA GPUs (4GB+ VRAM) can use CUDA acceleration for significantly faster processing. Chloros+ users also gain multi-threaded processing for maximum speed.
-{% endhint %}
-
-***
-
-## Download Chloros
-
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros Here</a>
-
-### Latest Stable Release
-
-**Chloros Installer for Windows**
-
-* **Version**: 1.0.4
-* **Release Date**: January 5, 2026
-* **File Size (Download)**: 1.8GB
-* **File Size (Installed)**: 5.7GB
-* **File Type**: .exe (Windows Installer)
-
-#### **Installation Steps:**
-
-1. Download the `CHLOROS INSTALLER - CURRENT VERSION.exe` file
-2. Double-click the installer to begin installation
-3. Follow the installation wizard prompts
-4. Choose installation directory (default: `C:\Program Files\[USER]\Chloros\`)
-5. Complete installation and launch Chloros, Chloros (Browser), or Chloros CLI
-6. Sign in with your [MAPIR Cloud Chloros+ account](https://cloud.mapir.camera/pricing) (or continue with free version)
-
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH for command-line access.
-{% endhint %}
+{% संकेत शैली = "जानकारी" %}
+**जीपीयू एक्सेलेरेशन**: NVIDIA GPU (4GB+ VRAM) वाले Chloros+ उपयोगकर्ता काफी तेज प्रोसेसिंग के लिए CUDA एक्सेलेरेशन का उपयोग कर सकते हैं। Chloros+ उपयोगकर्ता अधिकतम गति के लिए मल्टी-थ्रेडेड प्रोसेसिंग भी प्राप्त करते हैं।
+{% अंतिम संकेत %}
 
 ***
 
-## Additional Resources
+## Chloros डाउनलोड करें
+
+### <a href='https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link' class='बटन प्राइमरी'>Chloros यहां से डाउनलोड करें</a>
+
+### नवीनतम स्थिर रिलीज़
+
+**Windows के लिए Chloros इंस्टॉलर*** **संस्करण**: 1.0.4
+* **रिलीज़ दिनांक**: 5 जनवरी, 2026
+* **फ़ाइल का आकार (डाउनलोड)**: 1.8 जीबी
+* **फ़ाइल का आकार (स्थापित)**: 5.7GB
+* **फ़ाइल प्रकार**: .exe (Windows इंस्टॉलर)
+
+#### **स्थापना चरण:**
+
+1. `CHLOROS INSTALLER - CURRENT VERSION.exe` फ़ाइल डाउनलोड करें
+2. इंस्टॉलेशन शुरू करने के लिए इंस्टॉलर पर डबल-क्लिक करें
+3. इंस्टॉलेशन विज़ार्ड संकेतों का पालन करें
+4. इंस्टॉलेशन निर्देशिका चुनें (डिफ़ॉल्ट: `C:\Program Files\[USER]\Chloros\`)
+5. इंस्टॉलेशन पूरा करें और Chloros, Chloros (ब्राउज़र), या Chloros CLI लॉन्च करें
+6. अपने [MAPIR क्लाउड Chloros+ खाते](https://cloud.mapir.camera/pricing) से साइन इन करें (या मुफ़्त संस्करण जारी रखें)
+
+{% संकेत शैली = "सफलता" %}
+कमांड-लाइन एक्सेस के लिए इंस्टॉलर स्वचालित रूप से आपके सिस्टम PATH में `chloros-cli` जोड़ता है।
+{% अंतिम संकेत %}
+
+***
+
+## अतिरिक्त संसाधन
 
 ### Python SDK
 
-For developers and automation workflows, install the Chloros Python SDK:
+डेवलपर्स और ऑटोमेशन वर्कफ़्लो के लिए, Chloros Python SDK इंस्टॉल करें:
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Documentation**: [API: Python SDK](api-python-sdk.md)
+**दस्तावेज़ीकरण**: [API: Python SDK](api-python-sdk.md)**आवश्यकताएँ**: Chloros डेस्कटॉप स्थापित होना चाहिए, Chloros+ लाइसेंस लॉगिन आवश्यक है***
 
-**Requirements**: Chloros Desktop must be installed, Chloros+ license login required
+## क्या शामिल है
 
-***
+Chloros इंस्टॉलेशन में शामिल हैं:
 
-## What's Included
+* ✅ **Chloros** - पूर्ण विशेषताओं वाला ग्राफिकल इंटरफ़ेस
+* ✅ **Chloros (ब्राउज़र)** - कम-स्पेक सिस्टम के लिए वेब-आधारित इंटरफ़ेस
+* ✅ **Chloros CLI** - कमांड-लाइन इंटरफ़ेस (Chloros+ लाइसेंस की आवश्यकता है)
+* ✅ **Chloros SDK** - Python API (Chloros+ लाइसेंस की आवश्यकता है)
+* ✅ **कैमरा प्रोफ़ाइल** - पूर्व-कॉन्फ़िगर MAPIR कैमरा टेम्पलेट***
 
-The Chloros installation includes:
+## Chloros+ में अपग्रेड करें
 
-* ✅ **Chloros** - Full-featured graphical interface
-* ✅ **Chloros (Browser)** - Web-based interface for lower-spec systems
-* ✅ **Chloros CLI** - Command-line interface (requires Chloros+ license)
-* ✅ **Chloros SDK** - Python API (requires Chloros+ license)
-* ✅ **Camera Profiles** - Pre-configured MAPIR camera templates
+Chloros+ सदस्यता के साथ उन्नत सुविधाएँ अनलॉक करें:
 
-***
+* 🚀 **मल्टी-थ्रेडेड प्रोसेसिंग** - छवियों को समानांतर में प्रोसेस करें
+* ⚡ **GPU (CUDA) एक्सेलेरेशन** - NVIDIA GPU पावर का लाभ उठाएं
+* 💻 **CLI एक्सेस** - कमांड-लाइन टूल के साथ स्वचालित करें
+* 🐍 **Python SDK** - प्रोग्रामेटिक API एक्सेस
+* 📱 **एकाधिक डिवाइस** - 2-10+ डिवाइस पर उपयोग करें (योजना पर निर्भर)
+* 🧮 **कस्टम सूत्र** - कस्टम मल्टीस्पेक्ट्रल सूचकांक बनाएं
 
-## Upgrade to Chloros+
-
-Unlock advanced features with a Chloros+ subscription:
-
-* 🚀 **Multi-threaded Processing** - Process images in parallel
-* ⚡ **GPU (CUDA) Acceleration** - Leverage NVIDIA GPU power
-* 💻 **CLI Access** - Automate with command-line tools
-* 🐍 **Python SDK** - Programmatic API access
-* 📱 **Multiple Devices** - Use on 2-10+ devices (plan dependent)
-* 🧮 **Custom Formulas** - Create custom multispectral indices
-
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">View Chloros+ Plans &#x26; Pricing</a></p>
+<p ign='center'><a href='https://cloud.mapir.camera/pricing' class='बटन प्राइमरी'>Chloros+ प्लान देखें &#x26; मूल्य निर्धारण</a></p>
 
 ***
 
-## Installation Help
+## स्थापना सहायता
 
-### Troubleshooting
+### समस्या निवारण
 
-**Installation fails with error message:**
+**त्रुटि संदेश के साथ स्थापना विफल:**
 
-* Ensure you have administrator rights
-* Temporarily disable antivirus software
-* Check that you meet minimum system requirements
+* सुनिश्चित करें कि आपके पास प्रशासकीय अधिकार हैं
+* एंटीवायरस सॉफ़्टवेयर को अस्थायी रूप से अक्षम करें
+* जांचें कि आप न्यूनतम सिस्टम आवश्यकताओं को पूरा करते हैं
 
-**Application won't start:**
+**एप्लिकेशन प्रारंभ नहीं होगा:**
 
-* Try Chloros (Browser) version
-* Verify Windows 10/11 (64-bit) is installed
-* Update graphics drivers
-* Check Windows Event Viewer for error details
-* Contact support with error logs
+* Chloros (ब्राउज़र) संस्करण आज़माएँ
+* सत्यापित करें कि Windows 10/11 (64-बिट) स्थापित है
+* ग्राफिक्स ड्राइवरों को अपडेट करें
+* त्रुटि विवरण के लिए Windows इवेंट व्यूअर की जाँच करें
+* त्रुटि लॉग के साथ समर्थन से संपर्क करें
 
-**License activation issues:**
+**लाइसेंस सक्रियण मुद्दे:**
 
-* Ensure internet connection is active
-* Verify credentials at [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Check firewall isn't blocking Chloros
-* See [Chloros+ Login](chloros+-login.md) for detailed instructions
+* सुनिश्चित करें कि इंटरनेट कनेक्शन सक्रिय है
+* [https://cloud.mapir.camera](https://cloud.mapir.camera) पर क्रेडेंशियल सत्यापित करें
+* जांचें कि फ़ायरवॉल Chloros को अवरुद्ध तो नहीं कर रहा है
+* विस्तृत निर्देशों के लिए [Chloros+ लॉगिन](क्लोरोस+-login.md) देखें
 
-### Getting Support
+### समर्थन मिल रहा है
 
-Need help with installation or setup?
+इंस्टालेशन या सेटअप में मदद चाहिए?
 
-* 📧 **Email**: info@mapir.camera
-* 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **Documentation**: [Getting Started](./)
-* ❓ **FAQ**: [Frequently Asked Questions](faq.md)
+* 📧 **ईमेल**: info@mapir.camera
+* 🌐 **वेबसाइट**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **दस्तावेज़ीकरण**: [आरंभ करना](./)
+* ❓ **अक्सर पूछे जाने वाले प्रश्न**: [अक्सर पूछे जाने वाले प्रश्न](faq.md)***
 
-***
+## लॉग बदलें
 
-## Change Log
+<विवरण>
 
-<details>
+<सारांश>संस्करण 1.0.4</सारांश>
 
-<summary>Version 1.0.4</summary>
+#### **रिलीज़ दिनांक**: 5 जनवरी, 2026**नई सुविधाओं*** **छवि/मेटाडेटा टॉगल**: चयनित छवि के मेटाडेटा को छवि ग्रिड के बजाय तालिका में देखने के लिए फ़ाइल ब्राउज़र में टॉगल जोड़ा गया
+* **छवि ग्रिड ज़ूम स्लाइडर**: थंबनेल आकार को समायोजित करने के लिए नया यूआई स्लाइडर (CTRL + माउस व्हील का भी समर्थन करता है)
+* **छवि ग्रिड निर्यात बटन**: जेपीजी से संसाधित निर्यात (लक्ष्य, प्रतिबिंब, सूचकांक, एलयूटी) में थंबनेल स्विच करने के लिए शीर्ष पंक्ति में बटन
+* **मैप टैब**: छवि जीपीएस स्थान मार्कर दिखाने वाला नया इंटरैक्टिव 2डी मानचित्र
+  * गूगल मैप्स और ईएसआरआई मैप टाइल्स का समर्थन करता है (ज़ूम स्तर की उपलब्धता के आधार पर सर्वश्रेष्ठ टाइल सेवा का स्वतः चयन करता है)
+  * मानचित्र मार्करों पर माउस होवर थंबनेल पूर्वावलोकन
 
-#### **Release Date**: January 5, 2026
+**कंप्यूटर प्रोग्राम या प्रणाली में बग को दूर करना*** गैर-अंग्रेजी भाषा वाले कंप्यूटरों पर Chloros स्थापित करने के लिए बेहतर समर्थन
 
-**New Features**
+</विवरण>
 
-* **Image/Metadata Toggle**: Added toggle in File Browser to view selected image's metadata in a table instead of the image grid
-* **Image Grid Zoom Slider**: New UI slider to adjust thumbnail size (also supports CTRL + mouse wheel)
-* **Image Grid Export Buttons**: Buttons in the top row to switch thumbnails from JPG to processed exports (Targets, Reflectance, Index, LUT)
-* **Map Tab**: New interactive 2D map showing image GPS location markers
-  * Supports Google Maps and ESRI map tiles (auto-selects best tile service based on zoom level availability)
-  * Mouse hover thumbnail preview on map markers
+<विवरण>
 
-**Bug Fixes**
+<सारांश>संस्करण 1.0.3</सारांश>
 
-* Improved support for installing Chloros on non-English language computers
+#### **रिलीज़ दिनांक**: 20 दिसंबर, 2025**नई सुविधाओं*** प्रारंभिक लॉन्च
 
-</details>
+**सुधार*** प्रारंभिक लॉन्च
 
-<details>
+**कंप्यूटर प्रोग्राम या प्रणाली में बग को दूर करना*** प्रारंभिक लॉन्च
 
-<summary>Version 1.0.3</summary>
+**ज्ञात मुद्दे*** प्रारंभिक लॉन्च
 
-#### **Release Date**: December 20, 2025
-
-**New Features**
-
-* Initial Launch
-
-**Improvements**
-
-* Initial Launch
-
-**Bug Fixes**
-
-* Initial Launch
-
-**Known Issues**
-
-* Initial Launch
-
-</details>
+</विवरण>
 
 ***
 
-## License Agreement
+## लाइसेंस समझौता**मालिकाना सॉफ्टवेयर** - कॉपीराइट (सी) 2025 MAPIR Inc.
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+अनधिकृत उपयोग, वितरण या संशोधन निषिद्ध है।
 
-Unauthorized use, distribution, or modification is prohibited.
-
-**Free Version**: Available for personal and commercial use with feature limitations
-
-**Chloros+**: Subscription-based license for advanced features and commercial deployments
+**निःशुल्क संस्करण**: सुविधा सीमाओं के साथ व्यक्तिगत और व्यावसायिक उपयोग के लिए उपलब्ध**Chloros+**: उन्नत सुविधाओं और वाणिज्यिक तैनाती के लिए सदस्यता-आधारित लाइसेंस

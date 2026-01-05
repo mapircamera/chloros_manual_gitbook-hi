@@ -1,165 +1,161 @@
-# Map Markers
+# मानचित्र मार्कर
 
-The Map tab displays your images on an interactive 2D map based on their GPS coordinates. This provides a geographic overview of your capture session and helps you visualize spatial coverage. It is also useful when first importing your images to quickly remove any images you do not need to process.
+मानचित्र टैब आपकी छवियों को उनके जीपीएस निर्देशांक के आधार पर एक इंटरैक्टिव 2डी मानचित्र पर प्रदर्शित करता है। यह आपके कैप्चर सत्र का भौगोलिक अवलोकन प्रदान करता है और आपको स्थानिक कवरेज की कल्पना करने में मदद करता है। यह तब भी उपयोगी होता है जब आप पहली बार अपनी छवियों को आयात करते हैं ताकि उन छवियों को तुरंत हटा सकें जिन्हें आपको संसाधित करने की आवश्यकता नहीं है।
 
-## Accessing the Map Tab
+## मानचित्र टैब तक पहुँचना
 
-1. Open or create a project in Chloros
-2. Import images that contain GPS metadata
-3. Click the **Map** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> tab in the left sidebar
-4. The map will display markers at each image's GPS location
+1. Chloros में एक प्रोजेक्ट खोलें या बनाएं
+2. ऐसी छवियां आयात करें जिनमें जीपीएस मेटाडेटा हो
+3. बाएं साइडबार में **मैप** <img src='../.gitbook/assets/image (3).png' alt='' data-size='line'> टैब पर क्लिक करें।
+4. मानचित्र प्रत्येक छवि के जीपीएस स्थान पर मार्कर प्रदर्शित करेगा
 
-{% hint style="info" %}
-**GPS Required**: Only images with embedded GPS coordinates in their EXIF metadata will appear on the map. Ensure your camera has GPS enabled during capture.
-{% endhint %}
-
-***
-
-## Adjusting Images from Map Tab
-
-The **Map** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> tab has the same add  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  and remove  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  file buttons as the [**File Browser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab does. It also shows the same project file table list but with different column headers:
-
-### File Name
-
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
-
-### Latitude
-
-* The image's latitude
-
-### Longitude
-
-* The image's longitude
-
-### Altitude
-
-* The image's altitude
-
-{% hint style="info" %}
-Clicking the table column headers also sorts the row data
-{% endhint %}
+{% संकेत शैली = "जानकारी" %}
+**जीपीएस आवश्यक**: केवल उनके EXIF मेटाडेटा में एम्बेडेड जीपीएस निर्देशांक वाली छवियां मानचित्र पर दिखाई देंगी। सुनिश्चित करें कि कैप्चर के दौरान आपके कैमरे में जीपीएस सक्षम है।
+{% अंतिम संकेत %}
 
 ***
 
-## Image Markers
+## मानचित्र टैब से छवियाँ समायोजित करना**मैप**<img src='../.gitbook/assets/image (3).png' alt='' data-size='line'> टैब में एक ही ऐड है <img src='../.gitbook/assets/image.png' alt='' data-size='line'> <img src='../.gitbook/assets/image (1).png' alt='' डेटा-आकार = "लाइन"> और <img src = "../.gitbook/assets/image (2).png" alt = "" डेटा-आकार = "लाइन"> फ़ाइल बटन को हटा दें जैसा कि [** फ़ाइल ब्राउज़र**] (../processing-images-gui/adding-files-to-a-project.md) <img src = "../.gitbook/assets/icon_file-browser.JPG" alt = "" डेटा-आकार = "लाइन"> टैब करता है। यह समान प्रोजेक्ट फ़ाइल तालिका सूची भी दिखाता है लेकिन विभिन्न कॉलम हेडर के साथ:
 
-Each image with GPS data is represented by a marker on the map:
+### फ़ाइल का नाम
 
-### Marker Display
+* कैमरे से मूल फ़ाइल नाम
+* कैमरा नामकरण परंपरा को बनाए रखता है (उदाहरण के लिए, IMG\_0001.RAW)
 
-* Markers indicate the exact GPS coordinates where each image was captured
-* Clustered markers may group together when zoomed out
-* Zoom in to see individual image locations
+### अक्षांश
 
-{% hint style="success" %}
-SUPER-ZOOM: When you reach the maximum zoom level from the map tile provider the tile is then enlarged upon further zoom, allowing you to see markers that are close together.
-{% endhint %}
+* छवि का अक्षांश
 
-### Hover Preview
+### देशांतर
 
-* **Hover your mouse** over any marker to see a thumbnail preview of that image
-* This allows quick visual identification without leaving the map view
-* Useful for locating specific images within a large capture session
+* छवि का देशांतर
 
-***
+### ऊंचाई
 
-## Map Tile Providers
+* छवि की ऊंचाई
 
-{% hint style="success" %}
-**Automatic Selection**: Chloros automatically chooses the tile service that provides the best zoom level for your current map location. You can manually switch between providers if desired.
-{% endhint %}
-
-The Map tab supports two tile providers for the background map imagery:
-
-### Google Maps
-
-* Standard satellite and map imagery from Google
-* Best for general worldwide coverage
-
-### ESRI
-
-* Satellite and aerial imagery from ESRI ArcGIS
-* Often provides higher resolution imagery in certain regions
+{% संकेत शैली = "जानकारी" %}
+तालिका कॉलम हेडर पर क्लिक करने से पंक्ति डेटा भी सॉर्ट हो जाता है
+{% अंतिम संकेत %}
 
 ***
 
-## Map Tile Types
+## छवि मार्कर
 
-You can choose the map layer type (from left to right):
+जीपीएस डेटा वाली प्रत्येक छवि को मानचित्र पर एक मार्कर द्वारा दर्शाया गया है:
 
-&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
+### मार्कर डिस्प्ले
 
-### Terrain
+* मार्कर सटीक जीपीएस निर्देशांक दर्शाते हैं जहां प्रत्येक छवि कैप्चर की गई थी
+* ज़ूम आउट करने पर क्लस्टर्ड मार्कर एक साथ समूहित हो सकते हैं
+* अलग-अलग छवि स्थानों को देखने के लिए ज़ूम इन करें
 
-Shows elevation profiles and map tiles with details (roads, etc)
+{% संकेत शैली = "सफलता" %}
+सुपर-ज़ूम: जब आप मानचित्र टाइल प्रदाता से अधिकतम ज़ूम स्तर तक पहुँच जाते हैं तो टाइल को और अधिक ज़ूम करने पर बड़ा किया जाता है, जिससे आप एक-दूसरे के करीब आने वाले मार्कर देख सकते हैं।
+{% अंतिम संकेत %}
 
-### Map
+### होवर पूर्वावलोकन
 
-Shows standard (lower bandwidth) map tiles with details (roads, etc)
-
-### Satellite
-
-Shows detailed (higher bandwidth) satellite map tiles
-
-### Hybrid
-
-Shows satellite map tiles with added details (roads, etc)
+* **उस छवि का थंबनेल पूर्वावलोकन देखने के लिए किसी भी मार्कर पर अपना माउस घुमाएँ**
+* यह मानचित्र दृश्य को छोड़े बिना त्वरित दृश्य पहचान की अनुमति देता है
+* बड़े कैप्चर सत्र के भीतर विशिष्ट छवियों का पता लगाने के लिए उपयोगी
 
 ***
 
-## Map Navigation
+## मानचित्र टाइल प्रदाता
 
-### Zoom Controls
+{% संकेत शैली = "सफलता" %}
+**स्वचालित चयन**: Chloros स्वचालित रूप से उस टाइल सेवा को चुनता है जो आपके वर्तमान मानचित्र स्थान के लिए सर्वोत्तम ज़ूम स्तर प्रदान करती है। यदि आप चाहें तो आप प्रदाताओं के बीच मैन्युअल रूप से स्विच कर सकते हैं।
+{% अंतिम संकेत %}
 
-* **Zoom In/Out**: Use mouse scroll wheel or zoom buttons
-* **Fullscreen**: Fullscreen the map
+मानचित्र टैब पृष्ठभूमि मानचित्र इमेजरी के लिए दो टाइल प्रदाताओं का समर्थन करता है:
 
-### Pan Controls
+### गूगल मानचित्र
 
-* **Pan**: Click and drag to move around the map
+* Google से मानक उपग्रह और मानचित्र इमेजरी
+* सामान्य विश्वव्यापी कवरेज के लिए सर्वोत्तम
 
-***
+### ईएसआरआई
 
-## Use Cases
-
-### Flight Path Visualization
-
-* View the coverage area of drone capture sessions
-* Identify gaps in image coverage
-* Verify flight path execution
-
-### Ground Survey Review
-
-* See the spatial distribution of ground-based captures
-* Locate calibration target images relative to survey area
-* Plan additional capture locations
-
-### Quality Control
-
-* Quickly identify images captured in unexpected locations
-* Verify GPS accuracy across the dataset
-* Cross-reference image locations with field notes
+* ईएसआरआई आर्कजीआईएस से उपग्रह और हवाई इमेजरी
+* अक्सर कुछ क्षेत्रों में उच्च रिज़ॉल्यूशन इमेजरी प्रदान करता है
 
 ***
 
-## Troubleshooting
+## मानचित्र टाइल प्रकार
 
-### No Markers Appearing
+आप मानचित्र परत प्रकार चुन सकते हैं (बाएं से दाएं):
 
-**Possible causes:**
+&#x20;<img src='../.gitbook/assets/image (23).png' alt='' data-size='original'>
 
-* Images do not contain GPS metadata
-* GPS was disabled on camera during capture
-* EXIF data was stripped by external software
+### इलाक़ा
 
-**Solution**: Verify GPS is enabled on your camera and re-import original files
+विवरण (सड़कें, आदि) के साथ ऊंचाई प्रोफाइल और मानचित्र टाइल दिखाता है
 
-### Markers in Wrong Location
+### नक्शा
 
-**Possible causes:**
+विवरण (सड़कें, आदि) के साथ मानक (निचली बैंडविड्थ) मानचित्र टाइलें दिखाता है
 
-* Camera GPS had poor satellite fix
-* GPS drift during capture
+### सैटेलाइट
 
-**Solution**: This is typically a capture-time issue; consider using PPK/RTK GPS for precision applications
+विस्तृत (उच्च बैंडविड्थ) उपग्रह मानचित्र टाइलें दिखाता है
+
+### हाइब्रिड
+
+अतिरिक्त विवरण (सड़कें, आदि) के साथ उपग्रह मानचित्र टाइलें दिखाता है
+
+***
+
+## मानचित्र नेविगेशन
+
+### ज़ूम नियंत्रण
+
+* **ज़ूम इन/आउट**: माउस स्क्रॉल व्हील या ज़ूम बटन का उपयोग करें
+* **पूर्णस्क्रीन**: मानचित्र को पूर्णस्क्रीन
+
+### पैन नियंत्रण
+
+* **पैन**: मानचित्र के चारों ओर घूमने के लिए क्लिक करें और खींचें***
+
+## उपयोग के मामले
+
+### उड़ान पथ विज़ुअलाइज़ेशन
+
+* ड्रोन कैप्चर सत्रों का कवरेज क्षेत्र देखें
+* छवि कवरेज में अंतराल को पहचानें
+* उड़ान पथ निष्पादन सत्यापित करें
+
+### ग्राउंड सर्वेक्षण समीक्षा
+
+* ज़मीन आधारित कैप्चर का स्थानिक वितरण देखें
+* सर्वेक्षण क्षेत्र के सापेक्ष अंशांकन लक्ष्य छवियों का पता लगाएं
+* अतिरिक्त कैप्चर स्थानों की योजना बनाएं
+
+### गुणवत्ता नियंत्रण
+
+* अप्रत्याशित स्थानों पर कैप्चर की गई छवियों को तुरंत पहचानें
+* पूरे डेटासेट में जीपीएस सटीकता सत्यापित करें
+* फ़ील्ड नोट्स के साथ क्रॉस-रेफरेंस छवि स्थान
+
+***
+
+## समस्या निवारण
+
+### कोई मार्कर दिखाई नहीं दे रहा
+
+**संभावित कारण:**
+
+* छवियों में जीपीएस मेटाडेटा नहीं है
+* कैप्चर के दौरान कैमरे पर जीपीएस अक्षम कर दिया गया था
+* EXIF डेटा बाहरी सॉफ़्टवेयर द्वारा छीन लिया गया था
+
+**समाधान**: सत्यापित करें कि आपके कैमरे पर जीपीएस सक्षम है और मूल फ़ाइलों को पुनः आयात करें
+
+### गलत स्थान पर मार्कर
+
+**संभावित कारण:**
+
+* कैमरा जीपीएस में खराब सैटेलाइट फिक्स था
+* कैप्चर के दौरान जीपीएस बहाव
+
+**समाधान**: यह आमतौर पर कैप्चर-टाइम समस्या है; सटीक अनुप्रयोगों के लिए पीपीके/आरटीके जीपीएस का उपयोग करने पर विचार करें
