@@ -6,7 +6,7 @@
 
 लॉग इन करने पर आपके खाते का विवरण दिखाया जाएगा:
 
-<figure><img src='.gitbook/assets/user_account.JPG' alt='' width='375'><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
 
 ## CLI लॉगिन
 
@@ -18,9 +18,9 @@ CLI प्रोसेसिंग सक्षम करने के लिए
 chloros-cli login <email> <password>
 ```
 
-{% संकेत शैली = "जानकारी" %}
+{% hint style="info" %}
 **SDK उपयोगकर्ता**: Python SDK कैश्ड क्रेडेंशियल्स को साफ़ करने के लिए एक प्रोग्रामेटिक `logout()` विधि भी प्रदान करता है। विवरण के लिए [Python SDK दस्तावेज़](api-python-sdk.md#logout) देखें।
-{% अंतिम संकेत %}
+{% endhint %}
 
 **उदाहरण:**
 
@@ -28,13 +28,13 @@ chloros-cli login <email> <password>
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% संकेत शैली = "चेतावनी" %}
+{% hint style="warning" %}
 **विशेष वर्ण**: `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर एकल उद्धरण चिह्नों का उपयोग करें।
-{% अंतिम संकेत %}
+{% endhint %}
 
 **आउटपुट:**
 
-<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=''><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=""><figcaption></figcaption></figure>
 
 ### योजना समाप्ति
 

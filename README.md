@@ -4,7 +4,7 @@ metaLinks: {}
 
 # आरंभ करना
 
-<div data-full-width='false'><figure><img src='.gitbook/assets/cloros_logo_transparent.png' alt=''><figcaption></figcaption></figure></div>
+<div data-full-width='false'><figure><img src='.gitbook/assets/cloros_logo_transparent.png' alt=""><figcaption></figcaption></figure></div>
 
 Chloros छवियों और अन्य सेंसर डेटा को संसाधित करने के लिए [MAPIR](https://www.mapir.camera) का एक सॉफ्टवेयर एप्लिकेशन है।
 
@@ -43,6 +43,6 @@ Chloros 4 एप्लिकेशन मोड में उपलब्ध ह
 
 <p संरेखित करें = केंद्र साइनअप</a></p>
 
-<figure><img src='.gitbook/assets/plus_prog.JPG' alt=''><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/plus_prog.JPG' alt=""><figcaption></figcaption></figure>
 
-<figure><img src='.gitbook/assets/cli.JPG' alt=''><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/cli.JPG' alt=""><figcaption></figcaption></figure>

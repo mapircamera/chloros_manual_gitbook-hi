@@ -4,13 +4,13 @@ Chloros आपको ऐसे प्रोजेक्ट बनाने क�
 
 ## नया प्रोजेक्ट
 
-<figure><img src='.gitbook/assets/project_new.JPG' alt=''><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/project_new.JPG' alt=""><figcaption></figcaption></figure>
 
 मुख्य मेनू से "नया प्रोजेक्ट" चुनें और अपने प्रोजेक्ट के लिए एक अद्वितीय नाम दर्ज करें।
 
 ## प्रोजेक्ट खोलें
 
-<figure><img src='.gitbook/assets/project_open.JPG' alt=''><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/project_open.JPG' alt=""><figcaption></figcaption></figure>
 
 प्रोजेक्ट फ़ोल्डर में मौजूदा प्रोजेक्ट्स की सूची देखने के लिए "ओपन प्रोजेक्ट" चुनें। यदि कोई प्रोजेक्ट मौजूद नहीं है तो द्वितीयक साइड मेनू नहीं खुलेगा। आप उपरोक्त फोटो में सूचीबद्ध कुछ GUI निर्मित प्रोजेक्ट (t1, t2, t3) देख सकते हैं। DATE\_TIME प्रोजेक्ट CLI द्वारा डिफ़ॉल्ट प्रोजेक्ट नामकरण योजना का उपयोग करके बनाए गए थे। किसी भी प्रोजेक्ट नाम पर क्लिक करने से वह खुल जाएगा।
 
