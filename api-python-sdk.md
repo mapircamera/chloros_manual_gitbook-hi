@@ -1,46 +1,48 @@
-# एपीआई: पायथन एसडीके
+# API : Python SDK
 
-**क्लोरोस पायथन एसडीके** क्लोरोस इमेज प्रोसेसिंग इंजन तक प्रोग्रामेटिक पहुंच प्रदान करता है, जो आपके पायथन अनुप्रयोगों और अनुसंधान पाइपलाइनों के साथ स्वचालन, कस्टम वर्कफ़्लो और निर्बाध एकीकरण को सक्षम करता है।
+The **Chloros Python SDK** provides programmatic access to the Chloros image processing engine, enabling automation, custom workflows, and seamless integration with your Python applications and research pipelines.
 
-### प्रमुख विशेषताऐं
+### Key Features
 
-* 🐍 **नेटिव पायथन** - इमेज प्रोसेसिंग के लिए स्वच्छ, पायथोनिक एपीआई
-* 🔧 **पूर्ण एपीआई एक्सेस** - क्लोरोस प्रसंस्करण पर पूर्ण नियंत्रण
-* 🚀 **स्वचालन** - कस्टम बैच प्रोसेसिंग वर्कफ़्लोज़ बनाएं
-* 🔗 **एकीकरण** - मौजूदा पायथन अनुप्रयोगों में क्लोरोस एम्बेड करें
-* 📊 **अनुसंधान के लिए तैयार** - वैज्ञानिक विश्लेषण पाइपलाइनों के लिए बिल्कुल सही
-* ⚡ **समानांतर प्रसंस्करण**- आपके सीपीयू कोर को स्केल करता है (क्लोरोस+)
+* 🐍 **Native Python** - Clean, Pythonic API for image processing
+* 🔧 **Full API Access** - Complete control over Chloros processing
+* 🚀 **Automation** - Build custom batch processing workflows
+* 🔗 **Integration** - Embed Chloros in existing Python applications
+* 📊 **Research-Ready** - Perfect for scientific analysis pipelines
+* ⚡ **Parallel Processing** - Scales to your CPU cores (Chloros+)
 
-### आवश्यकताएं
+### Requirements
 
-| मांग          | विवरण                                                             |
-| ------------------- | ---------------------------------------------------------------------------------- |
-|**क्लोरोस डेस्कटॉप**| स्थानीय स्तर पर स्थापित किया जाना चाहिए                                           |
-|**लाइसेंस**| Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-|**ऑपरेटिंग सिस्टम**| विंडोज़ 10/11 (64-बिट)                                              |
-|**पायथन**| पायथन 3.7 या उच्चतर                                                |
-|**याद**| न्यूनतम 8 जीबी रैम (16 जीबी अनुशंसित)                                  |
-|**इंटरनेट**| लाइसेंस सक्रियण के लिए आवश्यक है                                     |
+| Requirement          | Details                                                             |
+| -------------------- | ------------------------------------------------------------------- |
+| **Chloros Desktop**  | Must be installed locally                                           |
+| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
+| **Operating System** | Windows 10/11 (64-bit)                                              |
+| **Python**           | Python 3.7 or higher                                                |
+| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
+| **Internet**         | Required for license activation                                     |
 
-{% hint style="warning" %}**लाइसेंस आवश्यकता**: पायथन एसडीके को एपीआई एक्सेस के लिए सशुल्क क्लोरोस+ सदस्यता की आवश्यकता होती है। मानक (निःशुल्क) योजनाओं में एपीआई/एसडीके पहुंच नहीं है। मिलने जाना [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) करने के लिए नवीनीकरण।
+{% hint style="warning" %}
+**License Requirement**: The Python SDK requires a paid Chloros+ subscription for API access. Standard (free) plans do not have API/SDK access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
 {% endhint %}
 
-## त्वरित शुरुआत
+## Quick Start
 
-### इंस्टालेशन
+### Installation
 
-पिप के माध्यम से स्थापित करें:
+Install via pip:
 
 ```bash
 pip install chloros-sdk
 ```
 
-{% hint style="info" %}**पहली बार सेटअप**: एसडीके का उपयोग करने से पहले, क्लोरोस, क्लोरोस (ब्राउज़र) या क्लोरोस सीएलआई खोलकर और अपने क्रेडेंशियल्स के साथ लॉग इन करके अपने क्लोरोस+ लाइसेंस को सक्रिय करें। इसे केवल एक बार ही करना होगा.
+{% hint style="info" %}
+**First-Time Setup**: Before using the SDK, activate your Chloros+ license by opening Chloros, Chloros (Browser) or Chloros CLI and logging in with your credentials. This only needs to be done once.
 {% endhint %}
 
-### बुनियादी उपयोग
+### Basic Usage
 
-किसी फ़ोल्डर को केवल कुछ पंक्तियों के साथ संसाधित करें:
+Process a folder with just a few lines:
 
 ```python
 from chloros_sdk import process_folder
@@ -49,9 +51,9 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\DroneImages\\Flight001")
 ```
 
-### पूर्ण नियंत्रण
+### Full Control
 
-उन्नत वर्कफ़्लोज़ के लिए:
+For advanced workflows:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -74,47 +76,72 @@ chloros.configure(
 
 # Process images
 chloros.process(mode="parallel", wait=True)
-```***## इंस्टालेशन गाइड
+```
 
-### आवश्यक शर्तें
+***
 
-एसडीके स्थापित करने से पहले, सुनिश्चित करें कि आपके पास:
+## Installation Guide
 
-1.**क्लोरोस डेस्कटॉप**स्थापित ([डाउनलोड](download.md))
-2.**पायथन 3.7+**स्थापित ([python.org](https://www.python.org))
-3.**एक्टिव क्लोरोस+ लाइसेंस**([अपग्रेड](https://cloud.mapir.camera/pricing))
+### Prerequisites
 
-### पिप के माध्यम से स्थापित करें**मानक स्थापना:**```bash
+Before installing the SDK, ensure you have:
+
+1. **Chloros Desktop** installed ([download](download.md))
+2. **Python 3.7+** installed ([python.org](https://www.python.org))
+3. **Active Chloros+ license** ([upgrade](https://cloud.mapir.camera/pricing))
+
+### Install via pip
+
+**Standard installation:**
+
+```bash
 pip install chloros-sdk
-```**प्रगति निगरानी समर्थन के साथ:**```bash
+```
+
+**With progress monitoring support:**
+
+```bash
 pip install chloros-sdk[progress]
-```**विकास स्थापना:**```bash
+```
+
+**Development installation:**
+
+```bash
 pip install chloros-sdk[dev]
 ```
 
-### स्थापना सत्यापित करें
+### Verify Installation
 
-परीक्षण करें कि SDK सही ढंग से स्थापित है:
+Test that the SDK is installed correctly:
 
 ```python
 import chloros_sdk
 print(f"Chloros SDK version: {chloros_sdk.__version__}")
-```***## पहली बार सेटअप
+```
 
-### लाइसेंस सक्रियण
+***
 
-एसडीके क्लोरोस, क्लोरोस (ब्राउज़र), और क्लोरोस सीएलआई के समान लाइसेंस का उपयोग करता है। GUI या CLI के माध्यम से एक बार सक्रिय करें:
+## First-Time Setup
 
-1.**क्लोरोस या क्लोरोस (ब्राउज़र)**खोलें और उपयोगकर्ता पर लॉगिन करें<img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line">टैब. या,**सीएलआई**खोलें।
-2. अपने क्लोरोस+ क्रेडेंशियल दर्ज करें और लॉग इन करें
-3. लाइसेंस स्थानीय रूप से कैश किया जाता है (रीबूट के दौरान बना रहता है)
+### License Activation
 
-{% hint style="success" %}**वन-टाइम सेटअप**: जीयूआई या सीएलआई के माध्यम से लॉग इन करने के बाद, एसडीके स्वचालित रूप से कैश्ड लाइसेंस का उपयोग करता है। किसी अतिरिक्त प्रमाणीकरण की आवश्यकता नहीं!
+The SDK uses the same license as Chloros, Chloros (Browser), and Chloros CLI. Activate once via the GUI or CLI:
+
+1. Open **Chloros or Chloros (Browser)** and login on the User <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> tab. Or, open the **CLI**.
+2. Enter your Chloros+ credentials and log in
+3. License is cached locally (persists across reboots)
+
+{% hint style="success" %}
+**One-Time Setup**: After logging in via the GUI or CLI, the SDK automatically uses the cached license. No additional authentication needed!
 {% endhint %}
 
-### परीक्षण कनेक्शन
+{% hint style="info" %}
+**Logout**: SDK users can programmatically clear cached credentials using the `logout()` method. See [logout() method](#logout) in the API Reference.
+{% endhint %}
 
-सत्यापित करें कि SDK क्लोरोस से कनेक्ट हो सकता है:
+### Test Connection
+
+Verify the SDK can connect to Chloros:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -125,13 +152,17 @@ chloros = ChlorosLocal()
 # Check status
 status = chloros.get_status()
 print(f"Backend running: {status['running']}")
-```***## एपीआई संदर्भ
+```
 
-### क्लोरोसलोकल क्लास
+***
 
-स्थानीय क्लोरोस छवि प्रसंस्करण के लिए मुख्य वर्ग।
+## API Reference
 
-#### निर्माता
+### ChlorosLocal Class
+
+Main class for local Chloros image processing.
+
+#### Constructor
 
 ```python
 ChlorosLocal(
@@ -141,13 +172,21 @@ ChlorosLocal(
     timeout=30,                          # Request timeout (seconds)
     backend_startup_timeout=60           # Backend startup timeout
 )
-```**पैरामीटर:**| पैरामीटर                 | प्रकार | गलती करना                   | विवरण                           |
-| ---------------------- | ---- | ---------------------- | -------------------------------------- |
-| `api_url`                 | एसटीआर  | `"http://localhost:5000"` | स्थानीय क्लोरोस बैकएंड का URL          |
-| `auto_start_backend`      | बूल | `True`                    | यदि आवश्यक हो तो स्वचालित रूप से बैकएंड प्रारंभ करें |
-| `backend_exe`             | एसटीआर  | `None` (auto-detect)      | निष्पादन योग्य बैकएंड का पथ            |
-| `timeout`                 | int यहाँ  | `30`                      | सेकंड में टाइमआउट का अनुरोध करें            |
-| `backend_startup_timeout` | int यहाँ  | `60`                      | बैकएंड स्टार्टअप के लिए टाइमआउट (सेकंड) |**उदाहरण:**```python
+```
+
+**Parameters:**
+
+| Parameter                 | Type | Default                   | Description                           |
+| ------------------------- | ---- | ------------------------- | ------------------------------------- |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL of local Chloros backend          |
+| `auto_start_backend`      | bool | `True`                    | Automatically start backend if needed |
+| `backend_exe`             | str  | `None` (auto-detect)      | Path to backend executable            |
+| `timeout`                 | int  | `30`                      | Request timeout in seconds            |
+| `backend_startup_timeout` | int  | `60`                      | Timeout for backend startup (seconds) |
+
+**Examples:**
+
+```python
 # Default (auto-start backend)
 chloros = ChlorosLocal()
 
@@ -159,48 +198,92 @@ chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
 # Custom timeout
 chloros = ChlorosLocal(timeout=60)
-```***### तरीकों
+```
+
+***
+
+### Methods
 
 #### `create_project(project_name, camera=None)`
 
-एक नया क्लोरोस प्रोजेक्ट बनाएं।**पैरामीटर:**| पैरामीटर      | प्रकार | आवश्यक | विवरण                                              |
-| -------------- | ---- | -------- | ---------------------------------------------------------------- |
-| `project_name` | एसटीआर  | हाँ      | परियोजना के लिए नाम                                     |
-| `camera`       | एसटीआर  | No       | कैमरा टेम्प्लेट (जैसे, "Survey3N\_RGN", "Survey3W\_OCN") |**रिटर्न:**`dict` - Project creation response**उदाहरण:**```python
+Create a new Chloros project.
+
+**Parameters:**
+
+| Parameter      | Type | Required | Description                                              |
+| -------------- | ---- | -------- | -------------------------------------------------------- |
+| `project_name` | str  | Yes      | Name for the project                                     |
+| `camera`       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
+
+**Returns:** `dict` - Project creation response
+
+**Example:**
+
+```python
 # Basic project
 chloros.create_project("DroneField_A")
 
 # With camera template
 chloros.create_project("DroneField_A", camera="Survey3N_RGN")
-```***#### `import_images(folder_path, recursive=False)`
+```
 
-किसी फ़ोल्डर से छवियाँ आयात करें.**पैरामीटर:**| पैरामीटर     | प्रकार     | आवश्यक | विवरण                        |
-| ----------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/पथ | हाँ      | छवियों वाले फ़ोल्डर का पथ         |
-| `recursive`   | बूल     | No       | सबफ़ोल्डर खोजें (डिफ़ॉल्ट: गलत) |**रिटर्न:**`dict` - Import results with file count**उदाहरण:**```python
+***
+
+#### `import_images(folder_path, recursive=False)`
+
+Import images from a folder.
+
+**Parameters:**
+
+| Parameter     | Type     | Required | Description                        |
+| ------------- | -------- | -------- | ---------------------------------- |
+| `folder_path` | str/Path | Yes      | Path to folder with images         |
+| `recursive`   | bool     | No       | Search subfolders (default: False) |
+
+**Returns:** `dict` - Import results with file count
+
+**Example:**
+
+```python
 # Import from folder
 chloros.import_images("C:\\DroneImages\\Flight001")
 
 # Import recursively
 chloros.import_images("C:\\DroneImages", recursive=True)
-```***#### `configure(**settings)`
+```
 
-प्रोसेसिंग सेटिंग्स कॉन्फ़िगर करें.**पैरामीटर:**| पैरामीटर                 | प्रकार | गलती करना                 | विवरण                     |
-| ---------------------- | ---- | ---------------------- | -------------------------------- |
-| `debayer`                 | एसटीआर  | "उच्च गुणवत्ता (तेज़)" | डिबायर विधि                  |
-| `vignette_correction`     | बूल | `True`                  | विग्नेट सुधार सक्षम करें      |
-| `reflectance_calibration` | बूल | `True`                  | परावर्तन अंशांकन सक्षम करें  |
-| `indices`                 | सूची | `None`                  | गणना के लिए वनस्पति सूचकांक |
-| `export_format`           | एसटीआर  | "TIFF (16-बिट)"         | आउटपुट स्वरूप                   |
-| `ppk`                     | बूल | `False`                 | पीपीके सुधार सक्षम करें          |
-| `custom_settings`         | हुक्म | `None`                  | उन्नत कस्टम सेटिंग्स        |**निर्यात प्रारूप:**
+***
 
-* `"TIFF (16-bit)"`- जीआईएस/फोटोग्रामेट्री के लिए अनुशंसित
-* `"TIFF (32-bit, Percent)"`- वैज्ञानिक विश्लेषण
-* `"PNG (8-bit)"`- दृश्य निरीक्षण
-* `"JPG (8-bit)"`-संपीड़ित आउटपुट
+#### `configure(**settings)`
 
-**उपलब्ध सूचकांक:**NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, और बहुत कुछ।**उदाहरण:**```python
+Configure processing settings.
+
+**Parameters:**
+
+| Parameter                 | Type | Default                 | Description                     |
+| ------------------------- | ---- | ----------------------- | ------------------------------- |
+| `debayer`                 | str  | "High Quality (Faster)" | Debayer method                  |
+| `vignette_correction`     | bool | `True`                  | Enable vignette correction      |
+| `reflectance_calibration` | bool | `True`                  | Enable reflectance calibration  |
+| `indices`                 | list | `None`                  | Vegetation indices to calculate |
+| `export_format`           | str  | "TIFF (16-bit)"         | Output format                   |
+| `ppk`                     | bool | `False`                 | Enable PPK corrections          |
+| `custom_settings`         | dict | `None`                  | Advanced custom settings        |
+
+**Export Formats:**
+
+* `"TIFF (16-bit)"` - Recommended for GIS/photogrammetry
+* `"TIFF (32-bit, Percent)"` - Scientific analysis
+* `"PNG (8-bit)"` - Visual inspection
+* `"JPG (8-bit)"` - Compressed output
+
+**Available Indices:**
+
+NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, and more.
+
+**Example:**
+
+```python
 # Basic configuration
 chloros.configure(
     vignette_correction=True,
@@ -217,17 +300,32 @@ chloros.configure(
     export_format="TIFF (32-bit, Percent)",
     indices=["NDVI", "NDRE", "GNDVI", "OSAVI", "CIG"]
 )
-```***#### `process(mode="parallel", wait=True, progress_callback=None)`
+```
 
-प्रोजेक्ट छवियों को संसाधित करें.**पैरामीटर:**| पैरामीटर           | प्रकार     | गलती करना      | विवरण                               |
-| ------------------- | -------- | ----------- | ------------------------------------------------ |
-| `mode`              | एसटीआर      | `"parallel"` | प्रसंस्करण मोड: "समानांतर" या "धारावाहिक"   |
-| `wait`              | बूल     | `True`       | पूरा होने की प्रतीक्षा करें                       |
-| `progress_callback` | प्रतिदेय | `None`       | प्रगति कॉलबैक फ़ंक्शन (प्रगति, संदेश) |
-| `poll_interval`     | तैरना    | `2.0`        | प्रगति के लिए मतदान अंतराल (सेकंड)   |**रिटर्न:**`dict` - Processing results
+***
 
-{% hint style="warning" %}**समानांतर मोड**: क्लोरोस+ लाइसेंस की आवश्यकता है। स्वचालित रूप से आपके सीपीयू कोर (16 श्रमिकों तक) को स्केल करता है।
-{% endhint %}**उदाहरण:**```python
+#### `process(mode="parallel", wait=True, progress_callback=None)`
+
+Process the project images.
+
+**Parameters:**
+
+| Parameter           | Type     | Default      | Description                               |
+| ------------------- | -------- | ------------ | ----------------------------------------- |
+| `mode`              | str      | `"parallel"` | Processing mode: "parallel" or "serial"   |
+| `wait`              | bool     | `True`       | Wait for completion                       |
+| `progress_callback` | callable | `None`       | Progress callback function(progress, msg) |
+| `poll_interval`     | float    | `2.0`        | Polling interval for progress (seconds)   |
+
+**Returns:** `dict` - Processing results
+
+{% hint style="warning" %}
+**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
+{% endhint %}
+
+**Example:**
+
+```python
 # Simple processing
 results = chloros.process()
 
@@ -243,36 +341,112 @@ chloros.process(
 
 # Fire-and-forget (non-blocking)
 chloros.process(wait=False)
-```***#### `get_config()`
+```
 
-वर्तमान प्रोजेक्ट कॉन्फ़िगरेशन प्राप्त करें.**रिटर्न:**`dict` - Current project configuration**उदाहरण:**```python
+***
+
+#### `get_config()`
+
+Get current project configuration.
+
+**Returns:** `dict` - Current project configuration
+
+**Example:**
+
+```python
 config = chloros.get_config()
 print(config['Project Settings'])
-```***#### `get_status()`
+```
 
-बैकएंड स्थिति की जानकारी प्राप्त करें.**रिटर्न:**`dict` - Backend status**उदाहरण:**```python
+***
+
+#### `get_status()`
+
+Get backend status information.
+
+**Returns:** `dict` - Backend status
+
+**Example:**
+
+```python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
-```***#### `shutdown_backend()`
+```
 
-बैकएंड बंद करें (यदि एसडीके द्वारा शुरू किया गया हो)।**उदाहरण:**```python
+***
+
+#### `shutdown_backend()`
+
+Shutdown the backend (if started by SDK).
+
+**Example:**
+
+```python
 chloros.shutdown_backend()
-```***### सुविधा कार्य
+```
 
-#### `process_folder(folder_path,**options)`
+***
 
-किसी फ़ोल्डर को संसाधित करने के लिए एक-पंक्ति सुविधा फ़ंक्शन।**पैरामीटर:**| पैरामीटर                 | प्रकार     | गलती करना         | विवरण                    |
-| ---------------------- | -------- | --------------- | -------------------------------- |
-| `folder_path`             | str/पथ | आवश्यक        | छवियों वाले फ़ोल्डर का पथ     |
-| `project_name`            | एसटीआर      | स्वतः उत्पन्न  | प्रोजेक्ट का नाम                   |
-| `camera`                  | एसटीआर      | `None`          | कैमरा टेम्पलेट                |
-| `indices`                 | सूची     | `["NDVI"]`      | गणना करने के लिए सूचकांक           |
-| `vignette_correction`     | बूल     | `True`          | विग्नेट सुधार सक्षम करें     |
-| `reflectance_calibration` | बूल     | `True`          | परावर्तन अंशांकन सक्षम करें |
-| `export_format`           | एसटीआर      | "TIFF (16-बिट)" | आउटपुट स्वरूप                  |
-| `mode`                    | एसटीआर      | `"parallel"`    | प्रसंस्करण मोड                |
-| `progress_callback`       | प्रतिदेय | `None`          | प्रगति कॉलबैक              |**रिटर्न:**`dict` - Processing results**उदाहरण:**```python
+#### `logout()`
+
+Clear cached credentials from the local system.
+
+**Description:**
+
+Programmatically logs out by removing cached authentication credentials. This is useful for:
+* Switching between different Chloros+ accounts
+* Clearing credentials in automated environments
+* Security purposes (e.g., removing credentials before uninstalling)
+
+**Returns:** `dict` - Logout operation result
+
+**Example:**
+
+```python
+from chloros_sdk import ChlorosLocal
+
+# Initialize SDK
+chloros = ChlorosLocal()
+
+# Clear cached credentials
+result = chloros.logout()
+print(f"Logout successful: {result}")
+
+# After logout, login required via GUI/CLI/Browser before next SDK use
+```
+
+{% hint style="info" %}
+**Re-authentication Required**: After calling `logout()`, you must log in again via Chloros, Chloros (Browser), or Chloros CLI before using the SDK.
+{% endhint %}
+
+***
+
+### Convenience Functions
+
+#### `process_folder(folder_path, **options)`
+
+One-line convenience function to process a folder.
+
+**Parameters:**
+
+| Parameter                 | Type     | Default         | Description                    |
+| ------------------------- | -------- | --------------- | ------------------------------ |
+| `folder_path`             | str/Path | Required        | Path to folder with images     |
+| `project_name`            | str      | Auto-generated  | Project name                   |
+| `camera`                  | str      | `None`          | Camera template                |
+| `indices`                 | list     | `["NDVI"]`      | Indices to calculate           |
+| `vignette_correction`     | bool     | `True`          | Enable vignette correction     |
+| `reflectance_calibration` | bool     | `True`          | Enable reflectance calibration |
+| `export_format`           | str      | "TIFF (16-bit)" | Output format                  |
+| `mode`                    | str      | `"parallel"`    | Processing mode                |
+| `progress_callback`       | callable | `None`          | Progress callback              |
+
+**Returns:** `dict` - Processing results
+
+**Example:**
+
+```python
 from chloros_sdk import process_folder
 
 # Simple one-liner
@@ -295,9 +469,13 @@ results = process_folder(
     "C:\\DroneImages\\Flight001",
     progress_callback=show_progress
 )
-```***## प्रसंग प्रबंधक समर्थन
+```
 
-एसडीके स्वचालित सफाई के लिए संदर्भ प्रबंधकों का समर्थन करता है:
+***
+
+## Context Manager Support
+
+The SDK supports context managers for automatic cleanup:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -309,11 +487,15 @@ with ChlorosLocal() as chloros:
     chloros.configure(indices=["NDVI"])
     chloros.process()
 # Backend automatically shut down here
-```***## संपूर्ण उदाहरण
+```
 
-### उदाहरण 1: बुनियादी प्रसंस्करण
+***
 
-डिफ़ॉल्ट सेटिंग्स वाले फ़ोल्डर को संसाधित करें:
+## Complete Examples
+
+### Example 1: Basic Processing
+
+Process a folder with default settings:
 
 ```python
 from chloros_sdk import process_folder
@@ -322,9 +504,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Datasets\\Field_A_2025_01_15")
 
 print(f"Processing complete: {results}")
-```***### उदाहरण 2: कस्टम वर्कफ़्लो
+```
 
-प्रसंस्करण पाइपलाइन पर पूर्ण नियंत्रण:
+***
+
+### Example 2: Custom Workflow
+
+Full control over processing pipeline:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -360,11 +546,13 @@ chloros.process(
 )
 
 print("Processing complete!")
-```***
+```
 
-### उदाहरण 3: एकाधिक फ़ोल्डरों का बैच प्रसंस्करण
+***
 
-एकाधिक उड़ान डेटासेट संसाधित करें:
+### Example 3: Batch Processing Multiple Folders
+
+Process multiple flight datasets:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -412,9 +600,11 @@ print("\n" + "="*60)
 print("All flights processed!")
 ```
 
-***### उदाहरण 4: अनुसंधान पाइपलाइन एकीकरण
+***
 
-डेटा विश्लेषण के साथ क्लोरोस को एकीकृत करें:
+### Example 4: Research Pipeline Integration
+
+Integrate Chloros with data analysis:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -463,9 +653,13 @@ print(df)
 # plt.ylabel('Biomass (kg/ha)')
 # plt.title('NDVI vs Biomass Correlation')
 # plt.show()
-```***### उदाहरण 5: कस्टम प्रगति निगरानी
+```
 
-लॉगिंग के साथ उन्नत प्रगति ट्रैकिंग:
+***
+
+### Example 5: Custom Progress Monitoring
+
+Advanced progress tracking with logging:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -498,9 +692,13 @@ chloros.process(
     wait=True
 )
 logging.info("Processing complete!")
-```***### उदाहरण 6: त्रुटि प्रबंधन
+```
 
-उत्पादन उपयोग के लिए मजबूत त्रुटि प्रबंधन:
+***
+
+### Example 6: Error Handling
+
+Robust error handling for production use:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -546,11 +744,56 @@ if success:
     print(f"✓ {message}")
 else:
     print(f"✗ {message}")
-```***
+```
 
-### उदाहरण 7: कमांड-लाइन टूल
+***
 
-SDK के साथ एक कस्टम CLI टूल बनाएं:
+### Example 7: Account Management and Logout
+
+Manage credentials programmatically:
+
+```python
+from chloros_sdk import ChlorosLocal
+
+def switch_account():
+    """Clear credentials to switch to a different account"""
+    try:
+        chloros = ChlorosLocal()
+        
+        # Clear current credentials
+        result = chloros.logout()
+        print("✓ Credentials cleared successfully")
+        print("Please log in with new account via Chloros, Chloros (Browser), or CLI")
+        
+        return True
+    
+    except Exception as e:
+        print(f"✗ Logout failed: {e}")
+        return False
+
+def secure_cleanup():
+    """Remove credentials for security purposes"""
+    try:
+        chloros = ChlorosLocal()
+        chloros.logout()
+        print("✓ Credentials removed for security")
+        
+    except Exception as e:
+        print(f"Warning: Cleanup error: {e}")
+
+# Switch accounts
+if switch_account():
+    print("\nRe-authenticate via Chloros GUI/CLI/Browser before next SDK use")
+
+# Or perform secure cleanup
+# secure_cleanup()
+```
+
+***
+
+### Example 8: Command-Line Tool
+
+Build a custom CLI tool with the SDK:
 
 ```python
 #!/usr/bin/env python
@@ -573,8 +816,18 @@ def main():
                        help='Camera template')
     parser.add_argument('--format', default='TIFF (16-bit)',
                        help='Export format')
+    parser.add_argument('--logout', action='store_true',
+                       help='Clear cached credentials before processing')
     
     args = parser.parse_args()
+    
+    # Handle logout if requested
+    if args.logout:
+        from chloros_sdk import ChlorosLocal
+        chloros = ChlorosLocal()
+        chloros.logout()
+        print("Credentials cleared. Please re-login via Chloros GUI/CLI/Browser.")
+        return 0
     
     successful = []
     failed = []
@@ -613,15 +866,23 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-**प्रयोग:**```bash
+**Usage:**
+
+```bash
+# Process multiple folders
 python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
-```***
 
-## एक्सेप्शन हेंडलिंग
+# Clear cached credentials
+python my_processor.py --logout
+```
 
-एसडीके विभिन्न त्रुटि प्रकारों के लिए विशिष्ट अपवाद वर्ग प्रदान करता है:
+***
 
-### अपवाद पदानुक्रम
+## Exception Handling
+
+The SDK provides specific exception classes for different error types:
+
+### Exception Hierarchy
 
 ```python
 ChlorosError                    # Base exception
@@ -633,7 +894,7 @@ ChlorosError                    # Base exception
 └── ChlorosConfigurationError  # Configuration errors
 ```
 
-### अपवाद उदाहरण
+### Exception Examples
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -658,11 +919,11 @@ except ChlorosError as e:
 
 ***
 
-## उन्नत विषय
+## Advanced Topics
 
-### कस्टम बैकएंड कॉन्फ़िगरेशन
+### Custom Backend Configuration
 
-कस्टम बैकएंड स्थान या कॉन्फ़िगरेशन का उपयोग करें:
+Use a custom backend location or configuration:
 
 ```python
 chloros = ChlorosLocal(
@@ -673,9 +934,9 @@ chloros = ChlorosLocal(
 )
 ```
 
-### नॉन-ब्लॉकिंग प्रोसेसिंग
+### Non-Blocking Processing
 
-प्रसंस्करण प्रारंभ करें और अन्य कार्य जारी रखें:
+Start processing and continue with other tasks:
 
 ```python
 # Start processing (non-blocking)
@@ -695,9 +956,9 @@ while True:
 print("Processing complete!")
 ```
 
-### स्मृति प्रबंधन
+### Memory Management
 
-बड़े डेटासेट के लिए, बैचों में प्रक्रिया करें:
+For large datasets, process in batches:
 
 ```python
 from pathlib import Path
@@ -720,9 +981,17 @@ for i in range(0, len(images), batch_size):
     process_folder(batch_folder)
 ```
 
-***## समस्या निवारण
+***
 
-### बैकएंड प्रारंभ नहीं हो रहा है**मुद्दा:**SDK fails to start backend**समाधान:**1. सत्यापित करें कि क्लोरोस डेस्कटॉप स्थापित है:
+## Troubleshooting
+
+### Backend Not Starting
+
+**Issue:** SDK fails to start backend
+
+**Solutions:**
+
+1. Verify Chloros Desktop is installed:
 
 ```python
 import os
@@ -730,13 +999,23 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. जांचें कि विंडोज़ फ़ायरवॉल अवरुद्ध नहीं हो रहा है
-3. मैन्युअल बैकएंड पथ आज़माएँ:
+2. Check Windows Firewall isn't blocking
+3. Try manual backend path:
 
 ```python
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
-```***### लाइसेंस का पता नहीं चला**मुद्दा:**SDK warns about missing license**समाधान:**1. क्लोरोस, क्लोरोस (ब्राउज़र) या क्लोरोस सीएलआई खोलें और लॉगिन करें।
-2. सत्यापित करें कि लाइसेंस कैश किया गया है:
+```
+
+***
+
+### License Not Detected
+
+**Issue:** SDK warns about missing license
+
+**Solutions:**
+
+1. Open Chloros, Chloros (Browser) or Chloros CLI and login.
+2. Verify license is cached:
 
 ```python
 from pathlib import Path
@@ -747,7 +1026,29 @@ cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
-3. समर्थन से संपर्क करें: info@mapir.camera***### आयात त्रुटियाँ**मुद्दा:**`ModuleNotFoundError: No module named 'chloros_sdk'`**समाधान:**```bash
+3. If experiencing credential issues, clear cached credentials and re-login:
+
+```python
+from chloros_sdk import ChlorosLocal
+
+# Clear cached credentials
+chloros = ChlorosLocal()
+chloros.logout()
+
+# Then login again via Chloros, Chloros (Browser), or Chloros CLI
+```
+
+4. Contact support: info@mapir.camera
+
+***
+
+### Import Errors
+
+**Issue:** `ModuleNotFoundError: No module named 'chloros_sdk'`
+
+**Solutions:**
+
+```bash
 # Verify installation
 pip show chloros-sdk
 
@@ -757,64 +1058,102 @@ pip install chloros-sdk
 
 # Check Python environment
 python -c "import sys; print(sys.path)"
-```***### प्रसंस्करण समयबाह्य**मुद्दा:**Processing times out**समाधान:**1. टाइमआउट बढ़ाएँ:
+```
+
+***
+
+### Processing Timeout
+
+**Issue:** Processing times out
+
+**Solutions:**
+
+1. Increase timeout:
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. छोटे बैचों में प्रक्रिया करें
-3. उपलब्ध डिस्क स्थान की जाँच करें
-4. सिस्टम संसाधनों की निगरानी करें***### पोर्ट पहले से ही उपयोग में है**मुद्दा:**Backend port 5000 occupied**समाधान:**```python
+2. Process smaller batches
+3. Check available disk space
+4. Monitor system resources
+
+***
+
+### Port Already in Use
+
+**Issue:** Backend port 5000 occupied
+
+**Solutions:**
+
+```python
 # Use different port
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-या विरोधाभासी प्रक्रिया ढूंढें और बंद करें:
+Or find and close conflicting process:
 
 ```powershell
 # PowerShell
 Get-NetTCPConnection -LocalPort 5000
-```***## प्रदर्शन युक्तियाँ
+```
 
-### प्रसंस्करण गति को अनुकूलित करें
+***
 
-1.**समानांतर मोड का उपयोग करें**(क्लोरोस+ की आवश्यकता है)
+## Performance Tips
+
+### Optimize Processing Speed
+
+1. **Use Parallel Mode** (requires Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2.**आउटपुट रिज़ॉल्यूशन कम करें**(यदि स्वीकार्य हो)
+2. **Reduce Output Resolution** (if acceptable)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 ```
 
-3.**अनावश्यक सूचकांक अक्षम करें**```python
+3. **Disable Unnecessary Indices**
+
+```python
 # Only calculate needed indices
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4.**एसएसडी पर प्रक्रिया**(एचडीडी नहीं)***### मेमोरी अनुकूलन
+4. **Process on SSD** (not HDD)
 
-बड़े डेटासेट के लिए:
+***
+
+### Memory Optimization
+
+For large datasets:
 
 ```python
 # Process in batches instead of all at once
 # See "Memory Management" in Advanced Topics
-```***### पृष्ठभूमि प्रसंस्करण
+```
 
-अन्य कार्यों के लिए पायथन को मुक्त करें:
+***
+
+### Background Processing
+
+Free up Python for other tasks:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
 
 # Continue with other work
 # ...
-```***## एकीकरण उदाहरण
+```
 
-### Django एकीकरण
+***
+
+## Integration Examples
+
+### Django Integration
 
 ```python
 # views.py
@@ -832,7 +1171,7 @@ def process_images_view(request):
             return JsonResponse({'success': False, 'error': str(e)})
 ```
 
-### फ्लास्क एपीआई
+### Flask API
 
 ```python
 # app.py
@@ -856,7 +1195,7 @@ if __name__ == '__main__':
     app.run()
 ```
 
-### ज्यूपिटर नोटबुक
+### Jupyter Notebook
 
 ```python
 # notebook.ipynb
@@ -883,43 +1222,75 @@ chloros.process(progress_callback=notebook_progress)
 
 # Visualize results
 # ... (your visualization code)
-```***## अक्सर पूछे जाने वाले प्रश्न
+```
 
-### प्रश्न: क्या एसडीके को इंटरनेट कनेक्शन की आवश्यकता है?**A:**Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.***### प्रश्न: क्या मैं GUI के बिना सर्वर पर SDK का उपयोग कर सकता हूँ?**A:** Yes! Requirements:
+***
 
-* विंडोज सर्वर 2016 या बाद का संस्करण
-* क्लोरोस स्थापित (एक बार)
-* किसी भी मशीन पर लाइसेंस सक्रिय (कैश्ड लाइसेंस सर्वर पर कॉपी किया गया)
+## FAQ
 
-***### प्रश्न: डेस्कटॉप, सीएलआई और एसडीके के बीच क्या अंतर है?
+### Q: Does the SDK require an internet connection?
 
-| विशेषता         | डेस्कटॉप जीयूआई | सीएलआई कमांड लाइन | पायथन एसडीके  |
+**A:** Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.
+
+***
+
+### Q: Can I use the SDK on a server without GUI?
+
+**A:** Yes! Requirements:
+
+* Windows Server 2016 or later
+* Chloros installed (one-time)
+* License activated on any machine (cached license copied to server)
+
+***
+
+### Q: What's the difference between Desktop, CLI, and SDK?
+
+| Feature         | Desktop GUI | CLI Command Line | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
-|**इंटरफ़ेस**| बिंदु-क्लिक करें | आज्ञा          | पायथन एपीआई  |
-|**के लिए सर्वोत्तम**| दृश्य कार्य | स्क्रिप्टिंग        | एकीकरण |
-|**स्वचालन**| सीमित     | अच्छा             | उत्कृष्ट   |
-|**लचीलापन**| बुनियादी       | अच्छा             | अधिकतम     |
-|**लाइसेंस**| क्लोरोस+    | क्लोरोस+         | क्लोरोस+    |***### प्रश्न: क्या मैं एसडीके के साथ निर्मित ऐप्स वितरित कर सकता हूं?**A:** SDK code can be integrated into your applications, but:
+| **Interface**   | Point-click | Command          | Python API  |
+| **Best For**    | Visual work | Scripting        | Integration |
+| **Automation**  | Limited     | Good             | Excellent   |
+| **Flexibility** | Basic       | Good             | Maximum     |
+| **License**     | Chloros+    | Chloros+         | Chloros+    |
 
-* अंतिम उपयोगकर्ताओं को क्लोरोस स्थापित करने की आवश्यकता है
-* अंतिम उपयोगकर्ताओं को सक्रिय क्लोरोस+ लाइसेंस की आवश्यकता है
-* वाणिज्यिक वितरण के लिए OEM लाइसेंसिंग की आवश्यकता होती है
+***
 
-OEM पूछताछ के लिए info@mapir.camera से संपर्क करें।
+### Q: Can I distribute apps built with the SDK?
 
-***### प्रश्न: मैं एसडीके को कैसे अपडेट करूं?
+**A:** SDK code can be integrated into your applications, but:
+
+* End users need Chloros installed
+* End users need active Chloros+ licenses
+* Commercial distribution requires OEM licensing
+
+Contact info@mapir.camera for OEM inquiries.
+
+***
+
+### Q: How do I update the SDK?
 
 ```bash
 pip install --upgrade chloros-sdk
-```***### प्रश्न: संसाधित छवियाँ कहाँ सहेजी जाती हैं?
+```
 
-डिफ़ॉल्ट रूप से, प्रोजेक्ट पथ में:
+***
+
+### Q: Where are processed images saved?
+
+By default, in the Project Path :
 
 ```
 Project_Path/
 └── MyProject/
     └── Survey3N_RGN/          # Processed outputs
-```***### प्रश्न: क्या मैं निर्धारित समय पर चल रही पायथन स्क्रिप्ट से छवियों को संसाधित कर सकता हूँ?**A:**Yes! Use Windows Task Scheduler with Python scripts:
+```
+
+***
+
+### Q: Can I process images from Python scripts running on schedule?
+
+**A:** Yes! Use Windows Task Scheduler with Python scripts:
 
 ```python
 # scheduled_processing.py
@@ -929,7 +1300,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-प्रतिदिन चलने के लिए टास्क शेड्यूलर के माध्यम से शेड्यूल करें।***### प्रश्न: क्या SDK async/प्रतीक्षा का समर्थन करता है?**A:**Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
+Schedule via Task Scheduler to run daily.
+
+***
+
+### Q: Does the SDK support async/await?
+
+**A:** Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
 
 ```python
 import threading
@@ -941,22 +1318,48 @@ thread = threading.Thread(target=process_thread)
 thread.start()
 
 # Continue with other work...
-```***
+```
 
-## मदद प्राप्त करें
+***
 
-### प्रलेखन
+### Q: How do I switch between different Chloros+ accounts?
 
-* **एपीआई संदर्भ**: यह पृष्ठ
+**A:** Use the `logout()` method to clear cached credentials, then re-login with the new account:
 
-### समर्थन चैनल
+```python
+from chloros_sdk import ChlorosLocal
 
-* **ईमेल**: info@mapir.camera
-* **वेबसाइट**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **मूल्य निर्धारण**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+# Clear current credentials
+chloros = ChlorosLocal()
+chloros.logout()
 
-### नमूना कोड
+# Re-login via Chloros, Chloros (Browser), or Chloros CLI with new account
+```
 
-यहां सूचीबद्ध सभी उदाहरण परीक्षणित और उत्पादन के लिए तैयार हैं। उन्हें कॉपी करें और अपने उपयोग के मामले में अनुकूलित करें।***## लाइसेंस**मालिकाना सॉफ्टवेयर** - कॉपीराइट (सी) 2025 एमएपीआईआर इंक।
+After logout, authenticate with the new account via the GUI, Browser, or CLI before using the SDK again.
 
-एसडीके को एक सक्रिय क्लोरोस+ सदस्यता की आवश्यकता है। अनधिकृत उपयोग, वितरण या संशोधन निषिद्ध है।
+***
+
+## Getting Help
+
+### Documentation
+
+* **API Reference**: This page
+
+### Support Channels
+
+* **Email**: info@mapir.camera
+* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+
+### Sample Code
+
+All examples listed here are tested and production-ready. Copy and adapt them for your use case.
+
+***
+
+## License
+
+**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+
+SDK requires an active Chloros+ subscription. Unauthorized use, distribution, or modification is prohibited.

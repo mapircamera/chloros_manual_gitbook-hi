@@ -1,225 +1,306 @@
-# प्रसंस्करण समाप्त करना
+# Finishing the Processing
 
-एक बार जब क्लोरोस प्रसंस्करण पूरा कर लेता है, तो यह आपके परिणामों की समीक्षा करने, आउटपुट गुणवत्ता को सत्यापित करने और आपके वर्कफ़्लो में उपयोग के लिए आपकी संसाधित छवियों को तैयार करने का समय है। यह पृष्ठ आपको अंतिम चरणों और अगली कार्रवाइयों में मार्गदर्शन करता है।
+Once Chloros completes processing, it's time to review your results, verify output quality, and prepare your processed images for use in your workflow. This page guides you through the final steps and next actions.
 
-## प्रसंस्करण पूर्ण संकेत
+## Processing Complete Indication
 
-जब प्रसंस्करण सफलतापूर्वक पूरा हो जाएगा, तो आपको कई संकेतक दिखाई देंगे:
+When processing finishes successfully, you'll see several indicators:
 
-* ✅ **प्रगति पट्टी**: 100% पूर्णता तक पहुँचता है
-* ✅ **डीबग लॉग**: "प्रसंस्करण पूर्ण" संदेश दिखाता है
-* ✅ **स्टार्ट बटन**: फिर से सक्षम हो जाता है (अगले प्रोसेसिंग रन के लिए तैयार)
-* ✅ **आउटपुट फ़ाइलें**: सभी संसाधित छवियां कैमरा मॉडल सबफ़ोल्डर में सहेजी गईं***## आपकी संसाधित छवियाँ ढूँढना
-
-### आउटपुट फ़ोल्डर खोलना
-
-1.**मुख्य मेनू**पर क्लिक करें<img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line">आइकन (ऊपर बाएँ)
-2.**"प्रोजेक्ट फ़ोल्डर खोलें"**चुनें
-3. आपका फ़ाइल एक्सप्लोरर प्रोजेक्ट निर्देशिका में खुलता है
-4. नाम से अपना प्रोजेक्ट ढूंढें***## संसाधित छवियों की समीक्षा करना
-
-### फ़ाइल एक्सप्लोरर में त्वरित पूर्वावलोकन**विंडोज़ अंतर्निर्मित पूर्वावलोकन:**1. कैमरा मॉडल सबफ़ोल्डर पर जाएँ
-2. एक छवि फ़ाइल चुनें
-3. पूर्वावलोकन विंडोज़ एक्सप्लोरर पूर्वावलोकन फलक में दिखाई देता है
-4. छवियों को ब्राउज़ करने के लिए तीर कुंजियों का उपयोग करें
-
-### बाहरी छवि दर्शकों में पूर्वावलोकन**अनुशंसित दर्शक:**
-
-* **QGIS** - मुफ़्त GIS सॉफ़्टवेयर (जियोरेफ़रेंस्ड मल्टीस्पेक्ट्रल विश्लेषण के लिए सर्वोत्तम)
-* **इरफ़ानव्यू** - तेज़, हल्का छवि दर्शक (टीआईएफएफ का समर्थन करता है)
-* **एडोब फोटोशॉप** - व्यावसायिक संपादन (टीआईएफएफ समर्थन)
-* **GIMP** - फ़ोटोशॉप का मुफ़्त विकल्प
-* **विंडोज़ फ़ोटो**- मूल दृश्य (16-बिट TIFF का समर्थन नहीं कर सकता)
-
-### क्लोरोस इमेज व्यूअर में पूर्वावलोकन
-
-उन्नत विज़ुअलाइज़ेशन के लिए क्लोरोस के अंतर्निहित छवि व्यूअर का उपयोग करें:
-
-1. फ़ाइल ब्राउज़र में एक छवि थंबनेल पर क्लिक करें
-2. छवि मुख्य पूर्वावलोकन क्षेत्र में खुलती है
-3.**इमेज व्यूअर**पर क्लिक करें<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">बाएँ साइडबार में टैब
-4. इंटरैक्टिव विश्लेषण के लिए [इंडेक्स/एलयूटी सैंडबॉक्स](../image-viewer-gui/index-lut-sandbox.md) का उपयोग करें
-
-विस्तृत निर्देशों के लिए [इमेज व्यूअर](../image-viewer-gui/opening-an-image-full-screen.md) देखें।***## डिबग लॉग की समीक्षा करना
-
-### चेतावनियों या त्रुटियों की जाँच करें
-
-1.**डीबग लॉग**खोलें<img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line">टैब
-2. संदेशों के माध्यम से स्क्रॉल करें
-3. पीली चेतावनियाँ या लाल त्रुटियाँ देखें
-4. नोट किए गए किसी भी मुद्दे की समीक्षा करें
-5. सहायता के लिए MAPIR समर्थन से संपर्क करें
-
-### लॉग सहेजा जा रहा है
-
-प्रसंस्करण का रिकॉर्ड रखने या एमएपीआईआर समर्थन को भेजने के लिए:
-
-1.**"कॉपी"**या**"डाउनलोड"**बटन पर क्लिक करें
-2. प्रोजेक्ट फ़ोल्डर में टेक्स्ट फ़ाइल के रूप में सहेजें
-3. प्रोजेक्ट दस्तावेज़ीकरण के साथ शामिल करें
-4. यदि समस्या आती है तो MAPIR सहायता को भेजें***## सामान्य आउटपुट मुद्दे और समाधान
-
-### समस्या: गुम आउटपुट फ़ाइलें**संभावित कारण:**
-
-* फ़ाइलें प्रसंस्करण मानदंडों को पूरा नहीं करतीं
-* केवल लक्ष्य छवियाँ (निर्यात से बाहर)
-* निर्यात के दौरान डिस्क स्थान समाप्त हो गया
-* प्रसंस्करण के दौरान फ़ाइल भ्रष्टाचार
-
-**समाधान:**1. स्किप/त्रुटि संदेशों के लिए डिबग लॉग की जाँच करें
-2. सत्यापित करें कि डिस्क स्थान पर्याप्त था
-3. फ़ाइलों की गणना करें: मेल खाना चाहिए (मूल गणना - लक्ष्य गणना) × (सूचकांक + 1)
-4. किसी भी गुम हुई फ़ाइल को पुनः आयात और पुनर्संसाधित करें
-
-### अंक: गहरे या चमकीले किनारे (विग्नेटिंग अभी भी दृश्यमान)**संभावित कारण:**
-
-* विग्नेट सुधार अक्षम किया गया
-* कैमरा/लेंस क्लोरोस प्रोफ़ाइल डेटाबेस में नहीं है
-* सुधार क्षमता से परे अत्यधिक विग्नेटिंग
-
-**समाधान:**1. सत्यापित करें कि प्रोजेक्ट सेटिंग्स में विगनेट सुधार सक्षम किया गया था
-2. जांचें कि कैमरा मॉडल सही ढंग से पहचाना गया है या नहीं
-3. यदि विगनेटिंग बनी रहती है तो MAPIR सहायता से संपर्क करें
-
-### समस्या: ग़लत रंग या मान**संभावित कारण:**
-
-* कोई अंशांकन लक्ष्य नहीं पाया गया
-* ग़लत अंशांकन लक्ष्य मॉडल चयनित
-* परावर्तन अंशांकन अक्षम किया गया
-* खराब गुणवत्ता वाली लक्ष्य छवियाँ
-
-**समाधान:**1. सत्यापित करें कि परावर्तन अंशांकन सक्षम किया गया था
-2. डीबग लॉग में "लक्ष्य मिला" संदेशों की जाँच करें
-3. लक्ष्य छवि गुणवत्ता की समीक्षा करें
-4. उचित लक्ष्यों को चिन्हित कर पुनः प्रक्रिया करें
-
-### समस्या: एनडीवीआई मान ग़लत प्रतीत होते हैं**अपेक्षित एनडीवीआई रेंज:**
-
-* **पानी, चट्टानें, मिट्टी**: -0.1 से 0.2
-* **विरल/अस्वास्थ्यकर वनस्पति**: 0.2 से 0.4
-* **मध्यम वनस्पति**: 0.4 से 0.6
-* **स्वस्थ, घनी वनस्पति**: 0.6 से 0.9**यदि मान इन सीमाओं से बाहर हैं:**1. सत्यापित करें कि परावर्तन अंशांकन लागू किया गया था
-2. सत्यापित करें कि प्रकाश सेंसर लॉग शामिल किया गया था
-3. जाँच अंशांकन लक्ष्यों का पता लगाया गया
-4. सुनिश्चित करें कि सही कैमरा मॉडल का पता लगाया गया
-5. लक्ष्य छवि कैप्चर समय और शर्तों की समीक्षा करें***## आपकी संसाधित छवियों का उपयोग करना
-
-### फोटोग्राममेट्री/ऑर्थोमोज़ेक निर्माण के लिए**अनुशंसित वर्कफ़्लो:**1.**कैलिब्रेटेड परावर्तन छवियों को फोटोग्रामेट्री सॉफ़्टवेयर में आयात करें**:
-* Pix4Dmapper
-* एगिसॉफ्ट मेटाशेप
-* ड्रोन परिनियोजन
-* वेबओडीएम
-2. **EXIF मेटाडेटा रखें**: जियोटैगिंग के लिए जीपीएस डेटा को संरक्षित करना सुनिश्चित करें
-3.**कैलिब्रेटेड वर्कफ़्लोज़**: वैज्ञानिक सटीकता के लिए परावर्तन छवियों का उपयोग करें
-4.**प्रोसेस इंडेक्स मोज़ाइक**: अलग-अलग इंडेक्स छवियों से एनडीवीआई ऑर्थोमोज़ैक बनाएं
-5.**जियो-संदर्भित जियोटीआईएफएफ निर्यात करें**: जीआईएस अनुप्रयोगों में उपयोग के लिए
-
-### जीआईएस विश्लेषण के लिए**अनुशंसित वर्कफ़्लो:**1.**QGIS, ArcGIS, या समान में लोड करें**2.**मल्टी-बैंड विश्लेषण के लिए 16-बिट TIFF**परावर्तन छवियों का उपयोग करें
-3.**सूचकांक छवियों का उपयोग करें**(एनडीवीआई, एनडीआरई) उपयोग के लिए तैयार वनस्पति परतों के रूप में
-4.**रैस्टर कैलकुलेटर**: कस्टम विश्लेषण के लिए बैंड को संयोजित करें
-5.**निर्यात**: वर्गीकरण मानचित्र, परिवर्तन का पता लगाना, वनस्पति स्वास्थ्य मानचित्र बनाएं
-
-### प्रत्यक्ष विश्लेषण/रिपोर्टिंग के लिए**अनुशंसित वर्कफ़्लो:**1.**दृश्य रिपोर्ट के लिए LUT रंगों के साथ अनुक्रमणिका छवियों का उपयोग करें**2.**आंकड़े निकालें**: प्रति फ़ील्ड/प्लॉट का मतलब एनडीवीआई
-3.**समय श्रृंखला**: कई सत्रों के सूचकांकों की तुलना करें
-4.**रिपोर्ट तैयार करें**: मानचित्र, आंकड़े और विज़ुअलाइज़ेशन शामिल करें***## संग्रह और बैकअप
-
-### अनुशंसित बैकअप रणनीति**क्या बचाना है:**
-
-* ✅ **मूल रॉ/जेपीजी छवियां** - अलग ड्राइव/क्लाउड पर संग्रहित करें
-* ✅ **संसाधित आउटपुट** - कैलिब्रेटेड छवियां और सूचकांक रखें
-* ✅ **प्रोजेक्ट फ़ाइल** - यदि आवश्यक हो तो पुन: प्रसंस्करण के लिए सभी सेटिंग्स शामिल हैं
-* ✅ **डीबग लॉग** - दस्तावेज़ प्रसंस्करण विवरण
-* ✅ **अंशांकन लक्ष्य छवियाँ**- सत्यापन और पुनर्प्रसंस्करण के लिए**भंडारण अनुशंसाएँ:**
-
-* **तत्काल बैकअप**: बाहरी हार्ड ड्राइव
-* **दीर्घकालिक संग्रह**: क्लाउड स्टोरेज (Google ड्राइव, ड्रॉपबॉक्स, आदि)
-* **महत्वपूर्ण डेटा**: 2-3 प्रतियां विभिन्न स्थानों पर रखें***## अगला प्रसंस्करण चलता है
-
-### प्रोजेक्ट सेटिंग्स का पुन: उपयोग करना
-
-यदि भविष्य में समान डेटासेट संसाधित किया जा रहा है:
-
-1.**प्रोजेक्ट टेम्पलेट सहेजें**(यदि पहले से नहीं किया गया है)
-2.**सहेजे गए टेम्पलेट का उपयोग करके नया प्रोजेक्ट बनाएं**3.**नई छवियाँ आयात करें**4.**प्रक्रिया**स्थिरता के लिए समान सेटिंग्स के साथ
-
-### बैच प्रसंस्करण एकाधिक सत्र
-
-एकाधिक सत्र/डेटासेट के लिए:**विकल्प 1: जीयूआई - एकाधिक परियोजनाएँ**
-
-* प्रत्येक सत्र के लिए अलग प्रोजेक्ट बनाएं
-* सुसंगत टेम्पलेट सेटिंग्स का उपयोग करें
-* एक समय में एक प्रक्रिया करें
-
-**विकल्प 2: क्लोरोस सीएलआई (केवल क्लोरोस+)**
-
-* स्वचालित बैच प्रसंस्करण
-* स्क्रिप्ट के साथ एकाधिक फ़ोल्डरों को संसाधित करें
-* देखें [सीएलआई दस्तावेज़ीकरण](../CLI.md)
-
-**विकल्प 3: पायथन एसडीके (केवल क्लोरोस+)**
-
-* प्रोग्रामेटिक नियंत्रण
-* विश्लेषण पाइपलाइनों के साथ एकीकरण
-* [एपीआई दस्तावेज़ीकरण](../api-python-sdk.md) देखें
+* ✅ **Progress bar**: Reaches 100% completion
+* ✅ **Debug Log**: Shows "Processing Complete" message
+* ✅ **Start button**: Becomes enabled again (ready for next processing run)
+* ✅ **Output files**: All processed images saved to camera model subfolder
 
 ***
 
-## प्रसंस्करण के बाद समस्या निवारण
+## Locating Your Processed Images
 
-### विभिन्न सेटिंग्स के साथ पुन: प्रसंस्करण
+### Opening the Output Folder
 
-यदि परिणाम संतोषजनक नहीं हैं:
+1. Click the **Main Menu** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> icon (top left)
+2. Select **"Open Project Folder"**
+3. Your file explorer opens to the project directory
+4. Locate your project by name
 
-1. मूल छवियाँ रखें (कभी न हटाएँ)
-2. क्लोरोस में वही प्रोजेक्ट खोलें
-3. प्रोजेक्ट सेटिंग्स पैनल में सेटिंग्स समायोजित करें
-4. दोबारा प्रक्रिया करें - आउटपुट पिछले परिणामों को अधिलेखित कर देंगे
-
-### छवियों का प्रसंस्करण सबसेट
-
-केवल विशिष्ट छवियों को पुन: संसाधित करने के लिए:
-
-1. नया प्रोजेक्ट बनाएं
-2. केवल उन्हीं छवियों को आयात करें जिनकी पुनर्संसाधन की आवश्यकता है
-3. समान सेटिंग टेम्पलेट का उपयोग करें
-4. छोटे डेटासेट को संसाधित करें
-
-### मदद प्राप्त करें
-
-यदि आपको समस्याएं आती हैं:
-
-* 📧 **ईमेल**: info@mapir.camera (डीबग लॉग शामिल करें)
-* 🌐 **समर्थन**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **अक्सर पूछे जाने वाले प्रश्न**: [अक्सर पूछे जाने वाले प्रश्न](../faq.md)
-* 📖 **दस्तावेज़ीकरण**: [क्लोरोस मैनुअल](../)***## सारांश: पूर्ण वर्कफ़्लो
-
-अब आपने संपूर्ण क्लोरोस प्रसंस्करण वर्कफ़्लो पूरा कर लिया है:
-
-1. ✅**प्रोजेक्ट बनाया गया**- देखें [प्रोजेक्ट्स](../projects.md)
-2. ✅**जोड़ी गई फ़ाइलें**- देखें [फ़ाइलें जोड़ना](a-project.md में फ़ाइलें जोड़ना)
-3. ✅**समायोजित सेटिंग्स**- देखें [प्रोजेक्ट सेटिंग्स समायोजित करना](adjusting-project-settings.md)
-4. ✅**चिह्नित लक्ष्य**- देखें [लक्ष्य छवियाँ चुनना](target-images.md चुनना)
-5. ✅**प्रसंस्करण प्रारंभ**- देखें [प्रसंस्करण प्रारंभ करना](starting-the-processing.md)
-6. ✅**प्रगति की निगरानी**- देखें [प्रसंस्करण की निगरानी](monitoring-the-processing.md)
-7. ✅**समीक्षित परिणाम**- यह पृष्ठ**आपकी कैलिब्रेटेड, परावर्तन-संशोधित मल्टीस्पेक्ट्रल छवियां विश्लेषण के लिए तैयार हैं!**
 ***
 
-## अतिरिक्त संसाधन
+## Reviewing Processed Images
 
-### उन्नत विशेषताएँ
+### Quick Preview in File Explorer
 
-* [**छवि दर्शक**](../image-viewer-gui/opening-an-image-full-screen.md) - इंटरएक्टिव विज़ुअलाइज़ेशन और विश्लेषण
-* [**इंडेक्स/एलयूटी सैंडबॉक्स**](../image-viewer-gui/index-lut-sandbox.md) - कस्टम इंडेक्स परीक्षण
-* [**मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला**](../project-settings/multispectral-index-formulas.md) - पूर्ण इंडेक्स संदर्भ
+**Windows built-in preview:**
 
-### स्वचालन एवं एकीकरण
+1. Navigate to camera model subfolder
+2. Select an image file
+3. Preview appears in Windows Explorer preview pane
+4. Use arrow keys to browse through images
 
-* [**सीएलआई दस्तावेज़ीकरण**](../CLI.md) - कमांड-लाइन बैच प्रोसेसिंग
-* [**पायथन एसडीके**](../api-python-sdk.md) - प्रोग्रामेटिक ऑटोमेशन
-* [**क्लोरोस+ विशेषताएं**](../#क्लोरोस) - उन्नत प्रसंस्करण क्षमताएं
+### Preview in External Image Viewers
 
-### समर्थन और सीखना
+**Recommended viewers:**
 
-* [**FAQ**](../faq.md) - सामान्य प्रश्नों के उत्तर दिए गए
-* [**अंशांकन लक्ष्य**](../calibration-targets.md) - परावर्तन अंशांकन को समझना
-* [**समर्थित कैमरे**](../supported-cameras.md) - संगत हार्डवेयर
+* **QGIS** - Free GIS software (best for georeferenced multispectral analysis)
+* **IrfanView** - Fast, lightweight image viewer (supports TIFF)
+* **Adobe Photoshop** - Professional editing (TIFF support)
+* **GIMP** - Free alternative to Photoshop
+* **Windows Photos** - Basic viewing (may not support 16-bit TIFF)
+
+### Preview in Chloros Image Viewer
+
+Use Chloros's built-in Image Viewer for advanced visualization:
+
+1. Click an image thumbnail in the File Browser
+2. Image opens in the main preview area
+3. Click **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab in left sidebar
+4. Use [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) for interactive analysis
+
+See [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detailed instructions.
+
+***
+
+## Reviewing the Debug Log
+
+### Check for Warnings or Errors
+
+1. Open **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> tab
+2. Scroll through messages
+3. Look for yellow warnings or red errors
+4. Review any issues noted
+5. Contact MAPIR support for assistance
+
+### Saving the Log
+
+To keep a record of processing or to send to MAPIR Support:
+
+1. Click **"Copy"** or **"Download"** button
+2. Save as text file in project folder
+3. Include with project documentation
+4. Send to MAPIR support if issues encountered
+
+***
+
+## Common Output Issues and Solutions
+
+### Issue: Missing Output Files
+
+**Possible causes:**
+
+* Files didn't meet processing criteria
+* Target-only images (excluded from export)
+* Disk space ran out during export
+* File corruption during processing
+
+**Solutions:**
+
+1. Check Debug Log for skip/error messages
+2. Verify disk space was sufficient
+3. Count files: Should match (original count - target count) × (indices + 1)
+4. Re-import and reprocess any missing files
+
+### Issue: Dark or Bright Edges (Vignetting Still Visible)
+
+**Possible causes:**
+
+* Vignette correction disabled
+* Camera/lens not in Chloros profile database
+* Extreme vignetting beyond correction capability
+
+**Solutions:**
+
+1. Verify vignette correction was enabled in Project Settings
+2. Check camera model correctly detected
+3. Contact MAPIR support if vignetting persists
+
+### Issue: Incorrect Colors or Values
+
+**Possible causes:**
+
+* No calibration targets detected
+* Wrong calibration target model selected
+* Reflectance calibration disabled
+* Poor quality target images
+
+**Solutions:**
+
+1. Verify reflectance calibration was enabled
+2. Check "Target found" messages in Debug Log
+3. Review target image quality
+4. Reprocess with proper targets marked
+
+### Issue: NDVI Values Seem Wrong
+
+**Expected NDVI ranges:**
+
+* **Water, rocks, soil**: -0.1 to 0.2
+* **Sparse/unhealthy vegetation**: 0.2 to 0.4
+* **Moderate vegetation**: 0.4 to 0.6
+* **Healthy, dense vegetation**: 0.6 to 0.9
+
+**If values are outside these ranges:**
+
+1. Verify reflectance calibration was applied
+2. Verify light sensor log was included
+3. Check calibration targets were detected
+4. Ensure correct camera model was detected
+5. Review target image capture timing and conditions
+
+***
+
+## Using Your Processed Images
+
+### For Photogrammetry / Orthomosaic Creation
+
+**Recommended workflow:**
+
+1. **Import calibrated reflectance images** into photogrammetry software:
+   * Pix4Dmapper
+   * Agisoft Metashape
+   * DroneDeploy
+   * WebODM
+2. **Keep EXIF metadata**: Ensure GPS data preserved for geotagging
+3. **Calibrated workflows**: Use reflectance images for scientific accuracy
+4. **Process index mosaics**: Create NDVI orthomosaics from individual index images
+5. **Export georeferenced GeoTIFF**: For use in GIS applications
+
+### For GIS Analysis
+
+**Recommended workflow:**
+
+1. **Load into QGIS, ArcGIS, or similar**
+2. **Use 16-bit TIFF** reflectance images for multi-band analysis
+3. **Use index images** (NDVI, NDRE) as ready-to-use vegetation layers
+4. **Raster calculator**: Combine bands for custom analysis
+5. **Export**: Create classification maps, change detection, vegetation health maps
+
+### For Direct Analysis / Reporting
+
+**Recommended workflow:**
+
+1. **Use index images with LUT colors** for visual reports
+2. **Extract statistics**: Mean NDVI per field/plot
+3. **Time series**: Compare indices across multiple sessions
+4. **Generate reports**: Include maps, statistics, and visualizations
+
+***
+
+## Archiving and Backup
+
+### Recommended Backup Strategy
+
+**What to save:**
+
+* ✅ **Original RAW/JPG images** - Archive on separate drive/cloud
+* ✅ **Processed outputs** - Keep calibrated images and indices
+* ✅ **Project file** - Contains all settings for reprocessing if needed
+* ✅ **Debug Log** - Documents processing details
+* ✅ **Calibration target images** - For verification and reprocessing
+
+**Storage recommendations:**
+
+* **Immediate backup**: External hard drive
+* **Long-term archive**: Cloud storage (Google Drive, Dropbox, etc.)
+* **Critical data**: Keep 2-3 copies in different locations
+
+***
+
+## Next Processing Runs
+
+### Reusing Project Settings
+
+If processing similar datasets in the future:
+
+1. **Save Project Template** (if not already done)
+2. **Create new project** using saved template
+3. **Import new images**
+4. **Process** with identical settings for consistency
+
+### Batch Processing Multiple Sessions
+
+For multiple sessions/datasets:
+
+**Option 1: GUI - Multiple Projects**
+
+* Create separate project for each session
+* Use consistent template settings
+* Process one at a time
+
+**Option 2: Chloros CLI (Chloros+ only)**
+
+* Automate batch processing
+* Process multiple folders with scripts
+* See [CLI Documentation](../CLI.md)
+
+**Option 3: Python SDK (Chloros+ only)**
+
+* Programmatic control
+* Integration with analysis pipelines
+* See [API Documentation](../api-python-sdk.md)
+
+***
+
+## Troubleshooting Post-Processing
+
+### Re-Processing with Different Settings
+
+If results aren't satisfactory:
+
+1. Keep original images (never delete)
+2. Open same project in Chloros
+3. Adjust settings in Project Settings panel
+4. Process again - outputs will overwrite previous results
+
+### Processing Subset of Images
+
+To reprocess only specific images:
+
+1. Create new project
+2. Import only the images needing reprocessing
+3. Use same settings template
+4. Process smaller dataset
+
+### Getting Help
+
+If you encounter issues:
+
+* 📧 **Email**: info@mapir.camera (include Debug Log)
+* 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **FAQ**: [Frequently Asked Questions](../faq.md)
+* 📖 **Documentation**: [Chloros Manual](../)
+
+***
+
+## Summary: Complete Workflow
+
+You've now completed the full Chloros processing workflow:
+
+1. ✅ **Created project** - See [Projects](../projects.md)
+2. ✅ **Added files** - See [Adding Files](adding-files-to-a-project.md)
+3. ✅ **Adjusted settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
+4. ✅ **Marked targets** - See [Choosing Target Images](choosing-target-images.md)
+5. ✅ **Started processing** - See [Starting the Processing](starting-the-processing.md)
+6. ✅ **Monitored progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+7. ✅ **Reviewed results** - This page
+
+**Your calibrated, reflectance-corrected multispectral images are ready for analysis!**
+
+***
+
+## Additional Resources
+
+### Advanced Features
+
+* [**Image Viewer**](../image-viewer-gui/opening-an-image-full-screen.md) - Interactive visualization and analysis
+* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Custom index testing
+* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Complete index reference
+
+### Automation & Integration
+
+* [**CLI Documentation**](../CLI.md) - Command-line batch processing
+* [**Python SDK**](../api-python-sdk.md) - Programmatic automation
+* [**Chloros+ Features**](../#chloros) - Advanced processing capabilities
+
+### Support & Learning
+
+* [**FAQ**](../faq.md) - Common questions answered
+* [**Calibration Targets**](../calibration-targets.md) - Understanding reflectance calibration
+* [**Supported Cameras**](../supported-cameras.md) - Compatible hardware

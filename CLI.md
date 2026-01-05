@@ -1,44 +1,48 @@
-# सीएलआई: कमांड लाइन
+# CLI : Command Line
 
-<figure><img src=”.gitbook/assets/cli.JPG” alt=””><figcaption></figcaption></figure>**क्लोरोस सीएलआई** क्लोरोस इमेज प्रोसेसिंग इंजन तक शक्तिशाली कमांड-लाइन पहुंच प्रदान करता है, जो आपके इमेजिंग वर्कफ़्लो के लिए स्वचालन, स्क्रिप्टिंग और हेड-टू-हेड ऑपरेशन को सक्षम करता है।
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
 
-### मुख्य विशेषताएं
+The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
 
-* 🚀 **स्वचालन**: एकाधिक डेटा सेट की स्क्रिप्टेड बैच प्रोसेसिंग
-* 🔗 **एकीकरण**: मौजूदा वर्कफ़्लो और प्रक्रियाओं में एकीकृत होता है
-* 💻 **गैर-जीयूआई ऑपरेशन**: बिना जीयूआई के चलता है
-* 🌍 **बहुभाषी**: 38 भाषाओं का समर्थन करता है
-* ⚡ **समानांतर प्रसंस्करण**: गतिशील रूप से आपके सीपीयू (16 समानांतर श्रमिकों तक) के अनुकूल होता है।
+### Key Features
 
-### आवश्यकताएं
+* 🚀 **Automation** - Script batch processing of multiple datasets
+* 🔗 **Integration** - Embed in existing workflows and pipelines
+* 💻 **Headless Operation** - Run without GUI
+* 🌍 **Multi-Language** - Support for 38 languages
+* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
 
-| आवश्यकता | विवरण |
-| ------------------- | ---------------------------------------------------------------------------------- |
-|**ऑपरेटिंग सिस्टम**| विंडोज़ 10/11 (64-बिट) |
-|**लाइसेंस**| क्लोरोस+ ([भुगतान योजना आवश्यक](https://cloud.mapir.camera/pricing)) |
-|**स्मृति**| न्यूनतम 8जीबी रैम (16जीबी अनुशंसित) |
-|**इंटरनेट**| लाइसेंस सक्रियण के लिए आवश्यक |
-|**डिस्क स्थान**| प्रोजेक्ट आकार के आधार पर भिन्न होता है |
+### Requirements
 
-{% hint style="warning" %}**लाइसेंस आवश्यकताएँ**: सीएलआई को क्लोरोस+ की सशुल्क सदस्यता की आवश्यकता होती है। मानक (निःशुल्क) योजनाओं की सीएलआई तक पहुंच नहीं है। अपडेट करने के लिए [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) पर जाएं।
+| Requirement          | Details                                                             |
+| -------------------- | ------------------------------------------------------------------- |
+| **Operating System** | Windows 10/11 (64-bit)                                              |
+| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
+| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
+| **Internet**         | Required for license activation                                     |
+| **Disk Space**       | Varies by project size                                              |
+
+{% hint style="warning" %}
+**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
 {% endhint %}
 
-## त्वरित शुरुआत
+## Quick Start
 
-### सुविधा
+### Installation
 
-सीएलआई स्वचालित रूप से क्लोरोस इंस्टॉलर के साथ शामिल है:
+The CLI is automatically included with the Chloros installer:
 
-1. डाउनलोड करें और चलाएं**Chloros Installer.exe**2. इंस्टॉलेशन विज़ार्ड को पूरा करें
-3. सीएलआई स्थापित: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Download and run **Chloros Installer.exe**
+2. Complete the installation wizard
+3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
 {% hint style="success" %}
-इंस्टॉलर स्वचालित रूप से आपके सिस्टम के PATH में `chloros-cli` जोड़ता है। स्थापना के बाद अपने टर्मिनल को पुनः आरंभ करें।
+The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
 {% endhint %}
 
-### प्रारंभिक सेटअप
+### First-Time Setup
 
-सीएलआई का उपयोग करने से पहले, अपना क्लोरोस+ लाइसेंस सक्रिय करें:
+Before using the CLI, activate your Chloros+ license:
 
 ```bash
 # Login with your Chloros+ account
@@ -51,71 +55,140 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### बुनियादी उपयोग
+### Basic Usage
 
-डिफ़ॉल्ट सेटिंग्स वाले फ़ोल्डर को संसाधित करें:
+Process a folder with default settings:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
-```***## कमांड संदर्भ
+```
 
-### सामान्य वाक्यविन्यास
+***
+
+## Command Reference
+
+### General Syntax
 
 ```
 chloros-cli [global-options] <command> [command-options]
-```***## आदेश
+```
 
-### `process`: प्रक्रिया छवियाँ
+***
 
-अंशांकन के साथ एक फ़ोल्डर में छवियों को संसाधित करें।**वाक्यविन्यास:**```bash
+## Commands
+
+### `process` - Process Images
+
+Process images in a folder with calibration.
+
+**Syntax:**
+
+```bash
 chloros-cli process <input-folder> [options]
-```**उदाहरण:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### प्रोसेसिंग कमांड विकल्प
+#### Process Command Options
 
-| विकल्प | प्रकार | डिफ़ॉल्ट | विवरण |
-| ---------------------- | ------- | -------------- | -------------------------------------------------------------------------------------------------- |
-| `<input-folder>` | मार्ग | _आवश्यक_ | RAW/JPG मल्टीस्पेक्ट्रल छवियों वाला फ़ोल्डर |
-| `-o, --output` | मार्ग | प्रविष्टि के समान | संसाधित छवियों के लिए आउटपुट फ़ोल्डर |
-| `-n, --project-name` | चेन | स्वचालित रूप से उत्पन्न | कस्टम प्रोजेक्ट का नाम |
-| `--vignette` | सूचक | सक्षम | विग्नेट सुधार सक्षम करें |
-| `--no-vignette` | सूचक | - | विग्नेट सुधार अक्षम करें |
-| `--reflectance` | सूचक | सक्षम | परावर्तन अंशांकन सक्षम करें |
-| `--no-reflectance` | सूचक | - | परावर्तन अंशांकन अक्षम करें |
-| `--ppk` | सूचक | विकलांग | लाइट सेंसर डेटा से पीपीके सुधार लागू करें .daq |
-| `--format` | विकल्प | टीआईएफएफ (16 बिट) | आउटपुट स्वरूप: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size` | पूर्णांक | स्वचालित | अंशांकन पैनल का पता लगाने के लिए पिक्सेल में न्यूनतम लक्ष्य आकार |
-| `--target-clustering` | पूर्णांक | स्वचालित | लक्ष्य समूहन सीमा (0-100) |
-| `--exposure-pin-1` | चेन | कोई नहीं | कैमरा मॉडल के लिए एक्सपोज़र लॉक करें (पिन 1) |
-| `--exposure-pin-2` | चेन | कोई नहीं | कैमरा मॉडल के लिए एक्सपोज़र लॉक करें (पिन 2) |
-| `--recal-interval` | पूर्णांक | कार | सेकंड में पुनर्अंशांकन अंतराल |
-| `--timezone-offset` | पूर्णांक | 0 | समय विचलन घंटों में |***### `login` - खाता प्रमाणित करें
+| Option                | Type    | Default        | Description                                                                            |
+| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
+| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
+| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
+| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
+| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
+| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
+| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
+| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
+| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
+| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
+| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
+| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
+| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
+| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
+| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
 
-सीएलआई प्रसंस्करण सक्षम करने के लिए अपने क्लोरोस+ क्रेडेंशियल्स के साथ साइन इन करें।**वाक्यविन्यास:**```bash
+***
+
+### `login` - Authenticate Account
+
+Login with your Chloros+ credentials to enable CLI processing.
+
+**Syntax:**
+
+```bash
 chloros-cli login <email> <password>
-```**उदाहरण:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}**विशेष वर्ण**: उन पासवर्डों के चारों ओर सिंगल कोट्स का उपयोग करें जिनमें `$`, `!`, या रिक्त स्थान जैसे वर्ण हों।
-{% endhint %}**परिणाम:**<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=''><figcaption></figcaption></figure>***### `logout`: क्रेडेंशियल हटाएं
+{% hint style="warning" %}
+**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% endhint %}
 
-संग्रहीत क्रेडेंशियल हटाएं और अपने खाते से लॉग आउट करें।**वाक्यविन्यास:**```bash
+**Output:**
+
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+***
+
+### `logout` - Clear Credentials
+
+Clear stored credentials and logout from your account.
+
+**Syntax:**
+
+```bash
 chloros-cli logout
-```**उदाहरण:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli logout
-```**बाहर निकलना:**```
+```
+
+**Output:**
+
+```
 ✓ Logout successful
 ℹ Credentials cleared from cache
-```***### `status` - लाइसेंस की स्थिति जांचें
+```
 
-वर्तमान लाइसेंस और प्रमाणीकरण स्थिति दिखाता है।**वाक्यविन्यास:**```bash
+{% hint style="info" %}
+**SDK Users**: The Python SDK also provides a programmatic `logout()` method for clearing credentials within Python scripts. See the [Python SDK documentation](api-python-sdk.md#logout) for details.
+{% endhint %}
+
+***
+
+### `status` - Check License Status
+
+Display current license and authentication status.
+
+**Syntax:**
+
+```bash
 chloros-cli status
-```**उदाहरण:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli status
-```**बाहर निकलना:**```
+```
+
+**Output:**
+
+```
 ╔══════════════════════════════════════╗
 ║     LICENSE & ACCOUNT INFORMATION    ║
 ╚══════════════════════════════════════╝
@@ -124,15 +197,37 @@ chloros-cli status
 📋 Plan: Chloros+ Professional
 🔓 API/CLI Access: Enabled
 ✓ Status: Active
-```***### `export-status`: निर्यात प्रगति की जाँच करें
+```
 
-प्रसंस्करण के दौरान या उसके बाद थ्रेड 4 की निर्यात प्रगति पर नज़र रखता है।**वाक्यविन्यास:**```bash
-chloros-cli export-status
-```**उदाहरण:**```powershell
-chloros-cli export-status
-```**उपयोग का मामला:**निर्यात की प्रगति की जांच करने के लिए प्रसंस्करण चालू होने पर इस कमांड को कॉल करें।***### `language`: इंटरफ़ेस भाषा प्रबंधित करें
+***
 
-सीएलआई इंटरफ़ेस भाषा देखें या बदलें।**वाक्यविन्यास:**```bash
+### `export-status` - Check Export Progress
+
+Monitor Thread 4 export progress during or after processing.
+
+**Syntax:**
+
+```bash
+chloros-cli export-status
+```
+
+**Example:**
+
+```powershell
+chloros-cli export-status
+```
+
+**Use Case:** Call this command while processing is running to check export progress.
+
+***
+
+### `language` - Manage Interface Language
+
+View or change the CLI interface language.
+
+**Syntax:**
+
+```bash
 # Show current language
 chloros-cli language
 
@@ -141,7 +236,11 @@ chloros-cli language --list
 
 # Set a specific language
 chloros-cli language <language-code>
-```**उदाहरण:**```powershell
+```
+
+**Examples:**
+
+```powershell
 # View current language
 chloros-cli language
 
@@ -155,141 +254,203 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### समर्थित भाषाएँ (कुल 38)
+#### Supported Languages (38 Total)
 
-| कोड | भाषा | मूल नाम |
-| ------- | ---------------------- | ---------------- |
-| `en` | अंग्रेजी | अंग्रेजी |
-| `es` | स्पैनिश | स्पैनिश |
-| `pt` | पुर्तगाली | पुर्तगाली |
-| `fr` | फ़्रेंच | फ़्रेंच |
-| `de` | जर्मन | जर्मन |
-| `it` | इटालियन | इटालियन |
-| `ja` | जापानी | 日本語 |
-| `ko` | कोरियाई | 한국어 |
-| `zh` | चीनी (सरलीकृत) | 简体中文 |
-| `zh-TW` | चीनी (पारंपरिक) | 繁體中文 |
-| `ru` | रूसी | रूसी |
-| `nl` | डच | नीदरलैंड |
-| `ar` | अरबी | العربية |
-| `pl` | पोलिश | पोल्स्की |
-| `tr` | तुर्की | टर्की |
-| `hi` | हिंदी | हिंदी |
-| `id` | इंडोनेशियाई | बहासा इंडोनेशिया |
-| `vi` | वियतनामी | तियांग वियत |
-| `th` | थाई | ไทย |
-| `sv` | स्वीडिश | स्वेन्स्का |
-| `da` | डेनिश | डांस्क |
-| `no` | नॉर्वेजियन | नॉर्स्क |
-| `fi` | फ़िनिश | सुओमी |
-| `el` | ग्रीक | Ελληνικά |
-| `cs` | चेक | सेस्टिना |
-| `hu` | हंगेरियन | मग्यार |
-| `ro` | रोमानियाई | रोमानी |
-| `uk` | यूक्रेनी | Українська |
-| `pt-BR` | ब्राज़ीलियाई पुर्तगाली | ब्राज़ीलियाई पुर्तगाली |
-| `zh-HK` | कैंटोनीज़ | 粵語 |
-| `ms` | मलय | बहासा मेलायु |
-| `sk` | स्लोवाक | स्लोवेनसीना |
-| `bg` | बल्गेरियाई | बेल्ज़िक |
-| `hr` | क्रोएशियाई | ह्रवत्स्की |
-| `lt` | लिथुआनियाई | लितुविų |
-| `lv` | लातवियाई | लात्वीशू |
-| `et` | एस्टोनियाई | ईस्टी |
-| `sl` | स्लोवेनियाई | स्लोवेन्स्कीना |
-
-{% hint style="success" %}**स्वचालित दृढ़ता**: आपकी भाषा प्राथमिकता `~/.chloros/cli_language.json` में सहेजी जाती है और सभी सत्रों में बनी रहती है।
-{% endhint %}***### `set-project-folder`: डिफ़ॉल्ट प्रोजेक्ट फ़ोल्डर सेट करें
-
-प्रोजेक्ट फ़ोल्डर का डिफ़ॉल्ट स्थान बदलें (जीयूआई के साथ साझा किया गया)।**वाक्यविन्यास:**```bash
-chloros-cli set-project-folder <folder-path>
-```**उदाहरण:**```powershell
-chloros-cli set-project-folder "C:\Projects\2025"
-```***### `get-project-folder`: प्रोजेक्ट फ़ोल्डर दिखाएं
-
-प्रोजेक्ट फ़ोल्डर का वर्तमान डिफ़ॉल्ट स्थान दिखाता है।**वाक्यविन्यास:**```bash
-chloros-cli get-project-folder
-```**उदाहरण:**```powershell
-chloros-cli get-project-folder
-```**बाहर निकलना:**```
-ℹ Current project folder: C:\Projects\2025
-```***### `reset-project-folder`: डिफ़ॉल्ट मानों पर रीसेट करें
-
-प्रोजेक्ट फ़ोल्डर को डिफ़ॉल्ट स्थान पर रीसेट करता है।**वाक्यविन्यास:**```bash
-chloros-cli reset-project-folder
-```***## वैश्विक विकल्प
-
-ये विकल्प सभी आदेशों पर लागू होते हैं:
-
-| विकल्प | प्रकार | डिफ़ॉल्ट | विवरण |
-| --------------- | ------- | ----------------- | ------------------------------------------------ |
-| `--backend-exe` | मार्ग | स्वचालित रूप से पता चला | निष्पादन योग्य बैकएंड का पथ |
-| `--port` | पूर्णांक | 5000 | एपीआई बैकएंड पोर्ट नंबर |
-| `--restart` | सूचक | - | बलपूर्वक बैकएंड पुनरारंभ करें (मौजूदा प्रक्रियाओं को समाप्त कर देता है) |
-| `--version` | सूचक | - | संस्करण जानकारी दिखाएँ और बाहर निकलें |
-| `--help` | सूचक | - | सहायता जानकारी दिखाएँ और बाहर निकलें |**वैश्विक विकल्पों के साथ उदाहरण:**```powershell
-chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```***## प्रोसेसिंग कॉन्फ़िगरेशन गाइड
-
-### समानांतर प्रसंस्करण
-
-क्लोरोस+ सीएलआई आपके कंप्यूटर की क्षमताओं को फिट करने के लिए**स्वचालित रूप से समानांतर प्रसंस्करण**को मापता है:**यह कैसे काम करता है:**
-
-* सीपीयू और रैम कोर का पता लगाता है।
-* कर्मचारियों को नियुक्त करता है: **2× सीपीयू कोर** (हाइपरथ्रेडिंग का उपयोग करता है)।
-* **अधिकतम: समानांतर में 16 कर्मचारी**(अधिक स्थिरता के लिए)।**सिस्टम स्तर:**| सिस्टम प्रकार | सीपीयू | रैम | श्रमिक | प्रदर्शन |
-| ----------------- | ---------- | -------- | -------- | --------------- |
-|**उच्च श्रेणी**| 16+ कोर | 32+ जीबी | 16 तक | अधिकतम गति |
-|**मध्य-सीमा**| 8-15 कोर | 16-31जीबी | 8-16 | उत्कृष्ट गति |
-|**कम रेंज**| 4-7 कोर | 8-15GB | 4-8 | अच्छी गति |
-
-{% hint style="success" %}**ऑटो अनुकूलन**: सीएलआई स्वचालित रूप से आपके सिस्टम विनिर्देशों का पता लगाता है और इष्टतम समानांतर प्रसंस्करण को कॉन्फ़िगर करता है। कोई मैन्युअल कॉन्फ़िगरेशन आवश्यक नहीं!
-{% endhint %}
-
-### डिबेयर तरीके
-
-सीएलआई डिफ़ॉल्ट और अनुशंसित डिबायर एल्गोरिदम के रूप में**उच्च गुणवत्ता (तेज़)**का उपयोग करता है:
-
-| विधि | गुणवत्ता | गति | विवरण |
-| -------------------------------- | ------- | ----- | ------------------------------------------------ |
-|**उच्च गुणवत्ता (तेज़)**⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡ | एज-सेंसिटिव एल्गोरिदम (डिफ़ॉल्ट, अनुशंसित) |
-
-### विग्नेट सुधार**यह क्या करता है:** छवि के किनारों पर प्रकाश हानि को ठीक करता है (कैमरे की छवियों में गहरे कोने आम हैं)।
-
-* **डिफ़ॉल्ट रूप से सक्षम**: अधिकांश उपयोगकर्ताओं को इस विकल्प को सक्षम रखना चाहिए।
-* इसे अक्षम करने के लिए `--no-vignette` का उपयोग करें।
+| Code    | Language              | Native Name      |
+| ------- | --------------------- | ---------------- |
+| `en`    | English               | English          |
+| `es`    | Spanish               | Español          |
+| `pt`    | Portuguese            | Português        |
+| `fr`    | French                | Français         |
+| `de`    | German                | Deutsch          |
+| `it`    | Italian               | Italiano         |
+| `ja`    | Japanese              | 日本語              |
+| `ko`    | Korean                | 한국어              |
+| `zh`    | Chinese (Simplified)  | 简体中文             |
+| `zh-TW` | Chinese (Traditional) | 繁體中文             |
+| `ru`    | Russian               | Русский          |
+| `nl`    | Dutch                 | Nederlands       |
+| `ar`    | Arabic                | العربية          |
+| `pl`    | Polish                | Polski           |
+| `tr`    | Turkish               | Türkçe           |
+| `hi`    | Hindi                 | हिंदी            |
+| `id`    | Indonesian            | Bahasa Indonesia |
+| `vi`    | Vietnamese            | Tiếng Việt       |
+| `th`    | Thai                  | ไทย              |
+| `sv`    | Swedish               | Svenska          |
+| `da`    | Danish                | Dansk            |
+| `no`    | Norwegian             | Norsk            |
+| `fi`    | Finnish               | Suomi            |
+| `el`    | Greek                 | Ελληνικά         |
+| `cs`    | Czech                 | Čeština          |
+| `hu`    | Hungarian             | Magyar           |
+| `ro`    | Romanian              | Română           |
+| `uk`    | Ukrainian             | Українська       |
+| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
+| `zh-HK` | Cantonese             | 粵語             |
+| `ms`    | Malay                 | Bahasa Melayu    |
+| `sk`    | Slovak                | Slovenčina       |
+| `bg`    | Bulgarian             | Български        |
+| `hr`    | Croatian              | Hrvatski         |
+| `lt`    | Lithuanian            | Lietuvių         |
+| `lv`    | Latvian               | Latviešu         |
+| `et`    | Estonian              | Eesti            |
+| `sl`    | Slovenian             | Slovenščina      |
 
 {% hint style="success" %}
-**सिफारिश**: पूरे फ्रेम में एक समान चमक सुनिश्चित करने के लिए हमेशा विगनेट सुधार चालू करें।
+**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
 {% endhint %}
 
-### परावर्तन अंशांकन
+***
 
-अंशांकन पैनलों का उपयोग करके कच्चे सेंसर मानों को मानकीकृत परावर्तन प्रतिशत में परिवर्तित करता है।
+### `set-project-folder` - Set Default Project Folder
 
-* **डिफ़ॉल्ट रूप से सक्षम** - वनस्पति विश्लेषण के लिए आवश्यक।
-*छवियों पर अंशांकन पैनल की आवश्यकता है।
-* इसे अक्षम करने के लिए `--no-reflectance` का उपयोग करें।
+Change the default project folder location (shared with GUI).
+
+**Syntax:**
+
+```bash
+chloros-cli set-project-folder <folder-path>
+```
+
+**Example:**
+
+```powershell
+chloros-cli set-project-folder "C:\Projects\2025"
+```
+
+***
+
+### `get-project-folder` - Show Project Folder
+
+Display the current default project folder location.
+
+**Syntax:**
+
+```bash
+chloros-cli get-project-folder
+```
+
+**Example:**
+
+```powershell
+chloros-cli get-project-folder
+```
+
+**Output:**
+
+```
+ℹ Current project folder: C:\Projects\2025
+```
+
+***
+
+### `reset-project-folder` - Reset to Default
+
+Reset the project folder to the default location.
+
+**Syntax:**
+
+```bash
+chloros-cli reset-project-folder
+```
+
+***
+
+## Global Options
+
+These options apply to all commands:
+
+| Option          | Type    | Default       | Description                                      |
+| --------------- | ------- | ------------- | ------------------------------------------------ |
+| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
+| `--port`        | Integer | 5000          | Backend API port number                          |
+| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
+| `--version`     | Flag    | -             | Show version information and exit                |
+| `--help`        | Flag    | -             | Show help information and exit                   |
+
+**Example with Global Options:**
+
+```powershell
+chloros-cli --port 5001 process "C:\Datasets\Survey_001"
+```
+
+***
+
+## Processing Settings Guide
+
+### Parallel Processing
+
+Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+
+**How It Works:**
+
+* Detects your CPU cores and RAM
+* Allocates workers: **2× CPU cores** (uses hyperthreading)
+* **Maximum: 16 parallel workers** (for stability)
+
+**System Tiers:**
+
+| System Type   | CPU        | RAM      | Workers  | Performance     |
+| ------------- | ---------- | -------- | -------- | --------------- |
+| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
+| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
+| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
+
+{% hint style="success" %}
+**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
+{% endhint %}
+
+### Debayer Methods
+
+The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
+
+| Method                      | Quality | Speed | Description                                 |
+| --------------------------- | ------- | ----- | ------------------------------------------- |
+| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
+
+### Vignette Correction
+
+**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
+
+* **Enabled by default** - Most users should keep this enabled
+* Use `--no-vignette` to disable
+
+{% hint style="success" %}
+**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
+{% endhint %}
+
+### Reflectance Calibration
+
+Converts raw sensor values to standardized reflectance percentages using calibration panels.
+
+* **Enabled by default** - Essential for vegetation analysis
+* Requires calibration target panels in images
+* Use `--no-reflectance` to disable
 
 {% hint style="info" %}
-**आवश्यकताएँ**: सुनिश्चित करें कि सटीक परावर्तन रूपांतरण के लिए अंशांकन पैनल ठीक से उजागर हों और आपकी छवियों में दिखाई दें।
+**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
 {% endhint %}
 
-### पीपीके ठीक करता है**यह क्या करता है:** जीपीएस सटीकता में सुधार के लिए डीएक्यू-ए-एसडी लॉग डेटा का उपयोग करके पोस्ट-प्रोसेस्ड कीनेमेटिक सुधार लागू करता है।
+### PPK Corrections
 
-* **डिफ़ॉल्ट रूप से अक्षम**
-* इसे सक्रिय करने के लिए `--ppk` का उपयोग करें
-* MAPIR DAQ-A-SD लाइट सेंसर प्रोजेक्ट फ़ोल्डर में .daq फ़ाइलों की आवश्यकता है।
+**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
 
-### आउटपुट स्वरूप
+* **Disabled by default**
+* Use `--ppk` to enable
+* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
 
-<table><thead><tr><th width='197'>प्रारूप</th><th width='130.20001220703125'>बिट गहराई</th><th width='116.5999755859375'>फ़ाइल आकार</th><th>के लिए आदर्श</th></tr></thead><tbody><tr><td><strong>TIFF (16-बिट)</strong> ⭐</td><td>16-बिट पूर्णांक</td><td>बड़ा</td><td>जीआईएस विश्लेषण, फोटोग्रामेट्री (अनुशंसित)</td></tr><tr><td><strong>TIFF (32-बिट, प्रतिशत)</strong></td><td>32-बिट फ़्लोटिंग पॉइंट</td><td>बहुत बड़ा</td><td>वैज्ञानिक विश्लेषण, अनुसंधान</td></tr><tr><td><strong>PNG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>मध्यम</td><td>दृश्य निरीक्षण, वेब साझाकरण</td></tr><tr><td><strong>JPG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>छोटा</td><td>त्वरित पूर्वावलोकन, आउटपुट संपीड़ित</td></tr></tbody></table>***
+### Output Formats
 
-## स्वचालन और स्क्रिप्टिंग
+<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
 
-### पावरशेल बैच प्रोसेसिंग
+***
 
-डेटा सेट के एकाधिक फ़ोल्डरों को स्वचालित रूप से संसाधित करें:
+## Automation & Scripting
+
+### PowerShell Batch Processing
+
+Process multiple dataset folders automatically:
 
 ```powershell
 # process_all_datasets.ps1
@@ -313,9 +474,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### विंडोज़ बैच स्क्रिप्ट
+### Windows Batch Script
 
-बैच प्रोसेसिंग के लिए सरल लूप:
+Simple loop for batch processing:
 
 ```batch
 @echo off
@@ -340,9 +501,9 @@ echo All datasets processed!
 pause
 ```
 
-### पायथन ऑटोमेशन स्क्रिप्ट
+### Python Automation Script
 
-त्रुटि प्रबंधन के साथ उन्नत स्वचालन:
+Advanced automation with error handling:
 
 ```python
 import subprocess
@@ -419,16 +580,18 @@ if __name__ == '__main__':
     main()
 ```
 
-***## प्रसंस्करण कार्यप्रवाह
+***
 
-### मानक वर्कफ़्लो
+## Processing Workflow
 
-1.**प्रविष्टि**: रॉ/जेपीजी छवि जोड़े वाला फ़ोल्डर
-2.**पता लगाना**: सीएलआई स्वचालित रूप से संगत छवि फ़ाइलों की खोज करता है
-3.**प्रसंस्करण**: समानांतर मोड आपके सीपीयू कोर (क्लोरोस+) के अनुकूल होता है
-4.**आउटपुट**: संसाधित छवियों के साथ प्रति कैमरा मॉडल सबफ़ोल्डर बनाएं
+### Standard Workflow
 
-### आउटपुट संरचना उदाहरण
+1. **Input**: Folder containing RAW/JPG image pairs
+2. **Discovery**: CLI auto-scans for supported image files
+3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
+4. **Output**: Creates camera-model subfolders with processed images
+
+### Example Output Structure
 
 ```
 MyProject/
@@ -441,125 +604,248 @@ MyProject/
     └── ...
 ```
 
-### प्रसंस्करण समय का अनुमान
+### Processing Time Estimates
 
-100 छवियों (प्रत्येक 12 एमपी) के लिए विशिष्ट प्रसंस्करण समय:
+Typical processing times for 100 images (12MP each):
 
-| मोड | मौसम | हार्डवेयर |
-| ----------------- | --------- | ------------------------------------------------ |
-|**समानांतर मोड**| 5-10 मिनट | i7/Ryzen 7, 16GB RAM, SSD (16 कर्मचारियों तक) |
-|**समानांतर मोड**| 10-15 मिनट | i5/Ryzen 5, 8 जीबी रैम, HDD (8 कर्मचारियों तक) |
+| Mode              | Time      | Hardware                                     |
+| ----------------- | --------- | -------------------------------------------- |
+| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
+| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
 
-{% hint style="info" %}**प्रदर्शन युक्ति**: प्रसंस्करण समय छवियों की संख्या, रिज़ॉल्यूशन और कंप्यूटर विशिष्टताओं के आधार पर भिन्न होता है।
-{% endhint %}***## समस्या निवारण
+{% hint style="info" %}
+**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% endhint %}
 
-### सीएलआई नहीं मिला**गलती:**```
+***
+
+## Troubleshooting
+
+### CLI Not Found
+
+**Error:**
+
+```
 'chloros-cli' is not recognized as an internal or external command
-```**समाधान:**
+```
 
-1. स्थापना स्थान की जाँच करें:
+**Solutions:**
+
+1. Verify installation location:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. यदि यह PATH में नहीं है तो पूर्ण पथ का उपयोग करें:
+2. Use full path if not in PATH:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. इसे PATH में मैन्युअल रूप से जोड़ें:
-   *ओपन सिस्टम गुण → पर्यावरण चर।
-   * PATH वैरिएबल संपादित करें।
-   * जोड़ें: `C:\Program Files\Chloros\resources\cli`
-   * टर्मिनल को पुनः प्रारंभ करें.
+3. Add to PATH manually:
+   * Open System Properties → Environment Variables
+   * Edit PATH variable
+   * Add: `C:\Program Files\Chloros\resources\cli`
+   * Restart terminal
 
-***### बैकएंड प्रारंभ करने में त्रुटि.**गलती:**```
+***
+
+### Backend Failed to Start
+
+**Error:**
+
+```
 Backend failed to start within 30 seconds
-```**समाधान:**1. जांचें कि क्या बैकएंड पहले से चल रहा है (पहले इसे बंद करें)।
-2. जांचें कि विंडोज फ़ायरवॉल इसे ब्लॉक तो नहीं कर रहा है।
-3. एक अलग पोर्ट आज़माएँ:
+```
+
+**Solutions:**
+
+1. Check if backend already running (close it first)
+2. Check Windows Firewall is not blocking
+3. Try different port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. बैकएंड को बलपूर्वक पुनरारंभ करें:
+4. Force restart backend:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
-```***### लाइसेंस/प्रमाणीकरण मुद्दे**गलती:**```
+```
+
+***
+
+### License / Authentication Issues
+
+**Error:**
+
+```
 Chloros+ license required for CLI access
-```**समाधान:**1. जांचें कि आपके पास सक्रिय क्लोरोस+ सदस्यता है।
-2. अपने क्रेडेंशियल के साथ साइन इन करें:
+```
+
+**Solutions:**
+
+1. Verify you have an active Chloros+ subscription
+2. Login with your credentials:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. लाइसेंस की स्थिति जांचें:
+3. Check license status:
 
 ```powershell
 chloros-cli status
 ```
 
-4. समर्थन से संपर्क करें: info@mapir.camera***### कोई चित्र नहीं मिला.**गलती:**```
+4. Contact support: info@mapir.camera
+
+***
+
+### No Images Found
+
+**Error:**
+
+```
 No images found in the specified folder
-```**समाधान:**1. जांचें कि फ़ोल्डर में समर्थित प्रारूप (.RAW, .TIF, .JPG) हैं।
-2. जांचें कि फ़ोल्डर पथ सही है (रिक्त स्थान वाले पथों के लिए उद्धरण चिह्नों का उपयोग करें)।
-3. सुनिश्चित करें कि आपके पास फ़ोल्डर के लिए पढ़ने की अनुमति है।
-4. जांचें कि फ़ाइल एक्सटेंशन सही हैं।***### प्रोसेसिंग रुक जाती है या लटक जाती है**समाधान:**1. उपलब्ध डिस्क स्थान की जाँच करें (सुनिश्चित करें कि आउटपुट के लिए पर्याप्त जगह है)।
-2. मेमोरी खाली करने के लिए अन्य एप्लिकेशन बंद करें।
-3. छवियों की संख्या कम करें (बैच प्रक्रिया)।***### पोर्ट पहले से ही उपयोग में है**गलती:**```
+```
+
+**Solutions:**
+
+1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
+2. Check folder path is correct (use quotes for paths with spaces)
+3. Ensure you have read permissions for the folder
+4. Check file extensions are correct
+
+***
+
+### Processing Stalls or Hangs
+
+**Solutions:**
+
+1. Check available disk space (ensure enough for output)
+2. Close other applications to free memory
+3. Reduce image count (process in batches)
+
+***
+
+### Port Already in Use
+
+**Error:**
+
+```
 Port 5000 is already in use
-```**समाधान:**एक भिन्न पोर्ट निर्दिष्ट करें:
+```
+
+**Solution:**
+
+Specify a different port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```***## अक्सर पूछे जाने वाले प्रश्नों
+```
 
-### प्रश्न: क्या मुझे सीएलआई के लिए लाइसेंस की आवश्यकता है?**ए:**हाँ! सीएलआई को**सशुल्क क्लोरोस+ लाइसेंस** की आवश्यकता होती है।
+***
 
-* ❌ मानक योजना (निःशुल्क): सीएलआई अक्षम
-* ✅ क्लोरोस+ प्लान (भुगतान): सीएलआई पूरी तरह से सक्षम
+## FAQ
 
-यहां सदस्यता लें: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+### Q: Do I need a license for the CLI?
 
-***### प्रश्न: क्या मैं जीयूआई के बिना सर्वर पर सीएलआई का उपयोग कर सकता हूं?**ए:** हाँ! सीएलआई पूरी तरह से बिना ग्राफिकल इंटरफ़ेस के काम करता है। आवश्यकताएं:
+**A:** Yes! The CLI requires a paid **Chloros+ license**.
 
-*विंडोज सर्वर 2016 या बाद का संस्करण
-* विज़ुअल C++ पुनर्वितरण योग्य स्थापित
-* पर्याप्त रैम (न्यूनतम 8 जीबी, अनुशंसित 16 जीबी)
-* किसी भी मशीन पर जीयूआई लाइसेंस का एक बार सक्रियण
+* ❌ Standard (free) plan: CLI disabled
+* ✅ Chloros+ (paid) plans: CLI fully enabled
 
-***### प्रश्न: संसाधित छवियाँ कहाँ सहेजी जाती हैं?**ए:**डिफ़ॉल्ट रूप से, संसाधित छवियां कैमरा मॉडल के सबफ़ोल्डर्स में**इनपुट के समान फ़ोल्डर**में सहेजी जाती हैं (उदाहरण के लिए `Survey3N_RGN/`)।
+Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-भिन्न आउटपुट फ़ोल्डर निर्दिष्ट करने के लिए `-o` विकल्प का उपयोग करें:
+***
+
+### Q: Can I use the CLI on a server without GUI?
+
+**A:** Yes! The CLI runs completely headless. Requirements:
+
+* Windows Server 2016 or later
+* Visual C++ Redistributable installed
+* Sufficient RAM (8GB minimum, 16GB recommended)
+* One-time GUI license activation on any machine
+
+***
+
+### Q: Where are processed images saved?
+
+**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+
+Use `-o` option to specify different output folder:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
-```***### प्रश्न: क्या मैं एक साथ अनेक फ़ोल्डर संसाधित कर सकता हूँ?**ए:**सीधे एक कमांड के साथ नहीं, लेकिन आप फ़ोल्डरों को क्रमिक रूप से संसाधित करने के लिए स्क्रिप्ट का उपयोग कर सकते हैं। [ऑटोमेशन और स्क्रिप्टिंग](CLI.md#automation--scripting) अनुभाग देखें।***### प्रश्न: मैं सीएलआई आउटपुट को लॉग फ़ाइल में कैसे सहेजूं?**पावरशेल:**```powershell
+```
+
+***
+
+### Q: Can I process multiple folders at once?
+
+**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
+
+***
+
+### Q: How do I save CLI output to a log file?
+
+**PowerShell:**
+
+```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
-```**बैच:**```batch
+```
+
+**Batch:**
+
+```batch
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
-```***### प्रश्न: यदि मैं प्रोसेसिंग के दौरान Ctrl+C दबाऊं तो क्या होगा?**ए:**सीएलआई निम्नलिखित कार्य करेगा:
+```
 
-1. यह व्यवस्थित तरीके से प्रसंस्करण बंद कर देगा।
-2. यह बैकएंड को बंद कर देगा.
-3. यह कोड 130 के साथ आएगा।
+***
 
-आंशिक रूप से संसाधित छवियाँ आउटपुट फ़ोल्डर में रह सकती हैं।***### प्रश्न: क्या मैं सीएलआई प्रसंस्करण को स्वचालित कर सकता हूँ?**ए:**बिल्कुल! सीएलआई को स्वचालन के लिए डिज़ाइन किया गया है। पॉवरशेल, बैच और पायथन उदाहरणों के लिए [ऑटोमेशन और स्क्रिप्टिंग](CLI.md#automation--scripting) देखें।***### प्रश्न: मैं सीएलआई संस्करण की जांच कैसे कर सकता हूं?**ए:**```powershell
+### Q: What happens if I press Ctrl+C during processing?
+
+**A:** The CLI will:
+
+1. Stop processing gracefully
+2. Shut down the backend
+3. Exit with code 130
+
+Partially processed images may remain in the output folder.
+
+***
+
+### Q: Can I automate CLI processing?
+
+**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+
+***
+
+### Q: How do I check the CLI version?
+
+**A:**
+
+```powershell
 chloros-cli --version
-```**बाहर निकलना:**```
+```
+
+**Output:**
+
+```
 Chloros CLI 1.0.2
-```***
+```
 
-## मदद लें
+***
 
-### कमांड लाइन सहायता
+## Getting Help
 
-सहायता जानकारी सीधे सीएलआई में देखें:
+### Command-Line Help
+
+View help information directly in the CLI:
 
 ```powershell
 # General help
@@ -571,55 +857,79 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### समर्थन चैनल
+### Support Channels
 
-* **ईमेल**: info@mapir.camera
-* **वेबसाइट**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **कीमतें**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***## संपूर्ण उदाहरण
+* **Email**: info@mapir.camera
+* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### उदाहरण 1: बुनियादी प्रसंस्करण
+***
 
-डिफ़ॉल्ट सेटिंग्स के साथ प्रसंस्करण (विग्नेट, परावर्तन):
+## Complete Examples
+
+### Example 1: Basic Processing
+
+Process with default settings (vignette, reflectance):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
-```***### उदाहरण 2: उच्च गुणवत्ता वाला वैज्ञानिक परिणाम
+```
 
-32-बिट फ़्लोटिंग TIFF:
+***
+
+### Example 2: High-Quality Scientific Output
+
+32-bit float TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "TIFF (32-bit, Percent)" ^
   --vignette ^
   --reflectance
-```***### उदाहरण 3: त्वरित पूर्वावलोकन प्रसंस्करण
+```
 
-त्वरित समीक्षा के लिए अंशांकन के बिना 8-बिट पीएनजी:
+***
+
+### Example 3: Fast Preview Processing
+
+8-bit PNG without calibration for quick review:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "PNG (8-bit)" ^
   --no-vignette ^
   --no-reflectance
-```***### उदाहरण 4: पीपीके के साथ सही प्रसंस्करण
+```
 
-परावर्तन के साथ पीपीके सुधार लागू करें:
+***
+
+### Example 4: PPK-Corrected Processing
+
+Apply PPK corrections with reflectance:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --ppk ^
   --reflectance
-```***### उदाहरण 5: कस्टम आउटपुट स्थान
+```
 
-एक विशिष्ट प्रारूप के साथ एक अलग ड्राइव पर प्रक्रिया करें:
+***
+
+### Example 5: Custom Output Location
+
+Process to different drive with specific format:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
   -o "D:\Output\Processed" ^
   --format "TIFF (16-bit)"
-```***### उदाहरण 6: प्रमाणीकरण वर्कफ़्लो
+```
 
-पूर्ण प्रमाणीकरण प्रवाह:
+***
+
+### Example 6: Authentication Workflow
+
+Complete authentication flow:
 
 ```powershell
 # Step 1: Login
@@ -633,11 +943,13 @@ chloros-cli process "C:\Datasets\Field_A"
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
-```***
+```
 
-### उदाहरण 7: बहुभाषी उपयोग
+***
 
-इंटरफ़ेस भाषा बदलें:
+### Example 7: Multi-Language Usage
+
+Change interface language:
 
 ```powershell
 # List available languages

@@ -1,34 +1,36 @@
-# विषयसूची
+# सामग्री तालिका
 
-* [शुरू करना](README.md)
+* [आरंभ करना](README.md)
 * [जीयूआई: नेविगेशन](navigation.md)
-* [जीयूआई: परियोजनाएं](projects.md)
-* [सीएलआई: कमांड लाइन](CLI.md)
-* [एपीआई: पायथन एसडीके](api-python-sdk.md)
+* [जीयूआई: प्रोजेक्ट्स](projects.md)
+* [CLI : कमांड लाइन](CLI.md)
+* [API : Python SDK](api-python-sdk.md)
 * [समर्थित कैमरे](supported-cameras.md)
 * [आउटपुट छवि प्रारूप](output-image-formats.md)
-* [क्लोरोस+ लॉगिन](chloros+-login.md)
+* [Chloros+ लॉगिन](क्लोरोस+-login.md)
 * [अंशांकन लक्ष्य](calibration-targets.md)
 * [समर्थित भाषाएँ](supported-languages.md)
-* [डाउनलोड करना](download.md)
+* [डाउनलोड करें](download.md)
 * [अक्सर पूछे जाने वाले प्रश्न](faq.md)
 
-## छवियाँ प्रसंस्करण (जीयूआई)
+## प्रसंस्करण छवियां (जीयूआई)
 
 * [प्रोजेक्ट सेटिंग्स समायोजित करना](processing-images-gui/adjusting-project-settings.md)
-* [किसी प्रोजेक्ट में फ़ाइलें जोड़ना](processing-images-gui/adding-files-to-a-project.md)
+* [प्रोजेक्ट में फ़ाइलें जोड़ना](processing-images-gui/adding-files-to-a-project.md)
 * [लक्ष्य छवियाँ चुनना](processing-images-gui/choosing-target-images.md)
-* [प्रसंस्करण प्रारंभ करना](processing-images-gui/starting-the-processing.md)
-* [प्रसंस्करण की निगरानी करना](processing-images-gui/monitoring-the-processing.md)
+* [प्रसंस्करण प्रारंभ](processing-images-gui/starting-the-processing.md)
+* [प्रसंस्करण की निगरानी](processing-images-gui/monitoring-the-processing.md)
 * [प्रसंस्करण समाप्त करना](processing-images-gui/finishing-the-processing.md)
 
-## परियोजना सेटिंग्स
+## प्रोजेक्ट सेटिंग्स
 
 * [प्रोजेक्ट सेटिंग्स](project-settings/project-settings.md)
-* [मल्टीस्पेक्ट्रल सूचकांक सूत्र](project-settings/multispectral-index-formulas.md)
+* [मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला](project-settings/multispectral-index-formulas.md)
 
 ## छवि दर्शक (जीयूआई)
 
+* [छवि ग्रिड](image-viewer-gui/image-grid.md)
 * [एक छवि पूर्ण स्क्रीन खोलना](image-viewer-gui/opening-an-image-full-screen.md)
 * [छवि परतें](image-viewer-gui/image-layers.md)
-* [इंडेक्स/एलयूटी सैंडबॉक्स](image-viewer-gui/index-lut-sandbox.md)
+* [इंडेक्स/LUT सैंडबॉक्स](image-viewer-gui/index-lut-sandbox.md)
+* [मानचित्र मार्कर](image-viewer-gui/map-markers.md)

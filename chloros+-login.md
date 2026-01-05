@@ -1,27 +1,40 @@
-# क्लोरोस+ लॉगिन
+# Chloros+ लॉगिन
 
-## क्लोरोस और क्लोरोस (ब्राउज़र) लॉगिन
+## Chloros और Chloros (ब्राउज़र) लॉगिन
 
 उपयोगकर्ता <img src=”.gitbook/assets/icon_user.JPG” alt=”” data-size=”line”> साइडबार मेनू आपको अपने Chloros+ खाते में लॉग इन करने और अतिरिक्त सुविधाओं को अनलॉक करने की अनुमति देता है।
 
 लॉग इन करने पर आपके खाते का विवरण दिखाया जाएगा:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/user_account.JPG' alt='' width='375'><figcaption></figcaption></figure>
 
-## सीएलआई लॉगिन
+## CLI लॉगिन
 
-सीएलआई प्रोसेसिंग सक्षम करने के लिए अपने क्लोरोस+ क्रेडेंशियल्स के साथ लॉगिन करें।
+CLI प्रोसेसिंग सक्षम करने के लिए अपने Chloros+ क्रेडेंशियल के साथ लॉगिन करें।
 
-**वाक्यविन्यास:**```bash
+**वाक्यविन्यास:**
+
+```bash
 chloros-cli login <email> <password>
-```**Example:**```powershell
+```
+
+{% संकेत शैली = "जानकारी" %}
+**SDK उपयोगकर्ता**: Python SDK कैश्ड क्रेडेंशियल्स को साफ़ करने के लिए एक प्रोग्रामेटिक `logout()` विधि भी प्रदान करता है। विवरण के लिए [Python SDK दस्तावेज़](api-python-sdk.md#logout) देखें।
+{% अंतिम संकेत %}
+
+**उदाहरण:**
+
+```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर सिंगल कोट्स का उपयोग करें।
-{% endhint %}**आउटपुट:**
+{% संकेत शैली = "चेतावनी" %}
+**विशेष वर्ण**: `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर एकल उद्धरण चिह्नों का उपयोग करें।
+{% अंतिम संकेत %}
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+**आउटपुट:**
+
+<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=''><figcaption></figcaption></figure>
 
 ### योजना समाप्ति
 
@@ -29,6 +42,6 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### डिवाइस सीमा
 
-प्रत्येक क्लोरोस+ योजना अलग-अलग संख्या में पंजीकृत उपकरणों की पेशकश करती है। आपके द्वारा क्लोरोस+ खाते से लॉग इन किया गया प्रत्येक उपकरण आपके पंजीकृत उपकरणों की संख्या में गिना जाएगा। आप अपने MAPIR क्लाउड खाता पृष्ठ पर किसी डिवाइस का नाम बदल सकते हैं और उसे हटा सकते हैं।
+प्रत्येक Chloros+ योजना अलग-अलग संख्या में पंजीकृत डिवाइस प्रदान करती है। प्रत्येक डिवाइस जिसमें आप Chloros+ खाते से लॉग इन करते हैं, आपके पंजीकृत डिवाइसों की संख्या में गिना जाएगा। आप अपने MAPIR क्लाउड खाता पृष्ठ पर किसी डिवाइस का नाम बदल सकते हैं और उसे हटा सकते हैं।
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width='168.5999755859375' ign='right'>Chloros+ प्लान</th><th ign='center'>COPER</th><th ign='center'>Bronze</th><th ign='center'>Silver</th><th ign='center'>GOLD</th></tr></thead><tbody><tr><td ign='right'>समर्थित डिवाइस</td><td ign='center'>2</td><td ign='center'>2</td><td ign='center'>5</td><td ign='center'>10</td></tr></tbody></table>
