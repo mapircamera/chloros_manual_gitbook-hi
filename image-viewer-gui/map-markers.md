@@ -15,7 +15,9 @@
 
 ***
 
-## मानचित्र टैब से छवियाँ समायोजित करना**मैप**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब में एक ही ऐड है <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> और <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> फ़ाइल बटन को हटा दें जैसा कि [** फ़ाइल ब्राउज़र**] (../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> टैब करता है। यह समान प्रोजेक्ट फ़ाइल तालिका सूची भी दिखाता है लेकिन विभिन्न कॉलम हेडर के साथ:
+## मानचित्र टैब से छवियाँ समायोजित करना
+
+**मैप** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब में वही ऐड <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> और रिमूव <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> फ़ाइल बटन हैं जो [**फ़ाइल ब्राउज़र**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> टैब में हैं। यह समान प्रोजेक्ट फ़ाइल तालिका सूची भी दिखाता है लेकिन विभिन्न कॉलम हेडर के साथ:
 
 ### फ़ाइल का नाम
 
@@ -86,7 +88,7 @@
 
 आप मानचित्र परत प्रकार चुन सकते हैं (बाएं से दाएं):
 
-&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="line">
+&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
 
 ### इलाक़ा
 
@@ -115,7 +117,9 @@
 
 ### पैन नियंत्रण
 
-* **पैन**: मानचित्र के चारों ओर घूमने के लिए क्लिक करें और खींचें***
+* **पैन**: मानचित्र के चारों ओर घूमने के लिए क्लिक करें और खींचें
+
+***
 
 ## उपयोग के मामले
 
