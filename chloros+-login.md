@@ -6,7 +6,7 @@
 
 लॉग इन करने पर आपके खाते का विवरण दिखाया जाएगा:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
 ## CLI लॉगिन
 
@@ -34,7 +34,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **आउटपुट:**
 
-<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=""><figcaption></figcaption></figure>
+<figure><img src='.gitbook/assets/cli login_w.JPG' alt=""><figcaption></figcaption></figure>
 
 ### योजना समाप्ति
 
@@ -44,4 +44,4 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 प्रत्येक Chloros+ योजना अलग-अलग संख्या में पंजीकृत डिवाइस प्रदान करती है। प्रत्येक डिवाइस जिसमें आप Chloros+ खाते से लॉग इन करते हैं, आपके पंजीकृत डिवाइसों की संख्या में गिना जाएगा। आप अपने MAPIR क्लाउड खाता पृष्ठ पर किसी डिवाइस का नाम बदल सकते हैं और उसे हटा सकते हैं।
 
-<table><thead><tr><th width='168.5999755859375' ign='right'>Chloros+ प्लान</th><th ign='center'>COPER</th><th ign='center'>Bronze</th><th ign='center'>Silver</th><th ign='center'>GOLD</th></tr></thead><tbody><tr><td ign='right'>समर्थित डिवाइस</td><td ign='center'>2</td><td ign='center'>2</td><td ign='center'>5</td><td ign='center'>10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ प्लान</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">समर्थित डिवाइस</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

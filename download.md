@@ -86,7 +86,7 @@ Chloros+ सदस्यता के साथ उन्नत सुविध�
 * 📱 **एकाधिक डिवाइस** - 2-10+ डिवाइस पर उपयोग करें (योजना पर निर्भर)
 * 🧮 **कस्टम सूत्र** - कस्टम मल्टीस्पेक्ट्रल सूचकांक बनाएं
 
-<p ign='center'><a href='https://cloud.mapir.camera/pricing' class='बटन प्राइमरी'>Chloros+ प्लान देखें &#x26; मूल्य निर्धारण</a></p>
+<p align="center"><a href='https://cloud.mapir.camera/pricing' class='बटन प्राइमरी'>Chloros+ प्लान देखें &#x26; मूल्य निर्धारण</a></p>
 
 ***
 

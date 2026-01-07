@@ -136,7 +136,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **विशेष वर्ण**: `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर एकल उद्धरण चिह्नों का उपयोग करें।
 {% endhint %}
 
-**आउटपुट:**<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=""><figcaption></figcaption></figure>***
+**आउटपुट:**<figure><img src='.gitbook/assets/cli login_w.JPG' alt=""><figcaption></figcaption></figure>***
 
 ### `logout` - स्पष्ट क्रेडेंशियल
 
