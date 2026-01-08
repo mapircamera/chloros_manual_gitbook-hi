@@ -2,11 +2,13 @@
 
 मानचित्र टैब आपकी छवियों को उनके जीपीएस निर्देशांक के आधार पर एक इंटरैक्टिव 2डी मानचित्र पर प्रदर्शित करता है। यह आपके कैप्चर सत्र का भौगोलिक अवलोकन प्रदान करता है और आपको स्थानिक कवरेज की कल्पना करने में मदद करता है। यह तब भी उपयोगी होता है जब आप पहली बार अपनी छवियों को आयात करते हैं ताकि उन छवियों को तुरंत हटा सकें जिन्हें आपको संसाधित करने की आवश्यकता नहीं है।
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## मानचित्र टैब तक पहुँचना
 
 1. Chloros में एक प्रोजेक्ट खोलें या बनाएं
 2. ऐसी छवियां आयात करें जिनमें जीपीएस मेटाडेटा हो
-3. बाएं साइडबार में **मैप** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब पर क्लिक करें।
+3. बाएं साइडबार में **मैप** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब पर क्लिक करें
 4. मानचित्र प्रत्येक छवि के जीपीएस स्थान पर मार्कर प्रदर्शित करेगा
 
 {% hint style="info" %}
@@ -17,7 +19,7 @@
 
 ## मानचित्र टैब से छवियाँ समायोजित करना
 
-**मैप** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब में वही ऐड <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> और रिमूव <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> फ़ाइल बटन हैं जो [**फ़ाइल ब्राउज़र**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> टैब में हैं। यह समान प्रोजेक्ट फ़ाइल तालिका सूची भी दिखाता है लेकिन विभिन्न कॉलम हेडर के साथ:
+**मैप** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> टैब में <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> जोड़ने और <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> फ़ाइल बटन को हटाने के समान ही है जैसा कि [**फ़ाइल ब्राउज़र**](..XPROTX00001XPROTX) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> टैब में होता है। यह समान प्रोजेक्ट फ़ाइल तालिका सूची भी दिखाता है लेकिन विभिन्न कॉलम हेडर के साथ:
 
 ### फ़ाइल का नाम
 
