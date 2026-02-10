@@ -1,23 +1,20 @@
 ---
 metaLinks: {}
 ---
+
 # आरंभ करना
 
-<div डेटा-पूर्ण-width= "झूठा"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width='false'><figure><img src='.gitbook/assets/cloros_logo_transparent.png' alt=""><figcaption></figcaption></figure></div>
 
 Chloros छवियों और अन्य सेंसर डेटा को संसाधित करने के लिए [MAPIR](https://www.mapir.camera) का एक सॉफ्टवेयर एप्लिकेशन है।
 
 ***
 
-Chloros 4 एप्लिकेशन मोड में उपलब्ध है:
+Chloros 3 एप्लिकेशन मोड में उपलब्ध है:
 
 ## Chloros: डेस्कटॉप GUI एप्लिकेशन
 
-\[अनुशंसित] सभी सुविधाओं के साथ स्टैंडअलोन अलग विंडो।
-
-## Chloros (ब्राउज़र): वेब-आधारित GUI इंटरफ़ेस
-
-आपके वेब ब्राउज़र (क्रोम/एज) में चलता है। <4GB VRAM वाले धीमे कंप्यूटरों के लिए सर्वोत्तम।
+सभी सुविधाओं के साथ स्टैंडअलोन अलग विंडो।
 
 ## [Chloros CLI: कमांड लाइन इंटरफ़ेस](CLI.md)
 
@@ -35,21 +32,22 @@ Chloros 4 एप्लिकेशन मोड में उपलब्ध ह
 
 * **मल्टी-थ्रेडेड प्रोसेसिंग**: पाइपलाइन के माध्यम से एक साथ छवियों को संसाधित करके बड़ी परियोजनाओं के लिए छवि प्रसंस्करण को बहुत तेज करता है।
 * **जीपीयू (सीयूडीए) एक्सेलेरेशन**: इमेज प्रोसेसिंग पाइपलाइन को और तेज करने के लिए आज के उच्च जीपीयू मेमोरी विकल्पों का लाभ उठाएं। सर्वोत्तम परिणामों के लिए हम 4GB या अधिक VRAM की अनुशंसा करते हैं।
-* **Chloros+** [**CLI**](CLI.md) **एक्सेस**: स्वचालित करने और अपने सॉफ़्टवेयर में एकीकृत करने के लिए कमांड लाइन से Chloros+ चलाएं।
-* **Chloros+** [**API**](api-python-sdk.md) **पहुंच:** प्रोग्रामेटिक नियंत्रण के लिए Python से Chloros+ चलाएं, जिससे आपके शोध पाइपलाइनों, डेटा विश्लेषण वर्कफ़्लो और कस्टम अनुप्रयोगों के साथ सहज एकीकरण सक्षम हो सके।
+* **Chloros+**[**CLI**](CLI.md)**एक्सेस**: स्वचालित करने और अपने सॉफ़्टवेयर में एकीकृत करने के लिए कमांड लाइन से Chloros+ चलाएं।
+* **Chloros+**[**API**](api-python-sdk.md)**पहुंच:** प्रोग्रामेटिक नियंत्रण के लिए Python से Chloros+ चलाएं, जिससे आपके शोध पाइपलाइनों, डेटा विश्लेषण वर्कफ़्लो और कस्टम अनुप्रयोगों के साथ सहज एकीकरण सक्षम हो सके।
 * **एकाधिक डिवाइस उपयोग**: प्रत्येक Chloros+ लाइसेंस 2+ डिवाइस को पंजीकृत करने की अनुमति देता है। पंजीकृत उपकरणों को प्रबंधित करने के लिए अपने MAPIR क्लाउड खाते का उपयोग करें। अपने Chloros+ लाइसेंस को अपग्रेड करके अधिक उपकरणों के लिए समर्थन जोड़ें।
+* **उन्नत टेक्सचर अवेयर डिबेयर विधि:** एक उच्च गुणवत्ता वाला एज-अवेयर डिबेयर एक एआई/एमएल डीनोइज़िंग मॉडल के साथ संयुक्त है जो लगभग सभी डिबेयरिंग शोर को हटा देता है।&#x20;
 * **कस्टम मल्टीस्पेक्ट्रल इंडेक्स फॉर्मूला:** प्रसंस्करण और छवि देखने वाले सैंडबॉक्स दोनों के लिए, Chloros रैस्टर कैलकुलेटर में कस्टम मल्टीस्पेक्ट्रल इंडेक्स दर्ज करें।
 
-<p संरेखित करें = केंद्र
+<p संरेखित करें = केंद्र साइनअप</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src='gitbook/assets/cloros_grid_mode.gif' alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>

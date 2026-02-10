@@ -6,7 +6,7 @@
 
 आप छवि थंबनेल के आकार को समायोजित करने के लिए ऊपर दाईं ओर ज़ूम स्लाइडर का उपयोग कर सकते हैं। आप उन्हें स्केल करने के लिए CTRL + माउस व्हील भी पकड़ सकते हैं।
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src='../.gitbook/assets/cloros_grid_zoom.gif' alt=""><figcaption></figcaption></figure>
 
 ## निर्यात दृश्य बटन
 
@@ -19,4 +19,4 @@
 
 इमेज ग्रिड थंबनेल पर क्लिक करने से पूरी स्क्रीन खुल जाती है [इमेज व्यूअर](opening-an-image-full-screen.md)। यदि ग्रिड पर देखने का मोड "लक्ष्य" जैसे किसी विशेष निर्यात पर सेट है, तो ग्रिड थंबनेल पर क्लिक करने पर यह निर्यात की गई लक्ष्य छवि को पूर्ण स्क्रीन पर खोल देगा।
 
-<figure><img src="../.gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src='../.gitbook/assets/cloros_grid_mode.gif' alt=""><figcaption></figcaption></figure>
