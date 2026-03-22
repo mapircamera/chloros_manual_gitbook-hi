@@ -15,9 +15,9 @@
 
 | आवश्यकता | विवरण |
 | ------------------- | ---------------------------------------------------------------------------------- |
-| **Chloros डेस्कटॉप** | स्थानीय रूप से स्थापित किया जाना चाहिए |
+| **Chloros स्थापित** | Windows: डेस्कटॉप इंस्टॉलर; Linux: `.deb` पैकेज |
 | **लाइसेंस** | Chloros+ ([भुगतान योजना आवश्यक](https://cloud.mapir.camera/pricing)) |
-| **ऑपरेटिंग सिस्टम** | Windows 10/11 (64-बिट) |
+| **ऑपरेटिंग सिस्टम** | Windows 10/11 (64-बिट), Linux x86_64 (amd64), Linux आर्म64 (NVIDIA जेटसन जेटपैक 6) |
 | **Python** | Python 3.7 या उच्चतर |
 | **स्मृति** | न्यूनतम 8जीबी रैम (16जीबी अनुशंसित) |
 | **इंटरनेट** | लाइसेंस सक्रियण के लिए आवश्यक |
@@ -37,7 +37,7 @@ pip install chloros-sdk
 ```
 
 {% hint style="info" %}
-**पहली बार सेटअप**: SDK का उपयोग करने से पहले, Chloros, Chloros (ब्राउज़र) या Chloros CLI खोलकर और अपने क्रेडेंशियल्स के साथ लॉग इन करके अपना Chloros+ लाइसेंस सक्रिय करें। इसे केवल एक बार ही करना होगा.
+**पहली बार सेटअप**: SDK का उपयोग करने से पहले, Chloros, Chloros (ब्राउज़र) या Chloros CLI खोलकर और अपने क्रेडेंशियल्स के साथ लॉग इन करके अपना Chloros+ लाइसेंस सक्रिय करें। इसे केवल एक बार ही करना होगा. Linux (कोई GUI नहीं) पर, उपयोग करें: `chloros-cli login user@example.com 'password'`
 {% endhint %}
 
 ### मूल उपयोग
@@ -47,9 +47,16 @@ pip install chloros-sdk
 ```python
 from chloros_sdk import process_folder
 
-# One-line processing
+# One-line processing (Windows)
 results = process_folder("C:\\DroneImages\\Flight001")
+
+# One-line processing (Linux)
+results = process_folder("/home/user/drone_images/flight001")
 ```
+
+{% hint style="info" %}
+**क्रॉस-प्लेटफ़ॉर्म पथ**: इस पृष्ठ पर कोड उदाहरण Windows-शैली पथ (उदाहरण के लिए, `C:\\DroneImages\\Flight001`) का उपयोग करते हैं। Linux पर, इसके बजाय Linux पथ का उपयोग करें (उदाहरण के लिए, `/home/user/drone_images/flight001` या `~/drone_images/flight001`)। SDK दोनों प्लेटफॉर्म पर समान रूप से काम करता है।
+{% endhint %}
 
 ### पूर्ण नियंत्रण
 
@@ -65,7 +72,8 @@ chloros = ChlorosLocal()
 chloros.create_project("MyProject", camera="Survey3N_RGN")
 
 # Import images
-chloros.import_images("C:\\DroneImages\\Flight001")
+chloros.import_images("C:\\DroneImages\\Flight001")  # Windows
+# chloros.import_images("/home/user/drone_images/flight001")  # Linux
 
 # Configure settings
 chloros.configure(
@@ -86,7 +94,7 @@ chloros.process(mode="parallel", wait=True)
 
 SDK स्थापित करने से पहले, सुनिश्चित करें कि आपके पास:
 
-1. **Chloros डेस्कटॉप** स्थापित ([डाउनलोड](download.md))
+1. **Chloros स्थापित** — Windows: डेस्कटॉप इंस्टॉलर ([डाउनलोड](download.md)); Linux: `.deb` पैकेज ([Linux इंस्टालेशन](linux/linux-installation.md))
 2. **Python 3.7+** स्थापित ([python.org](https://www.python.org))
 3. **सक्रिय Chloros+ लाइसेंस** ([अपग्रेड](https://cloud.mapir.camera/pricing))
 
@@ -112,7 +120,7 @@ pip install chloros-sdk[dev]
 
 ### स्थापना सत्यापित करें
 
-परीक्षण करें कि SDK सही ढंग से स्थापित है:
+जांचें कि SDK सही ढंग से स्थापित है:
 
 ```python
 import chloros_sdk
@@ -125,11 +133,13 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ### लाइसेंस सक्रियण
 
-SDK Chloros, Chloros (ब्राउज़र), और Chloros CLI के समान लाइसेंस का उपयोग करता है। GUI या CLI के माध्यम से एक बार सक्रिय करें:
+SDK Chloros, Chloros (ब्राउज़र), और Chloros CLI के समान लाइसेंस का उपयोग करता है। GUI या CLI के माध्यम से एक बार सक्रिय करें:**Windows:** **Chloros या Chloros (ब्राउज़र)** खोलें और उपयोगकर्ता <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> टैब पर लॉगिन करें, या इसका उपयोग करें CLI.**Linux:** CLI का उपयोग करें (कोई GUI उपलब्ध नहीं है):
 
-1. **Chloros या Chloros (ब्राउज़र)**खोलें और उपयोगकर्ता <img src=”.gitbook/assets/icon_user.JPG” alt=”” data-size=”line”> टैब पर लॉगिन करें। या,**CLI** खोलें।
-2. अपना Chloros+ क्रेडेंशियल दर्ज करें और लॉग इन करें
-3. लाइसेंस स्थानीय रूप से कैश किया जाता है (रीबूट के दौरान बना रहता है)
+```bash
+chloros-cli login user@example.com 'your_password'
+```
+
+लाइसेंस स्थानीय रूप से कैश किया जाता है और रिबूट के दौरान बना रहता है।
 
 {% hint style="success" %}
 **वन-टाइम सेटअप**: GUI या CLI के माध्यम से लॉग इन करने के बाद, SDK स्वचालित रूप से कैश्ड लाइसेंस का उपयोग करता है। किसी अतिरिक्त प्रमाणीकरण की आवश्यकता नहीं!
@@ -187,18 +197,28 @@ ChlorosLocal(
 **उदाहरण:**
 
 ```python
-# Default (auto-start backend)
+# Default (auto-start backend, auto-detect path on Windows and Linux)
 chloros = ChlorosLocal()
 
 # Connect to running backend
 chloros = ChlorosLocal(auto_start_backend=False)
 
-# Custom backend path
+# Custom backend path (Windows)
 chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
-# Custom timeout
-chloros = ChlorosLocal(timeout=60)
+# Custom backend path (Linux)
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
+
+# Custom timeout with longer startup (e.g., for Jetson)
+chloros = ChlorosLocal(timeout=60, backend_startup_timeout=120)
 ```
+
+{% hint style="info" %}
+**क्रॉस-प्लेटफ़ॉर्म ऑटो-डिटेक्शन**: SDK स्वचालित रूप से आपके प्लेटफ़ॉर्म के लिए सही बैकएंड पथ का प्रयास करता है:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (मैनुअल)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
 
 ***
 
@@ -258,7 +278,7 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 | पैरामीटर | प्रकार | डिफ़ॉल्ट | विवरण |
 | -------------------------------- | ---- | ---------------------- | -------------------------------- |
-| `debayer` | स्ट्र | "उच्च गुणवत्ता (तेज़)" | डिबायर विधि |
+| `debayer` | स्ट्र | "मानक (तेज़, मध्यम गुणवत्ता)" | डिबायर विधि |
 | `vignette_correction` | बूल | `True` | विग्नेट सुधार सक्षम करें |
 | `reflectance_calibration` | बूल | `True` | परावर्तन अंशांकन सक्षम करें |
 | `indices` | सूची | `None` | गणना करने के लिए वनस्पति सूचकांक |
@@ -285,7 +305,7 @@ chloros.configure(
 
 # Advanced configuration
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=True,
@@ -352,21 +372,41 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-बैकएंड स्थिति की जानकारी प्राप्त करें.
+प्रति-थ्रेड प्रोसेसिंग प्रगति सहित बैकएंड स्थिति की जानकारी प्राप्त करें।
 
-**रिटर्न:** `dict` - बैकएंड स्थिति**उदाहरण:**
+**रिटर्न:** `dict` - निम्नलिखित संरचना के साथ बैकएंड स्थिति:
+
+```python
+{
+    "running": True,
+    "url": "http://localhost:5000",
+    "processing": {
+        "percent": 75.0,
+        "phase": "processing"
+    },
+    "export": {
+        "percent": 50.0,
+        "phase": "exporting",
+        "active": True
+    }
+}
+```
+
+**उदाहरण:**
 
 ```python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
+print(f"Processing: {status['processing']['percent']}%")
+print(f"Export: {status['export']['percent']}% - Active: {status['export']['active']}")
 ```
 
 ***
 
 #### `shutdown_backend()`
 
-बैकएंड बंद करें (यदि SDK द्वारा प्रारंभ किया गया है)।
+बैकएंड बंद करें (यदि SDK द्वारा प्रारंभ किया गया हो)।
 
 **उदाहरण:**
 
@@ -477,6 +517,10 @@ with ChlorosLocal() as chloros:
 
 ## संपूर्ण उदाहरण
 
+{% hint style="info" %}
+**Linux उपयोगकर्ता**: नीचे दिए गए सभी उदाहरण Windows पथ का उपयोग करते हैं। `C:\\...` पथों को अपने Linux पथों से बदलें (जैसे, `/home/user/...` या `~/...`)। सभी SDK कार्यक्षमता सभी प्लेटफ़ॉर्म पर समान है।
+{% endhint %}
+
 ### उदाहरण 1: बुनियादी प्रसंस्करण
 
 डिफ़ॉल्ट सेटिंग्स वाले फ़ोल्डर को संसाधित करें:
@@ -511,7 +555,7 @@ print(f"Imported {len(import_results.get('files', []))} images")
 
 # Configure advanced settings
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=False,
@@ -708,7 +752,7 @@ def process_safely(folder_path):
         return False, f"License error: {e}. Upgrade to Chloros+ at cloud.mapir.camera/pricing"
     
     except ChlorosBackendError as e:
-        return False, f"Backend error: {e}. Ensure Chloros Desktop is installed."
+        return False, f"Backend error: {e}. Ensure Chloros is installed (Windows installer or Linux .deb package)."
     
     except ChlorosProcessingError as e:
         return False, f"Processing error: {e}"
@@ -892,7 +936,7 @@ except ChlorosLicenseError:
     print("Chloros+ license required. Upgrade at cloud.mapir.camera/pricing")
 
 except ChlorosBackendError:
-    print("Backend failed to start. Ensure Chloros Desktop is installed.")
+    print("Backend failed to start. Ensure Chloros is installed (Windows installer or Linux .deb package).")
 
 except ChlorosProcessingError as e:
     print(f"Processing failed: {e}")
@@ -973,19 +1017,30 @@ for i in range(0, len(images), batch_size):
 
 **समस्या:** SDK बैकएंड प्रारंभ करने में विफल रहता है**समाधान:**
 
-1. सत्यापित करें कि Chloros डेस्कटॉप स्थापित है:
+1. सत्यापित करें कि Chloros स्थापित है:
 
 ```python
 import os
-backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+import platform
+
+# Auto-detect backend path
+if platform.system() == "Windows":
+    backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+else:
+    backend_path = "/usr/lib/chloros/chloros-backend"
+
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. जांचें कि Windows फ़ायरवॉल अवरुद्ध नहीं कर रहा है
+2. फ़ायरवॉल (Windows) या पोर्ट उपलब्धता (Linux: `lsof -i :5000`) की जाँच करें
 3. मैन्युअल बैकएंड पथ आज़माएँ:
 
 ```python
+# Windows
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
+
+# Linux
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
 ```
 
 ***
@@ -998,9 +1053,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 ```python
 from pathlib import Path
 import os
+import platform
 
-# Check cache location (Windows)
-cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+# Check cache location
+if platform.system() == "Windows":
+    cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+else:
+    cache_path = Path.home() / '.cache' / 'chloros'
+
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
@@ -1060,8 +1120,14 @@ chloros = ChlorosLocal(api_url="http://localhost:5001")
 या विरोधाभासी प्रक्रिया ढूंढें और बंद करें:
 
 ```powershell
-# PowerShell
+# Windows PowerShell
 Get-NetTCPConnection -LocalPort 5000
+```
+
+```bash
+# Linux
+lsof -i :5000
+kill $(lsof -t -i :5000)
 ```
 
 ***
@@ -1196,11 +1262,14 @@ chloros.process(progress_callback=notebook_progress)
 
 **ए:** केवल प्रारंभिक लाइसेंस सक्रियण के लिए। Chloros, Chloros (ब्राउज़र) या Chloros CLI के माध्यम से लॉग इन करने के बाद लाइसेंस स्थानीय रूप से कैश किया जाता है और 30 दिनों के लिए ऑफ़लाइन काम करता है।***
 
-### प्रश्न: क्या मैं GUI के बिना सर्वर पर SDK का उपयोग कर सकता हूँ?**ए:** हाँ! आवश्यकताएं:
+### प्रश्न: क्या मैं GUI के बिना सर्वर पर SDK का उपयोग कर सकता हूँ?**ए:** हाँ! SDK Windows और Linux दोनों सर्वरों पर बिना किसी परेशानी के काम करता है।**Linux (हेडलेस के लिए अनुशंसित):**
+* `.deb` पैकेज के माध्यम से इंस्टॉल करें
+* लाइसेंस सक्रिय करें: `chloros-cli login user@example.com 'password'`
 
+**Windows सर्वर:**
 * Windows सर्वर 2016 या बाद का संस्करण
 * Chloros स्थापित (एक बार)
-* किसी भी मशीन पर लाइसेंस सक्रिय (कैश्ड लाइसेंस सर्वर पर कॉपी किया गया)
+* लाइसेंस CLI या किसी मशीन पर सक्रिय किया गया
 
 ***
 
@@ -1216,7 +1285,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### प्रश्न: क्या मैं SDK के साथ निर्मित ऐप्स वितरित कर सकता हूं?**ए:** SDK कोड को आपके एप्लिकेशन में एकीकृत किया जा सकता है, लेकिन:
 
-* अंतिम उपयोगकर्ताओं को Chloros इंस्टॉल करना होगा
+* अंतिम उपयोगकर्ताओं को Chloros स्थापित करने की आवश्यकता है
 * अंतिम उपयोगकर्ताओं को सक्रिय Chloros+ लाइसेंस की आवश्यकता है
 * वाणिज्यिक वितरण के लिए ओईएम लाइसेंसिंग की आवश्यकता होती है
 
@@ -1245,17 +1314,23 @@ Project_Path/
 
 ***
 
-### प्रश्न: क्या मैं निर्धारित समय पर चलने वाली Python स्क्रिप्ट से छवियों को संसाधित कर सकता हूँ?**ए:** हाँ! Python स्क्रिप्ट के साथ Windows टास्क शेड्यूलर का उपयोग करें:
+### प्रश्न: क्या मैं निर्धारित समय पर चलने वाली Python स्क्रिप्ट से छवियों को संसाधित कर सकता हूँ?**ए:** हाँ! Python स्क्रिप्ट के साथ अपने OS शेड्यूलर का उपयोग करें:
 
 ```python
 # scheduled_processing.py
 from chloros_sdk import process_folder
 
 # Process today's flights
-results = process_folder("C:\\Flights\\Today")
+results = process_folder("/data/flights/today")  # Linux
+# results = process_folder("C:\\Flights\\Today")  # Windows
 ```
 
-प्रतिदिन चलने के लिए टास्क शेड्यूलर के माध्यम से शेड्यूल करें।
+**Windows:** प्रतिदिन चलने के लिए टास्क शेड्यूलर के माध्यम से शेड्यूल करें।**Linux:** क्रॉन के माध्यम से शेड्यूल:
+
+```cron
+# Run at 2 AM daily
+0 2 * ** /usr/bin/python3 /home/user/scheduled_processing.py >> /var/log/chloros.log 2>&1
+```
 
 ***
 

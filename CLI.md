@@ -1,6 +1,6 @@
 # CLI : कमांड लाइन
 
-<figure><img src='.gitbook/assets/cli.JPG' alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
 
 **Chloros CLI** Chloros इमेज प्रोसेसिंग इंजन तक शक्तिशाली कमांड-लाइन एक्सेस प्रदान करता है, जो आपके इमेजिंग वर्कफ़्लो के लिए स्वचालन, स्क्रिप्टिंग और हेडलेस ऑपरेशन को सक्षम करता है।
 
@@ -10,13 +10,13 @@
 * 🔗 **एकीकरण** - मौजूदा वर्कफ़्लोज़ और पाइपलाइनों में एम्बेड करें
 * 💻 **हेडलेस ऑपरेशन** - बिना जीयूआई के चलाएं
 * 🌍 **बहु-भाषा** - 38 भाषाओं के लिए समर्थन
-* ⚡ **समानांतर प्रसंस्करण** - आपके सीपीयू को गतिशील रूप से स्केल करता है (16 समानांतर श्रमिकों तक)
+* ⚡ **समानांतर प्रसंस्करण** - [डायनामिक कंप्यूट अनुकूलन](processing-architecture/dynamic-compute-adaptation.md) स्वचालित रूप से आपके हार्डवेयर के लिए अनुकूलित होता है
 
 ### आवश्यकताएं
 
 | आवश्यकता | विवरण |
 | ------------------- | ---------------------------------------------------------------------------------- |
-| **ऑपरेटिंग सिस्टम** | Windows 10/11 (64-बिट) |
+| **ऑपरेटिंग सिस्टम** | Windows 10/11 (64-बिट), Linux x86_64 (amd64), Linux आर्म64 (NVIDIA जेटसन जेटपैक 6) |
 | **लाइसेंस** | Chloros+ ([भुगतान योजना आवश्यक](https://cloud.mapir.camera/pricing)) |
 | **स्मृति** | न्यूनतम 8जीबी रैम (16जीबी अनुशंसित) |
 | **इंटरनेट** | लाइसेंस सक्रियण के लिए आवश्यक |
@@ -30,6 +30,8 @@
 
 ### स्थापना
 
+#### Windows
+
 CLI स्वचालित रूप से Chloros इंस्टॉलर के साथ शामिल है:
 
 1. डाउनलोड करें और चलाएं **Chloros इंस्टॉलर.exe**
@@ -41,11 +43,27 @@ CLI स्वचालित रूप से Chloros इंस्टॉलर �
 इंस्टॉलर स्वचालित रूप से आपके सिस्टम PATH में `chloros-cli` जोड़ता है। स्थापना के बाद अपने टर्मिनल को पुनः आरंभ करें।
 {% endhint %}
 
+#### Linux
+
+अपने आर्किटेक्चर के लिए `.deb` पैकेज स्थापित करें:
+
+```bash
+# Linux amd64
+sudo dpkg -i chloros-amd64.deb
+
+# Linux arm64 (NVIDIA Jetson, JetPack 6)
+sudo dpkg -i chloros-arm64-jp6.deb
+```
+
+विस्तृत Linux सेटअप के लिए, [Linux इंस्टालेशन](linux/linux-installation.md) देखें।
+
 ### पहली बार सेटअप
 
 CLI का उपयोग करने से पहले, अपना Chloros+ लाइसेंस सक्रिय करें:
 
-```bash
+**Windows:**
+
+```powershell
 # Login with your Chloros+ account
 chloros-cli login user@example.com 'your_password'
 
@@ -56,12 +74,33 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
+**Linux:**
+
+```bash
+# Login with your Chloros+ account
+chloros-cli login user@example.com 'your_password'
+
+# Check license status
+chloros-cli status
+
+# Process your first project
+chloros-cli process ~/images/dataset001
+```
+
 ### मूल उपयोग
 
 डिफ़ॉल्ट सेटिंग्स वाले फ़ोल्डर को संसाधित करें:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/images/dataset001
 ```
 
 ***
@@ -90,8 +129,12 @@ chloros-cli process <input-folder> [options]
 
 **उदाहरण:**
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
+
+# Linux
+chloros-cli process ~/datasets/survey_001 --vignette --reflectance
 ```
 
 #### प्रक्रिया आदेश विकल्प
@@ -109,6 +152,9 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--format` | विकल्प | TIFF (16-बिट) | आउटपुट स्वरूप: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size` | पूर्णांक | ऑटो | अंशांकन पैनल का पता लगाने के लिए पिक्सेल में न्यूनतम लक्ष्य आकार |
 | `--target-clustering` | पूर्णांक | ऑटो | लक्ष्य क्लस्टरिंग सीमा (0-100) |
+| `--debayer` | विकल्प | `standard` | डिबायर विधि: `standard` या `texture-aware` (केवल Chloros+) |
+| `--target`, `--targets` | झंडा | विकलांग | केवल "लक्ष्य" या "लक्ष्य" सबफ़ोल्डर में अंशांकन लक्ष्य खोजें (प्रसंस्करण की गति बढ़ाता है) |
+| `--indices` | सूची | कोई नहीं | गणना के लिए वनस्पति सूचकांक (जैसे, `--indices NDVI NDRE GNDVI`) |
 | `--exposure-pin-1` | स्ट्रिंग | कोई नहीं | कैमरा मॉडल के लिए एक्सपोज़र लॉक करें (पिन 1) |
 | `--exposure-pin-2` | स्ट्रिंग | कोई नहीं | कैमरा मॉडल के लिए एक्सपोज़र लॉक करें (पिन 2) |
 | `--recal-interval` | पूर्णांक | ऑटो | सेकंड में पुनर्अंशांकन अंतराल |
@@ -128,7 +174,7 @@ chloros-cli login <email> <password>
 
 **उदाहरण:**
 
-```powershell
+```bash
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
@@ -136,7 +182,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **विशेष वर्ण**: `$`, `!`, या रिक्त स्थान जैसे वर्ण वाले पासवर्ड के चारों ओर एकल उद्धरण चिह्नों का उपयोग करें।
 {% endhint %}
 
-**आउटपुट:**<figure><img src='.gitbook/assets/cli login_w.JPG' alt=""><figcaption></figcaption></figure>***
+**आउटपुट:**<figure><img src='.gitbook/assets/clilogin_w.JPG' alt=""><figcaption></figcaption></figure>***
 
 ### `logout` - स्पष्ट क्रेडेंशियल
 
@@ -150,7 +196,7 @@ chloros-cli logout
 
 **उदाहरण:**
 
-```powershell
+```bash
 chloros-cli logout
 ```
 
@@ -179,7 +225,7 @@ chloros-cli status
 
 **उदाहरण:**
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -210,7 +256,7 @@ chloros-cli export-status
 
 **उदाहरण:**
 
-```powershell
+```bash
 chloros-cli export-status
 ```
 
@@ -235,7 +281,7 @@ chloros-cli language <language-code>
 
 **उदाहरण:**
 
-```powershell
+```bash
 # View current language
 chloros-cli language
 
@@ -300,7 +346,7 @@ chloros-cli language ja
 
 ### `set-project-folder` - डिफ़ॉल्ट प्रोजेक्ट फ़ोल्डर सेट करें
 
-डिफ़ॉल्ट प्रोजेक्ट फ़ोल्डर स्थान बदलें (जीयूआई के साथ साझा)।
+डिफ़ॉल्ट प्रोजेक्ट फ़ोल्डर स्थान बदलें (Windows पर GUI के साथ साझा किया गया)।
 
 **वाक्यविन्यास:**
 
@@ -310,8 +356,12 @@ chloros-cli set-project-folder <folder-path>
 
 **उदाहरण:**
 
-```powershell
+```bash
+# Windows
 chloros-cli set-project-folder "C:\Projects\2025"
+
+# Linux
+chloros-cli set-project-folder ~/projects/2025
 ```
 
 ***
@@ -328,14 +378,19 @@ chloros-cli get-project-folder
 
 **उदाहरण:**
 
-```powershell
+```bash
 chloros-cli get-project-folder
 ```
 
 **आउटपुट:**
 
 ```
+
+# Windows
 ℹ Current project folder: C:\Projects\2025
+
+# Linux
+ℹ Current project folder: /home/user/.local/share/chloros/projects
 ```
 
 ***
@@ -352,53 +407,122 @@ chloros-cli reset-project-folder
 
 ***
 
+### `selftest` - सिस्टम डायग्नोस्टिक्स चलाएँ
+
+अपने सिस्टम कॉन्फ़िगरेशन को सत्यापित करने के लिए 7 डायग्नोस्टिक जाँच चलाएँ।
+
+**वाक्यविन्यास:**
+
+```bash
+chloros-cli selftest
+```
+
+**निदान किया गया:**
+
+1. संस्करण जांच
+2. पोर्ट उपलब्धता (5000)
+3. बैकएंड स्टार्टअप
+4. API कनेक्टिविटी परीक्षण
+5. सिस्टम जानकारी और जीपीयू का पता लगाना
+6. डेनोइज़र मॉडल सत्यापन
+7. सीयूडीए उपलब्धता जांच
+
+{% hint style="info" %}
+**समस्या निवारण के लिए उपयोगी**: यह सत्यापित करने के लिए कि आपका सिस्टम सही ढंग से कॉन्फ़िगर किया गया है, इंस्टॉलेशन के बाद `selftest` चलाएं, विशेष रूप से Linux/Jetson पर जहां GPU और CUDA सेटअप को सत्यापन की आवश्यकता हो सकती है।
+{% endhint %}
+
+***
+
+### `update` - अपडेट की जांच करें (केवल Linux)
+
+Linux सिस्टम पर CLI अपडेट की जांच करें और इंस्टॉल करें।
+
+**वाक्यविन्यास:**
+
+```bash
+# Check for updates without installing
+chloros-cli update --check
+
+# Check for and install updates
+chloros-cli update
+```
+
+| विकल्प | विवरण |
+| --------- | ---------------------------------- |
+| `--check` | केवल अपडेट की जांच करें, इंस्टॉल न करें |
+
+{% hint style="info" %}
+यह कमांड केवल Linux पर उपलब्ध है। Windows पर, अपडेट इंस्टॉलर के माध्यम से वितरित किए जाते हैं।
+{% endhint %}
+
+***
+
 ## वैश्विक विकल्प
 
 ये विकल्प सभी आदेशों पर लागू होते हैं:
 
 | विकल्प | प्रकार | डिफ़ॉल्ट | विवरण |
-| --------------- | ------- | ----------------- | ------------------------------------------------ |
+| ----------------- | ------- | ----------------- | ------------------------------------------------ |
 | `--backend-exe` | पथ | स्वतः पता लगाया गया | निष्पादन योग्य बैकएंड का पथ |
 | `--port` | पूर्णांक | 5000 | बैकएंड API पोर्ट नंबर |
 | `--restart` | झंडा | - | फोर्स रीस्टार्ट बैकएंड (मौजूदा प्रक्रियाओं को समाप्त करता है) |
 | `--version` | झंडा | - | संस्करण जानकारी दिखाएँ और बाहर निकलें |
 | `--help` | झंडा | - | सहायता जानकारी दिखाएँ और बाहर निकलें |
 
+{% hint style="info" %}
+**बैकएंड ऑटो-डिटेक्शन**: `--backend-exe` पथ प्रति प्लेटफ़ॉर्म पर स्वचालित रूप से पहचाना जाता है:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (मैनुअल)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
+
 **वैश्विक विकल्पों के साथ उदाहरण:**
+
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
+```
+
+**Linux:**
+
+```bash
+chloros-cli --port 5001 process ~/datasets/survey_001
 ```
 
 ***
 
 ## प्रोसेसिंग सेटिंग्स गाइड
 
-### समानांतर प्रसंस्करण
+### समानांतर प्रसंस्करण और गतिशील कंप्यूट अनुकूलन
 
-Chloros+ CLI **स्वचालित रूप से आपके कंप्यूटर की क्षमताओं से मेल खाने के लिए समानांतर प्रसंस्करण को मापता है:**यह काम किस प्रकार करता है:**
+Chloros 1.1.0 में [डायनामिक कंप्यूट अनुकूलन](processing-architecture/dynamic-compute-adaptation.md) शामिल है - प्रोसेसिंग इंजन **स्वचालित रूप से आपके हार्डवेयर का पता लगाता है** और इष्टतम रणनीति का चयन करता है:
 
-* आपके सीपीयू कोर और रैम का पता लगाता है
-* श्रमिकों को आवंटित करता है: **2× सीपीयू कोर** (हाइपरथ्रेडिंग का उपयोग करता है)
-* **अधिकतम: 16 समानांतर कार्यकर्ता** (स्थिरता के लिए)**सिस्टम स्तर:**
-
-| सिस्टम प्रकार | सीपीयू | रैम | श्रमिक | प्रदर्शन |
-| ----------------- | ---------- | -------- | -------- | --------------- |
-| **हाई-एंड** | 16+ कोर | 32+ जीबी | 16 तक | अधिकतम गति |
-| **मध्य-सीमा** | 8-15 कोर | 16-31 जीबी | 8-16 | उत्कृष्ट गति |
-| **लो-एंड** | 4-7 कोर | 8-15 जीबी | 4-8 | अच्छी गति |
+| प्लेटफार्म | रणनीति | श्रमिक | पाइपलाइन | नोट्स |
+| --- | --- | --- | --- | --- |
+| **जेटसन नैनो 8जीबी** | `GPU_SINGLE` | 1 | `tiled_gpu` | स्मृति-कुशल, क्रमबद्ध |
+| **जेटसन ओरिन एनएक्स 16जीबी** | `GPU_PARALLEL` | 3 | `fused_gpu` | समवर्ती जीपीयू प्रसंस्करण |
+| **8GB GPU के साथ डेस्कटॉप** | `GPU_SINGLE` | 3 | `tiled_gpu` | अच्छा डेस्कटॉप प्रदर्शन |
+| **12जीबी+ जीपीयू के साथ डेस्कटॉप** | `GPU_PARALLEL` | 3-4 | `fused_gpu` | इष्टतम डेस्कटॉप प्रदर्शन |
+| **केवल सीपीयू प्रणाली** | `CPU_PARALLEL` | कोर - 1 | `cpu_fallback` | किसी GPU की आवश्यकता नहीं |
 
 {% hint style="success" %}
-**स्वचालित अनुकूलन**: CLI स्वचालित रूप से आपके सिस्टम विनिर्देशों का पता लगाता है और इष्टतम समानांतर प्रसंस्करण को कॉन्फ़िगर करता है। किसी मैन्युअल कॉन्फ़िगरेशन की आवश्यकता नहीं!
+**किसी मैन्युअल कॉन्फ़िगरेशन की आवश्यकता नहीं है!** Chloros आपके सीपीयू, जीपीयू, रैम और (जेटसन पर) थर्मल सेंसर का स्वतः पता लगाता है, फिर इष्टतम प्रोसेसिंग पाइपलाइन को स्वचालित रूप से कॉन्फ़िगर करता है।
 {% endhint %}
 
 ### डिबेयर तरीके
 
-CLI डिफ़ॉल्ट और अनुशंसित डिबायर एल्गोरिदम के रूप में **उच्च गुणवत्ता (तेज़)** का उपयोग करता है:
+| विधि | CLI ध्वज | गुणवत्ता | गति | लाइसेंस |
+| --- | --- | --- | --- | --- |
+| **मानक (तेज़, मध्यम गुणवत्ता)** | `--debayer standard` | अच्छा | तेज | मुफ़्त / Chloros+ |
+| **बनावट से अवगत (धीमी, उच्चतम गुणवत्ता)** | `--debayer texture-aware` | उच्चतम | धीमा | केवल Chloros+ |
 
-| विधि | गुणवत्ता | गति | विवरण |
-| -------------------------------- | ------- | ----- | ------------------------------------------------ |
-| **उच्च गुणवत्ता (तेज़)** ⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡ | एज-अवेयर एल्गोरिथम (डिफ़ॉल्ट, अनुशंसित) |
+डिफ़ॉल्ट डिबेयर विधि **मानक**है।**टेक्सचर अवेयर** विधि उच्चतम गुणवत्ता वाले आउटपुट के लिए AI/ML डीनोइज़िंग मॉडल का उपयोग करती है लेकिन इसके लिए Chloros+ लाइसेंस और एक NVIDIA GPU की आवश्यकता होती है।
+
+```bash
+# Use Texture Aware debayer (Chloros+ only)
+chloros-cli process ~/datasets/field_a --debayer texture-aware
+```
 
 ### विग्नेट सुधार
 
@@ -433,15 +557,15 @@ CLI डिफ़ॉल्ट और अनुशंसित डिबायर 
 
 ### आउटपुट प्रारूप
 
-<table><thead><tr><th width="197">प्रारूप</th><th width="130.20001220703125">बिट गहराई</th><th width="116.5999755859375">फ़ाइल आकार</th><th>सर्वश्रेष्ठ</th></tr></thead><tbody><tr><td><strong>TIFF (16-बिट)</strong> ⭐</td><td>16-बिट पूर्णांक</td><td>बड़ा</td><td>जीआईएस विश्लेषण, फोटोग्रामेट्री (अनुशंसित)</td></tr><tr><td><strong>TIFF (32-बिट, प्रतिशत)</strong></td><td>32-बिट फ्लोट</td><td>बहुत बड़ा</td><td>वैज्ञानिक विश्लेषण, अनुसंधान</td></tr><tr><td><strong>PNG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>मध्यम</td><td>दृश्य निरीक्षण, वेब साझाकरण</td></tr><tr><td><strong>JPG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>छोटा</td><td>त्वरित पूर्वावलोकन, संपीड़ित आउटपुट</td></tr></tbody></table>
+<table><thead><tr><th width='197'>प्रारूप</th><th width='130.20001220703125'>बिट गहराई</th><th width='116.5999755859375'>फ़ाइल आकार</th><th>के लिए सर्वश्रेष्ठ</th></tr></thead><tbody><tr><td><strong>TIFF (16-बिट)</strong> ⭐</td><td>16-बिट पूर्णांक</td><td>बड़ा</td><td>जीआईएस विश्लेषण, फोटोग्रामेट्री (अनुशंसित)</td></tr><tr><td><strong>TIFF (32-बिट, प्रतिशत)</strong></td><td>32-बिट फ्लोट</td><td>बहुत बड़ा</td><td>वैज्ञानिक विश्लेषण, अनुसंधान</td></tr><tr><td><strong>PNG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>मध्यम</td><td>दृश्य निरीक्षण, वेब साझाकरण</td></tr><tr><td><strong>JPG (8-बिट)</strong></td><td>8-बिट पूर्णांक</td><td>छोटा</td><td>त्वरित पूर्वावलोकन, संपीड़ित आउटपुट</td></tr></tbody></table>
 
 ***
 
 ## स्वचालन एवं स्क्रिप्टिंग
 
-### पावरशेल बैच प्रोसेसिंग
+### पावरशेल बैच प्रोसेसिंग (Windows)
 
-एकाधिक डेटासेट फ़ोल्डरों को स्वचालित रूप से संसाधित करें:
+Windows पर एकाधिक डेटासेट फ़ोल्डरों को स्वचालित रूप से संसाधित करें:
 
 ```powershell
 # process_all_datasets.ps1
@@ -465,9 +589,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows बैच स्क्रिप्ट
+### Windows बैच स्क्रिप्ट (Windows)
 
-बैच प्रोसेसिंग के लिए सरल लूप:
+Windows पर बैच प्रोसेसिंग के लिए सरल लूप:
 
 ```batch
 @echo off
@@ -492,9 +616,35 @@ echo All datasets processed!
 pause
 ```
 
-### Python ऑटोमेशन स्क्रिप्ट
+### बैश बैच प्रोसेसिंग (Linux)
 
-त्रुटि प्रबंधन के साथ उन्नत स्वचालन:
+Linux पर एकाधिक डेटासेट फ़ोल्डर संसाधित करें:
+
+```bash
+#!/bin/bash
+# process_all_datasets.sh
+
+for dataset in ~/datasets/2026/*/; do
+    name=$(basename "$dataset")
+    echo "Processing $name..."
+
+    chloros-cli process "$dataset" \
+        --vignette \
+        --reflectance
+
+    if [ $? -eq 0 ]; then
+        echo "✓ $name complete"
+    else
+        echo "✗ $name failed"
+    fi
+done
+
+echo "All datasets processed!"
+```
+
+### Python ऑटोमेशन स्क्रिप्ट (क्रॉस-प्लेटफ़ॉर्म)
+
+त्रुटि प्रबंधन के साथ उन्नत स्वचालन (Windows और Linux पर काम करता है):
 
 ```python
 import subprocess
@@ -519,6 +669,9 @@ def process_dataset(input_folder):
 
 def main():
     """Process all datasets in a directory"""
+    # Adjust path for your platform
+    # Windows: Path('C:/Datasets/2025')
+    # Linux:   Path.home() / 'datasets' / '2025'
     datasets_dir = Path('C:/Datasets/2025')
     log_file = Path('processing_log.txt')
     
@@ -600,13 +753,16 @@ MyProject/
 
 100 छवियों (प्रत्येक 12 एमपी) के लिए विशिष्ट प्रसंस्करण समय:
 
-| मोड | समय | हार्डवेयर |
-| ----------------- | --------- | ------------------------------------------------ |
-| **समानांतर मोड** | 5-10 मिनट | i7/Ryzen 7, 16GB RAM, SSD (16 कर्मचारियों तक) |
-| **समानांतर मोड** | 10-15 मिनट | i5/Ryzen 5, 8GB रैम, HDD (8 कर्मचारियों तक) |
+| प्लेटफार्म | मोड | अनुमानित समय | नोट्स |
+| --- | --- | --- | --- |
+| **डेस्कटॉप 12जीबी+ जीपीयू** | `GPU_PARALLEL` | 5-10 मिनट | सबसे तेज़ विकल्प |
+| **डेस्कटॉप 8जीबी जीपीयू** | `GPU_SINGLE` | 10-15 मिनट | अच्छा प्रदर्शन |
+| **जेटसन ओरिन एनएक्स 16जीबी** | `GPU_PARALLEL` | 15-25 मिनट | एज कंप्यूट |
+| **जेटसन नैनो 8जीबी** | `GPU_SINGLE` | 30-60 मिनट | स्मृति-विवश |
+| **केवल सीपीयू** | `CPU_PARALLEL` | 20-40 मिनट | किसी GPU की आवश्यकता नहीं |
 
 {% hint style="info" %}
-**प्रदर्शन युक्ति**: प्रसंस्करण समय छवि गणना, रिज़ॉल्यूशन और कंप्यूटर विशिष्टताओं के आधार पर भिन्न होता है।
+**प्रदर्शन युक्ति**: प्रसंस्करण समय छवि गणना, रिज़ॉल्यूशन, डिबेयर विधि और हार्डवेयर के आधार पर भिन्न होता है। टेक्सचर अवेयर डिबेयर में मानक से काफी अधिक समय लगता है। विवरण के लिए [डायनामिक कंप्यूट अनुकूलन](processing-architecture/dynamic-compute-adaptation.md) देखें।
 {% endhint %}
 
 ***
@@ -615,13 +771,13 @@ MyProject/
 
 ### CLI नहीं मिला
 
-**गलती:**
+**Windows त्रुटि:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**समाधान:**
+**Windows समाधान:**
 
 1. स्थापना स्थान सत्यापित करें:
 
@@ -641,6 +797,33 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
    * जोड़ें: `C:\Program Files\Chloros\resources\cli`
    * टर्मिनल पुनः प्रारंभ करें
 
+**Linux त्रुटि:**
+
+```
+chloros-cli: command not found
+```
+
+**Linux समाधान:**
+
+1. स्थापना सत्यापित करें:
+
+```bash
+which chloros-cli
+dpkg -L chloros-amd64  # or chloros-arm64-jp6
+```
+
+2. अपना शेल पुनः लोड करें:
+
+```bash
+source ~/.bashrc
+```
+
+3. अनुमतियाँ जाँचें:
+
+```bash
+sudo chmod +x /usr/bin/chloros-cli
+```
+
 ***
 
 ### बैकएंड प्रारंभ होने में विफल**गलती:**
@@ -653,17 +836,31 @@ Backend failed to start within 30 seconds
 **समाधान:**
 
 1. जांचें कि क्या बैकएंड पहले से चल रहा है (पहले इसे बंद करें)
-2. जांचें कि Windows फ़ायरवॉल अवरुद्ध नहीं हो रहा है
+2. जांचें कि फ़ायरवॉल अवरुद्ध नहीं कर रहा है (Windows) या पोर्ट उपलब्धता की जांच करें (Linux: `lsof -i :5000`)
 3. भिन्न पोर्ट आज़माएँ:
 
-```powershell
+```bash
+# Windows
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
 4. फोर्स रीस्टार्ट बैकएंड:
 
-```powershell
+```bash
+# Windows
 chloros-cli --restart process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --restart process ~/datasets/field_a
+```
+
+5. Linux पर, चेक बैकएंड निष्पादन योग्य मौजूद है:
+
+```bash
+ls -la /usr/lib/chloros/chloros-backend
 ```
 
 ***
@@ -680,13 +877,13 @@ Chloros+ license required for CLI access
 1. सत्यापित करें कि आपके पास एक सक्रिय Chloros+ सदस्यता है
 2. अपने क्रेडेंशियल्स के साथ लॉगिन करें:
 
-```powershell
+```bash
 chloros-cli login user@example.com 'password'
 ```
 
 3. लाइसेंस की स्थिति जांचें:
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -727,10 +924,20 @@ Port 5000 is already in use
 
 **समाधान:**
 
-एक भिन्न पोर्ट निर्दिष्ट करें:
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+```
+
+**Linux:**
+
+```bash
+# Find what's using port 5000
+lsof -i :5000
+
+# Use a different port
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
 ***
@@ -748,21 +955,30 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ***
 
-### प्रश्न: क्या मैं GUI के बिना सर्वर पर CLI का उपयोग कर सकता हूँ?**ए:** हाँ! CLI पूरी तरह से हेडलेस चलता है। आवश्यकताएं:
-
+### प्रश्न: क्या मैं GUI के बिना सर्वर पर CLI का उपयोग कर सकता हूँ?**ए:** हाँ! CLI पूरी तरह से हेडलेस चलता है। यह Linux पर प्राथमिक उपयोग का मामला है।**Windows सर्वर:**
 * Windows सर्वर 2016 या बाद का संस्करण
 * विज़ुअल C++ पुनर्वितरण योग्य स्थापित
-* पर्याप्त रैम (न्यूनतम 8 जीबी, 16 जीबी अनुशंसित)
-* किसी भी मशीन पर एकमुश्त जीयूआई लाइसेंस सक्रियण
+
+**Linux सर्वर:**
+* उबंटू 20.04+ / डेबियन 11+ (amd64) या जेटपैक 6 (arm64)
+* `.deb` पैकेज के माध्यम से इंस्टॉल करें
+
+**दोनों प्लेटफार्म:**
+* न्यूनतम 8 जीबी रैम (16 जीबी अनुशंसित)
+* एकमुश्त लाइसेंस सक्रियण: `chloros-cli login user@example.com 'password'`
 
 ***
 
 ### प्रश्न: संसाधित छवियाँ कहाँ सहेजी जाती हैं?**ए:** डिफ़ॉल्ट रूप से, संसाधित छवियां कैमरा-मॉडल सबफ़ोल्डर्स (उदाहरण के लिए, `Survey3N_RGN/`) में इनपुट के समान फ़ोल्डर में सहेजी जाती हैं।
 
-विभिन्न आउटपुट फ़ोल्डर निर्दिष्ट करने के लिए `-o` विकल्प का उपयोग करें:
+भिन्न आउटपुट फ़ोल्डर निर्दिष्ट करने के लिए `-o` विकल्प का उपयोग करें:
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Input" -o "D:\Output"
+
+# Linux
+chloros-cli process ~/input -o ~/output
 ```
 
 ***
@@ -781,6 +997,12 @@ chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 ```
 
+**Linux बैश:**
+
+```bash
+chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
+```
+
 ***
 
 ### प्रश्न: यदि मैं प्रोसेसिंग के दौरान Ctrl+C दबाऊं तो क्या होगा?**ए:** CLI होगा:
@@ -793,11 +1015,11 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### प्रश्न: क्या मैं CLI प्रोसेसिंग को स्वचालित कर सकता हूँ?**ए:** बिल्कुल! CLI को स्वचालन के लिए डिज़ाइन किया गया है। पॉवरशेल, बैच और Python उदाहरणों के लिए [ऑटोमेशन और स्क्रिप्टिंग](CLI.md#automation--scripting) देखें।***
+### प्रश्न: क्या मैं CLI प्रोसेसिंग को स्वचालित कर सकता हूँ?**ए:** बिल्कुल! CLI को स्वचालन के लिए डिज़ाइन किया गया है। PowerShell (Windows), बैच (Windows), बैश (Linux), और Python (क्रॉस-प्लेटफ़ॉर्म) उदाहरणों के लिए [ऑटोमेशन और स्क्रिप्टिंग] (CLI.md#automation--scripting) देखें।***
 
 ### प्रश्न: मैं CLI संस्करण की जांच कैसे करूं?**ए:**
 
-```powershell
+```bash
 chloros-cli --version
 ```
 
@@ -805,7 +1027,7 @@ chloros-cli --version
 
 ```
 
-Chloros CLI 1.0.2
+Chloros CLI 1.1.0
 ```
 
 ***
@@ -816,7 +1038,7 @@ Chloros CLI 1.0.2
 
 सहायता जानकारी सीधे CLI में देखें:
 
-```powershell
+```bash
 # General help
 chloros-cli --help
 
@@ -838,8 +1060,16 @@ chloros-cli language --help
 
 डिफ़ॉल्ट सेटिंग्स के साथ प्रक्रिया (विग्नेट, परावर्तन):
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a_2025_01_15
 ```
 
 ***
@@ -848,10 +1078,21 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 32-बिट फ्लोट TIFF:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "TIFF (32-bit, Percent)" ^
   --vignette ^
+  --reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "TIFF (32-bit, Percent)" \
+  --vignette \
   --reflectance
 ```
 
@@ -861,10 +1102,21 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 त्वरित समीक्षा के लिए अंशांकन के बिना 8-बिट PNG:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "PNG (8-bit)" ^
   --no-vignette ^
+  --no-reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "PNG (8-bit)" \
+  --no-vignette \
   --no-reflectance
 ```
 
@@ -874,9 +1126,19 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 परावर्तन के साथ पीपीके सुधार लागू करें:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --ppk ^
+  --reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --ppk \
   --reflectance
 ```
 
@@ -884,7 +1146,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ### उदाहरण 5: कस्टम आउटपुट स्थान
 
-विशिष्ट प्रारूप के साथ अलग-अलग ड्राइव पर प्रक्रिया करें:
+विशिष्ट प्रारूप के साथ किसी भिन्न स्थान पर प्रक्रिया करें:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -892,13 +1156,21 @@ chloros-cli process "C:\Input\Raw_Images" ^
   --format "TIFF (16-bit)"
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/input/raw_images \
+  -o ~/output/processed \
+  --format "TIFF (16-bit)"
+```
+
 ***
 
 ### उदाहरण 6: प्रमाणीकरण वर्कफ़्लो
 
-पूर्ण प्रमाणीकरण प्रवाह:
+पूर्ण प्रमाणीकरण प्रवाह (सभी प्लेटफ़ॉर्म पर समान):
 
-```powershell
+```bash
 # Step 1: Login
 chloros-cli login user@example.com 'MyP@ssw0rd'
 
@@ -906,7 +1178,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd'
 chloros-cli status
 
 # Step 3: Process images
-chloros-cli process "C:\Datasets\Field_A"
+# Windows: chloros-cli process "C:\Datasets\Field_A"
+# Linux:   chloros-cli process ~/datasets/field_a
+chloros-cli process ~/datasets/field_a
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
@@ -916,9 +1190,9 @@ chloros-cli logout
 
 ### उदाहरण 7: बहुभाषी प्रयोग
 
-इंटरफ़ेस भाषा बदलें:
+इंटरफ़ेस भाषा बदलें (सभी प्लेटफ़ॉर्म पर समान):
 
-```powershell
+```bash
 # List available languages
 chloros-cli language --list
 
@@ -926,7 +1200,9 @@ chloros-cli language --list
 chloros-cli language es
 
 # Process with Spanish interface
-chloros-cli process "C:\Vuelos\Campo_A"
+# Windows: chloros-cli process "C:\Vuelos\Campo_A"
+# Linux:   chloros-cli process ~/vuelos/campo_a
+chloros-cli process ~/vuelos/campo_a
 
 # Change back to English
 chloros-cli language en

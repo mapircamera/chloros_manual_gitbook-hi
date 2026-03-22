@@ -34,3 +34,14 @@
 * [छवि परतें](image-viewer-gui/image-layers.md)
 * [इंडेक्स/LUT सैंडबॉक्स](image-viewer-gui/index-lut-sandbox.md)
 * [मानचित्र मार्कर](image-viewer-gui/map-markers.md)
+
+## Linux और एज कंप्यूटिंग
+
+* [Linux अवलोकन](linux/linux-overview.md)
+* [Linux इंस्टालेशन](linux/linux-installation.md)
+* [एनवीडिया जेटसन गाइड](linux/nvidia-jetson-guide.md)
+
+## प्रसंस्करण वास्तुकला
+
+* [डायनामिक कंप्यूट अनुकूलन](processing-architecture/dynamic-compute-adaptation.md)
+* [प्रसंस्करण पाइपलाइन](processing-architecture/processing-pipeline.md)

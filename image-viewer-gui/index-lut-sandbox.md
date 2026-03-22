@@ -49,24 +49,24 @@ Chloros में, प्रोजेक्ट प्रोसेसिंग �
 
 ### सैंडबॉक्स खोलना
 
-इंडेक्स/LUT सैंडबॉक्स को **इमेज व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> साइडबार टैब में एक्सेस किया जाता है:
+इंडेक्स/LUT सैंडबॉक्स को **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt="" data-size="line"> साइडबार टैब में एक्सेस किया जाता है:
 
 1. फ़ाइल ब्राउज़र छवि ग्रिड में एक छवि पर क्लिक करें, यह **छवि व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> टैब में खुलता है
-2. यदि बायां पॉप-आउट साइडबार पहले से खुला नहीं है तो उसे खोलने के लिए **इमेज व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> टैब पर क्लिक करें।
+2. बाएं पॉप-आउट साइडबार को खोलने के लिए **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt="" data-size="line"> टैब पर क्लिक करें, यदि यह पहले से खुला नहीं है।
 
 ### इंडेक्स/एलयूटी लागू करने के लिए एक छवि का चयन करना
 
-इमेज व्यूअर <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> सैंडबॉक्स में एक इंडेक्स के साथ काम करने के लिए:
+इमेज व्यूअर <img src='../.gitbook/assets/icon_image-viewer.JPG' alt="" data-size="line"> सैंडबॉक्स में एक इंडेक्स के साथ काम करने के लिए:
 
 1. **एक छवि** पर क्लिक करके उसे मुख्य छवि ग्रिड से खोलें
-2. **इमेज व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> टैब तब खुलेगा
+2. इसके बाद **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt="" data-size="line"> टैब खुलेगा
 3. **लेयर ड्रॉपडाउन** पर क्लिक करें (दर्शक के ऊपर दाईं ओर)
 4. ड्रॉपडाउन से परत का चयन करें:
    * रॉ (परावर्तन)
 
 ### किसी छवि पर अनुक्रमणिका लागू करना
 
-एक बार छवि फुलस्क्रीन हो जाए और **इमेज व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> टैब साइडबार खुला हो:
+एक बार छवि फुलस्क्रीन हो जाए और **इमेज व्यूअर** <img src='../.gitbook/assets/icon_image-viewer.JPG' alt="" data-size="line"> टैब साइडबार खुला हो:
 
 1. साइडबार के शीर्ष पर इंडेक्स बॉक्स को चेक करें
 2. बाएं ड्रॉपडाउन से अपने कैमरे का फ़िल्टर चुनें
@@ -120,11 +120,11 @@ Water: -0.1 to 0.1
 
 एक बार जब आपके पास एक सूचकांक छवि दिखाई देगी
 
-1. <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> '+Add LUT' बटन पर क्लिक करें
+1. <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> "+LUT जोड़ें" बटन पर क्लिक करें
 2. रंग ग्रेडिएंट का चयन करें
 3. क्लिपिंग न्यूनतम/अधिकतम अंतिम बिंदुओं को समायोजित करें
 4. क्लिपिंग मोड को समायोजित करें
-5. LUT लागू करने के लिए **इमेज व्यूअर** <img src=”../.gitbook/assets/icon_image-viewer.JPG” alt=”” data-size=”line”> टैब साइडबार में इंडेक्स बॉक्स को चेक करें।
+5. LUT लागू करने के लिए **इमेज व्यूअर** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> टैब साइडबार में इंडेक्स बॉक्स को चेक करें।
 
 ### रंग ग्रेडियंट चुनना
 
