@@ -77,7 +77,7 @@ LATTICE के लिए कैमरा फ़ोल्डर `LATT-<sensor>-<l
 | `Chloros:IlluminationInvariant` | `True` परावर्तन से गणना किए गए सूचकांक के लिए, `False` विकिरण या सेंसर मानों से |
 | `Chloros:ChlorosPipelineVersion` | वह Chloros संस्करण जिसने इंडेक्स लिखा |
 
-`Chloros:PixelScale` को इंडेक्स उत्पादों से हटा दिया गया है — ऊपर दिए गए `IndexMin` / `IndexMax` का उपयोग करें। पूरी रीड-बैक रेसिपी [CLI Reference](reference/cli-reference.md) में &quot;An integer index raster is a per-image contrast stretch&quot; के अंतर्गत है।
+`Chloros:PixelScale` को इंडेक्स उत्पादों से हटा दिया गया है — ऊपर दिए गए `IndexMin` / `IndexMax` का उपयोग करें। पूरी रीड-बैक रेसिपी [CLI Reference](reference/cli-reference.md) में "An integer index raster is a per-image contrast stretch" के अंतर्गत है।
 
 ## परावर्तन पिक्सेल मानों को पढ़ना
 
@@ -94,4 +94,4 @@ LATTICE के लिए कैमरा फ़ोल्डर `LATT-<sensor>-<l
 **8-बिट कैप्चर।** एक 8-बिट कैप्चर के एक्सपोर्ट 8-बिट होते हैं। इसकी रिफ्लेक्टेंस को रीस्केल करके `Chloros:PixelScale=32768` स्टैम्प किया जाता है, इसलिए स्केल बरकरार रहता है; 8-बिट DN उत्पाद, और 1.3.0 से पहले लिखी गई रिफ्लेक्टेंस फाइलें, 0–255 पर क्लिप की जाती हैं और इनमें कोई स्केल टैग नहीं होता है। यदि किसी LATTICE रिफ्लेक्टेंस फ़ाइल में टैग अनुपस्थित है, तो स्केल का अनुमान न लगाएं; इसके बजाय 16-बिट या 32-बिट पर फिर से एक्सपोर्ट करें।
 {% endhint %}
 
-पूर्ण नियमों के लिए (MicaSense-संगत टैग सहित), [CLI संदर्भ](reference/cli-reference.md) में **&quot;रिफ्लेक्टेंस पिक्सल पढ़ना&quot;** देखें।
+पूर्ण नियमों के लिए (MicaSense-संगत टैग सहित), [CLI संदर्भ](reference/cli-reference.md) में **"रिफ्लेक्टेंस पिक्सल पढ़ना"** देखें।
