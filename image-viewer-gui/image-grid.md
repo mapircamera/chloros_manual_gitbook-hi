@@ -20,7 +20,9 @@
 2. **कैमरा फ़िल्टर बटन** — प्रत्येक LATTICE कैमरे के लिए एक। केवल प्रति कैमरा मोड में दिखाई देता है।
 3. **एक्सपोर्ट/व्यू मोड बटन** — यह कि हर थंबनेल किस उत्पाद को दिखाता है।
 
-जब विंडो उन सभी के लिए बहुत संकीर्ण होती है, तो समूह दाईं-से-बाईं ओर होवर ड्रॉपडाउन में सिकुड़ जाते हैं: पहले एक्सपोर्ट/व्यू बटन मुड़ते हैं, फिर कैमरा बटन। सिकुड़ गया समूह वर्तमान में सक्रिय विकल्प के साथ लेबल किए गए एक बटन को पीछे छोड़ देता है, और उस पर होवर करने पर पूरा सेट नीचे आ जाता है। **पर ट्रिगर / पर कैमरा कभी नहीं सिकुड़ता है।**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+जब विंडो उन सभी के लिए बहुत संकीर्ण होती है, तो समूह दाईं-से-बाईं ओर होवर ड्रॉपडाउन में सिकुड़ जाते हैं: पहले एक्सपोर्ट/व्यू बटन मुड़ते हैं, फिर कैमरा बटन। सिकुड़ गया समूह वर्तमान में सक्रिय विकल्प के साथ लेबल किए गए एक बटन को पीछे छोड़ देता है, और उस पर होवर करने पर पूरा सेट नीचे आ जाता है। **पर ट्रिगर / पर कैमरा कभी नहीं सिकुड़ता है।**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->
+
+***
 
 ## एक्सपोर्ट व्यू बटन
 

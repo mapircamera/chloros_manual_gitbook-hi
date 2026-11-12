@@ -193,7 +193,9 @@ Chloros+ सदस्यता के साथ उन्नत सुविध�
 * **🐻 एडवांस्ड टेक्सचर अवेयर डेबायर मेथड** - एक उच्च-गुणवत्ता वाला एज-अवेयर डेबायर जो एक AI/ML डिनॉइज़िंग मॉडल के साथ संयुक्त है, जो लगभग सभी डेबायरिंग शोर को हटा देता है।
 * 🧮 **कस्टम फॉर्मूले** - कस्टम मल्टीस्पेक्ट्रल इंडेक्स बनाएं
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Chloros+ प्लान और कीमतें देखें</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Chloros+ प्लान और कीमतें देखें</a></p>
+
+***
 
 ## इंस्टॉलेशन सहायता
 
@@ -233,7 +235,9 @@ Chloros+ सदस्यता के साथ उन्नत सुविध�
 * 📧 **ईमेल**: info@mapir.camera
 * 🌐 **वेबसाइट**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **दस्तावेज़ीकरण**: [Getting Started](./)
-* ❓ **अक्सर पूछे जाने वाले प्रश्न**: [Frequently Asked Questions](faq.md)***
+* ❓ **अक्सर पूछे जाने वाले प्रश्न**: [Frequently Asked Questions](faq.md)
+
+***
 
 ## सॉफ़्टवेयर अपडेट्स
 

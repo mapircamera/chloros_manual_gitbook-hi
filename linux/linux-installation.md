@@ -186,7 +186,6 @@ Chloros अपने क्रेडेंशियल और CLI कॉन्�
 | `/usr/lib/chloros/models/*.pth.enc` | टेक्सचर अवेयर डेबयेर द्वारा उपयोग किए जाने वाले एन्क्रिप्टेड डिनॉइज़र मॉडल |
 | `/usr/lib/python3/dist-packages/chloros_sdk/` (और `lattice_sdk`, `lattice_cam`, `arena_api`, प्रोजेक्ट लोडर) | सिस्टम `python3` के लिए इंस्टॉल किया गया Python SDK, और पैकेज |
 | `/usr/lib/chloros/sdk/chloros_sdk-*.whl` | के स्वामित्व में |
-| `/usr/lib/chloros/exiftool` | बंडल किया गया ExifTool लॉन्चर (सिस्टम exiftool के अस्तित्व में न होने पर केवल `/usr/local/bin/exiftool` से सिमलिंक किया गया)
 | `/usr/lib/chloros/exiftool` | बंडल किया गया ExifTool लॉन्चर (सिस्टम `/usr/local/bin/exiftool` का सिमलिंक केवल तभी होता है जब कोई सिस्टम exiftool मौजूद नहीं होता). 1.3.0 से, ExifTool स्क्रिप्ट `/usr/lib/chloros/exiftool-dist/` में अपनी खुद की पर्ल लाइब्रेरी के साथ आती है, इसलिए यह सिस्टम `libimage-exiftool-perl` पैकेज के बिना चलती है |
 | `/etc/chloros/update.conf` | `chloros-cli update` द्वारा पढ़ी जाने वाली अपडेट-चैनल कॉन्फ़िगरेशन |
 | `/etc/sysctl.d/60-chloros-ptp.conf` | `net.ipv4.ip_unprivileged_port_start = 319` को सेट करता है ताकि बैकएंड रूट के बिना PTP पोर्ट बाइंड कर सके |
